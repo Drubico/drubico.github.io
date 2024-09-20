@@ -157,3 +157,39 @@ for (let i = 0; i < navigationLinks.length; i++) {
 
   });
 }
+
+
+document.addEventListener('DOMContentLoaded', (event) => {
+  const modal = document.getElementById("project-modal");
+  const overlay = modal.querySelector('[data-overlay]');
+  const closeButton = modal.querySelector('[data-modal-close-btn]');
+  const modalImg = modal.querySelector('[data-modal-img]');
+  const modalTitle = modal.querySelector('[data-modal-title]');
+  const modalText = modal.querySelector('[data-modal-text]');
+
+  document.querySelectorAll('.project-item').forEach(item => {
+    item.addEventListener('click', (e) => {
+      e.preventDefault();
+      const projectImg = item.querySelector('img').src;
+      const projectTitle = item.querySelector('.project-title').textContent;
+      const projectCategory = item.querySelector('.project-category').textContent;
+
+      modalImg.src = projectImg;
+      modalTitle.textContent = projectTitle;
+      modalText.innerHTML = `<p>${projectCategory}</p>`;
+
+      modal.classList.add('active');
+      overlay.classList.add('active');
+    });
+  });
+
+  closeButton.onclick = function() {
+    modal.classList.remove('active');
+    overlay.classList.remove('active');
+  }
+
+  overlay.onclick = function() {
+    modal.classList.remove('active');
+    overlay.classList.remove('active');
+  }
+});
