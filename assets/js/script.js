@@ -173,23 +173,27 @@ document.addEventListener('DOMContentLoaded', (event) => {
       const projectImg = item.querySelector('img').src;
       const projectTitle = item.querySelector('.project-title').textContent;
       const projectCategory = item.querySelector('.project-category').textContent;
-
+      const projectDescription = item.querySelector('.project-description').innerHTML;
+  
       modalImg.src = projectImg;
       modalTitle.textContent = projectTitle;
       modalText.innerHTML = `<p>${projectCategory}</p>`;
-
+      modalText.innerHTML += `<div class="project-description">${projectDescription}</div>`;  
       modal.classList.add('active');
       overlay.classList.add('active');
+      document.querySelector('.modal-content').classList.add('modal-active');
     });
   });
 
   closeButton.onclick = function() {
     modal.classList.remove('active');
     overlay.classList.remove('active');
+    document.querySelector('.modal-content').classList.remove('modal-active');
   }
 
   overlay.onclick = function() {
     modal.classList.remove('active');
     overlay.classList.remove('active');
+    document.querySelector('.modal-content').classList.remove('modal-active');
   }
 });

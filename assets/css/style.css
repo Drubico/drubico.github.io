@@ -1346,69 +1346,7 @@ textarea.form-input::-webkit-resizer { display: none; }
 
   .service-content-box { text-align: left; }
 
-  /* testimonials */
 
-  .testimonials-title { margin-bottom: 25px; }
-
-  .testimonials-list {
-    gap: 30px;
-    margin: 0 -30px;
-    padding: 30px;
-    padding-bottom: 35px;
-  }
-
-  .content-card {
-    padding: 30px;
-    padding-top: 25px;
-  }
-
-  .testimonials-avatar-box {
-    transform: translate(30px, -30px);
-    border-radius: 20px;
-  }
-
-  .testimonials-avatar-box img { width: 80px; }
-
-  .testimonials-item-title {
-    margin-bottom: 10px;
-    margin-left: 95px;
-  }
-
-  .testimonials-text {
-    line-clamp: 2;
-    -webkit-line-clamp: 2;
-  }
-
-  /* testimonials modal */
-
-  .modal-container { padding: 20px; }
-
-  .testimonials-modal {
-    display: flex;
-    justify-content: flex-start;
-    align-items: stretch;
-    gap: 25px;
-    padding: 30px;
-    border-radius: 20px;
-  }
-
-  .modal-img-wrapper {
-    display: flex;
-    flex-direction: column; /* Asegura que la imagen y el icono de cita se dispongan en columna */
-    align-items: center; /* Centra los elementos horizontalmente */
-  }
-
-  .modal-avatar-box img {
-    width: 100%; /* Asegura que la imagen ocupe todo el ancho disponible */
-    max-width: 650px; /* Limita el ancho máximo de la imagen */
-  }
-
-
-  .modal-img-wrapper > img {
-    display: block;
-    flex-grow: 1;
-    width: 35px;
-  }
 
   /* clients */
 
@@ -1833,5 +1771,24 @@ textarea.form-input::-webkit-resizer { display: none; }
   .modal-avatar-box img {
     max-width: 100%; /* Asegura que la imagen ocupe todo el ancho disponible en pantallas muy pequeñas */
     height: auto; /* Mantiene la proporción de la imagen */
+  }
+}
+
+.project-description {
+  display: none;
+}
+
+.modal-active .project-description {
+  display: block;
+  color: var(--light-gray);
+  font-size: var(--fs-6);
+  font-weight: var(--fw-300);
+  line-height: 1.6;
+}
+
+/* Hide project description on small screens */
+@media (max-width: 768px) {
+  .modal-active .project-description {
+    display: none;
   }
 }
