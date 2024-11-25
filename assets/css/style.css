@@ -607,9 +607,8 @@ main {
   justify-content: flex-start;
   align-items: stretch;
   gap: 25px;
-  width: 65%; /* Ajusta el ancho del modal al 65% de la pantalla */
   max-width: 90%; /* Limita el ancho máximo del modal */
-  max-height: 90%; /* Limita la altura máxima del modal */
+  max-height: 95%; /* Limita la altura máxima del modal */
   overflow: auto; /* Permite el desplazamiento si el contenido es demasiado grande */
 }
 
@@ -1783,12 +1782,26 @@ textarea.form-input::-webkit-resizer { display: none; }
   color: var(--light-gray);
   font-size: var(--fs-6);
   font-weight: var(--fw-300);
+  padding: 0 0 1em 0;
   line-height: 1.6;
 }
 
 /* Hide project description on small screens */
 @media (max-width: 768px) {
   .modal-active .project-description {
-    display: none;
+    display: block;
+    color: var(--light-gray);
+    font-size: var(--fs-6);
+    font-weight: var(--fw-300);
+    padding: 0 0 1em 0;
+    line-height: 1.6;
   }
+}
+
+.custom-link {
+  color: #0000EE;
+  text-decoration: none; /* Removes underline (optional) */
+}
+.custom-link:hover {
+  color: lightgray; /* Changes color on hover (optional) */
 }
