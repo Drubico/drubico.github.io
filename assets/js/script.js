@@ -108,7 +108,7 @@ for (let i = 0; i < filterButtons.length; i++) {
   });
 }
 
-// filter select box functionality
+// Filter select box functionality
 const filterSelectBox = document.querySelector('.filter-select-box');
 const filterSelectButton = filterSelectBox.querySelector('.filter-select');
 const filterSelectValue = filterSelectBox.querySelector('.select-value');

@@ -419,13 +419,23 @@
 				// Retrieve currentLang and currentJsonPath from localStorage or set defaults
 				let currentLang = localStorage.getItem("currentLang") || "es";
 				let currentJsonPath = localStorage.getItem("jsonPath") || "assets/lang-es.json";
-
+				let langToggleSrc = localStorage.getItem("langToggleSrc") || "assets/images/usa.svg";
+				let langToggleAlt = localStorage.getItem("langToggleAlt") || "English";
+				const langToggle = document.getElementById("lang-toggle");
+				langToggle.src = langToggleSrc;
+				langToggle.alt = langToggleAlt;
 				// Function to set current language and save to localStorage
-				function setCurrentLang(lang, jsonPath) {
+				function setCurrentLang(lang, jsonPath, imgSrc, imgAlt) {
 					currentLang = lang;
 					currentJsonPath = jsonPath;
+					langToggleSrc = imgSrc;
+					langToggleAlt = imgAlt;
+					langToggle.src = imgSrc;
+					langToggle.alt = imgAlt;
 					localStorage.setItem("currentLang", currentLang);
 					localStorage.setItem("jsonPath", currentJsonPath);
+					localStorage.setItem("langToggleSrc", langToggleSrc);
+					localStorage.setItem("langToggleAlt", langToggleAlt);
 				}
 
 				// Function to load language file
@@ -516,10 +526,15 @@
 
 							// Portfolio Section
 							document.querySelector("[data-lang='portfolio.title']").textContent = data.portfolio.title;
-							document.querySelector("[data-lang='portfolio.filter.all']").textContent = data.portfolio.filter.all;
-							document.querySelector("[data-lang='portfolio.filter.applications']").textContent = data.portfolio.filter.applications;
-							document.querySelector("[data-lang='portfolio.filter.webDevelopment']").textContent = data.portfolio.filter.webDevelopment;
-
+							document.querySelectorAll("[data-lang='portfolio.filter.all']").forEach((el) => {
+								el.textContent = data.portfolio.filter.all;
+							});
+							document.querySelectorAll("[data-lang='portfolio.filter.applications']").forEach((el) => {
+								el.textContent = data.portfolio.filter.applications;
+							});
+							document.querySelectorAll("[data-lang='portfolio.filter.webDevelopment']").forEach((el) => {
+								el.textContent = data.portfolio.filter.webDevelopment;
+							});
 							data.portfolio.projects.forEach((project, index) => {
 								document.querySelector(`[data-lang='portfolio.projects[${index}].title']`).textContent = project.title;
 								document.querySelector(`[data-lang='portfolio.projects[${index}].category']`).textContent = project.category;
@@ -542,14 +557,10 @@
 				document.getElementById("lang-toggle").addEventListener("click", () => {
 					if (currentLang === "en") {
 						loadLanguage("assets/lang-es.json");
-						document.getElementById("lang-toggle").src = "./assets/images/usa.svg";
-						document.getElementById("lang-toggle").alt = "English";
-						setCurrentLang("es", "assets/lang-es.json");
+						setCurrentLang("es", "assets/lang-es.json", "assets/images/usa.svg", "English");
 					} else {
 						loadLanguage("assets/lang.json");
-						document.getElementById("lang-toggle").src = "./assets/images/spanish.svg";
-						document.getElementById("lang-toggle").alt = "Español";
-						setCurrentLang("en", "assets/lang.json");
+						setCurrentLang("en", "assets/lang.json", "assets/images/spain.svg", "Español");
 					}
 				});
 			});

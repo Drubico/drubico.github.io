@@ -821,6 +821,32 @@ main {
   margin-bottom: 25px;
 }
 
+.filter-list.active {
+  display: block;
+  align-items: center;
+  color: var(--light-gray);
+}
+
+.filter-list.active .filter-item {
+  /* Estilos para los elementos <li> dentro de .filter-list.active */
+  padding: 10px;
+  cursor: pointer;
+}
+
+.filter-list.active .filter-item button {
+  background: none;
+  border: none;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+  padding: 10px;
+  text-align: left;
+  width: 100%;
+}
+
+.filter-list.active .filter-item button:hover {
+  background-color: #f0f0f0;
+}
 .filter-select {
   background: var(--eerie-black-2);
   color: var(--light-gray);
