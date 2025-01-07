@@ -195,6 +195,44 @@
 							<div class="icon-box">
 								<ion-icon name="book-outline"></ion-icon>
 							</div>
+							<h3 class="h3" data-lang="resume.experience.title"></h3>
+						</div>
+
+						<ol class="timeline-list">
+							<li class="timeline-item">
+								<h4 class="h4 timeline-item-title" data-lang="resume.experience.items[0].position"></h4>
+								<span data-lang="resume.experience.items[0].dates"></span>
+								<ul class="timeline-details">
+									<li class="timeline-text" data-lang="resume.experience.items[0].details[0]"></li>
+									<li class="timeline-text" data-lang="resume.experience.items[0].details[1]"></li>
+									<li class="timeline-text" data-lang="resume.experience.items[0].details[2]"></li>
+									<li class="timeline-text" data-lang="resume.experience.items[0].details[3]"></li>
+								</ul>
+							</li>
+
+							<li class="timeline-item">
+								<h4 class="h4 timeline-item-title" data-lang="resume.experience.items[1].position"></h4>
+								<span data-lang="resume.experience.items[1].dates"></span>
+								<ul class="timeline-details">
+									<li class="timeline-text" data-lang="resume.experience.items[1].details[0]"></li>
+									<li class="timeline-text" data-lang="resume.experience.items[1].details[1]"></li>
+									<li class="timeline-text" data-lang="resume.experience.items[1].details[2]"></li>
+									<li class="timeline-text" data-lang="resume.experience.items[1].details[3]"></li>
+								</ul>
+							</li>
+
+							<li class="timeline-item">
+								<h4 class="h4 timeline-item-title" data-lang="resume.experience.items[2].position"></h4>
+								<span data-lang="resume.experience.items[2].dates"></span>
+								<p class="timeline-text" data-lang="resume.experience.items[2].details[0]"></p>
+							</li>
+						</ol>
+					</section>
+					<section class="timeline">
+						<div class="title-wrapper">
+							<div class="icon-box">
+								<ion-icon name="book-outline"></ion-icon>
+							</div>
 							<h3 class="h3" data-lang="resume.education.title"></h3>
 						</div>
 
@@ -203,41 +241,6 @@
 								<h4 class="h4 timeline-item-title" data-lang="resume.education.items[0].institution"></h4>
 								<span data-lang="resume.education.items[0].dates"></span>
 								<p class="timeline-text" data-lang="resume.education.items[0].description"></p>
-							</li>
-						</ol>
-					</section>
-
-					<section class="timeline">
-						<div class="title-wrapper">
-							<div class="icon-box">
-								<ion-icon name="book-outline"></ion-icon>
-							</div>
-							<h3 class="h3" data-lang="resume.experience.title"></h3>
-						</div>
-
-						<ol class="timeline-list">
-							<li class="timeline-item">
-								<h4 class="h4 timeline-item-title" data-lang="resume.experience.items[0].position"></h4>
-								<span data-lang="resume.experience.items[0].dates"></span>
-								<p class="timeline-text" data-lang="resume.experience.items[0].details[0]"></p>
-								<p class="timeline-text" data-lang="resume.experience.items[0].details[1]"></p>
-								<p class="timeline-text" data-lang="resume.experience.items[0].details[2]"></p>
-								<p class="timeline-text" data-lang="resume.experience.items[0].details[3]"></p>
-							</li>
-
-							<li class="timeline-item">
-								<h4 class="h4 timeline-item-title" data-lang="resume.experience.items[1].position"></h4>
-								<span data-lang="resume.experience.items[1].dates"></span>
-								<p class="timeline-text" data-lang="resume.experience.items[1].details[0]"></p>
-								<p class="timeline-text" data-lang="resume.experience.items[1].details[1]"></p>
-								<p class="timeline-text" data-lang="resume.experience.items[1].details[2]"></p>
-								<p class="timeline-text" data-lang="resume.experience.items[1].details[3]"></p>
-							</li>
-
-							<li class="timeline-item">
-								<h4 class="h4 timeline-item-title" data-lang="resume.experience.items[2].position"></h4>
-								<span data-lang="resume.experience.items[2].dates"></span>
-								<p class="timeline-text" data-lang="resume.experience.items[2].details[0]"></p>
 							</li>
 						</ol>
 					</section>
@@ -341,7 +344,7 @@
 										<img src="./assets/images/direscup.png" alt="direscup" loading="lazy" />
 									</figure>
 									<h3 class="project-title" data-lang="portfolio.projects[3].title">Dires Cup</h3>
-									<p class="project-category" data-lang="portfolio.projects[3].category">Applications</p>
+									<span class="project-category" data-lang="portfolio.projects[3].category">Applications</span>
 									<div class="project-description" data-lang="portfolio.projects[3].description">
 										<p>Introducing DireCup, a modern application designed to keep track of match scores for friendly football games among friends...</p>
 									</div>
@@ -359,11 +362,9 @@
 										<img src="./assets/images/my-avatar.png" alt="Project Image" width="80" data-modal-img />
 									</figure>
 									<div class="modal-content">
-										<h4 class="h3 modal-title" data-modal-title>Project Title</h4>
+										<h4 class="h3 modal-title" data-modal-title></h4>
 										<div data-modal-text>
-											<p>
-												Project description goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...
-											</p>
+											<p></p>
 										</div>
 									</div>
 								</div>
@@ -443,6 +444,39 @@
 					fetch(langFile)
 						.then((response) => response.json())
 						.then((data) => {
+							// Experience Section
+							const timelineList = document.querySelector(".timeline-list");
+							timelineList.innerHTML = ""; // Clear existing items
+
+							data.resume.experience.items.forEach((item, index) => {
+								const timelineItem = document.createElement("li");
+								timelineItem.className = "timeline-item";
+
+								const position = document.createElement("h4");
+								position.className = "h4 timeline-item-title";
+								position.setAttribute("data-lang", `resume.experience.items[${index}].position`);
+								position.textContent = item.position;
+								timelineItem.appendChild(position);
+
+								const dates = document.createElement("span");
+								dates.setAttribute("data-lang", `resume.experience.items[${index}].dates`);
+								dates.textContent = item.dates;
+								timelineItem.appendChild(dates);
+
+								const detailsList = document.createElement("ul");
+								detailsList.className = "timeline-details";
+
+								item.details.forEach((detail, detailIndex) => {
+									const detailItem = document.createElement("li");
+									detailItem.className = "timeline-text";
+									detailItem.setAttribute("data-lang", `resume.experience.items[${index}].details[${detailIndex}]`);
+									detailItem.textContent = detail;
+									detailsList.appendChild(detailItem);
+								});
+
+								timelineItem.appendChild(detailsList);
+								timelineList.appendChild(timelineItem);
+							});
 							// Sidebar
 							document.querySelector(".name").textContent = data.sidebar.name;
 							document.querySelector(".title").textContent = data.sidebar.title;

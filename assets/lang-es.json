@@ -1,6 +1,6 @@
 {
 	"sidebar": {
-		"name": "Diego Rubi",
+		"name": "Diego Rubí",
 		"title": "Desarrollador Móvil",
 		"showContactsBtn": "Mostrar Contactos",
 		"contacts": {
@@ -33,7 +33,7 @@
 	},
 	"about": {
 		"title": "Acerca de mí",
-		"intro": "Soy un Desarrollador Móvil con Kotlin y Flutter de El Salvador, trabajando en el desarrollo de aplicaciones móviles y soluciones digitales. Disfruto convertir problemas complejos en aplicaciones simples, hermosas e intuitivas.",
+		"intro": "Soy un Desarrollador Móvil con Kotlin y Flutter de El Salvador, trabajando en el desarrollo soluciones digitales. Disfruto convertir problemas complejos en aplicaciones simples, hermosas e intuitivas.",
 		"description": "Mi trabajo es construir tu aplicación móvil para que sea funcional y fácil de usar, pero al mismo tiempo atractiva. Además, le doy un toque personal a tu producto y me aseguro de que sea llamativo y fácil de utilizar. Mi objetivo es transmitir tu mensaje e identidad de la manera más creativa posible. He creado aplicaciones móviles para muchas empresas de renombre.",
 		"services": {
 			"title": "Servicios",
@@ -73,7 +73,7 @@
 			"items": [
 				{
 					"institution": "Universidad Centroamericana Jose Simeon Cañas",
-					"dates": "2017 — 2025",
+					"dates": "2017 — Presente",
 					"description": "Durante mi tiempo en la universidad, aprendí sobre varios temas, incluyendo seguridad, redes, desarrollo Android, desarrollo web, APIs, programación orientada a objetos y programación dinámica."
 				}
 			]

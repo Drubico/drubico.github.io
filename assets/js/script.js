@@ -205,7 +205,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
       modalImg.src = projectImg;
       modalTitle.textContent = projectTitle;
-      modalText.innerHTML = `<p>${projectCategory}</p>`;
+      modalText.innerHTML = `<span class="project-category">${projectCategory}</span>`;
       modalText.innerHTML += `<div class="project-description">${projectDescription}</div>`;
       modal.classList.add('active');
       overlay.classList.add('active');
@@ -213,15 +213,15 @@ document.addEventListener('DOMContentLoaded', (event) => {
     });
   });
 
-  closeButton.onclick = function () {
+  closeButton.addEventListener('click', () => {
     modal.classList.remove('active');
     overlay.classList.remove('active');
     document.querySelector('.modal-content').classList.remove('modal-active');
-  }
+  });
 
-  overlay.onclick = function () {
+  overlay.addEventListener('click', () => {
     modal.classList.remove('active');
     overlay.classList.remove('active');
     document.querySelector('.modal-content').classList.remove('modal-active');
-  }
+  });
 });
