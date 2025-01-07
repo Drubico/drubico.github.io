@@ -108,6 +108,35 @@ for (let i = 0; i < filterButtons.length; i++) {
   });
 }
 
+// filter select box functionality
+const filterSelectBox = document.querySelector('.filter-select-box');
+const filterSelectButton = filterSelectBox.querySelector('.filter-select');
+const filterSelectValue = filterSelectBox.querySelector('.select-value');
+const filterList = filterSelectBox.querySelector('.filter-list');
+
+filterSelectButton.addEventListener('click', function () {
+  filterList.classList.toggle('active');
+});
+
+filterList.addEventListener('click', function (event) {
+  if (event.target.matches('[data-filter-btn]')) {
+    const selectedValue = event.target.getAttribute('data-category');
+    filterSelectValue.textContent = event.target.textContent;
+    filterList.classList.remove('active');
+
+    // Update active class on buttons
+    for (let i = 0; i < filterButtons.length; i++) {
+      if (filterButtons[i] === event.target) {
+        filterButtons[i].classList.add('active');
+      } else {
+        filterButtons[i].classList.remove('active');
+      }
+    }
+
+    filterFunc(selectedValue);
+  }
+});
+
 // contact form variables
 const form = document.querySelector("[data-form]");
 const formInputs = document.querySelectorAll("[data-form-input]");

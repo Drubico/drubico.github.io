@@ -263,20 +263,20 @@
 
 						<div class="filter-select-box">
 							<button class="filter-select" data-select>
-								<div class="select-value" data-selecct-value data-lang="portfolio.filter.all">Select category</div>
+								<div class="select-value" data-selecct-value data-category="all" data-lang="portfolio.filter.all">All</div>
 								<div class="select-icon">
 									<ion-icon name="chevron-down"></ion-icon>
 								</div>
 							</button>
 							<ul class="filter-list">
 								<li class="filter-item">
-									<button class="active" data-filter-btn data-category="all">All</button>
+									<button class="active" data-filter-btn data-category="all" data-lang="portfolio.filter.all">All</button>
 								</li>
 								<li class="filter-item">
-									<button data-filter-btn data-category="applications">Applications</button>
+									<button data-filter-btn data-category="applications" data-lang="portfolio.filter.applications">Applications</button>
 								</li>
 								<li class="filter-item">
-									<button data-filter-btn data-category="web-development">Web Development</button>
+									<button data-filter-btn data-category="web-development" data-lang="portfolio.filter.webDevelopment">Web development</button>
 								</li>
 							</ul>
 						</div>
@@ -415,130 +415,144 @@
 		<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
 		<script>
-			let currentLang = "es";
+			document.addEventListener("DOMContentLoaded", function () {
+				// Retrieve currentLang and currentJsonPath from localStorage or set defaults
+				let currentLang = localStorage.getItem("currentLang") || "es";
+				let currentJsonPath = localStorage.getItem("jsonPath") || "assets/lang-es.json";
 
-			function loadLanguage(langFile) {
-				fetch(langFile)
-					.then((response) => response.json())
-					.then((data) => {
-						// Sidebar
-						document.querySelector(".name").textContent = data.sidebar.name;
-						document.querySelector(".title").textContent = data.sidebar.title;
-						document.querySelector("[data-show-contacts]").textContent = data.sidebar.showContactsBtn;
-
-						// Contacts
-						document.querySelector('[data-contact-title="email"]').textContent = data.sidebar.contacts.email.title;
-						const emailLink = document.querySelector('[data-contact-link="email"]');
-						emailLink.textContent = data.sidebar.contacts.email.linkText;
-						emailLink.href = data.sidebar.contacts.email.linkHref;
-
-						document.querySelector('[data-contact-title="phone"]').textContent = data.sidebar.contacts.phone.title;
-						const phoneLink = document.querySelector('[data-contact-link="phone"]');
-						phoneLink.textContent = data.sidebar.contacts.phone.linkText;
-						phoneLink.href = data.sidebar.contacts.phone.linkHref;
-
-						document.querySelector('[data-contact-title="birthday"]').textContent = data.sidebar.contacts.birthday.title;
-						document.querySelector("[data-birthday-date]").textContent = data.sidebar.contacts.birthday.date;
-						document.querySelector("[data-birthday-date]").setAttribute("datetime", data.sidebar.contacts.birthday.datetime);
-
-						document.querySelector('[data-contact-title="location"]').textContent = data.sidebar.contacts.location.title;
-						document.querySelector("[data-location-address]").textContent = data.sidebar.contacts.location.address;
-
-						// Navbar
-						document.querySelectorAll("[data-nav-link]").forEach((navLink) => {
-							const page = navLink.getAttribute("data-page");
-							navLink.textContent = data.navbar[page];
-						});
-
-						// Sección About
-						document.querySelector("[data-about-title]").textContent = data.about.title;
-						document.querySelector("[data-about-intro]").textContent = data.about.intro;
-						document.querySelector("[data-about-description]").textContent = data.about.description;
-
-						document.querySelector("[data-service-title]").textContent = data.about.services.title;
-						document.querySelector("[data-mobile-app-title]").textContent = data.about.services.mobileApps.title;
-						document.querySelector("[data-mobile-app-description]").textContent = data.about.services.mobileApps.description;
-						document.querySelector("[data-web-dev-title]").textContent = data.about.services.webDevelopment.title;
-						document.querySelector("[data-web-dev-description]").textContent = data.about.services.webDevelopment.description;
-
-						document.querySelector("[data-skills-title]").textContent = data.about.skills.title;
-						document.querySelector("[data-android-title]").textContent = data.about.skills.android.title;
-						document.querySelector("[data-android-progress]").textContent = data.about.skills.android.progress;
-						document.querySelector("[data-flutter-title]").textContent = data.about.skills.flutter.title;
-						document.querySelector("[data-flutter-progress]").textContent = data.about.skills.flutter.progress;
-						document.querySelector("[data-backend-title]").textContent = data.about.skills.backend.title;
-						document.querySelector("[data-backend-progress]").textContent = data.about.skills.backend.progress;
-						document.querySelector("[data-wordpress-title]").textContent = data.about.skills.wordpress.title;
-						document.querySelector("[data-wordpress-progress]").textContent = data.about.skills.wordpress.progress;
-
-						// Resume Title
-						document.querySelector("[data-lang='resume.title']").textContent = data.resume.title;
-
-						// Education Section
-						document.querySelector("[data-lang='resume.education.title']").textContent = data.resume.education.title;
-						document.querySelector("[data-lang='resume.education.items[0].institution']").textContent = data.resume.education.items[0].institution;
-						document.querySelector("[data-lang='resume.education.items[0].dates']").textContent = data.resume.education.items[0].dates;
-						document.querySelector("[data-lang='resume.education.items[0].description']").textContent = data.resume.education.items[0].description;
-
-						// Experience Section
-						document.querySelector("[data-lang='resume.experience.title']").textContent = data.resume.experience.title;
-
-						// First experience item
-						document.querySelector("[data-lang='resume.experience.items[0].position']").textContent = data.resume.experience.items[0].position;
-						document.querySelector("[data-lang='resume.experience.items[0].dates']").textContent = data.resume.experience.items[0].dates;
-						data.resume.experience.items[0].details.forEach((detail, index) => {
-							document.querySelector(`[data-lang='resume.experience.items[0].details[${index}]']`).textContent = detail;
-						});
-
-						// Second experience item
-						document.querySelector("[data-lang='resume.experience.items[1].position']").textContent = data.resume.experience.items[1].position;
-						document.querySelector("[data-lang='resume.experience.items[1].dates']").textContent = data.resume.experience.items[1].dates;
-						data.resume.experience.items[1].details.forEach((detail, index) => {
-							document.querySelector(`[data-lang='resume.experience.items[1].details[${index}]']`).textContent = detail;
-						});
-
-						// Third experience item
-						document.querySelector("[data-lang='resume.experience.items[2].position']").textContent = data.resume.experience.items[2].position;
-						document.querySelector("[data-lang='resume.experience.items[2].dates']").textContent = data.resume.experience.items[2].dates;
-						document.querySelector("[data-lang='resume.experience.items[2].details[0]']").textContent = data.resume.experience.items[2].details[0];
-
-						// Portfolio Section
-						document.querySelector("[data-lang='portfolio.title']").textContent = data.portfolio.title;
-						document.querySelector("[data-lang='portfolio.filter.all']").textContent = data.portfolio.filter.all;
-						document.querySelector("[data-lang='portfolio.filter.applications']").textContent = data.portfolio.filter.applications;
-						document.querySelector("[data-lang='portfolio.filter.webDevelopment']").textContent = data.portfolio.filter.webDevelopment;
-
-						data.portfolio.projects.forEach((project, index) => {
-							document.querySelector(`[data-lang='portfolio.projects[${index}].title']`).textContent = project.title;
-							document.querySelector(`[data-lang='portfolio.projects[${index}].category']`).textContent = project.category;
-							document.querySelector(`[data-lang='portfolio.projects[${index}].description']`).innerHTML = project.description;
-						});
-
-						// Contact Section
-						document.querySelector("[data-lang='contact.title']").textContent = data.contact.title;
-						document.querySelector("[data-lang='contact.formTitle']").textContent = data.contact.formTitle;
-						document.querySelector("[data-lang='contact.linkedinProfile']").textContent = data.contact.linkedinProfile;
-						document.querySelector("[data-lang='contact.playStoreProfile']").textContent = data.contact.playStoreProfile;
-					})
-					.catch((error) => console.error("Error al cargar el archivo de idioma:", error));
-			}
-
-			document.getElementById("lang-toggle").addEventListener("click", () => {
-				if (currentLang === "en") {
-					loadLanguage("assets/lang-es.json");
-					document.getElementById("lang-toggle").src = "./assets/images/usa.svg";
-					document.getElementById("lang-toggle").alt = "English";
-					currentLang = "es";
-				} else {
-					loadLanguage("assets/lang.json");
-					document.getElementById("lang-toggle").src = "./assets/images/spanish.svg";
-					document.getElementById("lang-toggle").alt = "Español";
-					currentLang = "en";
+				// Function to set current language and save to localStorage
+				function setCurrentLang(lang, jsonPath) {
+					currentLang = lang;
+					currentJsonPath = jsonPath;
+					localStorage.setItem("currentLang", currentLang);
+					localStorage.setItem("jsonPath", currentJsonPath);
 				}
-			});
 
-			// Cargar el idioma inicial
-			loadLanguage("assets/lang-es.json");
+				// Function to load language file
+				function loadLanguage(langFile) {
+					fetch(langFile)
+						.then((response) => response.json())
+						.then((data) => {
+							// Sidebar
+							document.querySelector(".name").textContent = data.sidebar.name;
+							document.querySelector(".title").textContent = data.sidebar.title;
+							document.querySelector("[data-show-contacts]").textContent = data.sidebar.showContactsBtn;
+
+							// Contacts
+							document.querySelector('[data-contact-title="email"]').textContent = data.sidebar.contacts.email.title;
+							const emailLink = document.querySelector('[data-contact-link="email"]');
+							emailLink.textContent = data.sidebar.contacts.email.linkText;
+							emailLink.href = data.sidebar.contacts.email.linkHref;
+
+							document.querySelector('[data-contact-title="phone"]').textContent = data.sidebar.contacts.phone.title;
+							const phoneLink = document.querySelector('[data-contact-link="phone"]');
+							phoneLink.textContent = data.sidebar.contacts.phone.linkText;
+							phoneLink.href = data.sidebar.contacts.phone.linkHref;
+
+							document.querySelector('[data-contact-title="birthday"]').textContent = data.sidebar.contacts.birthday.title;
+							document.querySelector("[data-birthday-date]").textContent = data.sidebar.contacts.birthday.date;
+							document.querySelector("[data-birthday-date]").setAttribute("datetime", data.sidebar.contacts.birthday.datetime);
+
+							document.querySelector('[data-contact-title="location"]').textContent = data.sidebar.contacts.location.title;
+							document.querySelector("[data-location-address]").textContent = data.sidebar.contacts.location.address;
+
+							// Navbar
+							document.querySelectorAll("[data-nav-link]").forEach((navLink) => {
+								const page = navLink.getAttribute("data-page");
+								navLink.textContent = data.navbar[page];
+							});
+
+							// Sección About
+							document.querySelector("[data-about-title]").textContent = data.about.title;
+							document.querySelector("[data-about-intro]").textContent = data.about.intro;
+							document.querySelector("[data-about-description]").textContent = data.about.description;
+
+							document.querySelector("[data-service-title]").textContent = data.about.services.title;
+							document.querySelector("[data-mobile-app-title]").textContent = data.about.services.mobileApps.title;
+							document.querySelector("[data-mobile-app-description]").textContent = data.about.services.mobileApps.description;
+							document.querySelector("[data-web-dev-title]").textContent = data.about.services.webDevelopment.title;
+							document.querySelector("[data-web-dev-description]").textContent = data.about.services.webDevelopment.description;
+
+							document.querySelector("[data-skills-title]").textContent = data.about.skills.title;
+							document.querySelector("[data-android-title]").textContent = data.about.skills.android.title;
+							document.querySelector("[data-android-progress]").textContent = data.about.skills.android.progress;
+							document.querySelector("[data-flutter-title]").textContent = data.about.skills.flutter.title;
+							document.querySelector("[data-flutter-progress]").textContent = data.about.skills.flutter.progress;
+							document.querySelector("[data-backend-title]").textContent = data.about.skills.backend.title;
+							document.querySelector("[data-backend-progress]").textContent = data.about.skills.backend.progress;
+							document.querySelector("[data-wordpress-title]").textContent = data.about.skills.wordpress.title;
+							document.querySelector("[data-wordpress-progress]").textContent = data.about.skills.wordpress.progress;
+
+							// Resume Title
+							document.querySelector("[data-lang='resume.title']").textContent = data.resume.title;
+
+							// Education Section
+							document.querySelector("[data-lang='resume.education.title']").textContent = data.resume.education.title;
+							document.querySelector("[data-lang='resume.education.items[0].institution']").textContent = data.resume.education.items[0].institution;
+							document.querySelector("[data-lang='resume.education.items[0].dates']").textContent = data.resume.education.items[0].dates;
+							document.querySelector("[data-lang='resume.education.items[0].description']").textContent = data.resume.education.items[0].description;
+
+							// Experience Section
+							document.querySelector("[data-lang='resume.experience.title']").textContent = data.resume.experience.title;
+
+							// First experience item
+							document.querySelector("[data-lang='resume.experience.items[0].position']").textContent = data.resume.experience.items[0].position;
+							document.querySelector("[data-lang='resume.experience.items[0].dates']").textContent = data.resume.experience.items[0].dates;
+							data.resume.experience.items[0].details.forEach((detail, index) => {
+								document.querySelector(`[data-lang='resume.experience.items[0].details[${index}]']`).textContent = detail;
+							});
+
+							// Second experience item
+							document.querySelector("[data-lang='resume.experience.items[1].position']").textContent = data.resume.experience.items[1].position;
+							document.querySelector("[data-lang='resume.experience.items[1].dates']").textContent = data.resume.experience.items[1].dates;
+							data.resume.experience.items[1].details.forEach((detail, index) => {
+								document.querySelector(`[data-lang='resume.experience.items[1].details[${index}]']`).textContent = detail;
+							});
+
+							// Third experience item
+							document.querySelector("[data-lang='resume.experience.items[2].position']").textContent = data.resume.experience.items[2].position;
+							document.querySelector("[data-lang='resume.experience.items[2].dates']").textContent = data.resume.experience.items[2].dates;
+							document.querySelector("[data-lang='resume.experience.items[2].details[0]']").textContent = data.resume.experience.items[2].details[0];
+
+							// Portfolio Section
+							document.querySelector("[data-lang='portfolio.title']").textContent = data.portfolio.title;
+							document.querySelector("[data-lang='portfolio.filter.all']").textContent = data.portfolio.filter.all;
+							document.querySelector("[data-lang='portfolio.filter.applications']").textContent = data.portfolio.filter.applications;
+							document.querySelector("[data-lang='portfolio.filter.webDevelopment']").textContent = data.portfolio.filter.webDevelopment;
+
+							data.portfolio.projects.forEach((project, index) => {
+								document.querySelector(`[data-lang='portfolio.projects[${index}].title']`).textContent = project.title;
+								document.querySelector(`[data-lang='portfolio.projects[${index}].category']`).textContent = project.category;
+								document.querySelector(`[data-lang='portfolio.projects[${index}].description']`).innerHTML = project.description;
+							});
+
+							// Contact Section
+							document.querySelector("[data-lang='contact.title']").textContent = data.contact.title;
+							document.querySelector("[data-lang='contact.formTitle']").textContent = data.contact.formTitle;
+							document.querySelector("[data-lang='contact.linkedinProfile']").textContent = data.contact.linkedinProfile;
+							document.querySelector("[data-lang='contact.playStoreProfile']").textContent = data.contact.playStoreProfile;
+						})
+						.catch((error) => console.error("Error al cargar el archivo de idioma:", error));
+				}
+
+				// Load the language file based on currentJsonPath
+				loadLanguage(currentJsonPath);
+
+				// Add event listener to language toggle button
+				document.getElementById("lang-toggle").addEventListener("click", () => {
+					if (currentLang === "en") {
+						loadLanguage("assets/lang-es.json");
+						document.getElementById("lang-toggle").src = "./assets/images/usa.svg";
+						document.getElementById("lang-toggle").alt = "English";
+						setCurrentLang("es", "assets/lang-es.json");
+					} else {
+						loadLanguage("assets/lang.json");
+						document.getElementById("lang-toggle").src = "./assets/images/spanish.svg";
+						document.getElementById("lang-toggle").alt = "Español";
+						setCurrentLang("en", "assets/lang.json");
+					}
+				});
+			});
 		</script>
 	</body>
 </html>

@@ -1805,3 +1805,13 @@ textarea.form-input::-webkit-resizer { display: none; }
 .custom-link:hover {
   color: lightgray; /* Changes color on hover (optional) */
 }
+
+#lang-toggle {
+  cursor: pointer;
+  transition: transform 0.3s ease, opacity 0.3s ease; /* Animación suave */
+
+  &:hover {
+   transform: scale(1.3); /* Aumenta el tamaño del botón */
+   opacity: 0.8; /* Cambia la opacidad */
+  }
+}
