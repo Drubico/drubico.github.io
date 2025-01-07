@@ -86,23 +86,19 @@
 				<nav class="navbar">
 					<ul class="navbar-list">
 						<li class="navbar-item">
-							<button class="navbar-link active" data-nav-link data-navbar-item="about"></button>
+							<button class="navbar-link active" data-nav-link data-page="about"></button>
 						</li>
-
 						<li class="navbar-item">
-							<button class="navbar-link" data-nav-link data-navbar-item="resume"></button>
+							<button class="navbar-link" data-nav-link data-page="resume"></button>
 						</li>
-
 						<li class="navbar-item">
-							<button class="navbar-link" data-nav-link data-navbar-item="portfolio"></button>
+							<button class="navbar-link" data-nav-link data-page="portfolio"></button>
 						</li>
-
 						<li class="navbar-item">
-							<button class="navbar-link" data-nav-link data-navbar-item="contact"></button>
+							<button class="navbar-link" data-nav-link data-page="contact"></button>
 						</li>
-
 						<li class="navbar-item">
-							<img id="lang-toggle" src="./assets/images/usa.svg" alt="English" width="40" />
+							<img id="lang-toggle" src="./assets/images/usa.svg" alt="English" width="50" />
 						</li>
 					</ul>
 				</nav>
@@ -479,7 +475,7 @@
 		<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
 		<script>
-			let currentLang = "en";
+			let currentLang = "es";
 
 			function loadLanguage(langFile) {
 				fetch(langFile)
@@ -509,10 +505,10 @@
 						document.querySelector("[data-location-address]").textContent = data.sidebar.contacts.location.address;
 
 						// Navbar
-						document.querySelector('[data-navbar-item="about"]').textContent = data.navbar.about;
-						document.querySelector('[data-navbar-item="resume"]').textContent = data.navbar.resume;
-						document.querySelector('[data-navbar-item="portfolio"]').textContent = data.navbar.portfolio;
-						document.querySelector('[data-navbar-item="contact"]').textContent = data.navbar.contact;
+						document.querySelectorAll("[data-nav-link]").forEach((navLink) => {
+							const page = navLink.getAttribute("data-page");
+							navLink.textContent = data.navbar[page];
+						});
 
 						// Sección About
 						document.querySelector("[data-about-title]").textContent = data.about.title;
@@ -572,12 +568,12 @@
 			document.getElementById("lang-toggle").addEventListener("click", () => {
 				if (currentLang === "en") {
 					loadLanguage("assets/lang-es.json");
-					document.getElementById("lang-toggle").src = "./assets/images/usa.svg";
+					document.getElementById("lang-toggle").src = "./assets/images/spanish.svg";
 					document.getElementById("lang-toggle").alt = "Español";
 					currentLang = "es";
 				} else {
 					loadLanguage("assets/lang.json");
-					document.getElementById("lang-toggle").src = "./assets/images/spanish.svg";
+					document.getElementById("lang-toggle").src = "./assets/images/usa.svg";
 					document.getElementById("lang-toggle").alt = "English";
 					currentLang = "en";
 				}

@@ -143,21 +143,27 @@ const pages = document.querySelectorAll("[data-page]");
 // add event to all nav link
 for (let i = 0; i < navigationLinks.length; i++) {
   navigationLinks[i].addEventListener("click", function () {
+    const targetPage = this.getAttribute('data-page');
 
-    for (let i = 0; i < pages.length; i++) {
-      if (this.innerHTML.toLowerCase() === pages[i].dataset.page) {
-        pages[i].classList.add("active");
-        navigationLinks[i].classList.add("active");
-        window.scrollTo(0, 0);
+    for (let j = 0; j < pages.length; j++) {
+      if (pages[j].dataset.page.includes(targetPage)) {
+        pages[j].classList.add("active");
       } else {
-        pages[i].classList.remove("active");
-        navigationLinks[i].classList.remove("active");
+        pages[j].classList.remove("active");
       }
     }
 
+    for (let k = 0; k < navigationLinks.length; k++) {
+      if (navigationLinks[k].getAttribute('data-page') === targetPage) {
+        navigationLinks[k].classList.add("active");
+      } else {
+        navigationLinks[k].classList.remove("active");
+      }
+    }
+
+    window.scrollTo(0, 0);
   });
 }
-
 
 document.addEventListener('DOMContentLoaded', (event) => {
   const modal = document.getElementById("project-modal");
@@ -174,24 +180,24 @@ document.addEventListener('DOMContentLoaded', (event) => {
       const projectTitle = item.querySelector('.project-title').textContent;
       const projectCategory = item.querySelector('.project-category').textContent;
       const projectDescription = item.querySelector('.project-description').innerHTML;
-  
+
       modalImg.src = projectImg;
       modalTitle.textContent = projectTitle;
       modalText.innerHTML = `<p>${projectCategory}</p>`;
-      modalText.innerHTML += `<div class="project-description">${projectDescription}</div>`;  
+      modalText.innerHTML += `<div class="project-description">${projectDescription}</div>`;
       modal.classList.add('active');
       overlay.classList.add('active');
       document.querySelector('.modal-content').classList.add('modal-active');
     });
   });
 
-  closeButton.onclick = function() {
+  closeButton.onclick = function () {
     modal.classList.remove('active');
     overlay.classList.remove('active');
     document.querySelector('.modal-content').classList.remove('modal-active');
   }
 
-  overlay.onclick = function() {
+  overlay.onclick = function () {
     modal.classList.remove('active');
     overlay.classList.remove('active');
     document.querySelector('.modal-content').classList.remove('modal-active');

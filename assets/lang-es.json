@@ -26,10 +26,10 @@
 		}
 	},
 	"navbar": {
-		"about": "about",
-		"resume": "resume",
-		"portfolio": "portfolio",
-		"contact": "contact"
+		"about": "Perfil",
+		"resume": "Currículum",
+		"portfolio": "Proyectos",
+		"contact": "Contacto"
 	},
 	"about": {
 		"title": "Acerca de mí",
