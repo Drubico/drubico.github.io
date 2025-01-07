@@ -1,0 +1,110 @@
+{
+	"sidebar": {
+		"name": "Diego Rubi",
+		"title": "Desarrollador Móvil",
+		"showContactsBtn": "Mostrar Contactos",
+		"contacts": {
+			"email": {
+				"title": "Correo Electrónico",
+				"linkText": "drubico@gmail.com",
+				"linkHref": "mailto:drubico@gmail.com"
+			},
+			"phone": {
+				"title": "Teléfono",
+				"linkText": "+503 78508012",
+				"linkHref": "tel:+50378508012"
+			},
+			"birthday": {
+				"title": "Cumpleaños",
+				"date": "14 de febrero, 1999",
+				"datetime": "1999-02-14"
+			},
+			"location": {
+				"title": "Ubicación",
+				"address": "San Salvador, El Salvador"
+			}
+		}
+	},
+	"navbar": {
+		"about": "about",
+		"resume": "resume",
+		"portfolio": "portfolio",
+		"contact": "contact"
+	},
+	"about": {
+		"title": "Acerca de mí",
+		"intro": "Soy un Desarrollador Móvil con Kotlin y Flutter de El Salvador, trabajando en el desarrollo de aplicaciones móviles y soluciones digitales. Disfruto convertir problemas complejos en aplicaciones simples, hermosas e intuitivas.",
+		"description": "Mi trabajo es construir tu aplicación móvil para que sea funcional y fácil de usar, pero al mismo tiempo atractiva. Además, le doy un toque personal a tu producto y me aseguro de que sea llamativo y fácil de utilizar. Mi objetivo es transmitir tu mensaje e identidad de la manera más creativa posible. He creado aplicaciones móviles para muchas empresas de renombre.",
+		"services": {
+			"mobileApps": {
+				"title": "Aplicaciones móviles",
+				"description": "Desarrollo profesional de aplicaciones Android con Flutter y Kotlin, aprendiendo Swift."
+			},
+			"webDevelopment": {
+				"title": "Desarrollo web",
+				"description": "Aprendiendo desarrollo web."
+			}
+		},
+		"skills": {
+			"android": {
+				"title": "Desarrollador Android (Kotlin/Java)",
+				"progress": "80%"
+			},
+			"flutter": {
+				"title": "Desarrollador Flutter",
+				"progress": "60%"
+			},
+			"backend": {
+				"title": "Backend Node JS",
+				"progress": "60%"
+			},
+			"wordpress": {
+				"title": "WordPress",
+				"progress": "50%"
+			}
+		}
+	},
+	"resume": {
+		"title": "Currículum",
+		"education": {
+			"title": "Educación",
+			"items": [
+				{
+					"institution": "Universidad Centroamericana Jose Simeon Cañas",
+					"dates": "2017 — 2025",
+					"description": "Durante mi tiempo en la universidad, aprendí sobre varios temas, incluyendo seguridad, redes, desarrollo Android, desarrollo web, APIs, programación orientada a objetos y programación dinámica."
+				}
+			]
+		},
+		"experience": {
+			"title": "Experiencia",
+			"items": [
+				{
+					"position": "Desarrollador Móvil - Secretaría de Innovación de la Presidencia",
+					"dates": "10/2022 — Presente",
+					"details": [
+						"Desarrollé aplicaciones nativas con Kotlin y Jetpack Compose para Android.",
+						"Desarrollador de software con experiencia en desarrollo de aplicaciones móviles y web. Experto en Kotlin, Jetpack Compose, Flutter y Node.js. Enfoque en la implementación de arquitecturas limpias y metodologías ágiles para optimizar el desarrollo de software.",
+						"Desarrollé aplicaciones multiplataforma con Flutter.",
+						"Integré bibliotecas como Retrofit, Glide y Room para mejorar la funcionalidad y el rendimiento de las aplicaciones."
+					]
+				},
+				{
+					"position": "Desarrollador Móvil - Ministerio de Salud",
+					"dates": "2/2022 — 10/2022",
+					"details": [
+						"Creé APIs con Node.js.",
+						"Manteni aplicaciones nativas con Java y Kotlin.",
+						"Optimicé aplicaciones existentes y mejoré la experiencia de usuario.",
+						"Implementé bibliotecas como Dagger Hilt para inyección de dependencias."
+					]
+				},
+				{
+					"position": "Desarrollador WordPress - The Virtual Buddy",
+					"dates": "01/2021 — 06/2021",
+					"details": ["Desarrollé aplicaciones con WordPress, siguiendo un diseño y asegurando la mejor experiencia de usuario."]
+				}
+			]
+		}
+	}
+}
