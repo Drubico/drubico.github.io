@@ -35,7 +35,9 @@
 		"title": "About me",
 		"intro": "I am a Mobile Developer with Kotlin and Flutter from El Salvador, working in mobile application development and digital solutions. I enjoy turning complex problems into simple, beautiful, and intuitive applications.",
 		"description": "My job is to build your mobile application so that it is functional and user-friendly but at the same time attractive. Additionally, I add a personal touch to your product and make sure it is eye-catching and easy to use. My goal is to convey your message and identity in the most creative way possible. I have created mobile applications for many renowned companies.",
+		"tittle-what-im-doing": "What I'm doing",
 		"services": {
+			"title": "Services",
 			"mobileApps": {
 				"title": "Mobile apps",
 				"description": "Professional development of Android applications with Flutter and Kotlin, learning Swift."
@@ -46,6 +48,7 @@
 			}
 		},
 		"skills": {
+			"title": "Skills",
 			"android": {
 				"title": "Android (Kotlin/Java) Developer",
 				"progress": "80%"
