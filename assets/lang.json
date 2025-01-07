@@ -136,5 +136,11 @@
 				"description": "Introducing DireCup, a modern application designed to keep track of match scores for friendly football games among friends. This app provides a seamless and intuitive experience, allowing users to view match results, team standings, and league positions in real-time. With its responsive design, easy navigation, and secure data handling, DireCup helps football enthusiasts stay connected and informed, fostering friendly competition and strengthening camaraderie among participants."
 			}
 		]
+	},
+	"contact": {
+		"title": "Contact",
+		"formTitle": "Contact Me",
+		"linkedinProfile": "LinkedIn Profile",
+		"playStoreProfile": "Play Store Profile"
 	}
 }

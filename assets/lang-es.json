@@ -136,5 +136,11 @@
 				"description": "Presentamos DireCup, una aplicación moderna diseñada para llevar el registro de los puntajes de los partidos amistosos de fútbol entre amigos. Esta aplicación proporciona una experiencia fluida e intuitiva, permitiendo a los usuarios ver los resultados de los partidos, las posiciones de los equipos y las posiciones en la liga en tiempo real. Con su diseño responsivo, fácil navegación y manejo seguro de datos, DireCup ayuda a los entusiastas del fútbol a mantenerse conectados e informados, fomentando la competencia amistosa y fortaleciendo la camaradería entre los participantes."
 			}
 		]
+	},
+	"contact": {
+		"title": "Contacto",
+		"formTitle": "Contacta conmigo",
+		"linkedinProfile": "Perfil de LinkedIn",
+		"playStoreProfile": "Perfil de Play Store"
 	}
 }
