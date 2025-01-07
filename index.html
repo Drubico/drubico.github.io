@@ -10,24 +10,9 @@
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" />
-		<style>
-			#lang-toggle {
-				position: absolute;
-				top: 10px;
-				right: 10px;
-				padding: 10px 20px;
-				background-color: #007bff;
-				color: white;
-				border: none;
-				border-radius: 5px;
-				cursor: pointer;
-			}
-		</style>
 	</head>
 	<body>
 		<main>
-			<button id="lang-toggle">Español</button>
-
 			<aside class="sidebar" data-sidebar>
 				<div class="sidebar-info">
 					<figure class="avatar-box">
@@ -114,6 +99,10 @@
 
 						<li class="navbar-item">
 							<button class="navbar-link" data-nav-link data-navbar-item="contact"></button>
+						</li>
+
+						<li class="navbar-item">
+							<img id="lang-toggle" src="./assets/images/usa.svg" alt="English" width="40" />
 						</li>
 					</ul>
 				</nav>
@@ -407,7 +396,7 @@
 								</button>
 								<div class="modal-img-wrapper">
 									<figure class="modal-avatar-box">
-										<img src="./assets/images/project-placeholder.png" alt="Project Image" width="80" data-modal-img />
+										<img src="./assets/images/my-avatar.png" alt="Project Image" width="80" data-modal-img />
 									</figure>
 									<div class="modal-content">
 										<h4 class="h3 modal-title" data-modal-title>Project Title</h4>
@@ -583,11 +572,13 @@
 			document.getElementById("lang-toggle").addEventListener("click", () => {
 				if (currentLang === "en") {
 					loadLanguage("assets/lang-es.json");
-					document.getElementById("lang-toggle").textContent = "English";
+					document.getElementById("lang-toggle").src = "./assets/images/usa.svg";
+					document.getElementById("lang-toggle").alt = "Español";
 					currentLang = "es";
 				} else {
 					loadLanguage("assets/lang.json");
-					document.getElementById("lang-toggle").textContent = "Español";
+					document.getElementById("lang-toggle").src = "./assets/images/spanish.svg";
+					document.getElementById("lang-toggle").alt = "English";
 					currentLang = "en";
 				}
 			});
