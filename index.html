@@ -10,9 +10,11 @@
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" />
+		<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet" />
 	</head>
 	<body>
 		<main>
+			<!-- #region Sidebar-->
 			<aside class="sidebar" data-sidebar>
 				<div class="sidebar-info">
 					<figure class="avatar-box">
@@ -77,13 +79,25 @@
 								<address data-location-address></address>
 							</div>
 						</li>
+						<li class="contact-item">
+							<div class="icon-box">
+								<i class="fab fa-linkedin"></i>
+							</div>
+
+							<div class="contact-info">
+								<p class="contact-title" data-contact-title="linkedin"></p>
+								<a href="#" class="contact-link" data-contact-link="linkedin"></a>
+							</div>
+						</li>
 					</ul>
 
 					<div class="separator"></div>
 				</div>
 			</aside>
+			<!--#endregion-->
 
 			<div class="main-content">
+				<!-- #region NavBar -->
 				<nav class="navbar">
 					<ul class="navbar-list">
 						<li class="navbar-item">
@@ -103,7 +117,9 @@
 						</li>
 					</ul>
 				</nav>
+				<!-- endregion-->
 
+				<!-- #region About -->
 				<article class="about active" data-page="about">
 					<header>
 						<h2 class="h2 article-title" data-about-title></h2>
@@ -184,7 +200,9 @@
 						</section>
 					</section>
 				</article>
+				<!-- endregion-->
 
+				<!-- #region Resume -->
 				<article class="resume" data-page="resume">
 					<header>
 						<h2 class="h2 article-title" data-lang="resume.title"></h2>
@@ -245,7 +263,9 @@
 						</ol>
 					</section>
 				</article>
+				<!-- endregion-->
 
+				<!-- #region Portfolio -->
 				<article class="portfolio" data-page="portfolio">
 					<header>
 						<h2 class="h2 article-title" data-lang="portfolio.title">Portfolio</h2>
@@ -372,7 +392,11 @@
 						</div>
 					</section>
 				</article>
+				<!-- endregion-->
 
+				<!-- #region Contact -->
+
+				<!-- endregion-->
 				<article class="contact" data-page="contact">
 					<header>
 						<h2 class="h2 article-title" data-lang="contact.title">Contact</h2>
@@ -383,13 +407,19 @@
 
 						<div class="profile-previews">
 							<div class="profile-preview">
-								<h4 style="color: white" data-lang="contact.linkedinProfile">LinkedIn Profile</h4>
-								<a href="https://www.linkedin.com/in/drubico" target="_blank">
-									<img src="assets/images/placeholder-linkedin.png" alt="LinkedIn Profile Preview" style="width: 100%; height: auto; border: 1px solid #ccc; border-radius: 5px" />
+								<h4 style="color: white; padding-bottom: 20px" data-lang="contact.linkedinProfile">LinkedIn Profile</h4>
+								<div class="LI-profile-badge" data-version="v1" data-size="large" data-locale="en_US" data-type="horizontal" data-theme="light" data-vanity="drubico">
+									<!-- <a class="LI-simple-link" href="https://in.linkedin.com/in/drubico?trk=profile-badge"> Diego Alejandro Rubi </a> -->
+								</div>
+							</div>
+							<div class="profile-preview">
+								<h4 style="color: white; padding-bottom: 20px" data-lang="contact.githubProfile">Github Profile</h4>
+								<a href="https://github.com/drubico" target="_blank">
+									<img src="https://gh-readme-profile.vercel.app/api?username=drubico&theme=dark&hide=forks,prs,prs_merged" alt="GitHub Profile Summary" />
 								</a>
 							</div>
 							<div class="profile-preview">
-								<h4 style="color: white" data-lang="contact.playStoreProfile">Play Store Profile</h4>
+								<h4 style="color: white; padding-bottom: 20px; margin-top: 20px" data-lang="contact.playStoreProfile">Play Store Profile</h4>
 								<a href="https://play.google.com/store/apps/dev?id=5906834204268116327" target="_blank">
 									<img
 										src="assets/images/placeholder-play-store.png"
@@ -405,13 +435,14 @@
 		</main>
 
 		<!--
-    - custom js link
-  -->
+- custom js link
+-->
 		<script src="./assets/js/script.js"></script>
+		<script type="text/javascript" src="https://platform.linkedin.com/badges/js/profile.js" async defer></script>
 
 		<!--
-    - ionicon link
-  -->
+- ionicon link
+-->
 		<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
 		<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
@@ -425,6 +456,7 @@
 				const langToggle = document.getElementById("lang-toggle");
 				langToggle.src = langToggleSrc;
 				langToggle.alt = langToggleAlt;
+
 				// Function to set current language and save to localStorage
 				function setCurrentLang(lang, jsonPath, imgSrc, imgAlt) {
 					currentLang = lang;
@@ -499,6 +531,11 @@
 
 							document.querySelector('[data-contact-title="location"]').textContent = data.sidebar.contacts.location.title;
 							document.querySelector("[data-location-address]").textContent = data.sidebar.contacts.location.address;
+
+							document.querySelector('[data-contact-title="linkedin"]').textContent = data.sidebar.contacts.linkedin.title;
+							const linkedinLink = document.querySelector('[data-contact-link="linkedin"]');
+							linkedinLink.textContent = data.sidebar.contacts.linkedin.linkText;
+							linkedinLink.href = data.sidebar.contacts.linkedin.linkHref;
 
 							// Navbar
 							document.querySelectorAll("[data-nav-link]").forEach((navLink) => {
@@ -579,6 +616,7 @@
 							document.querySelector("[data-lang='contact.title']").textContent = data.contact.title;
 							document.querySelector("[data-lang='contact.formTitle']").textContent = data.contact.formTitle;
 							document.querySelector("[data-lang='contact.linkedinProfile']").textContent = data.contact.linkedinProfile;
+							document.querySelector("[data-lang='contact.githubProfile']").textContent = data.contact.githubProfile;
 							document.querySelector("[data-lang='contact.playStoreProfile']").textContent = data.contact.playStoreProfile;
 						})
 						.catch((error) => console.error("Error al cargar el archivo de idioma:", error));

@@ -22,6 +22,11 @@
 			"location": {
 				"title": "Ubicación",
 				"address": "San Salvador, El Salvador"
+			},
+			"linkedin": {
+				"title": "LinkedIn",
+				"linkText": "Diego Alejandro Rubi",
+				"linkHref": "https://www.linkedin.com/in/drubico/"
 			}
 		}
 	},
@@ -96,7 +101,7 @@
 					"dates": "2/2022 — 10/2022",
 					"details": [
 						"Creé APIs con Node.js.",
-						"Manteni aplicaciones nativas con Java y Kotlin.",
+						"Actualice aplicaciones nativas con Java y Kotlin.",
 						"Optimicé aplicaciones existentes y mejoré la experiencia de usuario.",
 						"Implementé bibliotecas como Dagger Hilt para inyección de dependencias."
 					]
@@ -143,6 +148,7 @@
 		"title": "Contacto",
 		"formTitle": "Contacta conmigo",
 		"linkedinProfile": "Perfil de LinkedIn",
+		"githubProfile": "Perfil de GitHub",
 		"playStoreProfile": "Perfil de Play Store"
 	}
 }

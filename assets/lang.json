@@ -22,6 +22,11 @@
 			"location": {
 				"title": "Location",
 				"address": "San Salvador, El Salvador"
+			},
+			"linkedin": {
+				"title": "LinkedIn",
+				"linkText": "Diego Alejandro Rubi",
+				"linkHref": "https://www.linkedin.com/in/drubico/"
 			}
 		}
 	},
@@ -144,6 +149,7 @@
 		"title": "Contact",
 		"formTitle": "Contact Me",
 		"linkedinProfile": "LinkedIn Profile",
+		"githubProfile": "GitHub Profile",
 		"playStoreProfile": "Play Store Profile"
 	}
 }
