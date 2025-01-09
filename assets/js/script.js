@@ -18,27 +18,6 @@ document.addEventListener("DOMContentLoaded", function () {
   const modalTitle = modal.querySelector('[data-modal-title]');
   const modalText = modal.querySelector('[data-modal-text]');
 
-  function filterProjects(category) {
-    const projectItems = document.querySelectorAll('.project-item');
-    projectItems.forEach(item => {
-      const itemCategory = item.getAttribute('data-category');
-      if (category === 'all' || itemCategory === category) {
-        item.style.display = 'block';
-      } else {
-        item.style.display = 'none';
-      }
-    });
-  }
-  document.querySelectorAll('[data-filter-btn]').forEach(button => {
-    button.addEventListener('click', (e) => {
-      const category = button.getAttribute('data-category');
-      filterProjects(category);
-
-      // Actualiza la clase activa
-      document.querySelectorAll('[data-filter-btn]').forEach(btn => btn.classList.remove('active'));
-      button.classList.add('active');
-    });
-  });
   // Function to set current language and save to localStorage
   function setCurrentLang(lang, jsonPath, imgSrc, imgAlt) {
     currentLang = lang;
@@ -60,7 +39,7 @@ document.addEventListener("DOMContentLoaded", function () {
       const projectItem = document.createElement("li");
       projectItem.className = "project-item active";
       projectItem.setAttribute("data-filter-item", "");
-      projectItem.setAttribute("data-category", project.category.toLowerCase().replace(" ", "-"));
+      projectItem.setAttribute("data-category", project.category.key);
 
       const projectLink = document.createElement("a");
       projectLink.href = "#";
@@ -92,7 +71,7 @@ document.addEventListener("DOMContentLoaded", function () {
       const projectCategory = document.createElement("span");
       projectCategory.className = "project-category";
       projectCategory.setAttribute("data-lang", `portfolio.projects[${index}].category`);
-      projectCategory.textContent = project.category;
+      projectCategory.textContent = project.category.value;
 
 
       const projectLinks = document.createElement("div");
@@ -363,14 +342,69 @@ document.addEventListener("DOMContentLoaded", function () {
           });
         });
 
+        const filterItems = [
+          { category: 'all', lang: 'portfolio.filter.all', text: data.portfolio.filter.all, active: true },
+          { category: 'applications', lang: 'portfolio.filter.applications', text: data.portfolio.filter.applications, active: false },
+          { category: 'webDevelopment', lang: 'portfolio.filter.webDevelopment', text: data.portfolio.filter.webDevelopment, active: false },
+        ];
+
+        // Function to generate filter items HTML
+        function generateFilterItems(items) {
+          return items.map(item => `
+            <li class="filter-item ${item.active ? 'active' : ''}">
+              <button data-filter-btn data-category="${item.category}" data-lang="${item.lang}">${item.text}</button>
+            </li>
+          `).join('');
+        }
+
+        // Get the container elements
+        const filterList = document.querySelectorAll('.filter-list');
+
+        // Generate and append the filter items
+        filterList.forEach(list => {
+          list.innerHTML = generateFilterItems(filterItems);
+        });
+
+        // Add filtering functionality
+        const filterItemsElements = document.querySelectorAll("[data-filter-item]");
+        const filterButtons = document.querySelectorAll("[data-filter-btn]");
+
+        const filterFunc = function (selectedCategory) {
+          for (let i = 0; i < filterItemsElements.length; i++) {
+            if (selectedCategory === "all") {
+              filterItemsElements[i].classList.add("active");
+            } else if (selectedCategory === filterItemsElements[i].dataset.category) {
+              filterItemsElements[i].classList.add("active");
+            } else {
+              filterItemsElements[i].classList.remove("active");
+            }
+          }
+        }
+
+        // Add event to all filter buttons
+        for (let i = 0; i < filterButtons.length; i++) {
+          filterButtons[i].addEventListener("click", function () {
+            const selectedCategory = this.getAttribute('data-category');
+
+            for (let j = 0; j < filterButtons.length; j++) {
+              if (filterButtons[j] === this) {
+                filterButtons[j].classList.add("active");
+              } else {
+                filterButtons[j].classList.remove("active");
+              }
+            }
+
+            filterFunc(selectedCategory);
+          });
+        }
+
+        // Set "all" filter as active by default
+        document.querySelector('[data-category="all"]').classList.add('active');
+        filterFunc("all");
+
       })
       .catch((error) => console.error("Error al cargar el archivo de idioma:", error));
   }
-
-
-
-
-
 
 
   closeButton.addEventListener('click', () => {
@@ -403,16 +437,12 @@ document.addEventListener("DOMContentLoaded", function () {
 // element toggle function
 const elementToggleFunc = function (elem) { elem.classList.toggle("active"); }
 
-
-
 // sidebar variables
 const sidebar = document.querySelector("[data-sidebar]");
 const sidebarBtn = document.querySelector("[data-sidebar-btn]");
 
 // sidebar toggle functionality for mobile
 sidebarBtn.addEventListener("click", function () { elementToggleFunc(sidebar); });
-
-
 
 // testimonials variables
 const testimonialsItem = document.querySelectorAll("[data-testimonials-item]");
@@ -450,111 +480,6 @@ for (let i = 0; i < testimonialsItem.length; i++) {
 // add click event to modal close button
 modalCloseBtn.addEventListener("click", testimonialsModalFunc);
 overlay.addEventListener("click", testimonialsModalFunc);
-
-
-
-// custom select variables
-const select = document.querySelector("[data-select]");
-const selectItems = document.querySelectorAll("[data-select-item]");
-const selectValue = document.querySelector("[data-selecct-value]");
-const filterBtn = document.querySelectorAll("[data-filter-btn]");
-
-select.addEventListener("click", function () { elementToggleFunc(this); });
-
-// add event in all select items
-for (let i = 0; i < selectItems.length; i++) {
-  selectItems[i].addEventListener("click", function () {
-
-    let selectedValue = this.innerText.toLowerCase();
-    selectValue.innerText = this.innerText;
-    elementToggleFunc(select);
-    filterFunc(selectedValue);
-
-  });
-}
-
-// filter variables
-const filterItems = document.querySelectorAll("[data-filter-item]");
-const filterButtons = document.querySelectorAll("[data-filter-btn]");
-
-const filterFunc = function (selectedValue) {
-  for (let i = 0; i < filterItems.length; i++) {
-    if (selectedValue === "all") {
-      filterItems[i].classList.add("active");
-    } else if (selectedValue === filterItems[i].dataset.category) {
-      filterItems[i].classList.add("active");
-    } else {
-      filterItems[i].classList.remove("active");
-    }
-  }
-}
-
-// add event to all filter buttons
-for (let i = 0; i < filterButtons.length; i++) {
-  filterButtons[i].addEventListener("click", function () {
-    const selectedValue = this.getAttribute('data-category');
-
-    for (let j = 0; j < filterButtons.length; j++) {
-      if (filterButtons[j] === this) {
-        filterButtons[j].classList.add("active");
-      } else {
-        filterButtons[j].classList.remove("active");
-      }
-    }
-
-    filterFunc(selectedValue);
-  });
-}
-
-// Filter select box functionality
-const filterSelectBox = document.querySelector('.filter-select-box');
-const filterSelectButton = filterSelectBox.querySelector('.filter-select');
-const filterSelectValue = filterSelectBox.querySelector('.select-value');
-const filterList = filterSelectBox.querySelector('.filter-list');
-
-filterSelectButton.addEventListener('click', function () {
-  filterList.classList.toggle('active');
-});
-
-filterList.addEventListener('click', function (event) {
-  if (event.target.matches('[data-filter-btn]')) {
-    const selectedValue = event.target.getAttribute('data-category');
-    filterSelectValue.textContent = event.target.textContent;
-    filterList.classList.remove('active');
-
-    // Update active class on buttons
-    for (let i = 0; i < filterButtons.length; i++) {
-      if (filterButtons[i] === event.target) {
-        filterButtons[i].classList.add('active');
-      } else {
-        filterButtons[i].classList.remove('active');
-      }
-    }
-
-    filterFunc(selectedValue);
-  }
-});
-
-// contact form variables
-const form = document.querySelector("[data-form]");
-const formInputs = document.querySelectorAll("[data-form-input]");
-const formBtn = document.querySelector("[data-form-btn]");
-
-// add event to all form input field
-for (let i = 0; i < formInputs.length; i++) {
-  formInputs[i].addEventListener("input", function () {
-
-    // check form validation
-    if (form.checkValidity()) {
-      formBtn.removeAttribute("disabled");
-    } else {
-      formBtn.setAttribute("disabled", "");
-    }
-
-  });
-}
-
-
 
 // page navigation variables
 const navigationLinks = document.querySelectorAll("[data-nav-link]");
