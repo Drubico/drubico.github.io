@@ -206,7 +206,55 @@ document.addEventListener('DOMContentLoaded', (event) => {
       modalImg.src = projectImg;
       modalTitle.textContent = projectTitle;
       modalText.innerHTML = `<span class="project-category">${projectCategory}</span>`;
+      modalText.innerHTML += `<div class="project-links"></div>`;
+      modalText.innerHTML += `<br> <div class="project-details"></div>`;
       modalText.innerHTML += `<div class="project-description">${projectDescription}</div>`;
+
+      // Add links
+      const modalLinks = modalText.querySelector('.project-links');
+      modalLinks.innerHTML = "";
+      const links = item.querySelectorAll('.project-link');
+
+      if (links.length > 0) {
+        links.forEach(link => {
+          const linkElement = document.createElement("a");
+          linkElement.className = "project-link";
+          linkElement.href = link.href;
+          linkElement.textContent = link.textContent;
+          linkElement.target = "_blank"; // Open link in a new tab
+          modalLinks.appendChild(linkElement);
+        });
+      }
+
+      const modalDetails = modalText.querySelector('.project-details');
+      modalDetails.innerHTML = "";
+
+      // Add languages
+      const languages = item.querySelectorAll('.project-language');
+      languages.forEach(language => {
+        const languageElement = document.createElement("span");
+        languageElement.className = "project-language";
+        languageElement.textContent = language.textContent;
+        modalDetails.appendChild(languageElement);
+      });
+
+      // Add frameworks
+      const frameworks = item.querySelectorAll('.project-framework');
+      frameworks.forEach(framework => {
+        const frameworkElement = document.createElement("span");
+        frameworkElement.className = "project-framework";
+        frameworkElement.textContent = framework.textContent;
+        modalDetails.appendChild(frameworkElement);
+      });
+
+      // Add libraries
+      const libraries = item.querySelectorAll('.project-library');
+      libraries.forEach(library => {
+        const libraryElement = document.createElement("span");
+        libraryElement.className = "project-library";
+        libraryElement.textContent = library.textContent;
+        modalDetails.appendChild(libraryElement);
+      });
       modal.classList.add('active');
       overlay.classList.add('active');
       document.querySelector('.modal-content').classList.add('modal-active');
