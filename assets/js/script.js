@@ -398,10 +398,48 @@ document.addEventListener("DOMContentLoaded", function () {
           });
         }
 
-        // Set "all" filter as active by default
-        document.querySelector('[data-category="all"]').classList.add('active');
-        filterFunc("all");
+        // Filter select box functionality
+        const filterSelectBox = document.querySelector('.filter-select-box');
+        if (filterSelectBox) {
+          const filterSelectButton = filterSelectBox.querySelector('.filter-select');
+          const filterSelectValue = filterSelectBox.querySelector('.select-value');
+          const currentFilterList = filterSelectBox.querySelector('.filter-list');
 
+          if (filterSelectButton && filterSelectValue && currentFilterList) {
+            filterSelectButton.addEventListener('click', function () {
+              currentFilterList.classList.toggle('active');
+            });
+
+            currentFilterList.addEventListener('click', function (event) {
+              if (event.target.matches('[data-filter-btn]')) {
+                const selectedCategory = event.target.getAttribute('data-category');
+                filterSelectValue.textContent = event.target.textContent;
+                filterSelectValue.setAttribute('data-category', selectedCategory);
+                currentFilterList.classList.remove('active');
+
+                // Update active class on buttons
+                for (let i = 0; i < filterButtons.length; i++) {
+                  if (filterButtons[i] === event.target) {
+                    filterButtons[i].classList.add('active');
+                  } else {
+                    filterButtons[i].classList.remove('active');
+                  }
+                }
+
+                filterFunc(selectedCategory);
+              }
+            });
+          }
+        }
+        // Set default filter value
+        const defaultCategory = 'all'; // Change this to the desired default category
+        const defaultFilterItem = filterItems.find(item => item.category === defaultCategory);
+        if (defaultFilterItem) {
+          const filterSelectValue = document.querySelector('.select-value');
+          filterSelectValue.textContent = defaultFilterItem.text;
+          filterSelectValue.setAttribute('data-category', defaultFilterItem.category);
+          filterFunc(defaultCategory);
+        }
       })
       .catch((error) => console.error("Error al cargar el archivo de idioma:", error));
   }
