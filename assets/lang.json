@@ -88,6 +88,11 @@
 			"title": "Experience",
 			"items": [
 				{
+					"position": "Independent Developer - Cluster Empresarial",
+					"dates": "10/2022 — Present",
+					"details": ["Developed native applications using Kotlin and Jetpack Compose for Android.", "Developed web solutions with Blazor and ASP.NET Core."]
+				},
+				{
 					"position": "Mobile Developer - Secretaria de Innovación de la Presidencia",
 					"dates": "10/2022 — Present",
 					"details": [
@@ -135,7 +140,8 @@
 				"description": "Introducing <strong>FinFlex</strong>, a comprehensive and intuitive application designed to help you manage your credit cards efficiently and effortlessly. FinFlex allows users to easily track payments, monitor balances, and keep an eye on available credit, delivering precise and reliable financial insights. The app also provides a detailed breakdown of spending categories, upcoming payment deadlines, and personalized tips to optimize your credit usage. With its user-friendly design, real-time updates, and detailed analytics, FinFlex is the perfect tool to help users stay in control of their finances, avoid late payments, and maximize their credit card benefits with transparency and ease.",
 				"languages": ["Kotlin"],
 				"frameworks": ["Jetpack Compose"],
-				"libraries": ["Firebase", "Glide", "Chart", "Hilt"]
+				"libraries": ["Firebase", "Glide", "Chart", "Hilt"],
+				"img": "finflex.png"
 			},
 			{
 				"title": "Salario Sv",
@@ -144,9 +150,10 @@
 				"languages": ["Kotlin"],
 				"frameworks": ["Jetpack Compose"],
 				"libraries": ["Firebase", "Coil", "Chart", "Koin"],
+				"img": "salario-sv.png",
 				"links": {
 					"playstore": {
-						"title": "Go to Play Store",
+						"title": "Go to Play Store  ⮕",
 						"link": "https://play.google.com/store/apps/details?id=com.drubico.salariosv"
 					}
 				}
@@ -155,6 +162,7 @@
 				"title": "Combo Vip",
 				"category": "Web development",
 				"description": "This application offers a seamless and secure experience, allowing VIP customers to provide personalized feedback through intuitive surveys. With real-time insights, responsive design, and integration with existing systems, the app empowers Impresa Repuesto to understand client needs better, improve services, and strengthen relationships, all while maintaining the highest standards of data security and professionalism.",
+				"img": "combo-vip.png",
 				"languages": ["C#", "css", "html", "javascript"],
 				"frameworks": ["Blazor"],
 				"libraries": ["Tailwind CSS", "PDFSharp"]
@@ -166,9 +174,10 @@
 				"languages": ["Kotlin"],
 				"frameworks": ["Jetpack Compose"],
 				"libraries": ["Firebase", "Glide", "Hilt"],
+				"img": "direscup.png",
 				"links": {
 					"playstore": {
-						"title": "Go to Play Store",
+						"title": "Go to Play Store  ⮕",
 						"link": "https://play.google.com/store/apps/details?id=com.drubi.diresCup"
 					}
 				}

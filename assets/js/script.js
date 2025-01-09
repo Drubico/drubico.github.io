@@ -17,6 +17,28 @@ document.addEventListener("DOMContentLoaded", function () {
   const modalImg = modal.querySelector('[data-modal-img]');
   const modalTitle = modal.querySelector('[data-modal-title]');
   const modalText = modal.querySelector('[data-modal-text]');
+
+  function filterProjects(category) {
+    const projectItems = document.querySelectorAll('.project-item');
+    projectItems.forEach(item => {
+      const itemCategory = item.getAttribute('data-category');
+      if (category === 'all' || itemCategory === category) {
+        item.style.display = 'block';
+      } else {
+        item.style.display = 'none';
+      }
+    });
+  }
+  document.querySelectorAll('[data-filter-btn]').forEach(button => {
+    button.addEventListener('click', (e) => {
+      const category = button.getAttribute('data-category');
+      filterProjects(category);
+
+      // Actualiza la clase activa
+      document.querySelectorAll('[data-filter-btn]').forEach(btn => btn.classList.remove('active'));
+      button.classList.add('active');
+    });
+  });
   // Function to set current language and save to localStorage
   function setCurrentLang(lang, jsonPath, imgSrc, imgAlt) {
     currentLang = lang;
@@ -30,7 +52,114 @@ document.addEventListener("DOMContentLoaded", function () {
     localStorage.setItem("langToggleSrc", langToggleSrc);
     localStorage.setItem("langToggleAlt", langToggleAlt);
   }
+  function renderProjects(projects) {
+    const projectList = document.getElementById("project-list");
+    projectList.innerHTML = ""; // Clear existing items
 
+    projects.forEach((project, index) => {
+      const projectItem = document.createElement("li");
+      projectItem.className = "project-item active";
+      projectItem.setAttribute("data-filter-item", "");
+      projectItem.setAttribute("data-category", project.category.toLowerCase().replace(" ", "-"));
+
+      const projectLink = document.createElement("a");
+      projectLink.href = "#";
+
+      const projectFigure = document.createElement("figure");
+      projectFigure.className = "project-img";
+
+      const projectIconBox = document.createElement("div");
+      projectIconBox.className = "project-item-icon-box";
+
+      const projectIcon = document.createElement("ion-icon");
+      projectIcon.setAttribute("name", "eye-outline");
+
+      projectIconBox.appendChild(projectIcon);
+
+      const projectImg = document.createElement("img");
+      projectImg.src = `./assets/images/${project.img}`;
+      projectImg.alt = project.title;
+      projectImg.loading = "lazy";
+
+      projectFigure.appendChild(projectIconBox);
+      projectFigure.appendChild(projectImg);
+
+      const projectTitle = document.createElement("h3");
+      projectTitle.className = "project-title";
+      projectTitle.setAttribute("data-lang", `portfolio.projects[${index}].title`);
+      projectTitle.textContent = project.title;
+
+      const projectCategory = document.createElement("span");
+      projectCategory.className = "project-category";
+      projectCategory.setAttribute("data-lang", `portfolio.projects[${index}].category`);
+      projectCategory.textContent = project.category;
+
+
+      const projectLinks = document.createElement("div");
+      projectLinks.className = "project-links";
+      projectLinks.setAttribute("data-lang", `portfolio.projects[${index}].links`);
+
+      if (project.links) {
+        Object.keys(project.links).forEach((key) => {
+          const link = project.links[key];
+          const linkElement = document.createElement("a");
+          linkElement.className = "project-link";
+          linkElement.href = link.link;
+          linkElement.textContent = link.title;
+          linkElement.target = "_blank"; // Open link in a new tab
+          projectLinks.appendChild(linkElement);
+        });
+      }
+
+
+      const projectDetails = document.createElement("div");
+      projectDetails.className = "project-details hidden";
+      projectDetails.setAttribute("data-lang", `portfolio.projects[${index}].details`);
+
+      if (project.languages) {
+        project.languages.forEach((language) => {
+          const languageElement = document.createElement("span");
+          languageElement.className = "project-language";
+          languageElement.textContent = language;
+          projectDetails.appendChild(languageElement);
+        });
+      }
+
+      if (project.frameworks) {
+        project.frameworks.forEach((framework) => {
+          const frameworkElement = document.createElement("span");
+          frameworkElement.className = "project-framework";
+          frameworkElement.textContent = framework;
+          projectDetails.appendChild(frameworkElement);
+        });
+      }
+
+      if (project.libraries) {
+        project.libraries.forEach((library) => {
+          const libraryElement = document.createElement("span");
+          libraryElement.className = "project-library";
+          libraryElement.textContent = library;
+          projectDetails.appendChild(libraryElement);
+        });
+      }
+
+
+      const projectDescription = document.createElement("div");
+      projectDescription.className = "project-description";
+      projectDescription.setAttribute("data-lang", `portfolio.projects[${index}].description`);
+      projectDescription.innerHTML = `<p>${project.description}</p>`;
+
+      projectLink.appendChild(projectFigure);
+      projectLink.appendChild(projectTitle);
+      projectLink.appendChild(projectCategory);
+      projectLink.appendChild(projectLinks);
+      projectLink.appendChild(projectDetails);
+      projectLink.appendChild(projectDescription);
+
+      projectItem.appendChild(projectLink);
+      projectList.appendChild(projectItem);
+    });
+  }
   // Function to load language file
   function loadLanguage(langFile) {
     fetch(langFile)
@@ -156,60 +285,8 @@ document.addEventListener("DOMContentLoaded", function () {
         document.querySelector("[data-lang='resume.experience.items[2].details[0]']").textContent = data.resume.experience.items[2].details[0];
 
         // Portfolio Section
-        document.querySelector("[data-lang='portfolio.title']").textContent = data.portfolio.title;
-        document.querySelectorAll("[data-lang='portfolio.filter.all']").forEach((el) => {
-          el.textContent = data.portfolio.filter.all;
-        });
-        document.querySelectorAll("[data-lang='portfolio.filter.applications']").forEach((el) => {
-          el.textContent = data.portfolio.filter.applications;
-        });
-        document.querySelectorAll("[data-lang='portfolio.filter.webDevelopment']").forEach((el) => {
-          el.textContent = data.portfolio.filter.webDevelopment;
-        });
-        data.portfolio.projects.forEach((project, index) => {
-          document.querySelector(`[data-lang='portfolio.projects[${index}].title']`).textContent = project.title;
-          document.querySelector(`[data-lang='portfolio.projects[${index}].category']`).textContent = project.category;
-          document.querySelector(`[data-lang='portfolio.projects[${index}].description']`).innerHTML = project.description;
+        renderProjects(data.portfolio.projects);
 
-          const continerLinks = document.querySelector(`[data-lang='portfolio.projects[${index}].links']`);
-          continerLinks.innerHTML = ""; // Clear existing items
-
-          if (project.links) {
-            Object.keys(project.links).forEach((key) => {
-              const link = project.links[key];
-              const linkElement = document.createElement("a");
-              linkElement.className = "project-link";
-              linkElement.href = link.link;
-              linkElement.textContent = link.title;
-              linkElement.target = "_blank"; // Open link in a new tab
-              continerLinks.appendChild(linkElement);
-            });
-          }
-
-          const continerDetails = document.querySelector(`[data-lang='portfolio.projects[${index}].details']`);
-          continerDetails.innerHTML = ""; // Clear existing items
-
-          project.languages.forEach((language) => {
-            const languageElement = document.createElement("span");
-            languageElement.className = "project-language";
-            languageElement.textContent = language;
-            continerDetails.appendChild(languageElement);
-          });
-
-          project.frameworks.forEach((framework) => {
-            const frameworkElement = document.createElement("span");
-            frameworkElement.className = "project-framework";
-            frameworkElement.textContent = framework;
-            continerDetails.appendChild(frameworkElement);
-          });
-
-          project.libraries.forEach((library) => {
-            const libraryElement = document.createElement("span");
-            libraryElement.className = "project-library";
-            libraryElement.textContent = library;
-            continerDetails.appendChild(libraryElement);
-          });
-        });
 
         // Contact Section
         document.querySelector("[data-lang='contact.title']").textContent = data.contact.title;
@@ -220,8 +297,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
         // Modal
         document.querySelectorAll('.project-item').forEach(item => {
-          item.addEventListener('click', (e) => {
-            e.preventDefault();
+          item.querySelector('.project-img').addEventListener('click', (e) => {
+            e.stopPropagation();
             const projectImg = item.querySelector('img').src;
             const projectTitle = item.querySelector('.project-title').textContent;
             const projectCategory = item.querySelector('.project-category').textContent;

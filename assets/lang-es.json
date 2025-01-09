@@ -38,7 +38,7 @@
 	},
 	"about": {
 		"title": "Acerca de mí",
-		"intro": "Soy un Desarrollador Móvil con Kotlin y Flutter de El Salvador, trabajando en el desarrollo soluciones digitales. Disfruto convertir problemas complejos en aplicaciones simples, hermosas e intuitivas.",
+		"intro": "Soy un Desarrollador Móvil con Kotlin y Flutter de El Salvador. Disfruto convertir problemas complejos en aplicaciones simples, hermosas e intuitivas.",
 		"description": "Mi trabajo es construir tu aplicación móvil para que sea funcional y fácil de usar, pero al mismo tiempo atractiva. Además, le doy un toque personal a tu producto y me aseguro de que sea llamativo y fácil de utilizar. Mi objetivo es transmitir tu mensaje e identidad de la manera más creativa posible. He creado aplicaciones móviles para muchas empresas de renombre.",
 		"services": {
 			"title": "Servicios",
@@ -87,6 +87,11 @@
 			"title": "Experiencia",
 			"items": [
 				{
+					"position": "Desarrollador Independiente - Cluster Empresarial",
+					"dates": "10/2022 — Presente",
+					"details": ["Desarrollé aplicaciones nativas con Kotlin y Jetpack Compose para Android.", "Desarrolle soluciones web con Blazor y ASP.NET Core."]
+				},
+				{
 					"position": "Desarrollador Móvil - Secretaría de Innovación de la Presidencia",
 					"dates": "10/2022 — Presente",
 					"details": [
@@ -131,23 +136,24 @@
 			{
 				"title": "Finflex",
 				"category": "Aplicaciones",
-				"description": "Presentamos <strong>FinFlex</strong>, una aplicación integral e intuitiva diseñada para ayudarte a gestionar tus tarjetas de crédito de manera eficiente y sin esfuerzo. FinFlex permite a los usuarios rastrear pagos, monitorear saldos y estar al tanto del crédito disponible, proporcionando información financiera precisa y confiable. La aplicación también ofrece un desglose detallado de las categorías de gastos, los plazos de pago próximos y consejos personalizados para optimizar el uso del crédito. Con su diseño fácil de usar, actualizaciones en tiempo real y análisis detallados, FinFlex es la herramienta perfecta para ayudar a los usuarios a mantener el control de sus finanzas, evitar pagos atrasados y maximizar los beneficios de sus tarjetas de crédito con transparencia y facilidad.",
+				"description": "<strong>FinFlex</strong>es una aplicación integral e intuitiva diseñada para ayudarte a gestionar tus tarjetas de crédito de manera eficiente y sin esfuerzo. FinFlex permite a los usuarios rastrear pagos, monitorear saldos y estar al tanto del crédito disponible, proporcionando información financiera precisa y confiable. La aplicación también ofrece un desglose detallado de las categorías de gastos, los plazos de pago próximos y consejos personalizados para optimizar el uso del crédito. Con su diseño fácil de usar, actualizaciones en tiempo real y análisis detallados, FinFlex es la herramienta perfecta para ayudar a los usuarios a mantener el control de sus finanzas, evitar pagos atrasados y maximizar los beneficios de sus tarjetas de crédito con transparencia y facilidad.",
 				"tenchnologies": "Tecnologias utilizadas :",
 				"languages": ["Kotlin"],
 				"frameworks": ["Jetpack Compose"],
-				"libraries": ["Firebase", "Glide", "Chart", "Hilt"]
+				"libraries": ["Firebase", "Glide", "Chart", "Hilt"],
+				"img": "finflex.png"
 			},
 			{
 				"title": "Salario Sv",
 				"category": "Aplicaciones",
-				"description": "Presentamos <strong>Salario SV</strong>, una aplicación integral e intuitiva diseñada para calcular tu salario neto en El Salvador después de aplicar las deducciones obligatorias. Salario SV permite a los usuarios calcular fácilmente las contribuciones como AFP (7.25%), ISSS (3% con un máximo limitado) e impuesto sobre la renta (renta), proporcionando resultados precisos y confiables. La aplicación también ofrece información sobre las contribuciones del empleador para AFP (8.75%) e ISSS (7.5%), brindando a los usuarios una visión completa de la estructura de su salario. Con su diseño fácil de usar, desgloses detallados y cálculos en tiempo real, Salario SV es la herramienta perfecta para ayudar a los empleados a gestionar sus finanzas de manera efectiva y transparente.",
-				"tenchnologies": "Tecnologias utilizadas :",
+				"description": "<strong>Salario SV</strong> es una aplicación integral e intuitiva diseñada para calcular tu salario neto en El Salvador después de aplicar las deducciones obligatorias. Salario SV permite a los usuarios calcular fácilmente las contribuciones como AFP (7.25%), ISSS (3% con un máximo limitado) e impuesto sobre la renta (renta), proporcionando resultados precisos y confiables. La aplicación también ofrece información sobre las contribuciones del empleador para AFP (8.75%) e ISSS (7.5%), brindando a los usuarios una visión completa de la estructura de su salario. Con su diseño fácil de usar, desgloses detallados y cálculos en tiempo real, Salario SV es la herramienta perfecta para ayudar a los empleados a gestionar sus finanzas de manera efectiva y transparente.",
 				"languages": ["Kotlin"],
 				"frameworks": ["Jetpack Compose"],
 				"libraries": ["Firebase", "Coil", "Chart", "Koin"],
+				"img": "salario-sv.png",
 				"links": {
 					"playstore": {
-						"title": "Ir a Play Store",
+						"title": "Ir a Play Store  ⮕",
 						"link": "https://play.google.com/store/apps/details?id=com.drubico.salariosv"
 					}
 				}
@@ -156,22 +162,22 @@
 				"title": "Combo Vip",
 				"category": "Desarrollo web",
 				"description": "Esta aplicación ofrece una experiencia fluida y segura, permitiendo a los clientes VIP proporcionar comentarios personalizados a través de encuestas intuitivas. Con información en tiempo real, diseño responsivo e integración con sistemas existentes, la aplicación permite a Impresa Repuestos comprender mejor las necesidades de los clientes, mejorar los servicios y fortalecer las relaciones, todo mientras mantiene los más altos estándares de seguridad de datos y profesionalismo.",
-				"tenchnologies": "Tecnologias utilizadas :",
 				"languages": ["C#", "CSS", "HTML", "JavaScript"],
 				"frameworks": ["Blazor"],
-				"libraries": ["Tailwind CSS", "PDFSharp"]
+				"libraries": ["Tailwind CSS", "PDFSharp"],
+				"img": "combo-vip.png"
 			},
 			{
 				"title": "Dires Cup",
 				"category": "Aplicaciones",
-				"description": "Presentamos DireCup, una aplicación moderna diseñada para llevar el registro de los puntajes de los partidos amistosos de fútbol entre amigos. Esta aplicación proporciona una experiencia fluida e intuitiva, permitiendo a los usuarios ver los resultados de los partidos, las posiciones de los equipos y las posiciones en la liga en tiempo real. Con su diseño responsivo, fácil navegación y manejo seguro de datos, DireCup ayuda a los entusiastas del fútbol a mantenerse conectados e informados, fomentando la competencia amistosa y fortaleciendo la camaradería entre los participantes.",
-				"tenchnologies": "Tecnologias utilizadas :",
+				"description": "<strong>DireCup</strong> es una aplicación moderna diseñada para llevar el registro de los puntajes de los partidos amistosos de fútbol entre amigos. Esta aplicación proporciona una experiencia fluida e intuitiva, permitiendo a los usuarios ver los resultados de los partidos, las posiciones de los equipos y las posiciones en la liga en tiempo real. Con su diseño responsivo, fácil navegación y manejo seguro de datos, DireCup ayuda a los entusiastas del fútbol a mantenerse conectados e informados, fomentando la competencia amistosa y fortaleciendo la camaradería entre los participantes.",
 				"languages": ["Kotlin"],
 				"frameworks": ["Jetpack Compose"],
 				"libraries": ["Firebase", "Glide", "Hilt"],
+				"img": "direscup.png",
 				"links": {
 					"playstore": {
-						"title": "Ir a Play Store",
+						"title": "Ir a Play Store  ⮕",
 						"link": "https://play.google.com/store/apps/details?id=com.drubi.diresCup"
 					}
 				}

@@ -11,6 +11,7 @@
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" />
 		<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 	</head>
 	<body>
 		<main>
@@ -86,7 +87,7 @@
 
 							<div class="contact-info">
 								<p class="contact-title" data-contact-title="linkedin"></p>
-								<a href="#" class="contact-link" data-contact-link="linkedin"></a>
+								<a href="#" target="_blank" class="contact-link" data-contact-link="linkedin"></a>
 							</div>
 						</li>
 					</ul>
@@ -304,81 +305,8 @@
 							</ul>
 						</div>
 
-						<ul class="project-list">
-							<li class="project-item active" data-filter-item data-category="applications">
-								<a href="#">
-									<figure class="project-img">
-										<div class="project-item-icon-box">
-											<ion-icon name="eye-outline"></ion-icon>
-										</div>
-										<img src="./assets/images/finflex.png" alt="finflex" loading="lazy" />
-									</figure>
-									<h3 class="project-title" data-lang="portfolio.projects[0].title">Finflex</h3>
-									<span class="project-category" data-lang="portfolio.projects[0].category">Applications</span>
-									<div class="project-links" data-lang="portfolio.projects[0].links"></div>
-									<div class="project-details hidden" data-lang="portfolio.projects[0].details"></div>
-									<div class="project-description" data-lang="portfolio.projects[0].description">
-										<p>
-											Introducing <strong>FinFlex</strong>, a comprehensive and intuitive application designed to help you manage your credit cards efficiently and effortlessly...
-										</p>
-									</div>
-								</a>
-							</li>
-							<li class="project-item active" data-filter-item data-category="applications">
-								<a href="#">
-									<figure class="project-img">
-										<div class="project-item-icon-box">
-											<ion-icon name="eye-outline"></ion-icon>
-										</div>
-										<img src="./assets/images/salario-sv.png" alt="salario-sv" loading="lazy" />
-									</figure>
-									<h3 class="project-title" data-lang="portfolio.projects[1].title">Salario Sv</h3>
-									<span class="project-category" data-lang="portfolio.projects[1].category">Applications</span>
-									<div class="project-links" data-lang="portfolio.projects[1].links"></div>
-									<div class="project-details hidden" data-lang="portfolio.projects[1].details"></div>
-									<div class="project-description" data-lang="portfolio.projects[1].description">
-										<p>
-											Introducing <strong>Salario SV</strong>, a comprehensive and intuitive application designed to calculate your net salary in El Salvador after applying
-											mandatory deductions...
-										</p>
-									</div>
-								</a>
-							</li>
-							<li class="project-item active" data-filter-item data-category="web-development">
-								<a href="#">
-									<figure class="project-img">
-										<div class="project-item-icon-box">
-											<ion-icon name="eye-outline"></ion-icon>
-										</div>
-										<img src="./assets/images/combo-vip.png" alt="combo-vip" loading="lazy" />
-									</figure>
-									<h3 class="project-title" data-lang="portfolio.projects[2].title">Combo Vip</h3>
-									<span class="project-category" data-lang="portfolio.projects[2].category">Web development</span>
-									<div class="project-links" data-lang="portfolio.projects[2].links"></div>
-									<div class="project-details hidden" data-lang="portfolio.projects[2].details"></div>
-									<div class="project-description" data-lang="portfolio.projects[2].description">
-										<p>This application offers a seamless and secure experience, allowing VIP customers to provide personalized feedback through intuitive surveys...</p>
-									</div>
-								</a>
-							</li>
-							<li class="project-item active" data-filter-item data-category="applications">
-								<a href="#">
-									<figure class="project-img">
-										<div class="project-item-icon-box">
-											<ion-icon name="eye-outline"></ion-icon>
-										</div>
-										<img src="./assets/images/direscup.png" alt="direscup" loading="lazy" />
-									</figure>
-									<h3 class="project-title" data-lang="portfolio.projects[3].title">Dires Cup</h3>
-									<span class="project-category" data-lang="portfolio.projects[3].category">Applications</span>
-									<div class="project-links" data-lang="portfolio.projects[3].links"></div>
-									<div class="project-details hidden" data-lang="portfolio.projects[3].details"></div>
-									<div class="project-description" data-lang="portfolio.projects[3].description">
-										<p>Introducing DireCup, a modern application designed to keep track of match scores for friendly football games among friends...</p>
-									</div>
-								</a>
-							</li>
-						</ul>
+						<ul class="project-list" id="project-list"></ul>
+
 						<div class="modal-container" id="project-modal" data-modal-container>
 							<div class="overlay" data-overlay></div>
 							<section class="testimonials-modal has-scrollbar">
@@ -387,7 +315,7 @@
 								</button>
 								<div class="modal-img-wrapper">
 									<figure class="modal-avatar-box">
-										<img src="./assets/images/my-avatar.png" alt="Project Image" width="80" data-modal-img />
+										<img class="img-project" src="./assets/images/my-avatar.png" alt="Project Image" width="100%" data-modal-img />
 									</figure>
 									<div class="modal-content">
 										<h4 class="h3 modal-title" data-modal-title></h4>
@@ -440,9 +368,10 @@
 				<!-- endregion-->
 			</div>
 		</main>
-		<script src="./assets/js/script.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 		<script type="text/javascript" src="https://platform.linkedin.com/badges/js/profile.js" async defer></script>
 		<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
 		<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+		<script src="./assets/js/script.js"></script>
 	</body>
 </html>
