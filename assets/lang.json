@@ -122,6 +122,12 @@
 			"applications": "Applications",
 			"webDevelopment": "Web development"
 		},
+		"technologies": {
+			"title": "Technologies",
+			"languages": "Languages",
+			"frameworks": "Frameworks",
+			"libraries": "Libraries"
+		},
 		"projects": [
 			{
 				"title": "Finflex",

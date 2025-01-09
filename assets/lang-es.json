@@ -121,11 +121,18 @@
 			"applications": "Aplicaciones",
 			"webDevelopment": "Desarrollo web"
 		},
+		"technologies": {
+			"title": "Tecnologías",
+			"languages": "Lenguajes",
+			"frameworks": "Frameworks",
+			"libraries": "Librerías"
+		},
 		"projects": [
 			{
 				"title": "Finflex",
 				"category": "Aplicaciones",
 				"description": "Presentamos <strong>FinFlex</strong>, una aplicación integral e intuitiva diseñada para ayudarte a gestionar tus tarjetas de crédito de manera eficiente y sin esfuerzo. FinFlex permite a los usuarios rastrear pagos, monitorear saldos y estar al tanto del crédito disponible, proporcionando información financiera precisa y confiable. La aplicación también ofrece un desglose detallado de las categorías de gastos, los plazos de pago próximos y consejos personalizados para optimizar el uso del crédito. Con su diseño fácil de usar, actualizaciones en tiempo real y análisis detallados, FinFlex es la herramienta perfecta para ayudar a los usuarios a mantener el control de sus finanzas, evitar pagos atrasados y maximizar los beneficios de sus tarjetas de crédito con transparencia y facilidad.",
+				"tenchnologies": "Tecnologias utilizadas :",
 				"languages": ["Kotlin"],
 				"frameworks": ["Jetpack Compose"],
 				"libraries": ["Firebase", "Glide", "Chart", "Hilt"]
@@ -134,6 +141,7 @@
 				"title": "Salario Sv",
 				"category": "Aplicaciones",
 				"description": "Presentamos <strong>Salario SV</strong>, una aplicación integral e intuitiva diseñada para calcular tu salario neto en El Salvador después de aplicar las deducciones obligatorias. Salario SV permite a los usuarios calcular fácilmente las contribuciones como AFP (7.25%), ISSS (3% con un máximo limitado) e impuesto sobre la renta (renta), proporcionando resultados precisos y confiables. La aplicación también ofrece información sobre las contribuciones del empleador para AFP (8.75%) e ISSS (7.5%), brindando a los usuarios una visión completa de la estructura de su salario. Con su diseño fácil de usar, desgloses detallados y cálculos en tiempo real, Salario SV es la herramienta perfecta para ayudar a los empleados a gestionar sus finanzas de manera efectiva y transparente.",
+				"tenchnologies": "Tecnologias utilizadas :",
 				"languages": ["Kotlin"],
 				"frameworks": ["Jetpack Compose"],
 				"libraries": ["Firebase", "Coil", "Chart", "Koin"],
@@ -148,6 +156,7 @@
 				"title": "Combo Vip",
 				"category": "Desarrollo web",
 				"description": "Esta aplicación ofrece una experiencia fluida y segura, permitiendo a los clientes VIP proporcionar comentarios personalizados a través de encuestas intuitivas. Con información en tiempo real, diseño responsivo e integración con sistemas existentes, la aplicación permite a Impresa Repuestos comprender mejor las necesidades de los clientes, mejorar los servicios y fortalecer las relaciones, todo mientras mantiene los más altos estándares de seguridad de datos y profesionalismo.",
+				"tenchnologies": "Tecnologias utilizadas :",
 				"languages": ["C#", "CSS", "HTML", "JavaScript"],
 				"frameworks": ["Blazor"],
 				"libraries": ["Tailwind CSS", "PDFSharp"]
@@ -156,6 +165,7 @@
 				"title": "Dires Cup",
 				"category": "Aplicaciones",
 				"description": "Presentamos DireCup, una aplicación moderna diseñada para llevar el registro de los puntajes de los partidos amistosos de fútbol entre amigos. Esta aplicación proporciona una experiencia fluida e intuitiva, permitiendo a los usuarios ver los resultados de los partidos, las posiciones de los equipos y las posiciones en la liga en tiempo real. Con su diseño responsivo, fácil navegación y manejo seguro de datos, DireCup ayuda a los entusiastas del fútbol a mantenerse conectados e informados, fomentando la competencia amistosa y fortaleciendo la camaradería entre los participantes.",
+				"tenchnologies": "Tecnologias utilizadas :",
 				"languages": ["Kotlin"],
 				"frameworks": ["Jetpack Compose"],
 				"libraries": ["Firebase", "Glide", "Hilt"],

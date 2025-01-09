@@ -1910,3 +1910,11 @@ textarea.form-input::-webkit-resizer { display: none; }
   margin-top: 10px;
   margin-bottom: 10px;
 }
+
+.project-links {
+  margin:0px;
+}
+
+.hidden {
+  display: none;
+}
