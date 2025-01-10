@@ -87,11 +87,6 @@
 			"title": "Experiencia",
 			"items": [
 				{
-					"position": "Desarrollador Independiente - Cluster Empresarial",
-					"dates": "10/2022 — Presente",
-					"details": ["Desarrollé aplicaciones nativas con Kotlin y Jetpack Compose para Android.", "Desarrolle soluciones web con Blazor y ASP.NET Core."]
-				},
-				{
 					"position": "Desarrollador Móvil - Secretaría de Innovación de la Presidencia",
 					"dates": "10/2022 — Presente",
 					"details": [
