@@ -398,39 +398,7 @@ document.addEventListener("DOMContentLoaded", function () {
           });
         }
 
-        // Filter select box functionality
-        const filterSelectBox = document.querySelector('.filter-select-box');
-        if (filterSelectBox) {
-          const filterSelectButton = filterSelectBox.querySelector('.filter-select');
-          const filterSelectValue = filterSelectBox.querySelector('.select-value');
-          const currentFilterList = filterSelectBox.querySelector('.filter-list');
-
-          if (filterSelectButton && filterSelectValue && currentFilterList) {
-            filterSelectButton.addEventListener('click', function () {
-              currentFilterList.classList.toggle('active');
-            });
-
-            currentFilterList.addEventListener('click', function (event) {
-              if (event.target.matches('[data-filter-btn]')) {
-                const selectedCategory = event.target.getAttribute('data-category');
-                filterSelectValue.textContent = event.target.textContent;
-                filterSelectValue.setAttribute('data-category', selectedCategory);
-                currentFilterList.classList.remove('active');
-
-                // Update active class on buttons
-                for (let i = 0; i < filterButtons.length; i++) {
-                  if (filterButtons[i] === event.target) {
-                    filterButtons[i].classList.add('active');
-                  } else {
-                    filterButtons[i].classList.remove('active');
-                  }
-                }
-
-                filterFunc(selectedCategory);
-              }
-            });
-          }
-        }
+      
         // Set default filter value
         const defaultCategory = 'all'; // Change this to the desired default category
         const defaultFilterItem = filterItems.find(item => item.category === defaultCategory);
@@ -443,7 +411,6 @@ document.addEventListener("DOMContentLoaded", function () {
       })
       .catch((error) => console.error("Error al cargar el archivo de idioma:", error));
   }
-
 
   closeButton.addEventListener('click', () => {
     modal.classList.remove('active');
@@ -474,76 +441,3 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // element toggle function
 const elementToggleFunc = function (elem) { elem.classList.toggle("active"); }
-
-// sidebar variables
-const sidebar = document.querySelector("[data-sidebar]");
-const sidebarBtn = document.querySelector("[data-sidebar-btn]");
-
-// sidebar toggle functionality for mobile
-sidebarBtn.addEventListener("click", function () { elementToggleFunc(sidebar); });
-
-// testimonials variables
-const testimonialsItem = document.querySelectorAll("[data-testimonials-item]");
-const modalContainer = document.querySelector("[data-modal-container]");
-const modalCloseBtn = document.querySelector("[data-modal-close-btn]");
-const overlay = document.querySelector("[data-overlay]");
-
-// modal variable
-const modalImg = document.querySelector("[data-modal-img]");
-const modalTitle = document.querySelector("[data-modal-title]");
-const modalText = document.querySelector("[data-modal-text]");
-
-// modal toggle function
-const testimonialsModalFunc = function () {
-  modalContainer.classList.toggle("active");
-  overlay.classList.toggle("active");
-}
-
-// add click event to all modal items
-for (let i = 0; i < testimonialsItem.length; i++) {
-
-  testimonialsItem[i].addEventListener("click", function () {
-
-    modalImg.src = this.querySelector("[data-testimonials-avatar]").src;
-    modalImg.alt = this.querySelector("[data-testimonials-avatar]").alt;
-    modalTitle.innerHTML = this.querySelector("[data-testimonials-title]").innerHTML;
-    modalText.innerHTML = this.querySelector("[data-testimonials-text]").innerHTML;
-
-    testimonialsModalFunc();
-
-  });
-
-}
-
-// add click event to modal close button
-modalCloseBtn.addEventListener("click", testimonialsModalFunc);
-overlay.addEventListener("click", testimonialsModalFunc);
-
-// page navigation variables
-const navigationLinks = document.querySelectorAll("[data-nav-link]");
-const pages = document.querySelectorAll("[data-page]");
-
-// add event to all nav link
-for (let i = 0; i < navigationLinks.length; i++) {
-  navigationLinks[i].addEventListener("click", function () {
-    const targetPage = this.getAttribute('data-page');
-
-    for (let j = 0; j < pages.length; j++) {
-      if (pages[j].dataset.page.includes(targetPage)) {
-        pages[j].classList.add("active");
-      } else {
-        pages[j].classList.remove("active");
-      }
-    }
-
-    for (let k = 0; k < navigationLinks.length; k++) {
-      if (navigationLinks[k].getAttribute('data-page') === targetPage) {
-        navigationLinks[k].classList.add("active");
-      } else {
-        navigationLinks[k].classList.remove("active");
-      }
-    }
-
-    window.scrollTo(0, 0);
-  });
-}
