@@ -915,8 +915,17 @@ main {
 .project-item.active {
   display: block;
   animation: scaleUp 0.25s ease forwards;
+  box-shadow: var(--shadow-1);
+  padding: 10px;
+  background: var(--eerie-black-1);
+  border-radius: 8px;
+  transition: box-shadow 0.25s ease, border 0.25s ease;
 }
 
+.project-item.active:hover {
+  box-shadow: 0 0 15px var(--orange-yellow-crayola);
+  border: 0.2px solid var(--orange-yellow-crayola);
+}
 @keyframes scaleUp {
   0% { transform: scale(0.5); }
   100% { transform: scale(1); }
@@ -1897,8 +1906,9 @@ textarea.form-input::-webkit-resizer { display: none; }
 }
 
 .project-link{
-  background-color: var(--smoky-black); /* Color de fondo de la etiqueta */
+  background-color: var(--eerie-black-2); /* Color de fondo de la etiqueta */
   border: 1px solid var(--orange-yellow-crayola); /* Borde de la etiqueta */
+  margin: 5px  0px;
   color: var(--orange-yellow-crayola); /* Color del texto */
   &:hover {
     background-color: var(--orange-yellow-crayola); /* Cambia el color de fondo al pasar el ratón */
@@ -1906,7 +1916,6 @@ textarea.form-input::-webkit-resizer { display: none; }
   }
 }
 
-.project-links,
 .project-details {
   display: inline-block;
   justify-content: space-between;
@@ -1917,7 +1926,9 @@ textarea.form-input::-webkit-resizer { display: none; }
 }
 
 .project-links {
+  display: inline-block;
   margin:0px;
+  padding: 0px;
 }
 
 .hidden {
@@ -1936,4 +1947,12 @@ textarea.form-input::-webkit-resizer { display: none; }
   &:hover {
     color: var(--orange-yellow-crayola);
   }
+}
+
+.project-container{
+  display: flex;
+  margin: 0px;
+  padding: 0px;
+  width: 100%;
+  justify-content: space-between;
 }

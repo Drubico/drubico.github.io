@@ -16,11 +16,14 @@ function setModal(data) {
 
             modalImg.src = projectImg;
             modalTitle.textContent = projectTitle;
-            modalText.innerHTML = `<span class="project-category">${projectCategory}</span>`;
-            modalText.innerHTML += `<div class="project-links"></div>`;
-            modalText.innerHTML += `<div class="project-description">${projectDescription}</div>`;
-            modalText.innerHTML += `<h4 class="project-title" >${data.portfolio.technologies.title}</h4>`;
-            modalText.innerHTML += `<div class="project-details"></div>`;
+            modalText.innerHTML = `
+            <div class="project-container">
+                <span class="project-category">${projectCategory}</span>
+                <div class="project-links"></div>
+            </div>
+            <div class="project-description">${projectDescription}</div>
+            <h4 class="project-title" >${data.portfolio.technologies.title}</h4>
+            <div class="project-details"></div>`;
 
             // Add links
             const modalLinks = modalText.querySelector('.project-links');

@@ -35,11 +35,13 @@ function renderProjects(projects) {
         projectTitle.setAttribute("data-lang", `portfolio.projects[${index}].title`);
         projectTitle.textContent = project.title;
 
+        const projectContainer = document.createElement("div");
+        projectContainer.className = "project-container";
+
         const projectCategory = document.createElement("span");
         projectCategory.className = "project-category";
         projectCategory.setAttribute("data-lang", `portfolio.projects[${index}].category`);
         projectCategory.textContent = project.category.value;
-
 
         const projectLinks = document.createElement("div");
         projectLinks.className = "project-links";
@@ -56,7 +58,8 @@ function renderProjects(projects) {
                 projectLinks.appendChild(linkElement);
             });
         }
-
+        projectContainer.appendChild(projectCategory);
+        projectContainer.appendChild(projectLinks);
 
         const projectDetails = document.createElement("div");
         projectDetails.className = "project-details hidden";
@@ -97,8 +100,7 @@ function renderProjects(projects) {
 
         projectLink.appendChild(projectFigure);
         projectLink.appendChild(projectTitle);
-        projectLink.appendChild(projectCategory);
-        projectLink.appendChild(projectLinks);
+        projectLink.appendChild(projectContainer);
         projectLink.appendChild(projectDetails);
         projectLink.appendChild(projectDescription);
 
