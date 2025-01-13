@@ -139,7 +139,7 @@
 				"languages": ["Kotlin"],
 				"frameworks": ["Jetpack Compose"],
 				"libraries": ["Firebase", "Glide", "Chart", "Hilt"],
-				"img": "finflex.png"
+				"img": "finflex.webp"
 			},
 			{
 				"title": "Salario Sv",
@@ -151,7 +151,7 @@
 				"languages": ["Kotlin"],
 				"frameworks": ["Jetpack Compose"],
 				"libraries": ["Firebase", "Coil", "Chart", "Koin"],
-				"img": "salario-sv.png",
+				"img": "salario-sv.webp",
 				"links": {
 					"playstore": {
 						"title": "Go to Play Store  ⮕",
@@ -169,7 +169,7 @@
 				"languages": ["Kotlin"],
 				"frameworks": ["Jetpack Compose"],
 				"libraries": ["Firebase", "Glide", "Hilt"],
-				"img": "direscup.png",
+				"img": "direscup.webp",
 				"links": {
 					"playstore": {
 						"title": "Go to Play Store  ⮕",
@@ -184,7 +184,7 @@
 					"value": "Web development"
 				},
 				"description": "This application offers a seamless and secure experience, allowing VIP customers to provide personalized feedback through intuitive surveys. With real-time insights, responsive design, and integration with existing systems, the app empowers Impresa Repuesto to understand client needs better, improve services, and strengthen relationships, all while maintaining the highest standards of data security and professionalism.",
-				"img": "combo-vip.png",
+				"img": "combo-vip.webp",
 				"languages": ["C#", "css", "html", "javascript"],
 				"frameworks": ["Blazor"],
 				"libraries": ["Tailwind CSS", "PDFSharp"]

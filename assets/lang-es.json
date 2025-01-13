@@ -139,7 +139,7 @@
 				"languages": ["Kotlin"],
 				"frameworks": ["Jetpack Compose"],
 				"libraries": ["Firebase", "Glide", "Chart", "Hilt"],
-				"img": "finflex.png"
+				"img": "finflex.webp"
 			},
 			{
 				"title": "Salario Sv",
@@ -151,7 +151,7 @@
 				"languages": ["Kotlin"],
 				"frameworks": ["Jetpack Compose"],
 				"libraries": ["Firebase", "Coil", "Chart", "Koin"],
-				"img": "salario-sv.png",
+				"img": "salario-sv.webp",
 				"links": {
 					"playstore": {
 						"title": "Ir a Play Store  ⮕",
@@ -169,7 +169,7 @@
 				"languages": ["Kotlin"],
 				"frameworks": ["Jetpack Compose"],
 				"libraries": ["Firebase", "Glide", "Hilt"],
-				"img": "direscup.png",
+				"img": "direscup.webp",
 				"links": {
 					"playstore": {
 						"title": "Ir a Play Store  ⮕",
@@ -187,7 +187,7 @@
 				"languages": ["C#", "CSS", "HTML", "JavaScript"],
 				"frameworks": ["Blazor"],
 				"libraries": ["Tailwind CSS", "PDFSharp"],
-				"img": "combo-vip.png"
+				"img": "combo-vip.webp"
 			}
 		]
 	},
