@@ -912,15 +912,14 @@ main {
 
 .project-item { display: none; }
 
-.project-item {
-  position: relative;
+.project-item.active {
   display: block;
+  animation: scaleUp 0.25s ease forwards;
+  box-shadow: var(--shadow-1);
+  padding: 10px;
   background: var(--border-gradient-onyx);
   border-radius: 8px;
-  padding: 10px;
-  box-shadow: var(--shadow-1);
-  z-index: 1;
-  transition: box-shadow 0.25s ease, border 0.25s;
+  transition: box-shadow 0.25s ease, border 0.25s ease;
 }
 
 .project-item::before {
