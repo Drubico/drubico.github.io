@@ -69,23 +69,4 @@ document.addEventListener("DOMContentLoaded", function () {
   }
   // Load the language file based on currentJsonPath
   loadLanguage(currentJsonPath);
-  const swiper = new Swiper('.swiper', {
-    // Configuración
-    direction: 'horizontal', // 'horizontal' o 'vertical'
-    loop: true,              // Habilitar bucle infinito
-    autoplay: {              // Autoplay opcional
-      delay: 3000,
-      disableOnInteraction: false,
-    },
-    navigation: {            // Botones de navegación
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
-    },
-    pagination: {            // Paginación opcional
-      el: '.swiper-pagination',
-      clickable: true,
-    },
-    slidesPerView: 1,        // Número de slides visibles
-    spaceBetween: 10,        // Espacio entre slides
-  });
 });
