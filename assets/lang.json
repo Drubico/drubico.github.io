@@ -165,7 +165,7 @@
 					"key": "applications",
 					"value": "Applications"
 				},
-				"description": "Introducing DireCup, a modern application designed to keep track of match scores for friendly football games among friends. This app provides a seamless and intuitive experience, allowing users to view match results, team standings, and league positions in real-time. With its responsive design, easy navigation, and secure data handling, DireCup helps football enthusiasts stay connected and informed, fostering friendly competition and strengthening camaraderie among participants.",
+				"description": "Introducing <strong>DireCup</strong>, a modern application designed to keep track of match scores for friendly football games among friends. This app provides a seamless and intuitive experience, allowing users to view match results, team standings, and league positions in real-time. With its responsive design, easy navigation, and secure data handling, DireCup helps football enthusiasts stay connected and informed, fostering friendly competition and strengthening camaraderie among participants.",
 				"languages": ["Kotlin"],
 				"frameworks": ["Jetpack Compose"],
 				"libraries": ["Firebase", "Glide", "Hilt"],
