@@ -1,13 +1,4 @@
-/*-----------------------------------*\
-  #style.css
-\*-----------------------------------*/
-
-/*-----------------------------------*\
-  #CUSTOM PROPERTY
-\*-----------------------------------*/
-
 :root {
-
   /**
    * colors
    */
@@ -144,14 +135,8 @@ input, textarea {
 }
 
 :focus { outline-color: var(--orange-yellow-crayola); }
-
 html { font-family: var(--ff-poppins); }
-
 body { background: var(--smoky-black); }
-
-
-
-
 
 /*-----------------------------------*\
   #REUSED STYLE
@@ -284,10 +269,6 @@ article.active {
   z-index: -1;
 }
 
-
-
-
-
 /*-----------------------------------*\
   #MAIN
 \*-----------------------------------*/
@@ -297,10 +278,6 @@ main {
   margin-bottom: 75px;
   min-width: 259px;
 }
-
-
-
-
 
 /*-----------------------------------*\
   #SIDEBAR
@@ -435,12 +412,7 @@ main {
   font-size: 18px;
 }
 
-
 .social-item .social-link:hover { color: var(--light-gray); }
-
-
-
-
 
 /*-----------------------------------*\
   #NAVBAR
@@ -781,11 +753,6 @@ main {
 
 .skills-title { margin-bottom: 20px; }
 
-.skills-list { padding: 20px; }
-
-
-.skills-item:not(:last-child) { margin-bottom: 15px; }
-
 .skill .title-wrapper {
   display: flex;
   align-items: center;
@@ -799,22 +766,59 @@ main {
   font-weight: var(--fw-300);
 }
 
-.skill-progress-bg {
-  background: var(--jet);
-  width: 100%;
-  height: 8px;
-  border-radius: 10px;
+.skill-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  padding-bottom: 20px;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px 25px;
 }
 
-.skill-progress-fill {
-  background: var(--text-gradient-yellow);
-  height: 100%;
+.skill-icon-box { margin-bottom: 10px; }
+
+.skill-icon-box img { 
+  margin: 10px 15px 10px 0;
+ }
+
+.skill-icon-box {
+  margin-bottom: 0;
+  margin-top: 5px;
+}
+
+.skill-item {
+  position: relative;
+  background: var(--border-gradient-onyx);
+  padding: 20px;
+  border-radius: 14px;
+  box-shadow: var(--shadow-2);
+  z-index: 1;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 18px;
+  padding: 30px;
+}
+
+.skill-item::before {
+  content: "";
+  position: absolute;
+  inset: 1px;
+  background: var(--bg-gradient-jet);
   border-radius: inherit;
+  z-index: -1;
 }
 
+.skill-content-box { text-align: left; }
 
+.skill-item-title { margin-bottom: 7px; }
 
-
+.skill-item-text {
+  color: var(--light-gray);
+  font-size: var(--fs-6);
+  font-weight: var(--fw-3);
+  line-height: 1.6;
+}
 
 /*-----------------------------------*\
   #PORTFOLIO
