@@ -22,7 +22,7 @@ function setModal(data) {
                 <div class="project-links"></div>
             </div>
             <div class="project-description">${projectDescription}</div>
-            <h4 class="project-title" >${data.portfolio.technologies.title}</h4>
+            <h5 class="project-details-title" >${data.portfolio.technologies.title}</h5>
             <div class="project-details"></div>`;
 
             // Add links
