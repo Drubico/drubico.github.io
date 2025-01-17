@@ -46,9 +46,9 @@
   --white-1: hsl(0, 0%, 100%);
   --white-2: hsl(0, 0%, 98%);
   --orange-yellow-crayola: hsl(45, 100%, 72%);
-  --green-language: hsl(120, 100%, 84%);
-  --blue-framework: hsl(210, 96%, 78%);
-  --pink-library: hsl(330, 100%, 72%);
+  --green-language: hsl(120, 100%, 28%);
+  --blue-framework: hsl(210, 100%, 28%);
+  --pink-library: hsl(330, 97%, 26%);
   --purple-link: hsl(270, 100%, 72%);
   --vegas-gold: hsl(45, 54%, 58%);
   --light-gray: hsl(0, 0%, 84%);
@@ -821,12 +821,6 @@ main {
 
 .skill-item-title { margin-bottom: 7px; }
 
-.skill-item-text {
-  color: var(--light-gray);
-  font-size: var(--fs-6);
-  font-weight: var(--fw-3);
-  line-height: 1.6;
-}
 
 /*-----------------------------------*\
   #PORTFOLIO
@@ -1912,11 +1906,11 @@ textarea.form-input::-webkit-resizer { display: none; }
 {
   display: inline-block;
   background-color: var(--green-language); /* Color de fondo de la etiqueta */
-  color: var(--smoky-black); /* Color del texto */
+  color: var(--white-1); /* Color del texto */
   padding: 4px 10px;/* Espaciado interno */
   border-radius :var(--br-3);  /* Bordes redondeados */
-  font-size: 12px; /* Tamaño de la fuente */
-  font-weight: bold; /* Negrita */
+  font-size: 13px; /* Tamaño de la fuente */
+  font-weight: 400; /* Negrita */
   margin: 4px 5px 4px 0px; /* Margen */
   text-align: center; /* Alineación del texto */
 }
@@ -1930,6 +1924,8 @@ textarea.form-input::-webkit-resizer { display: none; }
 }
 
 .project-link{
+  font-size: 12px; /* Tamaño de la fuente */
+  font-weight: bold; /* Negrita */
   background-color: var(--eerie-black-2); /* Color de fondo de la etiqueta */
   border: 1px solid var(--orange-yellow-crayola); /* Borde de la etiqueta */
   margin: 5px  0px;
