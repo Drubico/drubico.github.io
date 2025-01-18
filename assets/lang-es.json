@@ -183,7 +183,7 @@
 					"key": "webDevelopment",
 					"value": "Desarrollo web"
 				},
-				"description": "Esta aplicación ofrece una experiencia fluida y segura, permitiendo a los clientes VIP proporcionar comentarios personalizados a través de encuestas intuitivas. Con información en tiempo real, diseño responsivo e integración con sistemas existentes, la aplicación permite a la empresa comprender mejor las necesidades de los clientes, mejorar los servicios y fortalecer las relaciones, todo mientras mantiene los más altos estándares de seguridad de datos y profesionalismo.",
+				"description": "<strong>Combo Vip</strong> es una aplicación ofrece una experiencia fluida y segura, permitiendo a los clientes VIP proporcionar comentarios personalizados a través de encuestas intuitivas. Con información en tiempo real, diseño responsivo e integración con sistemas existentes, la aplicación permite a la empresa comprender mejor las necesidades de los clientes, mejorar los servicios y fortalecer las relaciones, todo mientras mantiene los más altos estándares de seguridad de datos y profesionalismo.",
 				"languages": ["C#", "CSS", "HTML", "JavaScript"],
 				"frameworks": ["Blazor"],
 				"libraries": ["Tailwind CSS", "PDFSharp"],

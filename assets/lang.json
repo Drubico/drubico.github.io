@@ -183,7 +183,7 @@
 					"key": "webDevelopment",
 					"value": "Web development"
 				},
-				"description": "This application offers a seamless and secure experience, allowing VIP customers to provide personalized feedback through intuitive surveys. With real-time insights, responsive design, and integration with existing systems, the app empowers to owner to understand client needs better, improve services, and strengthen relationships, all while maintaining the highest standards of data security and professionalism.",
+				"description": "Introducing <strong>Combo Vip</strong>, this application offers a seamless and secure experience, allowing VIP customers to provide personalized feedback through intuitive surveys. With real-time insights, responsive design, and integration with existing systems, the app empowers to owner to understand client needs better, improve services, and strengthen relationships, all while maintaining the highest standards of data security and professionalism.",
 				"img": "combo-vip-web.webp",
 				"languages": ["C#", "css", "html", "javascript"],
 				"frameworks": ["Blazor"],
