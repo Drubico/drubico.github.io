@@ -8,6 +8,7 @@ import { setNavBarData, setEventNavBar } from './data-navbar.js';
 import { renderProjects } from './data-projects.js';
 import { setSidebar } from './data-sidebar.js';
 import { setFilters, setFilterBox, setFilterDefaultValue } from './filters.js';
+import { loadLinkedin } from './linkedin.js';
 
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -19,7 +20,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const langToggle = document.getElementById("lang-toggle");
   langToggle.src = langToggleSrc;
   langToggle.alt = langToggleAlt;
-
+  loadLinkedin();
   // Function to set current language and save to localStorage
   function setCurrentLang(lang, jsonPath, imgSrc, imgAlt) {
     currentLang = lang;

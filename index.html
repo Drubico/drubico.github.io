@@ -426,13 +426,19 @@
 
 					<div class="profile-previews">
 						<div class="profile-preview">
-							<h4 style="color: white; padding-bottom: 20px" data-lang="contact.linkedinProfile">LinkedIn
-								Profile</h4>
+							<h4 style="color: white; padding-bottom: 20px" data-lang="contact.linkedinProfile">
+								LinkedIn Profile
+							</h4>
+
+							<!-- Marcador mientras carga -->
+							<div id="linkedin-placeholder" style="text-align: center;">
+								<h5 style="color: white; padding-bottom: 20px; margin-top: 20px">Cargando perfil...</h5>
+								<div class="spinner"></div> <!-- Spinner opcional -->
+							</div>
+
+							<!-- Contenedor del perfil de LinkedIn -->
 							<div class="LI-profile-badge" data-version="v1" data-size="large" data-locale="en_US"
-								data-type="horizontal" data-theme="light" data-vanity="drubico">
-								<a style="color: white; padding-bottom: 20px; margin-top: 20px"
-									href="https://in.linkedin.com/in/drubico?trk=profile-badge"> Diego Alejandro Rubi
-								</a>
+								data-type="horizontal" data-theme="light" data-vanity="drubico" style="display: none;">
 							</div>
 						</div>
 						<div class="profile-preview">
@@ -460,7 +466,6 @@
 	<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 	<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 	<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-	<script type="text/javascript" src="https://platform.linkedin.com/badges/js/profile.js" async defer></script>
 	<script type="module" src="assets/js/script.js"></script>
 </body>
 
