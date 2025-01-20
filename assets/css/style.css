@@ -878,7 +878,7 @@ main {
 }
 
 .skill-icon-box img {
-  margin: 10px 15px 10px 0;
+  margin: auto;
 }
 
 .skill-icon-box {
@@ -893,11 +893,6 @@ main {
   border-radius: 14px;
   box-shadow: var(--shadow-2);
   z-index: 1;
-  display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
-  gap: 18px;
-  padding: 30px;
 }
 
 .skill-item::before {
@@ -910,7 +905,7 @@ main {
 }
 
 .skill-content-box {
-  text-align: left;
+  text-align: center;
 }
 
 .skill-item-title {
@@ -1458,6 +1453,10 @@ textarea.form-input::-webkit-resizer {
     padding: 30px;
   }
 
+  .sidebar.active {
+    max-height: 950px;
+  }
+
   .article-title {
     font-weight: var(--fw-600);
     padding-bottom: 15px;
@@ -1600,7 +1599,34 @@ textarea.form-input::-webkit-resizer {
     text-align: left;
   }
 
+  .skill-icon-box {
+    margin-bottom: 0;
+    margin-top: 5px;
+    width: 35%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 
+  .skill-content-box {
+    text-align: left;
+    width: 65%;
+  }
+
+
+  .skill-icon-box img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .skill-item {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 18px;
+    padding: 25px;
+  }
 
   /* clients */
 
@@ -1710,6 +1736,10 @@ textarea.form-input::-webkit-resizer {
   .sidebar,
   article {
     width: 700px;
+  }
+
+  .sidebar.active {
+    max-height: 700px;
   }
 
   .has-scrollbar::-webkit-scrollbar-button {
@@ -1848,7 +1878,9 @@ textarea.form-input::-webkit-resizer {
     box-shadow: var(--shadow-5);
   }
 
-
+  .sidebar.active {
+    max-height: 950px;
+  }
 
   /**
    * MAIN 
@@ -2155,15 +2187,14 @@ textarea.form-input::-webkit-resizer {
 }
 
 #lang-toggle {
+  margin: 0 0 0 5px;
   cursor: pointer;
   transition: transform 0.3s ease, opacity 0.3s ease;
-  /* Animación suave */
+  animation: scaleUp 0.25s ease forwards;
 
   &:hover {
     transform: scale(1.08);
-    /* Aumenta el tamaño del botón */
     opacity: 0.8;
-    /* Cambia la opacidad */
   }
 }
 
@@ -2291,17 +2322,6 @@ textarea.form-input::-webkit-resizer {
   justify-content: space-between;
 }
 
-.spinner {
-  border: 4px solid #f3f3f3;
-  /* Color de fondo */
-  border-top: 4px solid #3498db;
-  /* Color de la animación */
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  animation: spin 1s linear infinite;
-  margin: 10px auto;
-}
 
 @keyframes spin {
   0% {
@@ -2310,5 +2330,90 @@ textarea.form-input::-webkit-resizer {
 
   100% {
     transform: rotate(360deg);
+  }
+}
+
+
+/* Loader */
+
+.loader-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: var(--smoky-black);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+}
+
+.loader {
+  color: #fff;
+  font-size: 10px;
+  width: 1em;
+  height: 1em;
+  border-radius: 50%;
+  position: relative;
+  text-indent: -9999em;
+  animation: mulShdSpin 1.3s infinite linear;
+  transform: translateZ(0);
+}
+
+@keyframes mulShdSpin {
+
+  0%,
+  100% {
+    box-shadow: 0 -3em 0 0.2em,
+      2em -2em 0 0em, 3em 0 0 -1em,
+      2em 2em 0 -1em, 0 3em 0 -1em,
+      -2em 2em 0 -1em, -3em 0 0 -1em,
+      -2em -2em 0 0;
+  }
+
+  12.5% {
+    box-shadow: 0 -3em 0 0, 2em -2em 0 0.2em,
+      3em 0 0 0, 2em 2em 0 -1em, 0 3em 0 -1em,
+      -2em 2em 0 -1em, -3em 0 0 -1em,
+      -2em -2em 0 -1em;
+  }
+
+  25% {
+    box-shadow: 0 -3em 0 -0.5em,
+      2em -2em 0 0, 3em 0 0 0.2em,
+      2em 2em 0 0, 0 3em 0 -1em,
+      -2em 2em 0 -1em, -3em 0 0 -1em,
+      -2em -2em 0 -1em;
+  }
+
+  37.5% {
+    box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em,
+      3em 0em 0 0, 2em 2em 0 0.2em, 0 3em 0 0em,
+      -2em 2em 0 -1em, -3em 0em 0 -1em, -2em -2em 0 -1em;
+  }
+
+  50% {
+    box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em,
+      3em 0 0 -1em, 2em 2em 0 0em, 0 3em 0 0.2em,
+      -2em 2em 0 0, -3em 0em 0 -1em, -2em -2em 0 -1em;
+  }
+
+  62.5% {
+    box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em,
+      3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 0,
+      -2em 2em 0 0.2em, -3em 0 0 0, -2em -2em 0 -1em;
+  }
+
+  75% {
+    box-shadow: 0em -3em 0 -1em, 2em -2em 0 -1em,
+      3em 0em 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em,
+      -2em 2em 0 0, -3em 0em 0 0.2em, -2em -2em 0 0;
+  }
+
+  87.5% {
+    box-shadow: 0em -3em 0 0, 2em -2em 0 -1em,
+      3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em,
+      -2em 2em 0 0, -3em 0em 0 0, -2em -2em 0 0.2em;
   }
 }

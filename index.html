@@ -49,6 +49,9 @@
 </head>
 
 <body>
+	<div class="loader-container" id="loading">
+		<span class="loader"></span>
+	</div>
 	<main>
 		<!-- #region Sidebar-->
 		<aside class="sidebar" data-sidebar>
@@ -195,7 +198,7 @@
 						<ul class="skill-list">
 							<li class="skill-item">
 								<div class="skill-icon-box">
-									<img src="./assets/images/android.svg" alt="android" width="80" />
+									<img src="./assets/images/android.svg" alt="android" width="100" />
 								</div>
 								<div class="skill-content-box">
 									<h4 class="h4 skill-item-title" data-mobile-app-title>Android</h4>
@@ -207,12 +210,12 @@
 										<p class="project-framework" data-mobile-app-description>Jetpack compose</p>
 									</div>
 									<div>
-										<p class="project-library" data-mobile-app-description>Ktor</p>
-										<p class="project-library" data-mobile-app-description>Retrofit</p>
 										<p class="project-library" data-mobile-app-description>Firebase</p>
-										<p class="project-library" data-mobile-app-description>Hiilt</p>
-										<p class="project-library" data-mobile-app-description>Koin</p>
 										<p class="project-library" data-mobile-app-description>Room</p>
+										<p class="project-library" data-mobile-app-description>Retrofit</p>
+										<p class="project-library" data-mobile-app-description>Hilt</p>
+										<p class="project-library" data-mobile-app-description>Koin</p>
+										<p class="project-library" data-mobile-app-description>Ktor</p>
 										<p class="project-library" data-mobile-app-description>Google Services</p>
 									</div>
 								</div>
@@ -220,7 +223,7 @@
 
 							<li class="skill-item">
 								<div class="skill-icon-box">
-									<img src="./assets/images/flutter.svg" alt="flutter" width="80" />
+									<img src="./assets/images/flutter.svg" alt="flutter" width="100" />
 								</div>
 								<div class="skill-content-box">
 									<h4 class="h4 skill-item-title" data-mobile-app-title>Flutter</h4>
@@ -238,7 +241,7 @@
 							</li>
 							<li class="skill-item">
 								<div class="skill-icon-box">
-									<img src="./assets/images/nodejs.svg" alt="nodejs" width="80" />
+									<img src="./assets/images/nodejs.svg" alt="nodejs" width="100" />
 								</div>
 								<div class="skill-content-box">
 									<h4 class="h4 skill-item-title" data-mobile-app-title>Node JS</h4>
@@ -257,7 +260,7 @@
 							</li>
 							<li class="skill-item">
 								<div class="skill-icon-box">
-									<img src="./assets/images/postgres.svg" alt="postgres" width="80" />
+									<img src="./assets/images/postgres.svg" alt="postgres" width="100" />
 								</div>
 								<div class="skill-content-box">
 									<h4 class="h4 skill-item-title" data-mobile-app-title>Postgres</h4>
@@ -271,7 +274,7 @@
 							</li>
 							<li class="skill-item">
 								<div class="skill-icon-box">
-									<img src="./assets/images/firebase.svg" alt="firebase" width="80" />
+									<img src="./assets/images/firebase.svg" alt="firebase" width="100" />
 								</div>
 								<div class="skill-content-box">
 									<h4 class="h4 skill-item-title" data-mobile-app-title>Firebase</h4>
@@ -283,7 +286,7 @@
 							</li>
 							<li class="skill-item">
 								<div class="skill-icon-box">
-									<img src="./assets/images/html_css_js.png" alt="flutter" width="80" />
+									<img src="./assets/images/html_css_js.png" alt="flutter" width="100" />
 								</div>
 								<div class="skill-content-box">
 									<h4 class="h4 skill-item-title" data-mobile-app-title>Html,Css,JS</h4>
@@ -433,7 +436,7 @@
 							<!-- Marcador mientras carga -->
 							<div id="linkedin-placeholder" style="text-align: center;">
 								<h5 style="color: white; padding-bottom: 20px; margin-top: 20px">Cargando perfil...</h5>
-								<div class="spinner"></div> <!-- Spinner opcional -->
+								<span class="loader"></span>
 							</div>
 
 							<!-- Contenedor del perfil de LinkedIn -->
@@ -442,19 +445,19 @@
 							</div>
 						</div>
 						<div class="profile-preview">
-							<h4 style="color: white; padding-bottom: 20px" data-lang="contact.githubProfile">Github
-								Profile</h4>
-							<a href="https://github.com/drubico" target="_blank">
-								<img src="https://gh-readme-profile.vercel.app/api?username=drubico&theme=dark&hide=forks,prs,prs_merged"
-									style="width: 100%" alt="GitHub Profile Summary" />
-							</a>
-						</div>
-						<div class="profile-preview">
 							<h4 style="color: white; padding-bottom: 20px; margin-top: 20px"
 								data-lang="contact.playStoreProfile">Play Store Profile</h4>
 							<a href="https://play.google.com/store/apps/dev?id=5906834204268116327" target="_blank">
 								<img src="assets/images/placeholder-play-store.png" alt="Play Store Profile Preview"
 									style="width: 100%; height: auto; border: 1px solid #ccc; border-radius: 5px" />
+							</a>
+						</div>
+						<div class="profile-preview">
+							<h4 style="color: white; padding-bottom: 20px" data-lang="contact.githubProfile">Github
+								Profile</h4>
+							<a href="https://github.com/drubico" target="_blank">
+								<img src="https://gh-readme-profile.vercel.app/api?username=drubico&theme=dark&hide=forks,prs,prs_merged"
+									style="width: 100%" alt="GitHub Profile Summary" />
 							</a>
 						</div>
 					</div>
