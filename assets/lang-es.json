@@ -121,9 +121,7 @@
 				{
 					"position": "Desarrollador WordPress - The Virtual Buddy",
 					"dates": "01/2021 — 06/2021",
-					"details": [
-						"Desarrollé aplicaciones con WordPress, siguiendo un diseño y asegurando la mejor experiencia de usuario."
-					]
+					"details": ["Desarrollé aplicaciones con WordPress, siguiendo un diseño y asegurando la mejor experiencia de usuario."]
 				}
 			]
 		}
@@ -150,18 +148,9 @@
 				},
 				"description": "<strong>FinFlex</strong> es una aplicación integral e intuitiva diseñada para ayudarte a gestionar tus tarjetas de crédito de manera eficiente y sin esfuerzo. FinFlex permite a los usuarios rastrear pagos, monitorear saldos y estar al tanto del crédito disponible, proporcionando información financiera precisa y confiable. La aplicación también ofrece un desglose detallado de las categorías de gastos, los plazos de pago próximos y consejos personalizados para optimizar el uso del crédito. Con su diseño fácil de usar, actualizaciones en tiempo real y análisis detallados, FinFlex es la herramienta perfecta para ayudar a los usuarios a mantener el control de sus finanzas, evitar pagos atrasados y maximizar los beneficios de sus tarjetas de crédito con transparencia y facilidad.",
 				"tenchnologies": "Tecnologias utilizadas :",
-				"languages": [
-					"Kotlin"
-				],
-				"frameworks": [
-					"Jetpack Compose"
-				],
-				"libraries": [
-					"Firebase",
-					"Glide",
-					"Chart",
-					"Hilt"
-				],
+				"languages": ["Kotlin"],
+				"frameworks": ["Jetpack Compose"],
+				"libraries": ["Firebase", "Glide", "Chart", "Hilt"],
 				"img": "finflex.webp"
 			},
 			{
@@ -171,18 +160,9 @@
 					"value": "Aplicaciones"
 				},
 				"description": "<strong>Salario SV</strong> es una aplicación integral e intuitiva diseñada para calcular tu salario neto en El Salvador después de aplicar las deducciones obligatorias. Salario SV permite a los usuarios calcular fácilmente las contribuciones como AFP (7.25%), ISSS (3% con un máximo limitado) e impuesto sobre la renta (renta), proporcionando resultados precisos y confiables. La aplicación también ofrece información sobre las contribuciones del empleador para AFP (8.75%) e ISSS (7.5%), brindando a los usuarios una visión completa de la estructura de su salario. Con su diseño fácil de usar, desgloses detallados y cálculos en tiempo real, Salario SV es la herramienta perfecta para ayudar a los empleados a gestionar sus finanzas de manera efectiva y transparente.",
-				"languages": [
-					"Kotlin"
-				],
-				"frameworks": [
-					"Jetpack Compose"
-				],
-				"libraries": [
-					"Firebase",
-					"Coil",
-					"Chart",
-					"Koin"
-				],
+				"languages": ["Kotlin"],
+				"frameworks": ["Jetpack Compose"],
+				"libraries": ["Firebase", "Coil", "Chart", "Koin"],
 				"img": "salario-sv.webp",
 				"links": {
 					"playstore": {
@@ -198,17 +178,9 @@
 					"value": "Aplicaciones"
 				},
 				"description": "<strong>DireCup</strong> es una aplicación moderna diseñada para llevar el registro de los puntajes de los partidos amistosos de fútbol entre amigos. Esta aplicación proporciona una experiencia fluida e intuitiva, permitiendo a los usuarios ver los resultados de los partidos, las posiciones de los equipos y las posiciones en la liga en tiempo real. Con su diseño responsivo, fácil navegación y manejo seguro de datos, DireCup ayuda a los entusiastas del fútbol a mantenerse conectados e informados, fomentando la competencia amistosa y fortaleciendo la camaradería entre los participantes.",
-				"languages": [
-					"Kotlin"
-				],
-				"frameworks": [
-					"Jetpack Compose"
-				],
-				"libraries": [
-					"Firebase",
-					"Glide",
-					"Hilt"
-				],
+				"languages": ["Kotlin"],
+				"frameworks": ["Jetpack Compose"],
+				"libraries": ["Firebase", "Glide", "Hilt"],
 				"img": "direscup.webp",
 				"links": {
 					"playstore": {
@@ -224,19 +196,9 @@
 					"value": "Desarrollo web"
 				},
 				"description": "<strong>Combo Vip</strong> es una aplicación ofrece una experiencia fluida y segura, permitiendo a los clientes VIP proporcionar comentarios personalizados a través de encuestas intuitivas. Con información en tiempo real, diseño responsivo e integración con sistemas existentes, la aplicación permite a la empresa comprender mejor las necesidades de los clientes, mejorar los servicios y fortalecer las relaciones, todo mientras mantiene los más altos estándares de seguridad de datos y profesionalismo.",
-				"languages": [
-					"C#",
-					"CSS",
-					"HTML",
-					"JavaScript"
-				],
-				"frameworks": [
-					"Blazor"
-				],
-				"libraries": [
-					"Tailwind CSS",
-					"PDFSharp"
-				],
+				"languages": ["C#", "CSS", "HTML", "JavaScript"],
+				"frameworks": ["Blazor"],
+				"libraries": ["Tailwind CSS", "PDFSharp"],
 				"img": "combo-vip-web.webp"
 			}
 		]
@@ -244,8 +206,29 @@
 	"contact": {
 		"title": "Contacto",
 		"formTitle": "Contacta conmigo",
-		"linkedinProfile": "Perfil de LinkedIn",
-		"githubProfile": "Perfil de GitHub",
-		"playStoreProfile": "Perfil de Play Store"
+		"linkedinProfile": {
+			"title": "Perfil de linkedin",
+			"urlTitle": "Ver perfil de LinkedIn",
+			"description": "Conéctate conmigo en LinkedIn.",
+			"link": "https://www.linkedin.com/in/drubico/"
+		},
+		"githubProfile": {
+			"title": "Perfil de GitHub",
+			"urlTitle": "Ver perfil de GitHub",
+			"description": "Echa un vistazo a mis proyectos en GitHub.",
+			"link": "https://github.com/drubico"
+		},
+		"playStoreProfile": {
+			"title": "Ver perfil de Play Store",
+			"urlTitle": "Ver perfil de Play Store",
+			"description": "Descubre mis aplicaciones en Play Store.",
+			"link": "https://play.google.com/store/apps/dev?id=5906834204268116327"
+		},
+		"whatsappProfile": {
+			"title": "WhatsApp",
+			"urlTitle": "Enviar mensaje de WhatsApp",
+			"description": "Envíame un mensaje de WhatsApp.",
+			"link": "https://wa.me/50378508012"
+		}
 	}
 }

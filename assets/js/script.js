@@ -1,7 +1,6 @@
 'use strict';
 
 import { languageMain } from './data-lang.js';
-import { loadLinkedin } from './linkedin.js';
 import { setEventNavBar } from './data-navbar.js';
 import { setSidebarClick } from './data-sidebar.js';
 import { setFilterBox } from './filters.js';
@@ -23,7 +22,6 @@ let langEnglish = {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
-  loadLinkedin();
   setSidebarClick();
   setEventNavBar();
   setFilterBox();

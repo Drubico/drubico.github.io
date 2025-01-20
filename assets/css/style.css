@@ -543,7 +543,8 @@ main {
   margin-bottom: 20px;
 }
 
-.service-list {
+.service-list,
+.contact-me-list {
   display: grid;
   grid-template-columns: 1fr;
   gap: 20px;
@@ -551,7 +552,8 @@ main {
 }
 
 
-.service-item {
+.service-item,
+.contact-me-item {
   position: relative;
   background: var(--border-gradient-onyx);
   padding: 20px;
@@ -560,7 +562,8 @@ main {
   z-index: 1;
 }
 
-.service-item::before {
+.service-item::before,
+.contact-me-item::before {
   content: "";
   position: absolute;
   inset: 1px;
@@ -581,9 +584,19 @@ main {
   text-align: center;
 }
 
-.service-item-title {
+.service-item-title,
+.contact-me-item-title {
   margin-bottom: 7px;
 }
+
+.contact-me-item-description {
+  color: var(--light-gray);
+  font-size: var(--fs-6);
+  font-weight: var(--fw-300);
+  line-height: 1.6;
+}
+
+
 
 .service-item-text {
   color: var(--light-gray);
@@ -873,15 +886,31 @@ main {
   padding-bottom: 20px;
 }
 
-.skill-icon-box {
+.skill-icon-box,
+.contact-me-icon-box {
   margin-bottom: 10px;
 }
 
-.skill-icon-box img {
+.skill-icon-box img,
+.contact-me-icon-box img {
   margin: auto;
+  max-width: 120px;
+  max-height: 120px;
 }
-
-.skill-icon-box {
+.rounded-background {
+  width: 100%; 
+  height: 100%; 
+  padding: 2px;
+  max-width: 120px;
+  max-height: 120px;
+  background-color: white; 
+  border-radius: 50%; 
+  align-items: center;
+  justify-content: center;
+  overflow: hidden; 
+}
+.skill-icon-box,
+.contact-me-icon-box {
   margin-bottom: 0;
   margin-top: 5px;
 }
@@ -904,7 +933,8 @@ main {
   z-index: -1;
 }
 
-.skill-content-box {
+.skill-content-box,
+.contact-me-content-box {
   text-align: center;
 }
 
@@ -1582,7 +1612,7 @@ textarea.form-input::-webkit-resizer {
 
   /* service */
 
-  .service-item {
+  .service-item,.contact-me-item {
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
@@ -1599,7 +1629,8 @@ textarea.form-input::-webkit-resizer {
     text-align: left;
   }
 
-  .skill-icon-box {
+  .skill-icon-box,
+  .contact-me-icon-box {
     margin-bottom: 0;
     margin-top: 5px;
     width: 35%;
@@ -1609,16 +1640,19 @@ textarea.form-input::-webkit-resizer {
     align-items: center;
   }
 
-  .skill-content-box {
+  .skill-content-box,
+  .contact-me-content-box {
     text-align: left;
     width: 65%;
   }
 
 
-  .skill-icon-box img {
+  .skill-icon-box img,
+  .contact-me-icon-box img {
     width: 100%;
     height: 100%;
   }
+
 
   .skill-item {
     display: flex;
@@ -1931,7 +1965,8 @@ textarea.form-input::-webkit-resizer {
 
   /* service */
 
-  .service-list {
+  .service-list,
+  .contact-me-list {
     grid-template-columns: 1fr 1fr;
     gap: 20px 25px;
   }
