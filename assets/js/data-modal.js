@@ -9,6 +9,7 @@ function setModal(data) {
     document.querySelectorAll('.project-item').forEach(item => {
         item.querySelector('.project-img').addEventListener('click', (e) => {
             e.stopPropagation();
+            e.preventDefault();
             const projectImg = item.querySelector('img').src;
             const projectTitle = item.querySelector('.project-title').textContent;
             const projectCategory = item.querySelector('.project-category').textContent;
