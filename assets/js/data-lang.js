@@ -20,9 +20,14 @@ function languageMain(languageTagLS, langSpanish, langEnglish) {
     setLanguageData(currentLanguage);
 
     document.getElementById("lang-toggle").addEventListener("click", () => {
+        const loadingElement = document.getElementById("loading");
+        loadingElement.style.display = "flex";
         currentLanguage = currentLanguage === langSpanish ? langEnglish : langSpanish;
         setLanguageData(currentLanguage);
         localStorage.setItem(languageTagLS, currentLanguage.lang);
+        setTimeout(() => {
+            loadingElement.style.display = "none";
+        }, 10);
     });
 }
 

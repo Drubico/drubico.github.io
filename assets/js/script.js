@@ -6,7 +6,7 @@ import { setEventNavBar } from './data-navbar.js';
 import { setSidebarClick } from './data-sidebar.js';
 import { setFilterBox } from './filters.js';
 
-let languageTagLS = "languageTag"; ;
+let languageTagLS = "languageTag";;
 
 let langSpanish = {
   "lang": "es",
@@ -30,5 +30,7 @@ document.addEventListener("DOMContentLoaded", function () {
   languageMain(languageTagLS, langSpanish, langEnglish);
 
   const loadingElement = document.getElementById("loading");
-  loadingElement.style.display = "none";
+  setTimeout(() => {
+    loadingElement.style.display = "none";
+  }, 300);
 });
