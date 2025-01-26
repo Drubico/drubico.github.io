@@ -3,7 +3,7 @@ import { setContacts } from './data-contacts.js';
 import { setExperience } from './data-experience.js';
 import { setModal } from './data-modal.js';
 import { setNavBarData } from './data-navbar.js';
-import { renderProjects } from './data-projects.js';
+import { renderProjects,setTextProject } from './data-projects.js';
 import { setSidebar } from './data-sidebar.js';
 import { setFilters, setFilterDefaultValue } from './filters.js';
 
@@ -38,11 +38,6 @@ function setLanguageData(language) {
     fetch(language.jsonPath)
         .then((response) => response.json())
         .then((data) => {
-            const filterItems = [
-                { category: 'all', lang: 'portfolio.filter.all', text: data.portfolio.filter.all, active: true },
-                { category: 'applications', lang: 'portfolio.filter.applications', text: data.portfolio.filter.applications, active: false },
-                { category: 'webDevelopment', lang: 'portfolio.filter.webDevelopment', text: data.portfolio.filter.webDevelopment, active: false },
-            ];
             setExperience(data);
             setAbout(data);
             setContacts(data);
@@ -50,6 +45,7 @@ function setLanguageData(language) {
             setModal(data);
             setNavBarData(data);
             setSidebar(data);
+            const filterItems = setTextProject(data);
             setFilters(filterItems);
             setFilterDefaultValue(filterItems);
         })
