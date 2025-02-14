@@ -2337,7 +2337,7 @@ textarea.form-input::-webkit-resizer {
 
 .img-project {
   width: 100%;
-  max-height: 320px;
+  max-height: 420px;
   object-fit: cover;
   border-radius: var(--br-3);
   transition: var(--transition-1);
@@ -2451,4 +2451,54 @@ textarea.form-input::-webkit-resizer {
       3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em,
       -2em 2em 0 0, -3em 0em 0 0, -2em -2em 0 0.2em;
   }
+}
+
+/* Contenedor principal */
+.modal-img-wrapper {
+  width: 100%;
+  max-width: 1000px; /* Ajusta según tu diseño */
+  margin: 0 auto;
+}
+
+/* Swiper contenedor */
+.swiper {
+  width: 100%;
+  overflow: hidden;
+}
+
+/* Cada slide ocupa el 100% del ancho */
+.swiper-slide {
+  width: 100% !important;
+  flex-shrink: 0; /* Importante para slides fijos */
+}
+
+/* Imagen llena el slide */
+.swiper-slide img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Cambiar el color del texto y los íconos */
+.swiper-pagination,
+.swiper-button-next,
+.swiper-button-prev {
+  color: var(--orange-yellow-crayola);
+}
+
+
+/* Cambiar el color de los botones al pasar el ratón por encima */
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  color: var(--white-2); /* Cambia esto al color que prefieras al pasar el ratón por encima */
+}
+
+/* Cambiar el color de la paginación activa */
+.swiper-pagination-bullet-active {
+  background-color:  var(--orange-yellow-crayola);
+}
+
+/* Cambiar el color de la paginación al pasar el ratón por encima */
+.swiper-pagination-bullet:hover {
+  color: var(--white-2); /* Cambia esto al color que prefieras al pasar el ratón por encima */
 }

@@ -139,7 +139,8 @@
 				"languages": ["Kotlin"],
 				"frameworks": ["Jetpack Compose"],
 				"libraries": ["Firebase", "Glide", "MPAndroidChart", "Hilt"],
-				"img": "finflex.webp"
+				"img": "finflex.webp",
+				"images": ["./assets/images/finflex.webp"]
 			},
 			{
 				"title": "Salario SV",
@@ -152,6 +153,7 @@
 				"frameworks": ["Jetpack Compose"],
 				"libraries": ["Firebase", "Coil", "MPAndroidChart", "Koin"],
 				"img": "salario-sv.webp",
+				"images": ["./assets/images/salario-sv.webp"],
 				"links": {
 					"playstore": {
 						"title": "Ver en Play Store",
@@ -170,6 +172,7 @@
 				"frameworks": ["Jetpack Compose"],
 				"libraries": ["Firebase", "Glide", "Hilt"],
 				"img": "direscup.webp",
+				"images": ["./assets/images/direscup.webp"],
 				"links": {
 					"playstore": {
 						"title": "Ver en Play Store",
@@ -187,7 +190,8 @@
 				"languages": ["C#", "CSS", "HTML", "JavaScript"],
 				"frameworks": ["Blazor"],
 				"libraries": ["Tailwind CSS", "PDFSharp"],
-				"img": "combo-vip-web.webp"
+				"img": "combo-vip-web.webp",
+				"images": ["./assets/images/combo-vip.webp"]
 			}
 		]
 	},

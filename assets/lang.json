@@ -105,11 +105,7 @@
 				{
 					"position": "WordPress Developer - The Virtual Buddy",
 					"dates": "Jan 2021 — Jun 2021",
-					"details": [
-						"Development of customized CMS platforms with WordPress",
-						"Design of adaptive themes and SEO optimization",
-						"E-commerce system integrations"
-					]
+					"details": ["Development of customized CMS platforms with WordPress", "Design of adaptive themes and SEO optimization", "E-commerce system integrations"]
 				}
 			]
 		}
@@ -139,7 +135,8 @@
 				"languages": ["Kotlin"],
 				"frameworks": ["Jetpack Compose"],
 				"libraries": ["Firebase", "Glide", "MPAndroidChart", "Hilt"],
-				"img": "finflex.webp"
+				"img": "finflex.webp",
+				"images": ["./assets/images/finflex.webp"]
 			},
 			{
 				"title": "Salario SV",
@@ -152,6 +149,7 @@
 				"frameworks": ["Jetpack Compose"],
 				"libraries": ["Firebase", "Coil", "MPAndroidChart", "Koin"],
 				"img": "salario-sv.webp",
+				"images": ["./assets/images/salario-sv.webp"],
 				"links": {
 					"playstore": {
 						"title": "View on Play Store",
@@ -170,6 +168,7 @@
 				"frameworks": ["Jetpack Compose"],
 				"libraries": ["Firebase", "Glide", "Hilt"],
 				"img": "direscup.webp",
+				"images": ["./assets/images/direscup.webp"],
 				"links": {
 					"playstore": {
 						"title": "View on Play Store",
@@ -187,7 +186,8 @@
 				"languages": ["C#", "CSS", "HTML", "JavaScript"],
 				"frameworks": ["Blazor"],
 				"libraries": ["Tailwind CSS", "PDFSharp"],
-				"img": "combo-vip-web.webp"
+				"img": "combo-vip-web.webp",
+				"images": ["./assets/images/combo-vip.webp"]
 			}
 		]
 	},

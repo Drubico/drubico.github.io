@@ -2,20 +2,62 @@ function setModal(data) {
     const modal = document.getElementById("project-modal");
     const overlay = modal.querySelector('[data-overlay]');
     const closeButton = modal.querySelector('[data-modal-close-btn]');
-    const modalImg = modal.querySelector('[data-modal-img]');
+    const swiperWrapper = modal.querySelector('.swiper-wrapper'); // Nuevo selector
     const modalTitle = modal.querySelector('[data-modal-title]');
     const modalText = modal.querySelector('[data-modal-text]');
-    // Modal
-    document.querySelectorAll('.project-item').forEach(item => {
-        item.querySelector('.project-img').addEventListener('click', (e) => {
-            e.stopPropagation();
+    let swiperInstance = null;
+
+    document.querySelectorAll('.project-item').forEach((item, index) => {
+        item.addEventListener('click', (e) => {
             e.preventDefault();
-            const projectImg = item.querySelector('img').src;
+
+            // Obtener datos del proyecto correspondiente
+            const projectData = data.portfolio.projects[index];
+            console.log(projectData);
+
+
+            // Limpiar slides anteriores
+            swiperWrapper.innerHTML = '';
+
+            // Crear nuevos slides
+            projectData.images.forEach(imgUrl => {
+                const slide = document.createElement('div');
+                slide.className = 'swiper-slide';
+
+                slide.innerHTML = `
+                    <figure class="modal-avatar-box">
+                        <img class="img-project" src="${imgUrl}" 
+                             alt="${projectData.title}" width="100%">
+                    </figure>
+                `;
+
+                swiperWrapper.appendChild(slide);
+            });
+
+            // Destruir instancia anterior de Swiper
+            if (swiperInstance) swiperInstance.destroy();
+
+            // Inicializar Swiper
+            swiperInstance = new Swiper(modal.querySelector('.swiper'), {
+                slidesPerView: 1,
+                spaceBetween: 20,
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                },
+                observer: true,
+                observeParents: true
+            });
+            swiperInstance.update();
+
             const projectTitle = item.querySelector('.project-title').textContent;
             const projectCategory = item.querySelector('.project-category').textContent;
             const projectDescription = item.querySelector('.project-description').innerHTML;
 
-            modalImg.src = projectImg;
             modalTitle.textContent = projectTitle;
             modalText.innerHTML = `
             <div class="project-container">

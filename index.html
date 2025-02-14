@@ -36,11 +36,12 @@
 		<link rel="shortcut icon" href="./assets/images/my-avatar.png" type="image/x-icon" />
 		<link rel="icon" type="image/png" sizes="32x32" href="./assets/images/my-avatar.png" />
 		<!-- CSS -->
-		<link rel="stylesheet" href="./assets/css/style.css" />
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" />
 		<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="https://unpkg.com/swiper@11/swiper-bundle.min.css" />
+		<link rel="stylesheet" href="./assets/css/style.css" />
 	</head>
 
 	<body>
@@ -394,10 +395,31 @@
 								<button class="modal-close-btn" data-modal-close-btn>
 									<ion-icon name="close-outline"></ion-icon>
 								</button>
+
+								<!-- Contenedor Swiper -->
 								<div class="modal-img-wrapper">
-									<figure class="modal-avatar-box">
-										<img class="img-project" src="./assets/images/my-avatar.png" alt="Project Image" width="100%" data-modal-img />
-									</figure>
+									<div class="swiper">
+										<div class="swiper-wrapper">
+											<!-- Slides -->
+											<div class="swiper-slide">
+												<figure class="modal-avatar-box">
+													<img class="img-project" src="./assets/images/my-avatar.png" alt="Project Image" width="100%" data-modal-img />
+												</figure>
+											</div>
+
+											<!-- Agrega más slides si necesitas -->
+											<div class="swiper-slide">
+												<figure class="modal-avatar-box">
+													<img class="img-project" src="./assets/images/my-avatar.png" alt="Slide 2" width="100%" />
+												</figure>
+											</div>
+										</div>
+
+										<!-- Controles de navegación -->
+										<div class="swiper-pagination"></div>
+										<div class="swiper-button-prev"></div>
+										<div class="swiper-button-next"></div>
+									</div>
 									<div class="modal-content">
 										<h4 class="h3 modal-title" data-modal-title></h4>
 										<div data-modal-text>
@@ -482,6 +504,7 @@
 				<!-- endregion-->
 			</div>
 		</main>
+		<script src="https://unpkg.com/swiper@11/swiper-bundle.min.js"></script>
 		<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 		<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 		<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
