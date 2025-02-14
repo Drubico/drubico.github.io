@@ -192,6 +192,25 @@
 				"libraries": ["Tailwind CSS", "PDFSharp"],
 				"img": "combo-vip-web.webp",
 				"images": ["./assets/images/combo-vip.webp"]
+			},
+			{
+				"title": "PokeDex",
+				"category": {
+					"key": "applications",
+					"value": "Aplicaciones"
+				},
+				"description": "<strong>Enciclopedia Pokémon Avanzada</strong> - Aplicación nativa Android que consume la PokeAPI para mostrar información detallada de más de 1000 Pokémon. Incluye búsqueda inteligente, favoritos locales y detalles de evoluciones.",
+				"languages": ["Kotlin"],
+				"frameworks": ["Android SDK"],
+				"libraries": ["Retrofit", "Room", "Coroutines", "ViewModel", "LiveData", "DataBinding"],
+				"img": "pokedex.webp",
+				"images": ["./assets/images/pokedex.webp", "./assets/images/pokedex-1.webp", "./assets/images/pokedex-2.webp"],
+				"links": {
+					"github": {
+						"title": "Ver código fuente",
+						"link": "https://github.com/Drubico/Pokeapi-Test"
+					}
+				}
 			}
 		]
 	},
