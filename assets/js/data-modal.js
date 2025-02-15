@@ -8,7 +8,7 @@ function setModal(data) {
     let swiperInstance = null;
 
     document.querySelectorAll('.project-item').forEach((item, index) => {
-        item.addEventListener('click', (e) => {
+        item.querySelector('.project-img').addEventListener('click', (e) => {
             e.preventDefault();
 
             // Obtener datos del proyecto correspondiente
