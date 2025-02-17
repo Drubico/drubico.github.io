@@ -191,7 +191,7 @@
 				"frameworks": ["Blazor"],
 				"libraries": ["Tailwind CSS", "PDFSharp"],
 				"img": "combo-vip-web.webp",
-				"images": ["./assets/images/combo-vip.webp"]
+				"images": ["./assets/images/combo-vip-web.webp"]
 			},
 			{
 				"title": "PokeDex",
