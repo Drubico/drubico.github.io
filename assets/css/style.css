@@ -690,14 +690,15 @@ main {
   position: absolute;
   top: 15px;
   right: 15px;
-  background: var(--onyx);
+  z-index: 10;
+  background: var(--eerie-black-1);
   border-radius: 8px;
   width: 32px;
   height: 32px;
   display: flex;
   justify-content: center;
   align-items: center;
-  color: var(--white-2);
+  color:var(--orange-yellow-crayola);
   font-size: 18px;
   opacity: 0.7;
 }
@@ -2501,4 +2502,47 @@ textarea.form-input::-webkit-resizer {
 /* Cambiar el color de la paginación al pasar el ratón por encima */
 .swiper-pagination-bullet:hover {
   color: var(--white-2); /* Cambia esto al color que prefieras al pasar el ratón por encima */
+}
+
+
+/* Image Modal CSS */
+.img-modal {
+  display: none; /* Asegúrate de que el modal esté oculto inicialmente */
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden; /* Cambiar overflow a hidden para evitar scroll */
+  background-color: rgba(0, 0, 0, 0.9);
+  justify-content: center;
+  align-items: center;
+}
+
+.img-modal-content {
+  margin: auto;
+  display: block;
+  width: 95%; /* Aumentar el ancho al 95% */
+  max-width: 95%; /* Aumentar el ancho máximo al 95% */
+  height: auto; /* Ajustar altura automáticamente */
+  max-height: 95%; /* Aumentar la altura máxima al 95% */
+  object-fit: contain; /* Ajustar imagen dentro del contenedor */
+}
+
+.img-modal .close {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: var(--orange-yellow-crayola);
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.img-modal .close:hover,
+.img-modal .close:focus {
+  color: var(--white-2);
+  text-decoration: none;
+  cursor: pointer;
 }

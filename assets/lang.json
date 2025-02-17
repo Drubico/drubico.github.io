@@ -200,7 +200,7 @@
 				"frameworks": ["Android SDK"],
 				"libraries": ["Retrofit", "Room", "Coroutines", "ViewModel", "LiveData", "DataBinding"],
 				"img": "pokedex.webp",
-				"images": ["./assets/images/pokedex.webp", "./assets/images/pokedex-1.webp", "./assets/images/pokedex-2.webp"],
+				"images": ["./assets/images/pokedex.webp", "./assets/images/pokedex-1.webp", "./assets/images/pokedex-2.webp", "assets/images/original/pokedex-diagram.png"],
 				"links": {
 					"github": {
 						"title": "View Source Code",

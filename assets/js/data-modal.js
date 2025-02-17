@@ -2,10 +2,15 @@ function setModal(data) {
     const modal = document.getElementById("project-modal");
     const overlay = modal.querySelector('[data-overlay]');
     const closeButton = modal.querySelector('[data-modal-close-btn]');
-    const swiperWrapper = modal.querySelector('.swiper-wrapper'); // Nuevo selector
+    const swiperWrapper = modal.querySelector('.swiper-wrapper');
     const modalTitle = modal.querySelector('[data-modal-title]');
     const modalText = modal.querySelector('[data-modal-text]');
     let swiperInstance = null;
+
+    // Image modal elements
+    const imgModal = document.getElementById("image-modal");
+    const imgModalImg = document.getElementById("img-modal-img");
+    const imgModalClose = imgModal.querySelector(".close");
 
     document.querySelectorAll('.project-item').forEach((item, index) => {
         item.querySelector('.project-img').addEventListener('click', (e) => {
@@ -13,13 +18,9 @@ function setModal(data) {
 
             // Obtener datos del proyecto correspondiente
             const projectData = data.portfolio.projects[index];
-            console.log(projectData);
 
-
-            // Limpiar slides anteriores
             swiperWrapper.innerHTML = '';
 
-            // Crear nuevos slides
             projectData.images.forEach(imgUrl => {
                 const slide = document.createElement('div');
                 slide.className = 'swiper-slide';
@@ -34,10 +35,8 @@ function setModal(data) {
                 swiperWrapper.appendChild(slide);
             });
 
-            // Destruir instancia anterior de Swiper
             if (swiperInstance) swiperInstance.destroy();
 
-            // Inicializar Swiper
             swiperInstance = new Swiper(modal.querySelector('.swiper'), {
                 slidesPerView: 1,
                 spaceBetween: 20,
@@ -68,7 +67,6 @@ function setModal(data) {
             <h5 class="project-details-title" >${data.portfolio.technologies.title}</h5>
             <div class="project-details"></div>`;
 
-            // Add links
             const modalLinks = modalText.querySelector('.project-links');
             modalLinks.innerHTML = "";
             const links = item.querySelectorAll('.project-link');
@@ -79,7 +77,7 @@ function setModal(data) {
                     linkElement.className = "project-link";
                     linkElement.href = link.href;
                     linkElement.textContent = link.textContent;
-                    linkElement.target = "_blank"; // Open link in a new tab
+                    linkElement.target = "_blank";
                     modalLinks.appendChild(linkElement);
                 });
             }
@@ -87,7 +85,6 @@ function setModal(data) {
             const modalDetails = modalText.querySelector('.project-details');
             modalDetails.innerHTML = "";
 
-            // Add languages
             const languages = item.querySelectorAll('.project-language');
             languages.forEach(language => {
                 const languageElement = document.createElement("span");
@@ -96,7 +93,6 @@ function setModal(data) {
                 modalDetails.appendChild(languageElement);
             });
 
-            // Add frameworks
             const frameworks = item.querySelectorAll('.project-framework');
             frameworks.forEach(framework => {
                 const frameworkElement = document.createElement("span");
@@ -105,7 +101,6 @@ function setModal(data) {
                 modalDetails.appendChild(frameworkElement);
             });
 
-            // Add libraries
             const libraries = item.querySelectorAll('.project-library');
             libraries.forEach(library => {
                 const libraryElement = document.createElement("span");
@@ -113,9 +108,18 @@ function setModal(data) {
                 libraryElement.textContent = library.textContent;
                 modalDetails.appendChild(libraryElement);
             });
+
             modal.classList.add('active');
             overlay.classList.add('active');
             document.querySelector('.modal-content').classList.add('modal-active');
+
+            // Add click event to images to open in img modal
+            modal.querySelectorAll('.img-project').forEach(img => {
+                img.addEventListener('click', () => {
+                    imgModal.style.display = "flex";
+                    imgModalImg.src = img.src;
+                });
+            });
         });
     });
 
@@ -129,6 +133,16 @@ function setModal(data) {
         modal.classList.remove('active');
         overlay.classList.remove('active');
         document.querySelector('.modal-content').classList.remove('modal-active');
+    });
+
+    imgModalClose.addEventListener('click', () => {
+        imgModal.style.display = "none";
+    });
+
+    imgModal.addEventListener('click', (e) => {
+        if (e.target === imgModal) {
+            imgModal.style.display = "none";
+        }
     });
 }
 
