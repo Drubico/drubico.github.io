@@ -129,20 +129,6 @@
 		},
 		"projects": [
 			{
-				"title": "Finflex",
-				"category": {
-					"key": "applications",
-					"value": "Aplicaciones"
-				},
-				"description": "<strong>Solución Financiera Integral</strong> - Plataforma móvil para gestión inteligente de tarjetas de crédito que combina análisis en tiempo real con recomendaciones personalizadas. Implementa seguimiento de gastos categorizados, alertas de pago y visualización de métricas financieras.",
-				"technologies": "Tecnologías clave:",
-				"languages": ["Kotlin"],
-				"frameworks": ["Jetpack Compose"],
-				"libraries": ["Firebase", "Glide", "MPAndroidChart", "Hilt"],
-				"img": "finflex.webp",
-				"images": ["./assets/images/finflex.webp"]
-			},
-			{
 				"title": "Salario SV",
 				"category": {
 					"key": "applications",
@@ -181,17 +167,18 @@
 				}
 			},
 			{
-				"title": "Combo Vip",
+				"title": "Finflex",
 				"category": {
-					"key": "webDevelopment",
-					"value": "Desarrollo web"
+					"key": "applications",
+					"value": "Aplicaciones"
 				},
-				"description": "<strong>Sistema de Encuestas Corporativas</strong> - Plataforma web para gestión de feedback de clientes VIP con generación automatizada de reportes analíticos. Implementa dashboard interactivo y exportación de datos en múltiples formatos.",
-				"languages": ["C#", "CSS", "HTML", "JavaScript"],
-				"frameworks": ["Blazor"],
-				"libraries": ["Tailwind CSS", "PDFSharp"],
-				"img": "combo-vip-web.webp",
-				"images": ["./assets/images/combo-vip-web.webp"]
+				"description": "<strong>Solución Financiera Integral</strong> - Plataforma móvil para gestión inteligente de tarjetas de crédito que combina análisis en tiempo real con recomendaciones personalizadas. Implementa seguimiento de gastos categorizados, alertas de pago y visualización de métricas financieras.",
+				"technologies": "Tecnologías clave:",
+				"languages": ["Kotlin"],
+				"frameworks": ["Jetpack Compose"],
+				"libraries": ["Firebase", "Glide", "MPAndroidChart", "Hilt"],
+				"img": "finflex.webp",
+				"images": ["./assets/images/finflex.webp"]
 			},
 			{
 				"title": "PokeDex",
@@ -211,6 +198,44 @@
 						"link": "https://github.com/Drubico/Pokeapi-Test"
 					}
 				}
+			},
+			{
+				"title": "CryptoTracker",
+				"category": {
+					"key": "applications",
+					"value": "Aplicaciones"
+				},
+				"description": "<strong>Rastreador de Criptomonedas en Tiempo Real</strong> - Aplicación nativa de Android que proporciona actualizaciones en vivo del precio de diversas criptomonedas. Cuenta con gráficos interactivos de las últimas 24 horas, búsqueda inteligente y seguimiento de monedas favoritas.",
+				"languages": ["Kotlin"],
+				"frameworks": ["Android SDK"],
+				"libraries": ["Retrofit", "Room", "Coroutines", "ViewModel", "LiveData", "MPAndroidChart"],
+				"img": "crypto-tracker.webp",
+				"images": [
+					"./assets/images/crypto-tracker.webp",
+					"./assets/images/crypto-tracker-1.webp",
+					"./assets/images/crypto-tracker-2.webp",
+					"./assets/images/crypto-tracker-3.webp",
+					"./assets/images/original/crypto-tracker-diagram.png"
+				],
+				"links": {
+					"github": {
+						"title": "Ver Código Fuente",
+						"link": "https://github.com/Drubico/CryptoTracker"
+					}
+				}
+			},
+			{
+				"title": "Combo Vip",
+				"category": {
+					"key": "webDevelopment",
+					"value": "Desarrollo web"
+				},
+				"description": "<strong>Sistema de Encuestas Corporativas</strong> - Plataforma web para gestión de feedback de clientes VIP con generación automatizada de reportes analíticos. Implementa dashboard interactivo y exportación de datos en múltiples formatos.",
+				"languages": ["C#", "CSS", "HTML", "JavaScript"],
+				"frameworks": ["Blazor"],
+				"libraries": ["Tailwind CSS", "PDFSharp"],
+				"img": "combo-vip-web.webp",
+				"images": ["./assets/images/combo-vip-web.webp"]
 			}
 		]
 	},

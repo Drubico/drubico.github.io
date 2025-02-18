@@ -125,20 +125,6 @@
 		},
 		"projects": [
 			{
-				"title": "Finflex",
-				"category": {
-					"key": "applications",
-					"value": "Applications"
-				},
-				"description": "<strong>Comprehensive Financial Solution</strong> - Mobile platform for intelligent credit card management combining real-time analytics with personalized recommendations. Features categorized expense tracking, payment alerts, and financial metric visualization.",
-				"technologies": "Key Technologies:",
-				"languages": ["Kotlin"],
-				"frameworks": ["Jetpack Compose"],
-				"libraries": ["Firebase", "Glide", "MPAndroidChart", "Hilt"],
-				"img": "finflex.webp",
-				"images": ["./assets/images/finflex.webp"]
-			},
-			{
 				"title": "Salario SV",
 				"category": {
 					"key": "applications",
@@ -177,17 +163,18 @@
 				}
 			},
 			{
-				"title": "Combo Vip",
+				"title": "Finflex",
 				"category": {
-					"key": "webDevelopment",
-					"value": "Web Development"
+					"key": "applications",
+					"value": "Applications"
 				},
-				"description": "<strong>Corporate Survey System</strong> - Web platform for VIP customer feedback management with automated analytical reporting. Features interactive dashboard and multi-format data export capabilities.",
-				"languages": ["C#", "CSS", "HTML", "JavaScript"],
-				"frameworks": ["Blazor"],
-				"libraries": ["Tailwind CSS", "PDFSharp"],
-				"img": "combo-vip-web.webp",
-				"images": ["./assets/images/combo-vip-web.webp"]
+				"description": "<strong>Comprehensive Financial Solution</strong> - Mobile platform for intelligent credit card management combining real-time analytics with personalized recommendations. Features categorized expense tracking, payment alerts, and financial metric visualization.",
+				"technologies": "Key Technologies:",
+				"languages": ["Kotlin"],
+				"frameworks": ["Jetpack Compose"],
+				"libraries": ["Firebase", "Glide", "MPAndroidChart", "Hilt"],
+				"img": "finflex.webp",
+				"images": ["./assets/images/finflex.webp"]
 			},
 			{
 				"title": "PokeDex",
@@ -207,6 +194,44 @@
 						"link": "https://github.com/Drubico/Pokeapi-Test"
 					}
 				}
+			},
+			{
+				"title": "CryptoTracker",
+				"category": {
+					"key": "applications",
+					"value": "Applications"
+				},
+				"description": "<strong>Real-time Cryptocurrency Tracker</strong> - Native Android application that provides live price updates for various cryptocurrencies. Features interactive 24-hour price charts, smart search, and favorite coin tracking.",
+				"languages": ["Kotlin"],
+				"frameworks": ["Jetpack Compose"],
+				"libraries": ["Firebase", "Coil", "Koin"],
+				"img": "crypto-tracker.webp",
+				"images": [
+					"./assets/images/crypto-tracker.webp",
+					"./assets/images/crypto-tracker-1.webp",
+					"./assets/images/crypto-tracker-2.webp",
+					"./assets/images/crypto-tracker-3.webp",
+					"./assets/images/original/crypto-tracker-diagram.png"
+				],
+				"links": {
+					"github": {
+						"title": "View Source Code",
+						"link": "https://github.com/Drubico/CryptoTracker"
+					}
+				}
+			},
+			{
+				"title": "Combo Vip",
+				"category": {
+					"key": "webDevelopment",
+					"value": "Web Development"
+				},
+				"description": "<strong>Corporate Survey System</strong> - Web platform for VIP customer feedback management with automated analytical reporting. Features interactive dashboard and multi-format data export capabilities.",
+				"languages": ["C#", "CSS", "HTML", "JavaScript"],
+				"frameworks": ["Blazor"],
+				"libraries": ["Tailwind CSS", "PDFSharp"],
+				"img": "combo-vip-web.webp",
+				"images": ["./assets/images/combo-vip-web.webp"]
 			}
 		]
 	},
