@@ -2523,7 +2523,6 @@ textarea.form-input::-webkit-resizer {
 .img-modal-content {
   margin: auto;
   display: block;
-  width: 95%; /* Aumentar el ancho al 95% */
   max-width: 95%; /* Aumentar el ancho máximo al 95% */
   height: auto; /* Ajustar altura automáticamente */
   max-height: 95%; /* Aumentar la altura máxima al 95% */
@@ -2545,4 +2544,24 @@ textarea.form-input::-webkit-resizer {
   color: var(--white-2);
   text-decoration: none;
   cursor: pointer;
+}
+
+.modal-image-zoom {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.modal-image-zoom img {
+  width: 90%;
+  max-width: 90%; /* Ajusta según tu diseño */
+  height: auto; /* Ajustar altura automáticamente */
+  max-height: 95%; /* Aumentar la altura máxima al 95% */
+  object-fit: contain; /* Ajustar imagen dentro del contenedor */
+}
+
+.swiper-container {
+  width: 100%;
+  height: 100%;
 }

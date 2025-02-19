@@ -50,8 +50,16 @@
 		</div>
 		<!-- Image Modal -->
 		<div id="image-modal" class="img-modal">
+			<div class="swiper-container">
+				<div class="swiper-wrapper">
+					<!-- Las imágenes se agregarán dinámicamente aquí -->
+				</div>
+				<!-- Agrega los controles de navegación de Swiper -->
+				<div class="swiper-button-next"></div>
+				<div class="swiper-button-prev"></div>
+				<div class="swiper-pagination"></div>
+			</div>
 			<span class="close">&times;</span>
-			<img class="img-modal-content" id="img-modal-img" />
 		</div>
 		<main>
 			<!-- #region Sidebar-->
@@ -405,19 +413,6 @@
 								<div class="modal-img-wrapper">
 									<div class="swiper">
 										<div class="swiper-wrapper">
-											<!-- Slides -->
-											<div class="swiper-slide">
-												<figure class="modal-avatar-box">
-													<img class="img-project" src="./assets/images/my-avatar.png" alt="Project Image" width="100%" data-modal-img />
-												</figure>
-											</div>
-
-											<!-- Agrega más slides si necesitas -->
-											<div class="swiper-slide">
-												<figure class="modal-avatar-box">
-													<img class="img-project" src="./assets/images/my-avatar.png" alt="Slide 2" width="100%" />
-												</figure>
-											</div>
 										</div>
 
 										<!-- Controles de navegación -->

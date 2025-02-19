@@ -9,8 +9,9 @@ function setModal(data) {
 
     // Image modal elements
     const imgModal = document.getElementById("image-modal");
-    const imgModalImg = document.getElementById("img-modal-img");
+    const imgModalSwiperWrapper = imgModal.querySelector('.swiper-wrapper');
     const imgModalClose = imgModal.querySelector(".close");
+    let imgModalSwiperInstance = null;
 
     document.querySelectorAll('.project-item').forEach((item, index) => {
         item.querySelector('.project-img').addEventListener('click', (e) => {
@@ -44,6 +45,7 @@ function setModal(data) {
                     nextEl: '.swiper-button-next',
                     prevEl: '.swiper-button-prev',
                 },
+                effect: 'cube',
                 pagination: {
                     el: '.swiper-pagination',
                     clickable: true,
@@ -115,9 +117,43 @@ function setModal(data) {
 
             // Add click event to images to open in img modal
             modal.querySelectorAll('.img-project').forEach(img => {
-                img.addEventListener('click', () => {
+                img.addEventListener('click', (e) => {
+                    e.stopPropagation(); // Detener la propagación del evento
                     imgModal.style.display = "flex";
-                    imgModalImg.src = img.src;
+                    imgModalSwiperWrapper.innerHTML = '';
+
+                    projectData.images.forEach(imgUrl => {
+                        const slide = document.createElement('div');
+                        slide.className = 'swiper-slide';
+
+                        slide.innerHTML = `
+                            <figure class="modal-image-zoom">
+                                <img class="img-modal-content" src="${imgUrl}" 
+                                     alt="${projectData.title}" width="100%">
+                            </figure>
+                        `;
+
+                        imgModalSwiperWrapper.appendChild(slide);
+                    });
+
+                    if (imgModalSwiperInstance) imgModalSwiperInstance.destroy();
+
+                    imgModalSwiperInstance = new Swiper(imgModal.querySelector('.swiper-container'), {
+                        slidesPerView: 1,
+                        spaceBetween: 20,
+                        navigation: {
+                            nextEl: '.swiper-button-next',
+                            prevEl: '.swiper-button-prev',
+                        },
+                        effect: 'cube',
+                        pagination: {
+                            el: '.swiper-pagination',
+                            clickable: true,
+                        },
+                        observer: true,
+                        observeParents: true
+                    });
+                    imgModalSwiperInstance.update();
                 });
             });
         });
@@ -127,21 +163,29 @@ function setModal(data) {
         modal.classList.remove('active');
         overlay.classList.remove('active');
         document.querySelector('.modal-content').classList.remove('modal-active');
+        swiperWrapper.innerHTML = ''; // Limpiar el contenido del swiper
+        if (swiperInstance) swiperInstance.destroy(); // Destruir la instancia de Swiper
     });
 
     overlay.addEventListener('click', () => {
         modal.classList.remove('active');
         overlay.classList.remove('active');
         document.querySelector('.modal-content').classList.remove('modal-active');
+        swiperWrapper.innerHTML = ''; // Limpiar el contenido del swiper
+        if (swiperInstance) swiperInstance.destroy(); // Destruir la instancia de Swiper
     });
 
     imgModalClose.addEventListener('click', () => {
         imgModal.style.display = "none";
+        imgModalSwiperWrapper.innerHTML = ''; // Limpiar el contenido del swiper
+        if (imgModalSwiperInstance) imgModalSwiperInstance.destroy(); // Destruir la instancia de Swiper
     });
 
     imgModal.addEventListener('click', (e) => {
         if (e.target === imgModal) {
             imgModal.style.display = "none";
+            imgModalSwiperWrapper.innerHTML = ''; // Limpiar el contenido del swiper
+            if (imgModalSwiperInstance) imgModalSwiperInstance.destroy(); // Destruir la instancia de Swiper
         }
     });
 }
