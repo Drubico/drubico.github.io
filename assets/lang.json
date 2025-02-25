@@ -50,13 +50,13 @@
 	},
 	"about": {
 		"title": "About Me",
-		"intro": "Mobile Developer specialized in Kotlin and Flutter based in El Salvador. I specialize in transforming technical challenges into intuitive and aesthetically refined solutions.",
+		"intro": "Mobile Developer specialized in Kotlin based in El Salvador. I specialize in transforming technical challenges into intuitive and aesthetically refined solutions.",
 		"description": "My approach combines robust functionality with attractive design, ensuring seamless user experiences. I have collaborated on application development for government institutions and private companies, implementing best practices and modern technologies.",
 		"services": {
 			"title": "Services",
 			"mobileApps": {
 				"title": "Mobile Development",
-				"description": "Native Android app development with Kotlin and cross-platform solutions using Flutter, implementing clean architectures and modern design patterns."
+				"description": "Native Android app development with Kotlin, implementing clean architectures and modern design patterns."
 			},
 			"webDevelopment": {
 				"title": "Web Solutions",
