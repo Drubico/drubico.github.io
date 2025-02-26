@@ -10,15 +10,15 @@ let languageTagLS = "languageTag";;
 let langSpanish = {
   "lang": "es",
   "jsonPath": "assets/lang-es.json",
-  "imgSrc": "assets/images/usa.svg",
-  "imgAlt": "English",
+  "imgSrc": "assets/images/spain.svg",
+  "imgAlt": "Español",
 }
 
 let langEnglish = {
   "lang": "en",
   "jsonPath": "assets/lang.json",
-  "imgSrc": "assets/images/spain.svg",
-  "imgAlt": "Español",
+  "imgSrc": "assets/images/usa.svg",
+  "imgAlt": "English",
 }
 
 document.addEventListener("DOMContentLoaded", function () {
