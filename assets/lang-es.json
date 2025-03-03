@@ -142,7 +142,7 @@
 				"images": ["./assets/images/salario-sv.webp"],
 				"links": {
 					"playstore": {
-						"title": "Ver en Play Store",
+						"title": "Ver en play store",
 						"link": "https://play.google.com/store/apps/details?id=com.drubico.salariosv"
 					}
 				}
@@ -161,7 +161,7 @@
 				"images": ["./assets/images/direscup.webp"],
 				"links": {
 					"playstore": {
-						"title": "Ver en Play Store",
+						"title": "Ver en play store",
 						"link": "https://play.google.com/store/apps/details?id=com.drubi.diresCup"
 					}
 				}
@@ -219,7 +219,7 @@
 				],
 				"links": {
 					"github": {
-						"title": "Ver Código Fuente",
+						"title": "Ver código fuente",
 						"link": "https://github.com/Drubico/CryptoTracker"
 					}
 				}
