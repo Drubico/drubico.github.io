@@ -341,10 +341,6 @@ main {
   gap: 15px;
 }
 
-.avatar-box {
-  background: var(--bg-gradient-onyx);
-  border-radius: 20px;
-}
 
 .info-content .name {
   color: var(--white-2);
@@ -463,6 +459,22 @@ main {
 
 .social-item .social-link:hover {
   color: var(--light-gray);
+}
+
+.avatar-box {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 3px solid var(--orange-yellow-crayola);
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.avatar-box img {
+  height: 100%;
+  object-fit: contain;
 }
 
 /*-----------------------------------*\
@@ -698,7 +710,7 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
-  color:var(--orange-yellow-crayola);
+  color: var(--orange-yellow-crayola);
   font-size: 18px;
   opacity: 0.7;
 }
@@ -898,18 +910,20 @@ main {
   max-width: 120px;
   max-height: 120px;
 }
+
 .rounded-background {
-  width: 100%; 
-  height: 100%; 
+  width: 100%;
+  height: 100%;
   padding: 2px;
   max-width: 120px;
   max-height: 120px;
-  background-color: white; 
-  border-radius: 50%; 
+  background-color: white;
+  border-radius: 50%;
   align-items: center;
   justify-content: center;
-  overflow: hidden; 
+  overflow: hidden;
 }
+
 .skill-icon-box,
 .contact-me-icon-box {
   margin-bottom: 0;
@@ -1535,14 +1549,6 @@ textarea.form-input::-webkit-resizer {
     gap: 25px;
   }
 
-  .avatar-box {
-    border-radius: 30px;
-  }
-
-  .avatar-box img {
-    width: 120px;
-  }
-
   .info-content .name {
     margin-bottom: 15px;
   }
@@ -1580,6 +1586,10 @@ textarea.form-input::-webkit-resizer {
   }
 
 
+  .avatar-box {
+    width: 120px;
+    height: 120px;
+  }
 
   /**
    * #NAVBAR
@@ -1613,7 +1623,8 @@ textarea.form-input::-webkit-resizer {
 
   /* service */
 
-  .service-item,.contact-me-item {
+  .service-item,
+  .contact-me-item {
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
@@ -1792,8 +1803,6 @@ textarea.form-input::-webkit-resizer {
     gap: 30px 15px;
   }
 
-
-
   /**
    * NAVBAR
    */
@@ -1915,6 +1924,11 @@ textarea.form-input::-webkit-resizer {
 
   .sidebar.active {
     max-height: 950px;
+  }
+
+  .avatar-box {
+    width: 140px;
+    height: 140px;
   }
 
   /**
@@ -2105,10 +2119,6 @@ textarea.form-input::-webkit-resizer {
     flex-direction: column;
   }
 
-  .avatar-box img {
-    width: 150px;
-  }
-
   .info-content .name {
     white-space: nowrap;
     text-align: center;
@@ -2152,6 +2162,10 @@ textarea.form-input::-webkit-resizer {
   }
 
 
+  .avatar-box {
+    width: 160px;
+    height: 160px;
+  }
 
   /**
 	 * RESUME
@@ -2457,7 +2471,8 @@ textarea.form-input::-webkit-resizer {
 /* Contenedor principal */
 .modal-img-wrapper {
   width: 100%;
-  max-width: 1000px; /* Ajusta según tu diseño */
+  max-width: 1000px;
+  /* Ajusta según tu diseño */
   margin: 0 auto;
 }
 
@@ -2471,7 +2486,8 @@ textarea.form-input::-webkit-resizer {
 /* Cada slide ocupa el 100% del ancho */
 .swiper-slide {
   width: 100% !important;
-  flex-shrink: 0; /* Importante para slides fijos */
+  flex-shrink: 0;
+  /* Importante para slides fijos */
 }
 
 /* Imagen llena el slide */
@@ -2492,30 +2508,34 @@ textarea.form-input::-webkit-resizer {
 /* Cambiar el color de los botones al pasar el ratón por encima */
 .swiper-button-next:hover,
 .swiper-button-prev:hover {
-  color: var(--white-2); /* Cambia esto al color que prefieras al pasar el ratón por encima */
+  color: var(--white-2);
+  /* Cambia esto al color que prefieras al pasar el ratón por encima */
 }
 
 /* Cambiar el color de la paginación activa */
 .swiper-pagination-bullet-active {
-  background-color:  var(--orange-yellow-crayola);
+  background-color: var(--orange-yellow-crayola);
 }
 
 /* Cambiar el color de la paginación al pasar el ratón por encima */
 .swiper-pagination-bullet:hover {
-  color: var(--white-2); /* Cambia esto al color que prefieras al pasar el ratón por encima */
+  color: var(--white-2);
+  /* Cambia esto al color que prefieras al pasar el ratón por encima */
 }
 
 
 /* Image Modal CSS */
 .img-modal {
-  display: none; /* Asegúrate de que el modal esté oculto inicialmente */
+  display: none;
+  /* Asegúrate de que el modal esté oculto inicialmente */
   position: fixed;
   z-index: 1000;
   left: 0;
   top: 0;
   width: 100%;
   height: 100%;
-  overflow: hidden; /* Cambiar overflow a hidden para evitar scroll */
+  overflow: hidden;
+  /* Cambiar overflow a hidden para evitar scroll */
   background-color: rgba(0, 0, 0, 0.9);
   justify-content: center;
   align-items: center;
@@ -2524,10 +2544,14 @@ textarea.form-input::-webkit-resizer {
 .img-modal-content {
   margin: auto;
   display: block;
-  max-width: 95%; /* Aumentar el ancho máximo al 95% */
-  height: auto; /* Ajustar altura automáticamente */
-  max-height: 95%; /* Aumentar la altura máxima al 95% */
-  object-fit: contain; /* Ajustar imagen dentro del contenedor */
+  max-width: 95%;
+  /* Aumentar el ancho máximo al 95% */
+  height: auto;
+  /* Ajustar altura automáticamente */
+  max-height: 95%;
+  /* Aumentar la altura máxima al 95% */
+  object-fit: contain;
+  /* Ajustar imagen dentro del contenedor */
 }
 
 .img-modal .close {
@@ -2556,10 +2580,14 @@ textarea.form-input::-webkit-resizer {
 
 .modal-image-zoom img {
   width: 90%;
-  max-width: 90%; /* Ajusta según tu diseño */
-  height: auto; /* Ajustar altura automáticamente */
-  max-height: 95%; /* Aumentar la altura máxima al 95% */
-  object-fit: contain; /* Ajustar imagen dentro del contenedor */
+  max-width: 90%;
+  /* Ajusta según tu diseño */
+  height: auto;
+  /* Ajustar altura automáticamente */
+  max-height: 95%;
+  /* Aumentar la altura máxima al 95% */
+  object-fit: contain;
+  /* Ajustar imagen dentro del contenedor */
 }
 
 .swiper-container {
