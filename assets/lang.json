@@ -81,33 +81,48 @@
 		},
 		"experience": {
 			"title": "Professional Experience",
-			"items": [
-				{
-					"position": "Senior Mobile Developer - Presidential Secretariat for Innovation",
-					"dates": "Oct 2022 — Present",
-					"details": [
-						"Technical leadership in native Android app development using Kotlin and Jetpack Compose",
-						"Implementation of MVVM and Clean Architecture in mission-critical projects",
-						"Integration of RESTful services with Retrofit and local data management with Room",
-						"Coordination of agile teams for delivery of priority features"
-					]
-				},
-				{
-					"position": "Full Stack Developer - Ministry of Health",
-					"dates": "Feb 2022 — Oct 2022",
-					"details": [
-						"Modernization of legacy applications by migrating from Java to Kotlin",
-						"Design and implementation of robust APIs using Node.js and Express",
-						"Performance optimization in critical applications reducing latency by 40%",
-						"Implementation of dependency injection with Dagger Hilt"
-					]
-				},
-				{
-					"position": "WordPress Developer - The Virtual Buddy",
-					"dates": "Jan 2021 — Jun 2021",
-					"details": ["Development of customized CMS platforms with WordPress", "Design of adaptive themes and SEO optimization", "E-commerce system integrations"]
-				}
-			]
+			"items": 
+				[
+				    {
+				        "position": "Senior Mobile Developer - PBS GROUP",
+				        "dates": "March 2025 — Present",
+				        "details": [
+				            "Development of mobile solutions using ODK Collect and Enketo",
+				            "Form consumption from ODK Central following Clean Architecture and Clean Code best practices",
+				            "Implementation of custom data capture flows for field operations",
+				            "Integration with REST APIs and advanced XML handling in Android"
+				        ]
+				    },
+				    {
+				        "position": "Senior Mobile Developer - Secretariat of Innovation of the Presidency",
+				        "dates": "October 2022 — March 2025",
+				        "details": [
+				            "Technical leadership in the development of native Android applications using Kotlin and Jetpack Compose",
+				            "Implementation of MVVM and Clean Architecture in critical projects",
+				            "Integration of RESTful services with Retrofit and local data management with Room",
+				            "Coordination of agile teams for the delivery of priority features"
+				        ]
+				    },
+				    {
+				        "position": "Full Stack Developer - Ministry of Health",
+				        "dates": "February 2022 — October 2022",
+				        "details": [
+				            "Modernization of legacy applications by migrating from Java to Kotlin",
+				            "Design and implementation of robust APIs using Node.js and Express",
+				            "Performance optimization in critical applications, reducing latency by 40%",
+				            "Implementation of dependency injection with Dagger Hilt"
+				        ]
+				    },
+				    {
+				        "position": "WordPress Developer - The Virtual Buddy",
+				        "dates": "January 2021 — June 2021",
+				        "details": [
+				            "Creation of customized CMS platforms using WordPress",
+				            "Design of responsive themes and SEO optimization",
+				            "Integration of e-commerce systems"
+				        ]
+				    }
+				]
 		}
 	},
 	"portfolio": {
