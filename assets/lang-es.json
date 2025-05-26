@@ -83,8 +83,18 @@
 			"title": "Experiencia Laboral",
 			"items": [
 				{
+					"position": "Desarrollador Móvil Senior - PBS GROUP",
+					"dates": "Marzo 2025 — Presente",
+					"details": [
+					    "Desarrollo de soluciones móviles con ODK Collect y Enketo",
+					    "Consumo de formularios desde ODK Central aplicando Clean Architecture y buenas prácticas de Clean Code",
+					    "Implementación de flujos personalizados para la captura de datos en campo",
+					    "Integración con APIs REST y manejo avanzado de XML en Android"
+					]
+			   	},
+				{
 					"position": "Desarrollador Móvil Senior - Secretaría de Innovación de la Presidencia",
-					"dates": "Oct 2022 — Presente",
+					"dates": "Octubre 2022 — Marzo 2025",
 					"details": [
 						"Liderazgo técnico en el desarrollo de aplicaciones Android nativas usando Kotlin y Jetpack Compose",
 						"Implementación de arquitecturas MVVM y Clean Architecture en proyectos críticos",
@@ -94,7 +104,7 @@
 				},
 				{
 					"position": "Desarrollador Full Stack - Ministerio de Salud",
-					"dates": "Feb 2022 — Oct 2022",
+					"dates": "Febrero 2022 — Octubre 2022",
 					"details": [
 						"Modernización de aplicaciones legacy migrando de Java a Kotlin",
 						"Diseño e implementación de APIs robustas con Node.js y Express",
@@ -104,7 +114,7 @@
 				},
 				{
 					"position": "Desarrollador WordPress - The Virtual Buddy",
-					"dates": "Ene 2021 — Jun 2021",
+					"dates": "Enero 2021 — Junio 2021",
 					"details": [
 						"Creación de plataformas CMS personalizadas con WordPress",
 						"Diseño de temas adaptativos y optimización SEO",
