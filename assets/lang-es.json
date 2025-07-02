@@ -3,32 +3,42 @@
 		"name": "Diego Rubí",
 		"title": "Desarrollador Móvil",
 		"showContactsBtn": "Ver información de contacto",
-		"contacts": {
-			"email": {
+		"contacts": [
+			{
+				"type": "email",
+				"icon": "mail-outline",
 				"title": "Correo Electrónico:",
-				"linkText": "drubico@gmail.com",
-				"linkHref": "mailto:drubico@gmail.com"
+				"text": "drubico@gmail.com",
+				"link": "mailto:drubico@gmail.com"
 			},
-			"phone": {
+			{
+				"type": "phone",
+				"icon": "phone-portrait-outline",
 				"title": "Teléfono:",
-				"linkText": "+503 78508012",
-				"linkHref": "tel:+50378508012"
+				"text": "+503 78508012",
+				"link": "tel:+50378508012"
 			},
-			"birthday": {
+			{
+				"type": "age",
+				"icon": "calendar-outline",
 				"title": "Edad:",
 				"unit": "años",
 				"datetime": "1999-02-14"
 			},
-			"location": {
+			{
+				"type": "address",
+				"icon": "location-outline",
 				"title": "Ubicación:",
-				"address": "La Libertad, El Salvador"
+				"text": "La Libertad, El Salvador"
 			},
-			"linkedin": {
+			{
+				"type": "linkedin",
+				"icon": "logo-linkedin",
 				"title": "LinkedIn:",
-				"linkText": "Diego Alejandro Rubí",
-				"linkHref": "https://www.linkedin.com/in/drubico/"
+				"text": "Diego Alejandro Rubí",
+				"link": "https://www.linkedin.com/in/drubico/"
 			}
-		}
+		]
 	},
 	"navbar": {
 		"about": {
@@ -54,14 +64,18 @@
 		"description": "Mi enfoque combina funcionalidad robusta con diseño atractivo, asegurando experiencias de usuario fluidas. He colaborado en el desarrollo de aplicaciones para instituciones gubernamentales y empresas privadas, implementando mejores prácticas y tecnologías modernas.",
 		"services": {
 			"title": "Servicios",
-			"mobileApps": {
-				"title": "Desarrollo Móvil",
-				"description": "Creación de aplicaciones Android nativas con Kotlin, implementando arquitecturas limpias y patrones de diseño modernos."
-			},
-			"webDevelopment": {
-				"title": "Soluciones Web",
-				"description": "Desarrollo de interfaces web responsivas y sistemas backend eficientes"
-			}
+			"items": [
+				{
+					"icon": "./assets/images/icon-app.svg",
+					"title": "Desarrollo Móvil",
+					"description": "Creación de aplicaciones Android nativas con Kotlin, implementando arquitecturas limpias y patrones de diseño modernos."
+				},
+				{
+					"icon": "./assets/images/icon-dev.svg",
+					"title": "Soluciones Web",
+					"description": "Desarrollo de interfaces web responsivas y sistemas backend eficientes"
+				}
+			]
 		},
 		"skills": {
 			"title": "Habilidades Técnicas"
@@ -86,12 +100,12 @@
 					"position": "Desarrollador Móvil Senior - PBS GROUP",
 					"dates": "Marzo 2025 — Presente",
 					"details": [
-					    "Desarrollo de soluciones móviles con ODK Collect y Enketo",
-					    "Consumo de formularios desde ODK Central aplicando Clean Architecture y buenas prácticas de Clean Code",
-					    "Implementación de flujos personalizados para la captura de datos en campo",
-					    "Integración con APIs REST y manejo avanzado de XML en Android"
+						"Desarrollo de soluciones móviles con ODK Collect y Enketo",
+						"Consumo de formularios desde ODK Central aplicando Clean Architecture y buenas prácticas de Clean Code",
+						"Implementación de flujos personalizados para la captura de datos en campo",
+						"Integración con APIs REST y manejo avanzado de XML en Android"
 					]
-			   	},
+				},
 				{
 					"position": "Desarrollador Móvil Senior - Secretaría de Innovación de la Presidencia",
 					"dates": "Octubre 2022 — Marzo 2025",
@@ -145,11 +159,22 @@
 					"value": "Aplicaciones"
 				},
 				"description": "<strong>Calculadora Fiscal Avanzada</strong> - Herramienta especializada para cálculo preciso de salarios netos en El Salvador. Incluye módulos para deducciones de AFP, ISSS e impuesto sobre la renta, con capacidad de simulación de escenarios financieros.",
-				"languages": ["Kotlin"],
-				"frameworks": ["Jetpack Compose"],
-				"libraries": ["Firebase", "Coil", "MPAndroidChart", "Koin"],
+				"languages": [
+					"Kotlin"
+				],
+				"frameworks": [
+					"Jetpack Compose"
+				],
+				"libraries": [
+					"Firebase",
+					"Coil",
+					"MPAndroidChart",
+					"Koin"
+				],
 				"img": "salario-sv.webp",
-				"images": ["./assets/images/salario-sv.webp"],
+				"images": [
+					"./assets/images/salario-sv.webp"
+				],
 				"links": {
 					"playstore": {
 						"title": "Ver en play store",
@@ -164,11 +189,21 @@
 					"value": "Aplicaciones"
 				},
 				"description": "<strong>Plataforma Deportiva Interactiva</strong> - Sistema de gestión de torneos amateur con seguimiento en tiempo real de marcadores, tablas de posiciones y estadísticas de rendimiento. Integra autenticación segura y sincronización multiplataforma.",
-				"languages": ["Kotlin"],
-				"frameworks": ["Jetpack Compose"],
-				"libraries": ["Firebase", "Glide", "Hilt"],
+				"languages": [
+					"Kotlin"
+				],
+				"frameworks": [
+					"Jetpack Compose"
+				],
+				"libraries": [
+					"Firebase",
+					"Glide",
+					"Hilt"
+				],
 				"img": "direscup.webp",
-				"images": ["./assets/images/direscup.webp"],
+				"images": [
+					"./assets/images/direscup.webp"
+				],
 				"links": {
 					"playstore": {
 						"title": "Ver en play store",
@@ -184,11 +219,22 @@
 				},
 				"description": "<strong>Solución Financiera Integral</strong> - Plataforma móvil para gestión inteligente de tarjetas de crédito que combina análisis en tiempo real con recomendaciones personalizadas. Implementa seguimiento de gastos categorizados, alertas de pago y visualización de métricas financieras.",
 				"technologies": "Tecnologías clave:",
-				"languages": ["Kotlin"],
-				"frameworks": ["Jetpack Compose"],
-				"libraries": ["Firebase", "Glide", "MPAndroidChart", "Hilt"],
+				"languages": [
+					"Kotlin"
+				],
+				"frameworks": [
+					"Jetpack Compose"
+				],
+				"libraries": [
+					"Firebase",
+					"Glide",
+					"MPAndroidChart",
+					"Hilt"
+				],
 				"img": "finflex.webp",
-				"images": ["./assets/images/finflex.webp"]
+				"images": [
+					"./assets/images/finflex.webp"
+				]
 			},
 			{
 				"title": "PokeDex",
@@ -197,11 +243,27 @@
 					"value": "Aplicaciones"
 				},
 				"description": "<strong>Enciclopedia Pokémon Avanzada</strong> - Aplicación nativa Android que consume la PokeAPI para mostrar información detallada de más de 1000 Pokémon. Incluye búsqueda inteligente, favoritos locales y detalles de evoluciones.",
-				"languages": ["Kotlin"],
-				"frameworks": ["Android SDK"],
-				"libraries": ["Retrofit", "Room", "Coroutines", "ViewModel", "LiveData", "DataBinding"],
+				"languages": [
+					"Kotlin"
+				],
+				"frameworks": [
+					"Android SDK"
+				],
+				"libraries": [
+					"Retrofit",
+					"Room",
+					"Coroutines",
+					"ViewModel",
+					"LiveData",
+					"DataBinding"
+				],
 				"img": "pokedex.webp",
-				"images": ["./assets/images/pokedex.webp", "./assets/images/pokedex-1.webp", "./assets/images/pokedex-2.webp", "assets/images/original/pokedex-diagram.png"],
+				"images": [
+					"./assets/images/pokedex.webp",
+					"./assets/images/pokedex-1.webp",
+					"./assets/images/pokedex-2.webp",
+					"assets/images/original/pokedex-diagram.png"
+				],
 				"links": {
 					"github": {
 						"title": "Ver código fuente",
@@ -216,9 +278,20 @@
 					"value": "Aplicaciones"
 				},
 				"description": "<strong>Rastreador de Criptomonedas en Tiempo Real</strong> - Aplicación nativa de Android que proporciona actualizaciones en vivo del precio de diversas criptomonedas. Cuenta con gráficos interactivos de las últimas 24 horas, búsqueda inteligente y seguimiento de monedas favoritas.",
-				"languages": ["Kotlin"],
-				"frameworks": ["Android SDK"],
-				"libraries": ["Retrofit", "Room", "Coroutines", "ViewModel", "LiveData", "MPAndroidChart"],
+				"languages": [
+					"Kotlin"
+				],
+				"frameworks": [
+					"Android SDK"
+				],
+				"libraries": [
+					"Retrofit",
+					"Room",
+					"Coroutines",
+					"ViewModel",
+					"LiveData",
+					"MPAndroidChart"
+				],
 				"img": "crypto-tracker.webp",
 				"images": [
 					"./assets/images/crypto-tracker.webp",
@@ -241,11 +314,23 @@
 					"value": "Desarrollo web"
 				},
 				"description": "<strong>Sistema de Encuestas Corporativas</strong> - Plataforma web para gestión de feedback de clientes VIP con generación automatizada de reportes analíticos. Implementa dashboard interactivo y exportación de datos en múltiples formatos.",
-				"languages": ["C#", "CSS", "HTML", "JavaScript"],
-				"frameworks": ["Blazor"],
-				"libraries": ["Tailwind CSS", "PDFSharp"],
+				"languages": [
+					"C#",
+					"CSS",
+					"HTML",
+					"JavaScript"
+				],
+				"frameworks": [
+					"Blazor"
+				],
+				"libraries": [
+					"Tailwind CSS",
+					"PDFSharp"
+				],
 				"img": "combo-vip-web.webp",
-				"images": ["./assets/images/combo-vip-web.webp"]
+				"images": [
+					"./assets/images/combo-vip-web.webp"
+				]
 			}
 		]
 	},
@@ -255,26 +340,22 @@
 		"linkedinProfile": {
 			"title": "Perfil de linkedin",
 			"urlTitle": "Ver perfil de LinkedIn",
-			"description": "Conéctate conmigo en LinkedIn.",
-			"link": "https://www.linkedin.com/in/drubico/"
+			"description": "Conéctate conmigo en LinkedIn."
 		},
 		"githubProfile": {
 			"title": "Perfil de GitHub",
 			"urlTitle": "Ver perfil de GitHub",
-			"description": "Echa un vistazo a mis proyectos en GitHub.",
-			"link": "https://github.com/drubico"
+			"description": "Echa un vistazo a mis proyectos en GitHub."
 		},
 		"playStoreProfile": {
 			"title": "Ver perfil de Play Store",
 			"urlTitle": "Ver perfil de Play Store",
-			"description": "Descubre mis aplicaciones en Play Store.",
-			"link": "https://play.google.com/store/apps/dev?id=5906834204268116327"
+			"description": "Descubre mis aplicaciones en Play Store."
 		},
 		"whatsappProfile": {
 			"title": "WhatsApp",
 			"urlTitle": "Enviar mensaje de WhatsApp",
-			"description": "Envíame un mensaje de WhatsApp.",
-			"link": "https://wa.me/50378508012"
+			"description": "Envíame un mensaje de WhatsApp."
 		}
 	}
 }

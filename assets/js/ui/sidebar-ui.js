@@ -10,30 +10,57 @@ import { calculateAge } from '../services/utils.js';
  * Rellena la barra lateral con la información de contacto y personal.
  * @param {object} data - Objeto que contiene los datos de la barra lateral.
  * @param {object} data.sidebar - Datos específicos de la barra lateral.
- * @param {object} data.sidebar.contacts - Información de contacto.
+ * @param {Array<object>} data.sidebar.contacts - Información de contacto.
  * @param {string} data.sidebar.name - Nombre del titular del portafolio.
  * @param {string} data.sidebar.title - Título o rol profesional.
  * @param {string} data.sidebar.showContactsBtn - Texto para el botón de mostrar contactos.
  */
 function setSidebar(data) {
-    document.querySelector('[data-contact-title="email"]').textContent = data.sidebar.contacts.email.title;
-    const emailLink = document.querySelector('[data-contact-link="email"]');
-    emailLink.textContent = data.sidebar.contacts.email.linkText;
-    emailLink.href = data.sidebar.contacts.email.linkHref;
-    document.querySelector('[data-contact-title="phone"]').textContent = data.sidebar.contacts.phone.title;
-    const phoneLink = document.querySelector('[data-contact-link="phone"]');
-    phoneLink.textContent = data.sidebar.contacts.phone.linkText;
-    phoneLink.href = data.sidebar.contacts.phone.linkHref;
-    document.querySelector('[data-contact-title="birthday"]').textContent = data.sidebar.contacts.birthday.title;
-    document.querySelector("[data-birthday-date]").textContent =
-        calculateAge(new Date(data.sidebar.contacts.birthday.datetime)) + " " + data.sidebar.contacts.birthday.unit;
-    document.querySelector("[data-birthday-date]").setAttribute("datetime", data.sidebar.contacts.birthday.datetime);
-    document.querySelector('[data-contact-title="location"]').textContent = data.sidebar.contacts.location.title;
-    document.querySelector("[data-location-address]").textContent = data.sidebar.contacts.location.address;
-    document.querySelector('[data-contact-title="linkedin"]').textContent = data.sidebar.contacts.linkedin.title;
-    const linkedinLink = document.querySelector('[data-contact-link="linkedin"]');
-    linkedinLink.textContent = data.sidebar.contacts.linkedin.linkText;
-    linkedinLink.href = data.sidebar.contacts.linkedin.linkHref;
+    const contactsList = document.getElementById("contacts-list");
+    contactsList.innerHTML = "";
+
+    data.sidebar.contacts.forEach(contact => {
+        const contactItem = document.createElement("li");
+        contactItem.className = "contact-item";
+
+        const iconBox = document.createElement("div");
+        iconBox.className = "icon-box";
+        const icon = document.createElement("ion-icon");
+        icon.name = contact.icon;
+        iconBox.appendChild(icon);
+
+        const contactInfo = document.createElement("div");
+        contactInfo.className = "contact-info";
+
+        const contactTitle = document.createElement("p");
+        contactTitle.className = "contact-title";
+        contactTitle.textContent = contact.title;
+
+        let contactLink;
+        if (contact.type === 'age') {
+            contactLink = document.createElement("time");
+            contactLink.textContent = calculateAge(new Date(contact.datetime)) + " " + contact.unit;
+            contactLink.setAttribute("datetime", contact.datetime);
+        } else if (contact.type === 'address') {
+            contactLink = document.createElement("address");
+            contactLink.textContent = contact.text;
+        } else {
+            contactLink = document.createElement("a");
+            contactLink.href = contact.link;
+            contactLink.textContent = contact.text;
+            if (contact.type === 'linkedin') contactLink.target = "_blank";
+        }
+        contactLink.className = "contact-link";
+
+        contactInfo.appendChild(contactTitle);
+        contactInfo.appendChild(contactLink);
+
+        contactItem.appendChild(iconBox);
+        contactItem.appendChild(contactInfo);
+
+        contactsList.appendChild(contactItem);
+    });
+
     document.querySelector(".name").textContent = data.sidebar.name;
     document.querySelector(".title").textContent = data.sidebar.title;
     document.querySelector("[data-show-contacts]").textContent = data.sidebar.showContactsBtn;

@@ -3,32 +3,42 @@
 		"name": "Diego Rubí",
 		"title": "Mobile Developer",
 		"showContactsBtn": "View Contact Information",
-		"contacts": {
-			"email": {
+		"contacts": [
+			{
+				"type": "email",
+				"icon": "mail-outline",
 				"title": "Email:",
-				"linkText": "drubico@gmail.com",
-				"linkHref": "mailto:drubico@gmail.com"
+				"text": "drubico@gmail.com",
+				"link": "mailto:drubico@gmail.com"
 			},
-			"phone": {
+			{
+				"type": "phone",
+				"icon": "phone-portrait-outline",
 				"title": "Phone:",
-				"linkText": "+503 78508012",
-				"linkHref": "tel:+50378508012"
+				"text": "+503 78508012",
+				"link": "tel:+50378508012"
 			},
-			"birthday": {
+			{
+				"type": "age",
+				"icon": "calendar-outline",
 				"title": "Age:",
 				"unit": "years",
 				"datetime": "1999-02-14"
 			},
-			"location": {
+			{
+				"type": "address",
+				"icon": "location-outline",
 				"title": "Location:",
-				"address": "La Libertad, El Salvador"
+				"text": "La Libertad, El Salvador"
 			},
-			"linkedin": {
+			{
+				"type": "linkedin",
+				"icon": "logo-linkedin",
 				"title": "LinkedIn:",
-				"linkText": "Diego Alejandro Rubí",
-				"linkHref": "https://www.linkedin.com/in/drubico/"
+				"text": "Diego Alejandro Rubí",
+				"link": "https://www.linkedin.com/in/drubico/"
 			}
-		}
+		]
 	},
 	"navbar": {
 		"about": {
@@ -54,14 +64,18 @@
 		"description": "My approach combines robust functionality with attractive design, ensuring seamless user experiences. I have collaborated on application development for government institutions and private companies, implementing best practices and modern technologies.",
 		"services": {
 			"title": "Services",
-			"mobileApps": {
-				"title": "Mobile Development",
-				"description": "Native Android app development with Kotlin, implementing clean architectures and modern design patterns."
-			},
-			"webDevelopment": {
-				"title": "Web Solutions",
-				"description": "Development of responsive web interfaces and efficient backend systems"
-			}
+			"items": [
+				{
+					"icon": "./assets/images/icon-app.svg",
+					"title": "Mobile Development",
+					"description": "Native Android app development with Kotlin, implementing clean architectures and modern design patterns."
+				},
+				{
+					"icon": "./assets/images/icon-dev.svg",
+					"title": "Web Solutions",
+					"description": "Development of responsive web interfaces and efficient backend systems"
+				}
+			]
 		},
 		"skills": {
 			"title": "Technical Skills"
