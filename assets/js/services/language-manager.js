@@ -1,11 +1,13 @@
-import { setAbout } from './data-about.js';
-import { setContacts } from './data-contacts.js';
-import { setExperience } from './data-experience.js';
-import { setModal } from './data-modal.js';
-import { setNavBarData } from './data-navbar.js';
-import { renderProjects,setTextProject } from './data-projects.js';
-import { setSidebar } from './data-sidebar.js';
-import { setFilters, setFilterDefaultValue } from './filters.js';
+import { setAbout } from '../ui/about-ui.js';
+import { setContacts } from '../ui/contacts-ui.js';
+import { setExperience } from '../ui/experience-ui.js';
+import { setModal } from '../ui/modal-ui.js';
+import { setNavBarData } from '../ui/navbar-ui.js';
+import { renderProjects } from '../ui/projects-ui.js';
+import { setTextProject } from './projects-service.js';
+import { setSidebar } from '../ui/sidebar-ui.js';
+import { setFilters, setFilterDefaultValue } from '../ui/filters-ui.js';
+import { loadSkills } from '../ui/skills-ui.js';
 
 
 function languageMain(languageTagLS, langSpanish, langEnglish) {
@@ -38,6 +40,7 @@ function setLanguageData(language) {
     fetch(language.jsonPath)
         .then((response) => response.json())
         .then((data) => {
+            loadSkills();
             setExperience(data);
             setAbout(data);
             setContacts(data);

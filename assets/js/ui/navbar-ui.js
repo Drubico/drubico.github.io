@@ -1,3 +1,4 @@
+
 function setNavBarData(data) {
     document.querySelectorAll("[data-nav-link]").forEach((navLink) => {
         const page = navLink.getAttribute("data-page");

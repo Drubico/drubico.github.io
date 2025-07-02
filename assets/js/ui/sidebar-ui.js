@@ -1,3 +1,5 @@
+import { calculateAge } from '../services/utils.js';
+
 function setSidebar(data) {
     // sidebar data
     document.querySelector('[data-contact-title="email"]').textContent = data.sidebar.contacts.email.title;
@@ -22,16 +24,6 @@ function setSidebar(data) {
     document.querySelector(".name").textContent = data.sidebar.name;
     document.querySelector(".title").textContent = data.sidebar.title;
     document.querySelector("[data-show-contacts]").textContent = data.sidebar.showContactsBtn;
-}
-
-function calculateAge(birthdate) {
-    const today = new Date();
-    let age = today.getFullYear() - birthdate.getFullYear();
-    const monthDifference = today.getMonth() - birthdate.getMonth();
-    if (monthDifference < 0 || (monthDifference === 0 && today.getDate() < birthdate.getDate())) {
-        age--;
-    }
-    return age;
 }
 
 function setSidebarClick() {

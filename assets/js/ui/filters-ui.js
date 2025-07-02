@@ -1,4 +1,3 @@
-
 // Function to generate filter items HTML
 function generateFilterItems(items) {
     return items.map(item => `

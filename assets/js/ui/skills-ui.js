@@ -1,4 +1,3 @@
-
 const skillsData = {
     "skills": [
         {
@@ -90,4 +89,4 @@ function loadSkills() {
     });
 }
 
-document.addEventListener('DOMContentLoaded', loadSkills);
+export { loadSkills };

@@ -1,9 +1,9 @@
 'use strict';
 
-import { languageMain } from './data-lang.js';
-import { setEventNavBar } from './data-navbar.js';
-import { setSidebarClick } from './data-sidebar.js';
-import { setFilterBox } from './filters.js';
+import { languageMain } from './services/language-manager.js';
+import { setEventNavBar } from './ui/navbar-ui.js';
+import { setSidebarClick } from './ui/sidebar-ui.js';
+import { setFilterBox } from './ui/filters-ui.js';
 
 let languageTagLS = "languageTag";;
 
