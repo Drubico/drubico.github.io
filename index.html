@@ -1,513 +1,427 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-		<!-- SEO Meta Tags -->
-		<meta
-			name="description"
-			content="Portafolio profesional de Diego Rubi, desarrollador de software especializado en Programacion movil. Conoce mis proyectos, habilidades y experiencia."
-		/>
-		<meta name="keywords" content="Diego Rubi, portafolio, desarrollador Android, Flutter, NodeJS, PostgreSQL, Jetpack Compose, Firebase, programación" />
-		<meta name="author" content="Diego Rubi" />
-		<meta name="robots" content="index, follow" />
-		<!-- Open Graph Meta Tags (para redes sociales como Facebook) -->
-		<meta property="og:title" content="Diego Rubi - Portafolio" />
-		<meta property="og:description" content="Explora el portafolio de Diego Rubi, desarrollador especializado en Programacion movil." />
-		<meta property="og:image" content="https://raw.githubusercontent.com/Drubico/drubico.github.io/refs/heads/master/assets/images/my-avatar.png" />
-		<meta property="og:url" content="https://diego-rubi.is-a.dev/" />
-		<meta property="og:type" content="website" />
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-		<!-- Twitter Meta Tags -->
-		<meta name="twitter:card" content="summary_large_image" />
-		<meta name="twitter:title" content="Diego Rubi - Portafolio" />
-		<meta name="twitter:description" content="Explora el portafolio de Diego Rubi, desarrollador especializado en Android y Flutter." />
-		<meta name="twitter:image" content="https://raw.githubusercontent.com/Drubico/drubico.github.io/refs/heads/master/assets/images/my-avatar.png" />
+	<!-- SEO Meta Tags -->
+	<meta name="description"
+		content="Portafolio profesional de Diego Rubi, desarrollador de software especializado en Programacion movil. Conoce mis proyectos, habilidades y experiencia." />
+	<meta name="keywords"
+		content="Diego Rubi, portafolio, desarrollador Android, Flutter, NodeJS, PostgreSQL, Jetpack Compose, Firebase, programación" />
+	<meta name="author" content="Diego Rubi" />
+	<meta name="robots" content="index, follow" />
+	<!-- Open Graph Meta Tags (para redes sociales como Facebook) -->
+	<meta property="og:title" content="Diego Rubi - Portafolio" />
+	<meta property="og:description"
+		content="Explora el portafolio de Diego Rubi, desarrollador especializado en Programacion movil." />
+	<meta property="og:image"
+		content="https://raw.githubusercontent.com/Drubico/drubico.github.io/refs/heads/master/assets/images/my-avatar.png" />
+	<meta property="og:url" content="https://diego-rubi.is-a.dev/" />
+	<meta property="og:type" content="website" />
 
-		<!-- Cache Control -->
-		<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
-		<meta http-equiv="Pragma" content="no-cache" />
-		<meta http-equiv="Expires" content="0" />
+	<!-- Twitter Meta Tags -->
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:title" content="Diego Rubi - Portafolio" />
+	<meta name="twitter:description"
+		content="Explora el portafolio de Diego Rubi, desarrollador especializado en Android y Flutter." />
+	<meta name="twitter:image"
+		content="https://raw.githubusercontent.com/Drubico/drubico.github.io/refs/heads/master/assets/images/my-avatar.png" />
 
-		<title>Diego Rubi - Portfolio</title>
-		<!-- Favicon -->
-		<link rel="shortcut icon" href="./assets/images/my-avatar.png" type="image/x-icon" />
-		<link rel="icon" type="image/png" sizes="32x32" href="./assets/images/my-avatar.png" />
-		<!-- CSS -->
-		<link rel="preconnect" href="https://fonts.googleapis.com" />
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" />
-		<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet" />
-		<link rel="stylesheet" href="https://unpkg.com/swiper@11/swiper-bundle.min.css" />
-		<link rel="stylesheet" href="./assets/css/style.css" />
-	</head>
+	<!-- Cache Control -->
+	<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+	<meta http-equiv="Pragma" content="no-cache" />
+	<meta http-equiv="Expires" content="0" />
 
-	<body>
-		<div class="loader-container" id="loading">
-			<span class="loader"></span>
-		</div>
-		<!-- Image Modal -->
-		<div id="image-modal" class="img-modal">
-			<div class="swiper-container">
-				<div class="swiper-wrapper">
-					<!-- Las imágenes se agregarán dinámicamente aquí -->
-				</div>
-				<!-- Agrega los controles de navegación de Swiper -->
-				<div class="swiper-button-next"></div>
-				<div class="swiper-button-prev"></div>
-				<div class="swiper-pagination"></div>
+	<title>Diego Rubi - Portfolio</title>
+	<!-- Favicon -->
+	<link rel="shortcut icon" href="./assets/images/my-avatar.png" type="image/x-icon" />
+	<link rel="icon" type="image/png" sizes="32x32" href="./assets/images/my-avatar.png" />
+	<!-- CSS -->
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" />
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet" />
+	<link rel="stylesheet" href="https://unpkg.com/swiper@11/swiper-bundle.min.css" />
+	<link rel="stylesheet" href="./assets/css/style.css" />
+</head>
+
+<body>
+	<div class="loader-container" id="loading">
+		<span class="loader"></span>
+	</div>
+	<!-- Image Modal -->
+	<div id="image-modal" class="img-modal">
+		<div class="swiper-container">
+			<div class="swiper-wrapper">
+				<!-- Las imágenes se agregarán dinámicamente aquí -->
 			</div>
-			<span class="close">&times;</span>
+			<!-- Agrega los controles de navegación de Swiper -->
+			<div class="swiper-button-next"></div>
+			<div class="swiper-button-prev"></div>
+			<div class="swiper-pagination"></div>
 		</div>
-		<main>
-			<!-- #region Sidebar-->
-			<aside class="sidebar" data-sidebar>
-				<div class="sidebar-info">
-					<figure class="avatar-box">
-						<img src="./assets/images/my-avatar.png" alt="Diego Rubi" />
-					</figure>
+		<span class="close">&times;</span>
+	</div>
+	<main>
+		<!-- #region Sidebar-->
+		<aside class="sidebar" data-sidebar>
+			<div class="sidebar-info">
+				<figure class="avatar-box">
+					<img src="./assets/images/my-avatar.png" alt="Diego Rubi" />
+				</figure>
 
-					<div class="info-content">
-						<h1 class="name" title="Diego Rubi"></h1>
-						<p class="title"></p>
+				<div class="info-content">
+					<h1 class="name" title="Diego Rubi"></h1>
+					<p class="title"></p>
+				</div>
+
+				<button class="info_more-btn" data-sidebar-btn>
+					<span data-show-contacts></span>
+					<ion-icon name="chevron-down"></ion-icon>
+				</button>
+			</div>
+
+			<div class="sidebar-info_more">
+				<div class="separator"></div>
+
+				<ul class="contacts-list">
+					<li class="contact-item">
+						<div class="icon-box">
+							<ion-icon name="mail-outline"></ion-icon>
+						</div>
+
+						<div class="contact-info">
+							<p class="contact-title" data-contact-title="email"></p>
+							<a href="#" class="contact-link" data-contact-link="email"></a>
+						</div>
+					</li>
+
+					<li class="contact-item">
+						<div class="icon-box">
+							<ion-icon name="phone-portrait-outline"></ion-icon>
+						</div>
+
+						<div class="contact-info">
+							<p class="contact-title" data-contact-title="phone"></p>
+							<a href="#" class="contact-link" data-contact-link="phone"></a>
+						</div>
+					</li>
+
+					<li class="contact-item">
+						<div class="icon-box">
+							<ion-icon name="calendar-outline"></ion-icon>
+						</div>
+
+						<div class="contact-info">
+							<p class="contact-title" data-contact-title="birthday"></p>
+							<time datetime="" data-birthday-date></time>
+						</div>
+					</li>
+
+					<li class="contact-item">
+						<div class="icon-box">
+							<ion-icon name="location-outline"></ion-icon>
+						</div>
+
+						<div class="contact-info">
+							<p class="contact-title" data-contact-title="location"></p>
+							<address data-location-address></address>
+						</div>
+					</li>
+					<li class="contact-item">
+						<div class="icon-box">
+							<i class="fab fa-linkedin"></i>
+						</div>
+
+						<div class="contact-info">
+							<p class="contact-title" data-contact-title="linkedin"></p>
+							<a href="#" target="_blank" class="contact-link" data-contact-link="linkedin"></a>
+						</div>
+					</li>
+				</ul>
+
+				<div class="separator"></div>
+			</div>
+		</aside>
+		<!--#endregion-->
+
+		<div class="main-content">
+			<!-- #region NavBar -->
+			<nav class="navbar">
+				<ul class="navbar-list">
+					<li class="navbar-item">
+						<button class="navbar-link active" data-nav-link data-page="about"></button>
+					</li>
+					<li class="navbar-item">
+						<button class="navbar-link" data-nav-link data-page="resume"></button>
+					</li>
+					<li class="navbar-item">
+						<button class="navbar-link" data-nav-link data-page="portfolio"></button>
+					</li>
+					<li class="navbar-item">
+						<button class="navbar-link" data-nav-link data-page="contact"></button>
+					</li>
+					<li class="navbar-item">
+						<img id="lang-toggle" src="./assets/images/usa.svg" alt="English" width="50" />
+					</li>
+				</ul>
+			</nav>
+			<!-- endregion-->
+
+			<!-- #region About -->
+			<article class="about active" data-page="about">
+				<header>
+					<h2 class="h2 article-title" data-about-title></h2>
+				</header>
+
+				<section class="about-text">
+					<p data-about-intro></p>
+					<p data-about-description></p>
+				</section>
+
+				<section class="service">
+					<h3 class="h3 service-title" data-service-title></h3>
+					<ul class="service-list">
+						<li class="service-item">
+							<div class="service-icon-box">
+								<img src="./assets/images/icon-app.svg" alt="mobile app icon" width="70" />
+							</div>
+							<div class="service-content-box">
+								<h4 class="h4 service-item-title" data-mobile-app-title></h4>
+								<p class="service-item-text" data-mobile-app-description></p>
+							</div>
+						</li>
+
+						<li class="service-item">
+							<div class="service-icon-box">
+								<img src="./assets/images/icon-dev.svg" alt="Web development icon" width="70" />
+							</div>
+							<div class="service-content-box">
+								<h4 class="h4 service-item-title" data-web-dev-title></h4>
+								<p class="service-item-text" data-web-dev-description></p>
+							</div>
+						</li>
+					</ul>
+
+					<section class="skill">
+						<h3 class="h3 skills-title" data-skills-title></h3>
+						<ul class="skill-list">
+						</ul>
+					</section>
+				</section>
+			</article>
+			<!-- endregion-->
+
+			<!-- #region Resume -->
+			<article class="resume" data-page="resume">
+				<header>
+					<h2 class="h2 article-title" data-lang="resume.title"></h2>
+				</header>
+
+				<section class="timeline">
+					<div class="title-wrapper">
+						<div class="icon-box">
+							<ion-icon name="book-outline"></ion-icon>
+						</div>
+						<h3 class="h3" data-lang="resume.experience.title"></h3>
 					</div>
 
-					<button class="info_more-btn" data-sidebar-btn>
-						<span data-show-contacts></span>
-						<ion-icon name="chevron-down"></ion-icon>
-					</button>
-				</div>
-
-				<div class="sidebar-info_more">
-					<div class="separator"></div>
-
-					<ul class="contacts-list">
-						<li class="contact-item">
-							<div class="icon-box">
-								<ion-icon name="mail-outline"></ion-icon>
-							</div>
-
-							<div class="contact-info">
-								<p class="contact-title" data-contact-title="email"></p>
-								<a href="#" class="contact-link" data-contact-link="email"></a>
-							</div>
-						</li>
-
-						<li class="contact-item">
-							<div class="icon-box">
-								<ion-icon name="phone-portrait-outline"></ion-icon>
-							</div>
-
-							<div class="contact-info">
-								<p class="contact-title" data-contact-title="phone"></p>
-								<a href="#" class="contact-link" data-contact-link="phone"></a>
-							</div>
-						</li>
-
-						<li class="contact-item">
-							<div class="icon-box">
-								<ion-icon name="calendar-outline"></ion-icon>
-							</div>
-
-							<div class="contact-info">
-								<p class="contact-title" data-contact-title="birthday"></p>
-								<time datetime="" data-birthday-date></time>
-							</div>
-						</li>
-
-						<li class="contact-item">
-							<div class="icon-box">
-								<ion-icon name="location-outline"></ion-icon>
-							</div>
-
-							<div class="contact-info">
-								<p class="contact-title" data-contact-title="location"></p>
-								<address data-location-address></address>
-							</div>
-						</li>
-						<li class="contact-item">
-							<div class="icon-box">
-								<i class="fab fa-linkedin"></i>
-							</div>
-
-							<div class="contact-info">
-								<p class="contact-title" data-contact-title="linkedin"></p>
-								<a href="#" target="_blank" class="contact-link" data-contact-link="linkedin"></a>
-							</div>
-						</li>
-					</ul>
-
-					<div class="separator"></div>
-				</div>
-			</aside>
-			<!--#endregion-->
-
-			<div class="main-content">
-				<!-- #region NavBar -->
-				<nav class="navbar">
-					<ul class="navbar-list">
-						<li class="navbar-item">
-							<button class="navbar-link active" data-nav-link data-page="about"></button>
-						</li>
-						<li class="navbar-item">
-							<button class="navbar-link" data-nav-link data-page="resume"></button>
-						</li>
-						<li class="navbar-item">
-							<button class="navbar-link" data-nav-link data-page="portfolio"></button>
-						</li>
-						<li class="navbar-item">
-							<button class="navbar-link" data-nav-link data-page="contact"></button>
-						</li>
-						<li class="navbar-item">
-							<img id="lang-toggle" src="./assets/images/usa.svg" alt="English" width="50" />
-						</li>
-					</ul>
-				</nav>
-				<!-- endregion-->
-
-				<!-- #region About -->
-				<article class="about active" data-page="about">
-					<header>
-						<h2 class="h2 article-title" data-about-title></h2>
-					</header>
-
-					<section class="about-text">
-						<p data-about-intro></p>
-						<p data-about-description></p>
-					</section>
-
-					<section class="service">
-						<h3 class="h3 service-title" data-service-title></h3>
-						<ul class="service-list">
-							<li class="service-item">
-								<div class="service-icon-box">
-									<img src="./assets/images/icon-app.svg" alt="mobile app icon" width="70" />
-								</div>
-								<div class="service-content-box">
-									<h4 class="h4 service-item-title" data-mobile-app-title></h4>
-									<p class="service-item-text" data-mobile-app-description></p>
-								</div>
-							</li>
-
-							<li class="service-item">
-								<div class="service-icon-box">
-									<img src="./assets/images/icon-dev.svg" alt="Web development icon" width="70" />
-								</div>
-								<div class="service-content-box">
-									<h4 class="h4 service-item-title" data-web-dev-title></h4>
-									<p class="service-item-text" data-web-dev-description></p>
-								</div>
-							</li>
-						</ul>
-
-						<section class="skill">
-							<h3 class="h3 skills-title" data-skills-title></h3>
-							<ul class="skill-list">
-								<li class="skill-item">
-									<div class="skill-icon-box">
-										<img src="./assets/images/android.svg" alt="android" width="100" />
-									</div>
-									<div class="skill-content-box">
-										<h4 class="h4 skill-item-title" data-mobile-app-title>Android</h4>
-										<div>
-											<p class="project-language" data-mobile-app-description>Java</p>
-											<p class="project-language" data-mobile-app-description>Kotlin</p>
-										</div>
-										<div>
-											<p class="project-framework" data-mobile-app-description>Jetpack compose</p>
-										</div>
-										<div>
-											<p class="project-library" data-mobile-app-description>Firebase</p>
-											<p class="project-library" data-mobile-app-description>Room</p>
-											<p class="project-library" data-mobile-app-description>Retrofit</p>
-											<p class="project-library" data-mobile-app-description>Hilt</p>
-											<p class="project-library" data-mobile-app-description>Koin</p>
-											<p class="project-library" data-mobile-app-description>Ktor</p>
-											<p class="project-library" data-mobile-app-description>Google Services</p>
-										</div>
-									</div>
-								</li>
-
-								<li class="skill-item">
-									<div class="skill-icon-box">
-										<img src="./assets/images/flutter.svg" alt="flutter" width="100" />
-									</div>
-									<div class="skill-content-box">
-										<h4 class="h4 skill-item-title" data-mobile-app-title>Flutter</h4>
-										<div>
-											<p class="project-language" data-mobile-app-description>Dart</p>
-										</div>
-										<div>
-											<p class="project-framework" data-mobile-app-description>Provider</p>
-											<p class="project-framework" data-mobile-app-description>Bloc</p>
-										</div>
-										<div>
-											<p class="project-library" data-mobile-app-description>Firebase</p>
-										</div>
-									</div>
-								</li>
-								<li class="skill-item">
-									<div class="skill-icon-box">
-										<img src="./assets/images/nodejs.svg" alt="nodejs" width="100" />
-									</div>
-									<div class="skill-content-box">
-										<h4 class="h4 skill-item-title" data-mobile-app-title>Node JS</h4>
-										<div>
-											<p class="project-language" data-mobile-app-description>Javascript</p>
-											<p class="project-language" data-mobile-app-description>Typescript</p>
-										</div>
-										<div>
-											<p class="project-framework" data-mobile-app-description>Express.js</p>
-										</div>
-										<div>
-											<p class="project-library" data-mobile-app-description>Axios</p>
-											<p class="project-library" data-mobile-app-description>Sequalize</p>
-										</div>
-									</div>
-								</li>
-								<li class="skill-item">
-									<div class="skill-icon-box">
-										<img src="./assets/images/postgres.svg" alt="postgres" width="100" />
-									</div>
-									<div class="skill-content-box">
-										<h4 class="h4 skill-item-title" data-mobile-app-title>Postgres</h4>
-										<div>
-											<p class="project-language" data-mobile-app-description>PL/pgSQL</p>
-										</div>
-										<div>
-											<p class="project-library" data-mobile-app-description>Sequalize</p>
-										</div>
-									</div>
-								</li>
-								<li class="skill-item">
-									<div class="skill-icon-box">
-										<img src="./assets/images/firebase.svg" alt="firebase" width="100" />
-									</div>
-									<div class="skill-content-box">
-										<h4 class="h4 skill-item-title" data-mobile-app-title>Firebase</h4>
-										<div>
-											<p class="project-library" data-mobile-app-description>Crashlytics</p>
-											<p class="project-library" data-mobile-app-description>Firestone</p>
-										</div>
-									</div>
-								</li>
-								<li class="skill-item">
-									<div class="skill-icon-box">
-										<img src="./assets/images/html_css_js.png" alt="flutter" width="100" />
-									</div>
-									<div class="skill-content-box">
-										<h4 class="h4 skill-item-title" data-mobile-app-title>Html,Css,JS</h4>
-										<div>
-											<p class="project-framework" data-mobile-app-description>Axios</p>
-										</div>
-										<div>
-											<p class="project-library" data-mobile-app-description>Tailwind</p>
-											<p class="project-library" data-mobile-app-description>Sass</p>
-										</div>
-									</div>
-								</li>
+					<ol class="timeline-list">
+						<li class="timeline-item">
+							<h4 class="h4 timeline-item-title" data-lang="resume.experience.items[0].position"></h4>
+							<span data-lang="resume.experience.items[0].dates"></span>
+							<ul class="timeline-details">
+								<li class="timeline-text" data-lang="resume.experience.items[0].details[0]"></li>
+								<li class="timeline-text" data-lang="resume.experience.items[0].details[1]"></li>
+								<li class="timeline-text" data-lang="resume.experience.items[0].details[2]"></li>
+								<li class="timeline-text" data-lang="resume.experience.items[0].details[3]"></li>
 							</ul>
-						</section>
-					</section>
-				</article>
-				<!-- endregion-->
+						</li>
 
-				<!-- #region Resume -->
-				<article class="resume" data-page="resume">
-					<header>
-						<h2 class="h2 article-title" data-lang="resume.title"></h2>
-					</header>
+						<li class="timeline-item">
+							<h4 class="h4 timeline-item-title" data-lang="resume.experience.items[1].position"></h4>
+							<span data-lang="resume.experience.items[1].dates"></span>
+							<ul class="timeline-details">
+								<li class="timeline-text" data-lang="resume.experience.items[1].details[0]"></li>
+								<li class="timeline-text" data-lang="resume.experience.items[1].details[1]"></li>
+								<li class="timeline-text" data-lang="resume.experience.items[1].details[2]"></li>
+								<li class="timeline-text" data-lang="resume.experience.items[1].details[3]"></li>
+							</ul>
+						</li>
 
-					<section class="timeline">
-						<div class="title-wrapper">
-							<div class="icon-box">
-								<ion-icon name="book-outline"></ion-icon>
-							</div>
-							<h3 class="h3" data-lang="resume.experience.title"></h3>
+						<li class="timeline-item">
+							<h4 class="h4 timeline-item-title" data-lang="resume.experience.items[2].position"></h4>
+							<span data-lang="resume.experience.items[2].dates"></span>
+							<p class="timeline-text" data-lang="resume.experience.items[2].details[0]"></p>
+						</li>
+					</ol>
+				</section>
+				<section class="timeline">
+					<div class="title-wrapper">
+						<div class="icon-box">
+							<ion-icon name="book-outline"></ion-icon>
 						</div>
+						<h3 class="h3" data-lang="resume.education.title"></h3>
+					</div>
 
-						<ol class="timeline-list">
-							<li class="timeline-item">
-								<h4 class="h4 timeline-item-title" data-lang="resume.experience.items[0].position"></h4>
-								<span data-lang="resume.experience.items[0].dates"></span>
-								<ul class="timeline-details">
-									<li class="timeline-text" data-lang="resume.experience.items[0].details[0]"></li>
-									<li class="timeline-text" data-lang="resume.experience.items[0].details[1]"></li>
-									<li class="timeline-text" data-lang="resume.experience.items[0].details[2]"></li>
-									<li class="timeline-text" data-lang="resume.experience.items[0].details[3]"></li>
-								</ul>
-							</li>
+					<ol class="timeline-list">
+						<li class="timeline-item">
+							<h4 class="h4 timeline-item-title" data-lang="resume.education.items[0].institution"></h4>
+							<span data-lang="resume.education.items[0].dates"></span>
+							<p class="timeline-text" data-lang="resume.education.items[0].description"></p>
+						</li>
+					</ol>
+				</section>
+			</article>
+			<!-- endregion-->
 
-							<li class="timeline-item">
-								<h4 class="h4 timeline-item-title" data-lang="resume.experience.items[1].position"></h4>
-								<span data-lang="resume.experience.items[1].dates"></span>
-								<ul class="timeline-details">
-									<li class="timeline-text" data-lang="resume.experience.items[1].details[0]"></li>
-									<li class="timeline-text" data-lang="resume.experience.items[1].details[1]"></li>
-									<li class="timeline-text" data-lang="resume.experience.items[1].details[2]"></li>
-									<li class="timeline-text" data-lang="resume.experience.items[1].details[3]"></li>
-								</ul>
-							</li>
+			<!-- #region Portfolio -->
+			<article class="portfolio" data-page="portfolio">
+				<header>
+					<h2 class="h2 article-title" data-lang="portfolio.title">Portfolio</h2>
+				</header>
 
-							<li class="timeline-item">
-								<h4 class="h4 timeline-item-title" data-lang="resume.experience.items[2].position"></h4>
-								<span data-lang="resume.experience.items[2].dates"></span>
-								<p class="timeline-text" data-lang="resume.experience.items[2].details[0]"></p>
-							</li>
-						</ol>
-					</section>
-					<section class="timeline">
-						<div class="title-wrapper">
-							<div class="icon-box">
-								<ion-icon name="book-outline"></ion-icon>
+				<section class="projects">
+					<ul class="filter-list">
+						<!-- Los elementos de filtro se generarán dinámicamente aquí -->
+					</ul>
+
+					<div class="filter-select-box">
+						<button class="filter-select" data-select>
+							<div class="select-value" data-selecct-value data-category="all"
+								data-lang="portfolio.filter.all">All</div>
+							<div class="select-icon">
+								<ion-icon name="chevron-down"></ion-icon>
 							</div>
-							<h3 class="h3" data-lang="resume.education.title"></h3>
-						</div>
-
-						<ol class="timeline-list">
-							<li class="timeline-item">
-								<h4 class="h4 timeline-item-title" data-lang="resume.education.items[0].institution"></h4>
-								<span data-lang="resume.education.items[0].dates"></span>
-								<p class="timeline-text" data-lang="resume.education.items[0].description"></p>
-							</li>
-						</ol>
-					</section>
-				</article>
-				<!-- endregion-->
-
-				<!-- #region Portfolio -->
-				<article class="portfolio" data-page="portfolio">
-					<header>
-						<h2 class="h2 article-title" data-lang="portfolio.title">Portfolio</h2>
-					</header>
-
-					<section class="projects">
+						</button>
 						<ul class="filter-list">
 							<!-- Los elementos de filtro se generarán dinámicamente aquí -->
 						</ul>
+					</div>
 
-						<div class="filter-select-box">
-							<button class="filter-select" data-select>
-								<div class="select-value" data-selecct-value data-category="all" data-lang="portfolio.filter.all">All</div>
-								<div class="select-icon">
-									<ion-icon name="chevron-down"></ion-icon>
-								</div>
+					<ul class="project-list" id="project-list"></ul>
+
+					<div class="modal-container" id="project-modal" data-modal-container>
+						<div class="overlay" data-overlay></div>
+						<section class="testimonials-modal has-scrollbar">
+							<button class="modal-close-btn" data-modal-close-btn>
+								<ion-icon name="close-outline"></ion-icon>
 							</button>
-							<ul class="filter-list">
-								<!-- Los elementos de filtro se generarán dinámicamente aquí -->
-							</ul>
-						</div>
 
-						<ul class="project-list" id="project-list"></ul>
+							<!-- Contenedor Swiper -->
+							<div class="modal-img-wrapper">
+								<div class="swiper">
+									<div class="swiper-wrapper">
+									</div>
 
-						<div class="modal-container" id="project-modal" data-modal-container>
-							<div class="overlay" data-overlay></div>
-							<section class="testimonials-modal has-scrollbar">
-								<button class="modal-close-btn" data-modal-close-btn>
-									<ion-icon name="close-outline"></ion-icon>
-								</button>
+									<!-- Controles de navegación -->
+									<div class="swiper-pagination"></div>
+									<div class="swiper-button-prev"></div>
+									<div class="swiper-button-next"></div>
+								</div>
+								<div class="modal-content">
+									<h4 class="h3 modal-title" data-modal-title></h4>
+									<div data-modal-text>
+										<p></p>
+									</div>
+								</div>
+							</div>
+						</section>
+					</div>
+				</section>
+			</article>
+			<!-- endregion-->
 
-								<!-- Contenedor Swiper -->
-								<div class="modal-img-wrapper">
-									<div class="swiper">
-										<div class="swiper-wrapper">
-										</div>
+			<!-- #region Contact -->
+			<article class="contact" data-page="contact">
+				<header>
+					<h2 class="h2 article-title" data-lang="contact.title">Contact</h2>
+				</header>
 
-										<!-- Controles de navegación -->
-										<div class="swiper-pagination"></div>
-										<div class="swiper-button-prev"></div>
-										<div class="swiper-button-next"></div>
-									</div>
-									<div class="modal-content">
-										<h4 class="h3 modal-title" data-modal-title></h4>
-										<div data-modal-text>
-											<p></p>
-										</div>
-									</div>
+				<section class="contact-me">
+					<h3 class="h3 form-title" data-lang="contact.formTitle">Contact Me</h3>
+					<ul class="contact-me-list">
+						<li class="contact-me-item">
+							<div class="contact-me-icon-box">
+								<img src="./assets/images/linkedin.svg" alt="linkedin" width="100" />
+							</div>
+							<div class="contact-me-content-box">
+								<h4 class="h4 contact-me-item-title" data-lang="contact.linkedinProfileTitle"></h4>
+								<div>
+									<p class="contact-me-item-description"
+										data-lang="contact.linkedinProfileDescription"></p>
 								</div>
-							</section>
-						</div>
-					</section>
-				</article>
-				<!-- endregion-->
+								<div>
+									<a class="project-link" href="" target="_blank"
+										data-lang="contact.linkedinProfileUrl"></a>
+								</div>
+							</div>
+						</li>
+						<li class="contact-me-item">
+							<div class="contact-me-icon-box">
+								<img src="./assets/images/whatsapp.svg" alt="whatsapp" width="100" />
+							</div>
+							<div class="contact-me-content-box">
+								<h4 class="h4 contact-me-item-title" data-lang="contact.whatsappProfileTitle"></h4>
+								<div>
+									<p class="contact-me-item-description"
+										data-lang="contact.whatsappProfileDescription"></p>
+								</div>
+								<div>
+									<a class="project-link" href="" target="_blank"
+										data-lang="contact.whatsappProfileUrl"></a>
+								</div>
+							</div>
+						</li>
+						<li class="contact-me-item">
+							<div class="contact-me-icon-box">
+								<img class="rounded-background" src="./assets/images/github.svg" alt="github"
+									width="100" />
+							</div>
+							<div class="contact-me-content-box">
+								<h4 class="h4 contact-me-item-title" data-lang="contact.githubProfileTitle"></h4>
+								<div>
+									<p class="contact-me-item-description" data-lang="contact.githubProfileDescription">
+									</p>
+								</div>
+								<div>
+									<a class="project-link" href="" target="_blank"
+										data-lang="contact.githubProfileUrl"></a>
+								</div>
+							</div>
+						</li>
+						<li class="contact-me-item">
+							<div class="contact-me-icon-box">
+								<img src="./assets/images/playstore.svg" alt="playstore" width="100" />
+							</div>
+							<div class="contact-me-content-box">
+								<h4 class="h4 contact-me-item-title" data-lang="contact.playStoreProfileTitle"></h4>
+								<div>
+									<p class="contact-me-item-description"
+										data-lang="contact.playStoreProfileDescription"></p>
+								</div>
+								<div>
+									<a class="project-link" href="" target="_blank"
+										data-lang="contact.playStoreProfileUrl"></a>
+								</div>
+							</div>
+						</li>
+					</ul>
+				</section>
+			</article>
+			<!-- endregion-->
+		</div>
+	</main>
+	<script src="https://unpkg.com/swiper@11/swiper-bundle.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+	<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+	<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+	<script src="./assets/js/data-lang.js"></script>
+	<script src="./assets/js/data-skills.js"></script>
+	<script type="module" src="assets/js/script.js"></script>
+</body>
 
-				<!-- #region Contact -->
-				<article class="contact" data-page="contact">
-					<header>
-						<h2 class="h2 article-title" data-lang="contact.title">Contact</h2>
-					</header>
-
-					<section class="contact-me">
-						<h3 class="h3 form-title" data-lang="contact.formTitle">Contact Me</h3>
-						<ul class="contact-me-list">
-							<li class="contact-me-item">
-								<div class="contact-me-icon-box">
-									<img src="./assets/images/linkedin.svg" alt="linkedin" width="100" />
-								</div>
-								<div class="contact-me-content-box">
-									<h4 class="h4 contact-me-item-title" data-lang="contact.linkedinProfileTitle"></h4>
-									<div>
-										<p class="contact-me-item-description" data-lang="contact.linkedinProfileDescription"></p>
-									</div>
-									<div>
-										<a class="project-link" href="" target="_blank" data-lang="contact.linkedinProfileUrl"></a>
-									</div>
-								</div>
-							</li>
-							<li class="contact-me-item">
-								<div class="contact-me-icon-box">
-									<img src="./assets/images/whatsapp.svg" alt="whatsapp" width="100" />
-								</div>
-								<div class="contact-me-content-box">
-									<h4 class="h4 contact-me-item-title" data-lang="contact.whatsappProfileTitle"></h4>
-									<div>
-										<p class="contact-me-item-description" data-lang="contact.whatsappProfileDescription"></p>
-									</div>
-									<div>
-										<a class="project-link" href="" target="_blank" data-lang="contact.whatsappProfileUrl"></a>
-									</div>
-								</div>
-							</li>
-							<li class="contact-me-item">
-								<div class="contact-me-icon-box">
-									<img class="rounded-background" src="./assets/images/github.svg" alt="github" width="100" />
-								</div>
-								<div class="contact-me-content-box">
-									<h4 class="h4 contact-me-item-title" data-lang="contact.githubProfileTitle"></h4>
-									<div>
-										<p class="contact-me-item-description" data-lang="contact.githubProfileDescription"></p>
-									</div>
-									<div>
-										<a class="project-link" href="" target="_blank" data-lang="contact.githubProfileUrl"></a>
-									</div>
-								</div>
-							</li>
-							<li class="contact-me-item">
-								<div class="contact-me-icon-box">
-									<img src="./assets/images/playstore.svg" alt="playstore" width="100" />
-								</div>
-								<div class="contact-me-content-box">
-									<h4 class="h4 contact-me-item-title" data-lang="contact.playStoreProfileTitle"></h4>
-									<div>
-										<p class="contact-me-item-description" data-lang="contact.playStoreProfileDescription"></p>
-									</div>
-									<div>
-										<a class="project-link" href="" target="_blank" data-lang="contact.playStoreProfileUrl"></a>
-									</div>
-								</div>
-							</li>
-						</ul>
-					</section>
-				</article>
-				<!-- endregion-->
-			</div>
-		</main>
-		<script src="https://unpkg.com/swiper@11/swiper-bundle.min.js"></script>
-		<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-		<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-		<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-		<script type="module" src="assets/js/script.js"></script>
-	</body>
 </html>
