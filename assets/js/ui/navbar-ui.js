@@ -1,4 +1,14 @@
+/**
+ * @file Gestiona la interfaz de usuario y los eventos de la barra de navegación.
+ * @author Diego Rubi
+ * @copyright 2025
+ */
 
+/**
+ * Establece el texto de los enlaces de navegación a partir de un objeto de datos.
+ * @param {object} data - El objeto que contiene los datos de la barra de navegación.
+ * @param {object} data.navbar - Objeto con los títulos de las páginas de navegación.
+ */
 function setNavBarData(data) {
     document.querySelectorAll("[data-nav-link]").forEach((navLink) => {
         const page = navLink.getAttribute("data-page");
@@ -6,13 +16,17 @@ function setNavBarData(data) {
     });
 }
 
+/**
+ * Configura los eventos de clic para la navegación de la página.
+ * Gestiona la página activa utilizando localStorage para mantener el estado entre cargas.
+ * Al cargar, establece la página activa desde localStorage o la primera como predeterminada.
+ * Asigna eventos de clic a los enlaces de navegación para cambiar entre páginas.
+ */
 function setEventNavBar() {
-    // page navigation variables
     const navigationLinks = document.querySelectorAll("[data-nav-link]");
     const pages = document.querySelectorAll("[data-page]");
     let activePage = localStorage.getItem("activePage");
 
-    // Set the active page from localStorage if it exists, otherwise set the first page as active
     if (!activePage && navigationLinks.length > 0) {
         activePage = navigationLinks[0].getAttribute('data-page');
         localStorage.setItem("activePage", activePage);
@@ -36,7 +50,6 @@ function setEventNavBar() {
         }
     }
 
-    // Add event to all nav links
     for (let i = 0; i < navigationLinks.length; i++) {
         navigationLinks[i].addEventListener("click", function () {
             const targetPage = this.getAttribute('data-page');
@@ -57,7 +70,6 @@ function setEventNavBar() {
                 }
             }
 
-            // Save the active page to localStorage
             localStorage.setItem("activePage", targetPage);
 
             window.scrollTo(0, 0);

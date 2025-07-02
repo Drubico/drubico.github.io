@@ -1,4 +1,18 @@
-// Function to generate filter items HTML
+/**
+ * @file Gestiona la interfaz de usuario y la lógica para los filtros de proyectos.
+ * @author Diego Rubi
+ * @copyright 2025
+ */
+
+/**
+ * Genera el HTML para los elementos de filtro a partir de una lista de ítems.
+ * @param {Array<object>} items - Lista de objetos de filtro.
+ * @param {boolean} items[].active - Indica si el filtro está activo.
+ * @param {string} items[].category - La categoría del filtro.
+ * @param {string} items[].lang - La clave de idioma para el texto del filtro.
+ * @param {string} items[].text - El texto a mostrar en el botón de filtro.
+ * @returns {string} Una cadena de HTML con los elementos de la lista de filtros.
+ */
 function generateFilterItems(items) {
     return items.map(item => `
       <li class="filter-item ${item.active ? 'active' : ''}">
@@ -7,6 +21,10 @@ function generateFilterItems(items) {
     `).join('');
 }
 
+/**
+ * Filtra los elementos del portafolio en el DOM basados en la categoría seleccionada.
+ * @param {string} selectedCategory - La categoría por la cual filtrar. 'all' para mostrar todos.
+ */
 const filterFunc = function (selectedCategory) {
     const filterItemsElements = document.querySelectorAll("[data-filter-item]");
     for (let i = 0; i < filterItemsElements.length; i++) {
@@ -20,16 +38,17 @@ const filterFunc = function (selectedCategory) {
     }
 }
 
+/**
+ * Configura los filtros en la interfaz de usuario.
+ * Genera los botones de filtro y les asigna los eventos de clic para activar el filtrado.
+ * @param {Array<object>} filterItems - Lista de objetos de filtro para generar los botones.
+ */
 function setFilters(filterItems) {
-    // Get the container elements
     const filterList = document.querySelectorAll('.filter-list');
-    // Generate and append the filter items
     filterList.forEach(list => {
         list.innerHTML = generateFilterItems(filterItems);
     });
-    // Add filtering functionality
     const filterButtons = document.querySelectorAll("[data-filter-btn]");
-    // Add event to all filter buttons
     for (let i = 0; i < filterButtons.length; i++) {
         filterButtons[i].addEventListener("click", function () {
             const selectedCategory = this.getAttribute('data-category');
@@ -47,8 +66,12 @@ function setFilters(filterItems) {
     }
 }
 
+/**
+ * Establece el valor de filtro predeterminado al cargar la página.
+ * Encuentra el filtro activo y lo aplica, actualizando la interfaz de usuario correspondiente.
+ * @param {Array<object>} filterItems - Lista de objetos de filtro para encontrar el valor predeterminado.
+ */
 function setFilterDefaultValue(filterItems) {
-    // Set default filter value
     const defaultCategory = filterItems.find(item => item.active).category?.toString() || 'all';
     const defaultFilterItem = filterItems.find(item => item.category === defaultCategory);
     if (defaultFilterItem) {
@@ -57,7 +80,6 @@ function setFilterDefaultValue(filterItems) {
         filterSelectValue.setAttribute('data-category', defaultFilterItem.category);
         filterFunc(defaultCategory);
     }
-    // Obtener todos los botones de filtro
     const filterButtons = document.querySelectorAll('[data-filter-btn]');
 
     filterButtons.forEach(button => {
@@ -69,9 +91,11 @@ function setFilterDefaultValue(filterItems) {
     });
 }
 
-
+/**
+ * Configura la funcionalidad del cuadro de selección de filtros (para vistas móviles).
+ * Asigna eventos para mostrar/ocultar la lista de filtros y para manejar la selección de un filtro.
+ */
 function setFilterBox() {
-    // Filter select box functionality
     const filterSelectBox = document.querySelector('.filter-select-box');
     if (filterSelectBox) {
         const filterSelectButton = filterSelectBox.querySelector('.filter-select');

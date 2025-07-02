@@ -1,3 +1,18 @@
+/**
+ * @file Gestiona la interfaz de usuario de los modales para los detalles del proyecto y la visualización de imágenes.
+ * @author Diego Rubi
+ * @copyright 2025
+ */
+
+/**
+ * Configura los modales para mostrar los detalles del proyecto y ampliar las imágenes.
+ * Inicializa los listeners de eventos para cada proyecto, gestionando la apertura y cierre de los modales,
+ * y la inicialización y destrucción de las instancias de Swiper para las galerías de imágenes.
+ * @param {object} data - El objeto principal de datos que contiene la información del portafolio.
+ * @param {object} data.portfolio - Contiene los datos del portafolio.
+ * @param {Array<object>} data.portfolio.projects - Lista de proyectos a mostrar.
+ * @param {object} data.portfolio.technologies - Textos relacionados con las tecnologías.
+ */
 function setModal(data) {
     const modal = document.getElementById("project-modal");
     const overlay = modal.querySelector('[data-overlay]');
@@ -7,7 +22,6 @@ function setModal(data) {
     const modalText = modal.querySelector('[data-modal-text]');
     let swiperInstance = null;
 
-    // Image modal elements
     const imgModal = document.getElementById("image-modal");
     const imgModalSwiperWrapper = imgModal.querySelector('.swiper-wrapper');
     const imgModalClose = imgModal.querySelector(".close");
@@ -17,7 +31,6 @@ function setModal(data) {
         item.querySelector('.project-img').addEventListener('click', (e) => {
             e.preventDefault();
 
-            // Obtener datos del proyecto correspondiente
             const projectData = data.portfolio.projects[index];
 
             swiperWrapper.innerHTML = '';
@@ -115,10 +128,9 @@ function setModal(data) {
             overlay.classList.add('active');
             document.querySelector('.modal-content').classList.add('modal-active');
 
-            // Add click event to images to open in img modal
             modal.querySelectorAll('.img-project').forEach(img => {
                 img.addEventListener('click', (e) => {
-                    e.stopPropagation(); // Detener la propagación del evento
+                    e.stopPropagation();
                     imgModal.style.display = "flex";
                     imgModalSwiperWrapper.innerHTML = '';
 
@@ -163,29 +175,29 @@ function setModal(data) {
         modal.classList.remove('active');
         overlay.classList.remove('active');
         document.querySelector('.modal-content').classList.remove('modal-active');
-        swiperWrapper.innerHTML = ''; // Limpiar el contenido del swiper
-        if (swiperInstance) swiperInstance.destroy(); // Destruir la instancia de Swiper
+        swiperWrapper.innerHTML = '';
+        if (swiperInstance) swiperInstance.destroy();
     });
 
     overlay.addEventListener('click', () => {
         modal.classList.remove('active');
         overlay.classList.remove('active');
         document.querySelector('.modal-content').classList.remove('modal-active');
-        swiperWrapper.innerHTML = ''; // Limpiar el contenido del swiper
-        if (swiperInstance) swiperInstance.destroy(); // Destruir la instancia de Swiper
+        swiperWrapper.innerHTML = '';
+        if (swiperInstance) swiperInstance.destroy();
     });
 
     imgModalClose.addEventListener('click', () => {
         imgModal.style.display = "none";
-        imgModalSwiperWrapper.innerHTML = ''; // Limpiar el contenido del swiper
-        if (imgModalSwiperInstance) imgModalSwiperInstance.destroy(); // Destruir la instancia de Swiper
+        imgModalSwiperWrapper.innerHTML = '';
+        if (imgModalSwiperInstance) imgModalSwiperInstance.destroy();
     });
 
     imgModal.addEventListener('click', (e) => {
         if (e.target === imgModal) {
             imgModal.style.display = "none";
-            imgModalSwiperWrapper.innerHTML = ''; // Limpiar el contenido del swiper
-            if (imgModalSwiperInstance) imgModalSwiperInstance.destroy(); // Destruir la instancia de Swiper
+            imgModalSwiperWrapper.innerHTML = '';
+            if (imgModalSwiperInstance) imgModalSwiperInstance.destroy();
         }
     });
 }

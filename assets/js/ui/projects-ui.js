@@ -1,7 +1,26 @@
+/**
+ * @file Gestiona la interfaz de usuario para mostrar los proyectos del portafolio.
+ * @author Diego Rubi
+ * @copyright 2025
+ */
 
+/**
+ * Renderiza la lista de proyectos en el DOM.
+ * @param {Array<object>} projects - Una lista de objetos de proyecto para mostrar.
+ * @param {string} projects[].img - La URL de la imagen para el proyecto.
+ * @param {string} projects[].title - El título del proyecto.
+ * @param {object} projects[].category - La categoría del proyecto.
+ * @param {string} projects[].category.key - La clave para el filtro de categoría.
+ * @param {string} projects[].category.value - El nombre visible de la categoría.
+ * @param {string} projects[].description - La descripción del proyecto.
+ * @param {object} [projects[].links] - Un objeto que contiene enlaces relacionados con el proyecto.
+ * @param {Array<string>} [projects[].languages] - Una lista de lenguajes de programación utilizados.
+ * @param {Array<string>} [projects[].frameworks] - Una lista de frameworks utilizados.
+ * @param {Array<string>} [projects[].libraries] - Una lista de librerías utilizadas.
+ */
 function renderProjects(projects) {
     const projectList = document.getElementById("project-list");
-    projectList.innerHTML = ""; // Clear existing items
+    projectList.innerHTML = "";
 
     projects.forEach((project, index) => {
         const projectItem = document.createElement("li");
@@ -55,7 +74,7 @@ function renderProjects(projects) {
                 linkElement.className = "project-link";
                 linkElement.href = link.link;
                 linkElement.textContent = link.title;
-                linkElement.target = "_blank"; // Open link in a new tab
+                linkElement.target = "_blank";
                 projectLinks.appendChild(linkElement);
             });
         }
