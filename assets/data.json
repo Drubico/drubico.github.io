@@ -123,5 +123,41 @@
             "urlTitleLangKey": "contact.playStoreProfile.urlTitle",
             "link": "https://play.google.com/store/apps/dev?id=5906834204268116327"
         }
+    ],
+    "sidebarContacts": [
+        {
+            "type": "email",
+            "icon": "mail-outline",
+            "titleLangKey": "sidebar.contacts.email.title",
+            "text": "drubico@gmail.com",
+            "link": "mailto:drubico@gmail.com"
+        },
+        {
+            "type": "phone",
+            "icon": "phone-portrait-outline",
+            "titleLangKey": "sidebar.contacts.phone.title",
+            "text": "+503 78508012",
+            "link": "tel:+50378508012"
+        },
+        {
+            "type": "age",
+            "icon": "calendar-outline",
+            "titleLangKey": "sidebar.contacts.age.title",
+            "unitLangKey": "sidebar.contacts.age.unit",
+            "datetime": "1999-02-14"
+        },
+        {
+            "type": "address",
+            "icon": "location-outline",
+            "titleLangKey": "sidebar.contacts.address.title",
+            "text": "La Libertad, El Salvador"
+        },
+        {
+            "type": "linkedin",
+            "icon": "logo-linkedin",
+            "titleLangKey": "sidebar.contacts.linkedin.title",
+            "text": "Diego Alejandro Rubí",
+            "link": "https://www.linkedin.com/in/drubico/"
+        }
     ]
 }

@@ -3,42 +3,24 @@
 		"name": "Diego Rubí",
 		"title": "Desarrollador Móvil",
 		"showContactsBtn": "Ver información de contacto",
-		"contacts": [
-			{
-				"type": "email",
-				"icon": "mail-outline",
-				"title": "Correo Electrónico:",
-				"text": "drubico@gmail.com",
-				"link": "mailto:drubico@gmail.com"
+		"contacts": {
+			"email": {
+				"title": "Correo Electrónico:"
 			},
-			{
-				"type": "phone",
-				"icon": "phone-portrait-outline",
-				"title": "Teléfono:",
-				"text": "+503 78508012",
-				"link": "tel:+50378508012"
+			"phone": {
+				"title": "Teléfono:"
 			},
-			{
-				"type": "age",
-				"icon": "calendar-outline",
+			"age": {
 				"title": "Edad:",
-				"unit": "años",
-				"datetime": "1999-02-14"
+				"unit": "años"
 			},
-			{
-				"type": "address",
-				"icon": "location-outline",
-				"title": "Ubicación:",
-				"text": "La Libertad, El Salvador"
+			"address": {
+				"title": "Ubicación:"
 			},
-			{
-				"type": "linkedin",
-				"icon": "logo-linkedin",
-				"title": "LinkedIn:",
-				"text": "Diego Alejandro Rubí",
-				"link": "https://www.linkedin.com/in/drubico/"
+			"linkedin": {
+				"title": "LinkedIn:"
 			}
-		]
+		}
 	},
 	"navbar": {
 		"about": {

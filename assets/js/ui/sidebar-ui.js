@@ -14,12 +14,14 @@ import { calculateAge } from '../services/utils.js';
  * @param {string} data.sidebar.name - Nombre del titular del portafolio.
  * @param {string} data.sidebar.title - Título o rol profesional.
  * @param {string} data.sidebar.showContactsBtn - Texto para el botón de mostrar contactos.
+ * @param {object} staticData - Objeto que contiene los datos estáticos.
+ * @param {Array<object>} staticData.sidebarContacts - Información de contacto de la barra lateral.
  */
-function setSidebar(data) {
+function setSidebar(data, staticData) {
     const contactsList = document.getElementById("contacts-list");
     contactsList.innerHTML = "";
 
-    data.sidebar.contacts.forEach(contact => {
+    staticData.sidebarContacts.forEach(contact => {
         const contactItem = document.createElement("li");
         contactItem.className = "contact-item";
 
@@ -34,12 +36,12 @@ function setSidebar(data) {
 
         const contactTitle = document.createElement("p");
         contactTitle.className = "contact-title";
-        contactTitle.textContent = contact.title;
+        contactTitle.textContent = data.sidebar.contacts[contact.type].title;
 
         let contactLink;
         if (contact.type === 'age') {
             contactLink = document.createElement("time");
-            contactLink.textContent = calculateAge(new Date(contact.datetime)) + " " + contact.unit;
+            contactLink.textContent = calculateAge(new Date(contact.datetime)) + " " + data.sidebar.contacts.age.unit;
             contactLink.setAttribute("datetime", contact.datetime);
         } else if (contact.type === 'address') {
             contactLink = document.createElement("address");

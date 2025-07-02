@@ -73,7 +73,7 @@ function setLanguageData(language) {
             renderProjects(langData.portfolio.projects);
             setModal(langData);
             setNavBarData(langData);
-            setSidebar(langData);
+            setSidebar(langData, staticData);
             const filterItems = setTextProject(langData);
             setFilters(filterItems);
             setFilterDefaultValue(filterItems);
