@@ -89,15 +89,23 @@ function setModal(langData, staticData) {
             const modalLinks = modalText.querySelector('.project-links');
             modalLinks.innerHTML = "";
             const links = projectData.links;
+            const langLinks = projectLang.links;
 
-            if (links) {
-                Object.entries(links).forEach(([key, value]) => {
-                    const linkElement = document.createElement("a");
-                    linkElement.className = "project-link";
-                    linkElement.href = value;
-                    linkElement.textContent = key.charAt(0).toUpperCase() + key.slice(1);
-                    linkElement.target = "_blank";
-                    modalLinks.appendChild(linkElement);
+            if (links && langLinks) {
+                Object.keys(langLinks).forEach((key) => {
+                    const linkInfo = langLinks[key];
+                    const linkUrl = links[key];
+                    if (linkInfo && linkUrl) {
+                        const linkElement = document.createElement("a");
+                        linkElement.className = "project-link";
+                        linkElement.href = linkUrl;
+                        linkElement.textContent = linkInfo.title;
+                        linkElement.target = "_blank";
+                        linkElement.addEventListener('click', (e) => {
+                            e.stopPropagation();
+                        });
+                        modalLinks.appendChild(linkElement);
+                    }
                 });
             }
 
