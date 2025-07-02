@@ -1,4 +1,9 @@
 <!DOCTYPE html>
+<!--
+  Author: Diego Rubi
+  Copyright: 2025
+  Description: Archivo HTML principal para el portafolio.
+-->
 <html lang="en">
 
 <head>
@@ -229,34 +234,7 @@
 						<h3 class="h3" data-lang="resume.experience.title"></h3>
 					</div>
 
-					<ol class="timeline-list">
-						<li class="timeline-item">
-							<h4 class="h4 timeline-item-title" data-lang="resume.experience.items[0].position"></h4>
-							<span data-lang="resume.experience.items[0].dates"></span>
-							<ul class="timeline-details">
-								<li class="timeline-text" data-lang="resume.experience.items[0].details[0]"></li>
-								<li class="timeline-text" data-lang="resume.experience.items[0].details[1]"></li>
-								<li class="timeline-text" data-lang="resume.experience.items[0].details[2]"></li>
-								<li class="timeline-text" data-lang="resume.experience.items[0].details[3]"></li>
-							</ul>
-						</li>
-
-						<li class="timeline-item">
-							<h4 class="h4 timeline-item-title" data-lang="resume.experience.items[1].position"></h4>
-							<span data-lang="resume.experience.items[1].dates"></span>
-							<ul class="timeline-details">
-								<li class="timeline-text" data-lang="resume.experience.items[1].details[0]"></li>
-								<li class="timeline-text" data-lang="resume.experience.items[1].details[1]"></li>
-								<li class="timeline-text" data-lang="resume.experience.items[1].details[2]"></li>
-								<li class="timeline-text" data-lang="resume.experience.items[1].details[3]"></li>
-							</ul>
-						</li>
-
-						<li class="timeline-item">
-							<h4 class="h4 timeline-item-title" data-lang="resume.experience.items[2].position"></h4>
-							<span data-lang="resume.experience.items[2].dates"></span>
-							<p class="timeline-text" data-lang="resume.experience.items[2].details[0]"></p>
-						</li>
+					<ol class="timeline-list" id="experience-timeline">
 					</ol>
 				</section>
 				<section class="timeline">
@@ -267,12 +245,7 @@
 						<h3 class="h3" data-lang="resume.education.title"></h3>
 					</div>
 
-					<ol class="timeline-list">
-						<li class="timeline-item">
-							<h4 class="h4 timeline-item-title" data-lang="resume.education.items[0].institution"></h4>
-							<span data-lang="resume.education.items[0].dates"></span>
-							<p class="timeline-text" data-lang="resume.education.items[0].description"></p>
-						</li>
+					<ol class="timeline-list" id="education-timeline">
 					</ol>
 				</section>
 			</article>
