@@ -1,0 +1,127 @@
+{
+    "skills": [
+        {
+            "icon": "./assets/images/android.svg",
+            "alt": "android",
+            "title": "Android",
+            "languages": [
+                "Java",
+                "Kotlin"
+            ],
+            "frameworks": [
+                "Jetpack compose"
+            ],
+            "libraries": [
+                "Firebase",
+                "Room",
+                "Retrofit",
+                "Hilt",
+                "Koin",
+                "Ktor",
+                "Google Services"
+            ]
+        },
+        {
+            "icon": "./assets/images/flutter.svg",
+            "alt": "flutter",
+            "title": "Flutter",
+            "languages": [
+                "Dart"
+            ],
+            "frameworks": [
+                "Provider",
+                "Bloc"
+            ],
+            "libraries": [
+                "Firebase"
+            ]
+        },
+        {
+            "icon": "./assets/images/nodejs.svg",
+            "alt": "nodejs",
+            "title": "Node JS",
+            "languages": [
+                "Javascript",
+                "Typescript"
+            ],
+            "frameworks": [
+                "Express.js"
+            ],
+            "libraries": [
+                "Axios",
+                "Sequalize"
+            ]
+        },
+        {
+            "icon": "./assets/images/postgres.svg",
+            "alt": "postgres",
+            "title": "Postgres",
+            "languages": [
+                "PL/pgSQL"
+            ],
+            "frameworks": [],
+            "libraries": [
+                "Sequalize"
+            ]
+        },
+        {
+            "icon": "./assets/images/firebase.svg",
+            "alt": "firebase",
+            "title": "Firebase",
+            "languages": [],
+            "frameworks": [],
+            "libraries": [
+                "Crashlytics",
+                "Firestone"
+            ]
+        },
+        {
+            "icon": "./assets/images/html_css_js.png",
+            "alt": "html_css_js",
+            "title": "Html,Css,JS",
+            "languages": [],
+            "frameworks": [
+                "Axios"
+            ],
+            "libraries": [
+                "Tailwind",
+                "Sass"
+            ]
+        }
+    ],
+    "contactItems": [
+        {
+            "icon": "./assets/images/linkedin.svg",
+            "alt": "linkedin",
+            "titleLangKey": "contact.linkedinProfile.title",
+            "descriptionLangKey": "contact.linkedinProfile.description",
+            "urlTitleLangKey": "contact.linkedinProfile.urlTitle",
+            "link": "https://www.linkedin.com/in/drubico/"
+        },
+        {
+            "icon": "./assets/images/whatsapp.svg",
+            "alt": "whatsapp",
+            "titleLangKey": "contact.whatsappProfile.title",
+            "descriptionLangKey": "contact.whatsappProfile.description",
+            "urlTitleLangKey": "contact.whatsappProfile.urlTitle",
+            "link": "https://wa.me/50378508012"
+        },
+        {
+            "icon": "./assets/images/github.svg",
+            "alt": "github",
+            "isRounded": true,
+            "titleLangKey": "contact.githubProfile.title",
+            "descriptionLangKey": "contact.githubProfile.description",
+            "urlTitleLangKey": "contact.githubProfile.urlTitle",
+            "link": "https://github.com/drubico"
+        },
+        {
+            "icon": "./assets/images/playstore.svg",
+            "alt": "playstore",
+            "titleLangKey": "contact.playStoreProfile.title",
+            "descriptionLangKey": "contact.playStoreProfile.description",
+            "urlTitleLangKey": "contact.playStoreProfile.urlTitle",
+            "link": "https://play.google.com/store/apps/dev?id=5906834204268116327"
+        }
+    ]
+}

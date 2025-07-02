@@ -81,48 +81,47 @@
 		},
 		"experience": {
 			"title": "Professional Experience",
-			"items": 
-				[
-				    {
-				        "position": "Senior Mobile Developer - PBS GROUP",
-				        "dates": "March 2025 — Present",
-				        "details": [
-				            "Development of mobile solutions using ODK Collect and Enketo",
-				            "Form consumption from ODK Central following Clean Architecture and Clean Code best practices",
-				            "Implementation of custom data capture flows for field operations",
-				            "Integration with REST APIs and advanced XML handling in Android"
-				        ]
-				    },
-				    {
-				        "position": "Senior Mobile Developer - Secretariat of Innovation of the Presidency",
-				        "dates": "October 2022 — March 2025",
-				        "details": [
-				            "Technical leadership in the development of native Android applications using Kotlin and Jetpack Compose",
-				            "Implementation of MVVM and Clean Architecture in critical projects",
-				            "Integration of RESTful services with Retrofit and local data management with Room",
-				            "Coordination of agile teams for the delivery of priority features"
-				        ]
-				    },
-				    {
-				        "position": "Full Stack Developer - Ministry of Health",
-				        "dates": "February 2022 — October 2022",
-				        "details": [
-				            "Modernization of legacy applications by migrating from Java to Kotlin",
-				            "Design and implementation of robust APIs using Node.js and Express",
-				            "Performance optimization in critical applications, reducing latency by 40%",
-				            "Implementation of dependency injection with Dagger Hilt"
-				        ]
-				    },
-				    {
-				        "position": "WordPress Developer - The Virtual Buddy",
-				        "dates": "January 2021 — June 2021",
-				        "details": [
-				            "Creation of customized CMS platforms using WordPress",
-				            "Design of responsive themes and SEO optimization",
-				            "Integration of e-commerce systems"
-				        ]
-				    }
-				]
+			"items": [
+				{
+					"position": "Senior Mobile Developer - PBS GROUP",
+					"dates": "March 2025 — Present",
+					"details": [
+						"Development of mobile solutions using ODK Collect and Enketo",
+						"Form consumption from ODK Central following Clean Architecture and Clean Code best practices",
+						"Implementation of custom data capture flows for field operations",
+						"Integration with REST APIs and advanced XML handling in Android"
+					]
+				},
+				{
+					"position": "Senior Mobile Developer - Secretariat of Innovation of the Presidency",
+					"dates": "October 2022 — March 2025",
+					"details": [
+						"Technical leadership in the development of native Android applications using Kotlin and Jetpack Compose",
+						"Implementation of MVVM and Clean Architecture in critical projects",
+						"Integration of RESTful services with Retrofit and local data management with Room",
+						"Coordination of agile teams for the delivery of priority features"
+					]
+				},
+				{
+					"position": "Full Stack Developer - Ministry of Health",
+					"dates": "February 2022 — October 2022",
+					"details": [
+						"Modernization of legacy applications by migrating from Java to Kotlin",
+						"Design and implementation of robust APIs using Node.js and Express",
+						"Performance optimization in critical applications, reducing latency by 40%",
+						"Implementation of dependency injection with Dagger Hilt"
+					]
+				},
+				{
+					"position": "WordPress Developer - The Virtual Buddy",
+					"dates": "January 2021 — June 2021",
+					"details": [
+						"Creation of customized CMS platforms using WordPress",
+						"Design of responsive themes and SEO optimization",
+						"Integration of e-commerce systems"
+					]
+				}
+			]
 		}
 	},
 	"portfolio": {
@@ -146,11 +145,22 @@
 					"value": "Applications"
 				},
 				"description": "<strong>Advanced Payroll Calculator</strong> - Specialized tool for precise net salary calculations in El Salvador. Includes modules for AFP, ISSS, and income tax deductions with financial scenario simulation capabilities.",
-				"languages": ["Kotlin"],
-				"frameworks": ["Jetpack Compose"],
-				"libraries": ["Firebase", "Coil", "MPAndroidChart", "Koin"],
+				"languages": [
+					"Kotlin"
+				],
+				"frameworks": [
+					"Jetpack Compose"
+				],
+				"libraries": [
+					"Firebase",
+					"Coil",
+					"MPAndroidChart",
+					"Koin"
+				],
 				"img": "salario-sv.webp",
-				"images": ["./assets/images/salario-sv.webp"],
+				"images": [
+					"./assets/images/salario-sv.webp"
+				],
 				"links": {
 					"playstore": {
 						"title": "View on Play Store",
@@ -165,11 +175,21 @@
 					"value": "Applications"
 				},
 				"description": "<strong>Interactive Sports Platform</strong> - Amateur tournament management system with real-time score tracking, league tables, and performance statistics. Features secure authentication and cross-platform synchronization.",
-				"languages": ["Kotlin"],
-				"frameworks": ["Jetpack Compose"],
-				"libraries": ["Firebase", "Glide", "Hilt"],
+				"languages": [
+					"Kotlin"
+				],
+				"frameworks": [
+					"Jetpack Compose"
+				],
+				"libraries": [
+					"Firebase",
+					"Glide",
+					"Hilt"
+				],
 				"img": "direscup.webp",
-				"images": ["./assets/images/direscup.webp"],
+				"images": [
+					"./assets/images/direscup.webp"
+				],
 				"links": {
 					"playstore": {
 						"title": "View on Play Store",
@@ -185,11 +205,22 @@
 				},
 				"description": "<strong>Comprehensive Financial Solution</strong> - Mobile platform for intelligent credit card management combining real-time analytics with personalized recommendations. Features categorized expense tracking, payment alerts, and financial metric visualization.",
 				"technologies": "Key Technologies:",
-				"languages": ["Kotlin"],
-				"frameworks": ["Jetpack Compose"],
-				"libraries": ["Firebase", "Glide", "MPAndroidChart", "Hilt"],
+				"languages": [
+					"Kotlin"
+				],
+				"frameworks": [
+					"Jetpack Compose"
+				],
+				"libraries": [
+					"Firebase",
+					"Glide",
+					"MPAndroidChart",
+					"Hilt"
+				],
 				"img": "finflex.webp",
-				"images": ["./assets/images/finflex.webp"]
+				"images": [
+					"./assets/images/finflex.webp"
+				]
 			},
 			{
 				"title": "PokeDex",
@@ -198,11 +229,27 @@
 					"value": "Applications"
 				},
 				"description": "<strong>Advanced Pokémon Encyclopedia</strong> - Native Android application consuming PokeAPI to display detailed information for over 1000 Pokémon. Features smart search, local favorites, and evolution chain details.",
-				"languages": ["Kotlin"],
-				"frameworks": ["Android SDK"],
-				"libraries": ["Retrofit", "Room", "Coroutines", "ViewModel", "LiveData", "DataBinding"],
+				"languages": [
+					"Kotlin"
+				],
+				"frameworks": [
+					"Android SDK"
+				],
+				"libraries": [
+					"Retrofit",
+					"Room",
+					"Coroutines",
+					"ViewModel",
+					"LiveData",
+					"DataBinding"
+				],
 				"img": "pokedex.webp",
-				"images": ["./assets/images/pokedex.webp", "./assets/images/pokedex-1.webp", "./assets/images/pokedex-2.webp", "assets/images/original/pokedex-diagram.png"],
+				"images": [
+					"./assets/images/pokedex.webp",
+					"./assets/images/pokedex-1.webp",
+					"./assets/images/pokedex-2.webp",
+					"assets/images/original/pokedex-diagram.png"
+				],
 				"links": {
 					"github": {
 						"title": "View Source Code",
@@ -217,9 +264,17 @@
 					"value": "Applications"
 				},
 				"description": "<strong>Real-time Cryptocurrency Tracker</strong> - Native Android application that provides live price updates for various cryptocurrencies. Features interactive 24-hour price charts, smart search, and favorite coin tracking.",
-				"languages": ["Kotlin"],
-				"frameworks": ["Jetpack Compose"],
-				"libraries": ["Firebase", "Coil", "Koin"],
+				"languages": [
+					"Kotlin"
+				],
+				"frameworks": [
+					"Jetpack Compose"
+				],
+				"libraries": [
+					"Firebase",
+					"Coil",
+					"Koin"
+				],
 				"img": "crypto-tracker.webp",
 				"images": [
 					"./assets/images/crypto-tracker.webp",
@@ -242,11 +297,23 @@
 					"value": "Web Development"
 				},
 				"description": "<strong>Corporate Survey System</strong> - Web platform for VIP customer feedback management with automated analytical reporting. Features interactive dashboard and multi-format data export capabilities.",
-				"languages": ["C#", "CSS", "HTML", "JavaScript"],
-				"frameworks": ["Blazor"],
-				"libraries": ["Tailwind CSS", "PDFSharp"],
+				"languages": [
+					"C#",
+					"CSS",
+					"HTML",
+					"JavaScript"
+				],
+				"frameworks": [
+					"Blazor"
+				],
+				"libraries": [
+					"Tailwind CSS",
+					"PDFSharp"
+				],
 				"img": "combo-vip-web.webp",
-				"images": ["./assets/images/combo-vip-web.webp"]
+				"images": [
+					"./assets/images/combo-vip-web.webp"
+				]
 			}
 		]
 	},
@@ -256,26 +323,22 @@
 		"linkedinProfile": {
 			"title": "LinkedIn Profile",
 			"urlTitle": "View LinkedIn Profile",
-			"description": "Connect with me on LinkedIn for professional inquiries.",
-			"link": "https://www.linkedin.com/in/drubico/"
+			"description": "Connect with me on LinkedIn for professional inquiries."
 		},
 		"githubProfile": {
 			"title": "GitHub Profile",
 			"urlTitle": "Explore GitHub Profile",
-			"description": "Review my technical contributions and personal projects.",
-			"link": "https://github.com/drubico"
+			"description": "Review my technical contributions and personal projects."
 		},
 		"playStoreProfile": {
 			"title": "Play Store Profile",
 			"urlTitle": "View Play Store Profile",
-			"description": "Discover my published applications.",
-			"link": "https://play.google.com/store/apps/dev?id=5906834204268116327"
+			"description": "Discover my published applications."
 		},
 		"whatsappProfile": {
 			"title": "WhatsApp",
 			"urlTitle": "Send WhatsApp Message",
-			"description": "Direct communication for urgent projects or technical consultations.",
-			"link": "https://wa.me/50378508012"
+			"description": "Direct communication for urgent projects or technical consultations."
 		}
 	}
 }

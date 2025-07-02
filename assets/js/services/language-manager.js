@@ -9,6 +9,7 @@ import { setSidebar } from '../ui/sidebar-ui.js';
 import { setFilters, setFilterDefaultValue } from '../ui/filters-ui.js';
 import { loadSkills } from '../ui/skills-ui.js';
 
+const dataUrl = 'assets/data.json';
 
 function languageMain(languageTagLS, langSpanish, langEnglish) {
     let currentLanguageTag = localStorage.getItem(languageTagLS);
@@ -37,22 +38,22 @@ function setLanguageData(language) {
     const langToggle = document.getElementById("lang-toggle");
     langToggle.src = language.imgSrc;
     langToggle.alt = language.imgAlt;
-    fetch(language.jsonPath)
-        .then((response) => response.json())
-        .then((data) => {
-            loadSkills();
-            setExperience(data);
-            setAbout(data);
-            setContacts(data);
-            renderProjects(data.portfolio.projects);
-            setModal(data);
-            setNavBarData(data);
-            setSidebar(data);
-            const filterItems = setTextProject(data);
+
+    Promise.all([fetch(language.jsonPath).then(res => res.json()), fetch(dataUrl).then(res => res.json())])
+        .then(([langData, staticData]) => {
+            loadSkills(staticData);
+            setExperience(langData);
+            setAbout(langData);
+            setContacts(langData, staticData);
+            renderProjects(langData.portfolio.projects);
+            setModal(langData);
+            setNavBarData(langData);
+            setSidebar(langData);
+            const filterItems = setTextProject(langData);
             setFilters(filterItems);
             setFilterDefaultValue(filterItems);
         })
-        .catch((error) => console.error("Error al cargar el archivo de idioma:", error));
+        .catch((error) => console.error("Error al cargar los archivos de datos:", error));
 }
 
 

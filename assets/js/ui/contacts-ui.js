@@ -1,28 +1,37 @@
-function setContacts(data) {
+function setContacts(langData, staticData) {
     // Set contact section
-    document.querySelector("[data-lang='contact.title']").textContent = data.contact.title;
-    document.querySelector("[data-lang='contact.formTitle']").textContent = data.contact.formTitle;
-    // Linkedin
-    document.querySelector("[data-lang='contact.linkedinProfileTitle']").textContent = data.contact.linkedinProfile.title;
-    document.querySelector("[data-lang='contact.linkedinProfileDescription']").textContent = data.contact.linkedinProfile.description;
-    document.querySelector("[data-lang='contact.linkedinProfileUrl']").textContent = data.contact.linkedinProfile.urlTitle;
-    document.querySelector("[data-lang='contact.linkedinProfileUrl']").href = data.contact.linkedinProfile.link;
-    // Github
-    document.querySelector("[data-lang='contact.githubProfileTitle']").textContent = data.contact.githubProfile.title;
-    document.querySelector("[data-lang='contact.githubProfileDescription']").textContent = data.contact.githubProfile.description;
-    document.querySelector("[data-lang='contact.githubProfileUrl']").textContent = data.contact.githubProfile.urlTitle;
-    document.querySelector("[data-lang='contact.githubProfileUrl']").href = data.contact.githubProfile.link;
+    document.querySelector("[data-lang='contact.title']").textContent = langData.contact.title;
+    document.querySelector("[data-lang='contact.formTitle']").textContent = langData.contact.formTitle;
 
-    // whatsapp
-    document.querySelector("[data-lang='contact.whatsappProfileTitle']").textContent = data.contact.whatsappProfile.title;
-    document.querySelector("[data-lang='contact.whatsappProfileDescription']").textContent = data.contact.whatsappProfile.description;
-    document.querySelector("[data-lang='contact.whatsappProfileUrl']").textContent = data.contact.whatsappProfile.urlTitle;
-    document.querySelector("[data-lang='contact.whatsappProfileUrl']").href = data.contact.whatsappProfile.link;
+    const contactList = document.querySelector('.contact-me-list');
+    contactList.innerHTML = ''; // Clear existing items
 
-    // play store
-    document.querySelector("[data-lang='contact.playStoreProfileTitle']").textContent = data.contact.playStoreProfile.title;
-    document.querySelector("[data-lang='contact.playStoreProfileDescription']").textContent = data.contact.playStoreProfile.description;
-    document.querySelector("[data-lang='contact.playStoreProfileUrl']").textContent = data.contact.playStoreProfile.urlTitle;
-    document.querySelector("[data-lang='contact.playStoreProfileUrl']").href = data.contact.playStoreProfile.link;
+    if (staticData.contactItems) {
+        staticData.contactItems.forEach(item => {
+            const listItem = document.createElement('li');
+            listItem.className = 'contact-me-item';
+
+            let titleText = item.titleLangKey.split('.').reduce((o, i) => o[i], langData);
+            let descriptionText = item.descriptionLangKey.split('.').reduce((o, i) => o[i], langData);
+            let urlTitleText = item.urlTitleLangKey.split('.').reduce((o, i) => o[i], langData);
+
+            listItem.innerHTML = `
+                <div class="contact-me-icon-box">
+                    <img src="${item.icon}" alt="${item.alt}" width="100" class="${item.isRounded ? 'rounded-background' : ''}" />
+                </div>
+                <div class="contact-me-content-box">
+                    <h4 class="h4 contact-me-item-title">${titleText}</h4>
+                    <div>
+                        <p class="contact-me-item-description">${descriptionText}</p>
+                    </div>
+                    <div>
+                        <a class="project-link" href="${item.link}" target="_blank">${urlTitleText}</a>
+                    </div>
+                </div>
+            `;
+            contactList.appendChild(listItem);
+        });
+    }
 }
+
 export { setContacts };
