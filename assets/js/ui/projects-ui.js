@@ -18,15 +18,19 @@
  * @param {Array<string>} [projects[].frameworks] - Una lista de frameworks utilizados.
  * @param {Array<string>} [projects[].libraries] - Una lista de librerías utilizadas.
  */
-function renderProjects(projects) {
+function renderProjects(projects, data) {
     const projectList = document.getElementById("project-list");
     projectList.innerHTML = "";
 
-    projects.forEach((project, index) => {
+    projects.forEach((project) => {
+        const projectData = data.projects.find(p => p.id === project.id);
+        if (!projectData) return;
+
         const projectItem = document.createElement("li");
         projectItem.className = "project-item active";
         projectItem.setAttribute("data-filter-item", "");
         projectItem.setAttribute("data-category", project.category.key);
+        projectItem.setAttribute("data-id", project.id);
 
         const projectLink = document.createElement("a");
         projectLink.href = "#";
@@ -43,7 +47,7 @@ function renderProjects(projects) {
         projectIconBox.appendChild(projectIcon);
 
         const projectImg = document.createElement("img");
-        projectImg.src = `./assets/images/${project.img}`;
+        projectImg.src = `./assets/images/${projectData.img}`;
         projectImg.alt = project.title;
         projectImg.loading = "lazy";
 
@@ -52,7 +56,6 @@ function renderProjects(projects) {
 
         const projectTitle = document.createElement("h3");
         projectTitle.className = "project-title";
-        projectTitle.setAttribute("data-lang", `portfolio.projects[${index}].title`);
         projectTitle.textContent = project.title;
 
         const projectContainer = document.createElement("div");
@@ -60,22 +63,23 @@ function renderProjects(projects) {
 
         const projectCategory = document.createElement("span");
         projectCategory.className = "project-category";
-        projectCategory.setAttribute("data-lang", `portfolio.projects[${index}].category`);
         projectCategory.textContent = project.category.value;
 
         const projectLinks = document.createElement("div");
         projectLinks.className = "project-links";
-        projectLinks.setAttribute("data-lang", `portfolio.projects[${index}].links`);
 
-        if (project.links) {
+        if (project.links && projectData.links) {
             Object.keys(project.links).forEach((key) => {
-                const link = project.links[key];
-                const linkElement = document.createElement("a");
-                linkElement.className = "project-link";
-                linkElement.href = link.link;
-                linkElement.textContent = link.title;
-                linkElement.target = "_blank";
-                projectLinks.appendChild(linkElement);
+                const linkInfo = project.links[key];
+                const linkUrl = projectData.links[key];
+                if (linkInfo && linkUrl) {
+                    const linkElement = document.createElement("a");
+                    linkElement.className = "project-link";
+                    linkElement.href = linkUrl;
+                    linkElement.textContent = linkInfo.title;
+                    linkElement.target = "_blank";
+                    projectLinks.appendChild(linkElement);
+                }
             });
         }
         projectContainer.appendChild(projectCategory);
@@ -83,10 +87,9 @@ function renderProjects(projects) {
 
         const projectDetails = document.createElement("div");
         projectDetails.className = "project-details hidden";
-        projectDetails.setAttribute("data-lang", `portfolio.projects[${index}].details`);
 
-        if (project.languages) {
-            project.languages.forEach((language) => {
+        if (projectData.languages) {
+            projectData.languages.forEach((language) => {
                 const languageElement = document.createElement("span");
                 languageElement.className = "project-language";
                 languageElement.textContent = language;
@@ -94,8 +97,8 @@ function renderProjects(projects) {
             });
         }
 
-        if (project.frameworks) {
-            project.frameworks.forEach((framework) => {
+        if (projectData.frameworks) {
+            projectData.frameworks.forEach((framework) => {
                 const frameworkElement = document.createElement("span");
                 frameworkElement.className = "project-framework";
                 frameworkElement.textContent = framework;
@@ -103,8 +106,8 @@ function renderProjects(projects) {
             });
         }
 
-        if (project.libraries) {
-            project.libraries.forEach((library) => {
+        if (projectData.libraries) {
+            projectData.libraries.forEach((library) => {
                 const libraryElement = document.createElement("span");
                 libraryElement.className = "project-library";
                 libraryElement.textContent = library;
@@ -112,10 +115,8 @@ function renderProjects(projects) {
             });
         }
 
-
         const projectDescription = document.createElement("div");
         projectDescription.className = "project-description";
-        projectDescription.setAttribute("data-lang", `portfolio.projects[${index}].description`);
         projectDescription.innerHTML = `<p>${project.description}</p>`;
 
         projectLink.appendChild(projectFigure);

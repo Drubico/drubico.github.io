@@ -70,8 +70,8 @@ function setLanguageData(language) {
             setExperience(langData);
             setAbout(langData);
             setContacts(langData, staticData);
-            renderProjects(langData.portfolio.projects);
-            setModal(langData);
+            renderProjects(langData.portfolio.projects, staticData);
+            setModal(langData, staticData);
             setNavBarData(langData);
             setSidebar(langData, staticData);
             const filterItems = setTextProject(langData);

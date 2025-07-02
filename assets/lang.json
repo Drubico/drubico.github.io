@@ -135,181 +135,78 @@
 		},
 		"projects": [
 			{
+				"id": "salario-sv",
 				"title": "Salario SV",
 				"category": {
 					"key": "applications",
 					"value": "Applications"
 				},
 				"description": "<strong>Advanced Payroll Calculator</strong> - Specialized tool for precise net salary calculations in El Salvador. Includes modules for AFP, ISSS, and income tax deductions with financial scenario simulation capabilities.",
-				"languages": [
-					"Kotlin"
-				],
-				"frameworks": [
-					"Jetpack Compose"
-				],
-				"libraries": [
-					"Firebase",
-					"Coil",
-					"MPAndroidChart",
-					"Koin"
-				],
-				"img": "salario-sv.webp",
-				"images": [
-					"./assets/images/salario-sv.webp"
-				],
 				"links": {
 					"playstore": {
-						"title": "View on Play Store",
-						"link": "https://play.google.com/store/apps/details?id=com.drubico.salariosv"
+						"title": "View on Play Store"
 					}
 				}
 			},
 			{
+				"id": "dires-cup",
 				"title": "Dires Cup",
 				"category": {
 					"key": "applications",
 					"value": "Applications"
 				},
 				"description": "<strong>Interactive Sports Platform</strong> - Amateur tournament management system with real-time score tracking, league tables, and performance statistics. Features secure authentication and cross-platform synchronization.",
-				"languages": [
-					"Kotlin"
-				],
-				"frameworks": [
-					"Jetpack Compose"
-				],
-				"libraries": [
-					"Firebase",
-					"Glide",
-					"Hilt"
-				],
-				"img": "direscup.webp",
-				"images": [
-					"./assets/images/direscup.webp"
-				],
 				"links": {
 					"playstore": {
-						"title": "View on Play Store",
-						"link": "https://play.google.com/store/apps/details?id=com.drubi.diresCup"
+						"title": "View on Play Store"
 					}
 				}
 			},
 			{
+				"id": "finflex",
 				"title": "Finflex",
 				"category": {
 					"key": "applications",
 					"value": "Applications"
 				},
-				"description": "<strong>Comprehensive Financial Solution</strong> - Mobile platform for intelligent credit card management combining real-time analytics with personalized recommendations. Features categorized expense tracking, payment alerts, and financial metric visualization.",
-				"technologies": "Key Technologies:",
-				"languages": [
-					"Kotlin"
-				],
-				"frameworks": [
-					"Jetpack Compose"
-				],
-				"libraries": [
-					"Firebase",
-					"Glide",
-					"MPAndroidChart",
-					"Hilt"
-				],
-				"img": "finflex.webp",
-				"images": [
-					"./assets/images/finflex.webp"
-				]
+				"description": "<strong>Comprehensive Financial Solution</strong> - Mobile platform for intelligent credit card management combining real-time analytics with personalized recommendations. Features categorized expense tracking, payment alerts, and financial metric visualization."
 			},
 			{
+				"id": "pokedex",
 				"title": "PokeDex",
 				"category": {
 					"key": "applications",
 					"value": "Applications"
 				},
 				"description": "<strong>Advanced Pokémon Encyclopedia</strong> - Native Android application consuming PokeAPI to display detailed information for over 1000 Pokémon. Features smart search, local favorites, and evolution chain details.",
-				"languages": [
-					"Kotlin"
-				],
-				"frameworks": [
-					"Android SDK"
-				],
-				"libraries": [
-					"Retrofit",
-					"Room",
-					"Coroutines",
-					"ViewModel",
-					"LiveData",
-					"DataBinding"
-				],
-				"img": "pokedex.webp",
-				"images": [
-					"./assets/images/pokedex.webp",
-					"./assets/images/pokedex-1.webp",
-					"./assets/images/pokedex-2.webp",
-					"assets/images/original/pokedex-diagram.png"
-				],
 				"links": {
 					"github": {
-						"title": "View Source Code",
-						"link": "https://github.com/Drubico/Pokeapi-Test"
+						"title": "View Source Code"
 					}
 				}
 			},
 			{
+				"id": "crypto-tracker",
 				"title": "CryptoTracker",
 				"category": {
 					"key": "applications",
 					"value": "Applications"
 				},
 				"description": "<strong>Real-time Cryptocurrency Tracker</strong> - Native Android application that provides live price updates for various cryptocurrencies. Features interactive 24-hour price charts, smart search, and favorite coin tracking.",
-				"languages": [
-					"Kotlin"
-				],
-				"frameworks": [
-					"Jetpack Compose"
-				],
-				"libraries": [
-					"Firebase",
-					"Coil",
-					"Koin"
-				],
-				"img": "crypto-tracker.webp",
-				"images": [
-					"./assets/images/crypto-tracker.webp",
-					"./assets/images/crypto-tracker-1.webp",
-					"./assets/images/crypto-tracker-2.webp",
-					"./assets/images/crypto-tracker-3.webp",
-					"./assets/images/original/crypto-tracker-diagram.png"
-				],
 				"links": {
 					"github": {
-						"title": "View Source Code",
-						"link": "https://github.com/Drubico/CryptoTracker"
+						"title": "View Source Code"
 					}
 				}
 			},
 			{
+				"id": "combo-vip",
 				"title": "Combo Vip",
 				"category": {
 					"key": "webDevelopment",
 					"value": "Web Development"
 				},
-				"description": "<strong>Corporate Survey System</strong> - Web platform for VIP customer feedback management with automated analytical reporting. Features interactive dashboard and multi-format data export capabilities.",
-				"languages": [
-					"C#",
-					"CSS",
-					"HTML",
-					"JavaScript"
-				],
-				"frameworks": [
-					"Blazor"
-				],
-				"libraries": [
-					"Tailwind CSS",
-					"PDFSharp"
-				],
-				"img": "combo-vip-web.webp",
-				"images": [
-					"./assets/images/combo-vip-web.webp"
-				]
+				"description": "<strong>Corporate Survey System</strong> - Web platform for VIP customer feedback management with automated analytical reporting. Features interactive dashboard and multi-format data export capabilities."
 			}
 		]
 	},

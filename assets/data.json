@@ -159,5 +159,144 @@
             "text": "Diego Alejandro Rubí",
             "link": "https://www.linkedin.com/in/drubico/"
         }
+    ],
+    "projects": [
+        {
+            "id": "salario-sv",
+            "img": "salario-sv.webp",
+            "images": [
+                "./assets/images/salario-sv.webp"
+            ],
+            "languages": [
+                "Kotlin"
+            ],
+            "frameworks": [
+                "Jetpack Compose"
+            ],
+            "libraries": [
+                "Firebase",
+                "Coil",
+                "MPAndroidChart",
+                "Koin"
+            ],
+            "links": {
+                "playstore": "https://play.google.com/store/apps/details?id=com.drubico.salariosv"
+            }
+        },
+        {
+            "id": "dires-cup",
+            "img": "direscup.webp",
+            "images": [
+                "./assets/images/direscup.webp"
+            ],
+            "languages": [
+                "Kotlin"
+            ],
+            "frameworks": [
+                "Jetpack Compose"
+            ],
+            "libraries": [
+                "Firebase",
+                "Glide",
+                "Hilt"
+            ],
+            "links": {
+                "playstore": "https://play.google.com/store/apps/details?id=com.drubi.diresCup"
+            }
+        },
+        {
+            "id": "finflex",
+            "img": "finflex.webp",
+            "images": [
+                "./assets/images/finflex.webp"
+            ],
+            "languages": [
+                "Kotlin"
+            ],
+            "frameworks": [
+                "Jetpack Compose"
+            ],
+            "libraries": [
+                "Firebase",
+                "Glide",
+                "MPAndroidChart",
+                "Hilt"
+            ]
+        },
+        {
+            "id": "pokedex",
+            "img": "pokedex.webp",
+            "images": [
+                "./assets/images/pokedex.webp",
+                "./assets/images/pokedex-1.webp",
+                "./assets/images/pokedex-2.webp",
+                "assets/images/original/pokedex-diagram.png"
+            ],
+            "languages": [
+                "Kotlin"
+            ],
+            "frameworks": [
+                "Android SDK"
+            ],
+            "libraries": [
+                "Retrofit",
+                "Room",
+                "Coroutines",
+                "ViewModel",
+                "LiveData",
+                "DataBinding"
+            ],
+            "links": {
+                "github": "https://github.com/Drubico/Pokeapi-Test"
+            }
+        },
+        {
+            "id": "crypto-tracker",
+            "img": "crypto-tracker.webp",
+            "images": [
+                "./assets/images/crypto-tracker.webp",
+                "./assets/images/crypto-tracker-1.webp",
+                "./assets/images/crypto-tracker-2.webp",
+                "./assets/images/crypto-tracker-3.webp",
+                "./assets/images/original/crypto-tracker-diagram.png"
+            ],
+            "languages": [
+                "Kotlin"
+            ],
+            "frameworks": [
+                "Android SDK"
+            ],
+            "libraries": [
+                "Retrofit",
+                "Room",
+                "Coroutines",
+                "ViewModel",
+                "LiveData",
+                "MPAndroidChart"
+            ],
+            "links": {
+                "github": "https://github.com/Drubico/CryptoTracker"
+            }
+        },
+        {
+            "id": "combo-vip",
+            "img": "combo-vip-web.webp",
+            "images": [
+                "./assets/images/combo-vip-web.webp"
+            ],
+            "languages": [
+                "C#",
+                "CSS",
+                "HTML",
+                "JavaScript"
+            ],
+            "frameworks": [
+                "Blazor"
+            ],
+            "libraries": [
+                "Tailwind CSS",
+                "PDFSharp"
+            ]
+        }
     ]
 }

@@ -135,184 +135,78 @@
 		},
 		"projects": [
 			{
+				"id": "salario-sv",
 				"title": "Salario SV",
 				"category": {
 					"key": "applications",
 					"value": "Aplicaciones"
 				},
 				"description": "<strong>Calculadora Fiscal Avanzada</strong> - Herramienta especializada para cálculo preciso de salarios netos en El Salvador. Incluye módulos para deducciones de AFP, ISSS e impuesto sobre la renta, con capacidad de simulación de escenarios financieros.",
-				"languages": [
-					"Kotlin"
-				],
-				"frameworks": [
-					"Jetpack Compose"
-				],
-				"libraries": [
-					"Firebase",
-					"Coil",
-					"MPAndroidChart",
-					"Koin"
-				],
-				"img": "salario-sv.webp",
-				"images": [
-					"./assets/images/salario-sv.webp"
-				],
 				"links": {
 					"playstore": {
-						"title": "Ver en play store",
-						"link": "https://play.google.com/store/apps/details?id=com.drubico.salariosv"
+						"title": "Ver en play store"
 					}
 				}
 			},
 			{
+				"id": "dires-cup",
 				"title": "Dires Cup",
 				"category": {
 					"key": "applications",
 					"value": "Aplicaciones"
 				},
 				"description": "<strong>Plataforma Deportiva Interactiva</strong> - Sistema de gestión de torneos amateur con seguimiento en tiempo real de marcadores, tablas de posiciones y estadísticas de rendimiento. Integra autenticación segura y sincronización multiplataforma.",
-				"languages": [
-					"Kotlin"
-				],
-				"frameworks": [
-					"Jetpack Compose"
-				],
-				"libraries": [
-					"Firebase",
-					"Glide",
-					"Hilt"
-				],
-				"img": "direscup.webp",
-				"images": [
-					"./assets/images/direscup.webp"
-				],
 				"links": {
 					"playstore": {
-						"title": "Ver en play store",
-						"link": "https://play.google.com/store/apps/details?id=com.drubi.diresCup"
+						"title": "Ver en play store"
 					}
 				}
 			},
 			{
+				"id": "finflex",
 				"title": "Finflex",
 				"category": {
 					"key": "applications",
 					"value": "Aplicaciones"
 				},
-				"description": "<strong>Solución Financiera Integral</strong> - Plataforma móvil para gestión inteligente de tarjetas de crédito que combina análisis en tiempo real con recomendaciones personalizadas. Implementa seguimiento de gastos categorizados, alertas de pago y visualización de métricas financieras.",
-				"technologies": "Tecnologías clave:",
-				"languages": [
-					"Kotlin"
-				],
-				"frameworks": [
-					"Jetpack Compose"
-				],
-				"libraries": [
-					"Firebase",
-					"Glide",
-					"MPAndroidChart",
-					"Hilt"
-				],
-				"img": "finflex.webp",
-				"images": [
-					"./assets/images/finflex.webp"
-				]
+				"description": "<strong>Solución Financiera Integral</strong> - Plataforma móvil para gestión inteligente de tarjetas de crédito que combina análisis en tiempo real con recomendaciones personalizadas. Implementa seguimiento de gastos categorizados, alertas de pago y visualización de métricas financieras."
 			},
 			{
+				"id": "pokedex",
 				"title": "PokeDex",
 				"category": {
 					"key": "applications",
 					"value": "Aplicaciones"
 				},
 				"description": "<strong>Enciclopedia Pokémon Avanzada</strong> - Aplicación nativa Android que consume la PokeAPI para mostrar información detallada de más de 1000 Pokémon. Incluye búsqueda inteligente, favoritos locales y detalles de evoluciones.",
-				"languages": [
-					"Kotlin"
-				],
-				"frameworks": [
-					"Android SDK"
-				],
-				"libraries": [
-					"Retrofit",
-					"Room",
-					"Coroutines",
-					"ViewModel",
-					"LiveData",
-					"DataBinding"
-				],
-				"img": "pokedex.webp",
-				"images": [
-					"./assets/images/pokedex.webp",
-					"./assets/images/pokedex-1.webp",
-					"./assets/images/pokedex-2.webp",
-					"assets/images/original/pokedex-diagram.png"
-				],
 				"links": {
 					"github": {
-						"title": "Ver código fuente",
-						"link": "https://github.com/Drubico/Pokeapi-Test"
+						"title": "Ver código fuente"
 					}
 				}
 			},
 			{
+				"id": "crypto-tracker",
 				"title": "CryptoTracker",
 				"category": {
 					"key": "applications",
 					"value": "Aplicaciones"
 				},
 				"description": "<strong>Rastreador de Criptomonedas en Tiempo Real</strong> - Aplicación nativa de Android que proporciona actualizaciones en vivo del precio de diversas criptomonedas. Cuenta con gráficos interactivos de las últimas 24 horas, búsqueda inteligente y seguimiento de monedas favoritas.",
-				"languages": [
-					"Kotlin"
-				],
-				"frameworks": [
-					"Android SDK"
-				],
-				"libraries": [
-					"Retrofit",
-					"Room",
-					"Coroutines",
-					"ViewModel",
-					"LiveData",
-					"MPAndroidChart"
-				],
-				"img": "crypto-tracker.webp",
-				"images": [
-					"./assets/images/crypto-tracker.webp",
-					"./assets/images/crypto-tracker-1.webp",
-					"./assets/images/crypto-tracker-2.webp",
-					"./assets/images/crypto-tracker-3.webp",
-					"./assets/images/original/crypto-tracker-diagram.png"
-				],
 				"links": {
 					"github": {
-						"title": "Ver código fuente",
-						"link": "https://github.com/Drubico/CryptoTracker"
+						"title": "Ver código fuente"
 					}
 				}
 			},
 			{
+				"id": "combo-vip",
 				"title": "Combo Vip",
 				"category": {
 					"key": "webDevelopment",
 					"value": "Desarrollo web"
 				},
-				"description": "<strong>Sistema de Encuestas Corporativas</strong> - Plataforma web para gestión de feedback de clientes VIP con generación automatizada de reportes analíticos. Implementa dashboard interactivo y exportación de datos en múltiples formatos.",
-				"languages": [
-					"C#",
-					"CSS",
-					"HTML",
-					"JavaScript"
-				],
-				"frameworks": [
-					"Blazor"
-				],
-				"libraries": [
-					"Tailwind CSS",
-					"PDFSharp"
-				],
-				"img": "combo-vip-web.webp",
-				"images": [
-					"./assets/images/combo-vip-web.webp"
-				]
+				"description": "<strong>Sistema de Encuestas Corporativas</strong> - Plataforma web para gestión de feedback de clientes VIP con generación automatizada de reportes analíticos. Implementa dashboard interactivo y exportación de datos en múltiples formatos."
 			}
 		]
 	},
