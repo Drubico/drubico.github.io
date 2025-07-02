@@ -78,6 +78,9 @@ function renderProjects(projects, data) {
                     linkElement.href = linkUrl;
                     linkElement.textContent = linkInfo.title;
                     linkElement.target = "_blank";
+                    linkElement.addEventListener('click', (e) => {
+                        e.stopPropagation();
+                    });
                     projectLinks.appendChild(linkElement);
                 }
             });
