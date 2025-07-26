@@ -24,9 +24,9 @@ function generateFilterItems(items) {
 /**
  * Filtra los elementos del portafolio en el DOM basados en la categoría seleccionada.
  * @param {string} selectedCategory - La categoría por la cual filtrar. 'all' para mostrar todos.
+ * @param {NodeListOf<HTMLElement>} filterItemsElements - Nodelist de los elementos a filtrar.
  */
-const filterFunc = function (selectedCategory) {
-    const filterItemsElements = document.querySelectorAll("[data-filter-item]");
+const filterFunc = function (selectedCategory, filterItemsElements) {
     for (let i = 0; i < filterItemsElements.length; i++) {
         if (selectedCategory === "all") {
             filterItemsElements[i].classList.add("active");
@@ -42,26 +42,31 @@ const filterFunc = function (selectedCategory) {
  * Configura los filtros en la interfaz de usuario.
  * Genera los botones de filtro y les asigna los eventos de clic para activar el filtrado.
  * @param {Array<object>} filterItems - Lista de objetos de filtro para generar los botones.
+ * @param {NodeListOf<HTMLElement>} filterListElements - Nodelist de los elementos de la lista de filtros.
+ * @param {NodeListOf<HTMLElement>} filterButtonsElements - Nodelist de los botones de filtro.
+ * @param {NodeListOf<HTMLElement>} filterItemsToFilter - Nodelist de los elementos del portafolio a filtrar.
  */
-function setFilters(filterItems) {
-    const filterList = document.querySelectorAll('.filter-list');
-    filterList.forEach(list => {
+function setFilters(filterItems, filterListElements, filterButtonsElements, filterItemsToFilter) {
+    filterListElements.forEach(list => {
         list.innerHTML = generateFilterItems(filterItems);
     });
-    const filterButtons = document.querySelectorAll("[data-filter-btn]");
-    for (let i = 0; i < filterButtons.length; i++) {
-        filterButtons[i].addEventListener("click", function () {
+
+    // Re-query filterButtonsElements after they have been rendered
+    filterButtonsElements = document.querySelectorAll("[data-filter-btn]");
+
+    for (let i = 0; i < filterButtonsElements.length; i++) {
+        filterButtonsElements[i].addEventListener("click", function () {
             const selectedCategory = this.getAttribute('data-category');
 
-            for (let j = 0; j < filterButtons.length; j++) {
-                if (filterButtons[j] === this) {
-                    filterButtons[j].classList.add("active");
+            for (let j = 0; j < filterButtonsElements.length; j++) {
+                if (filterButtonsElements[j] === this) {
+                    filterButtonsElements[j].classList.add("active");
                 } else {
-                    filterButtons[j].classList.remove("active");
+                    filterButtonsElements[j].classList.remove("active");
                 }
             }
 
-            filterFunc(selectedCategory);
+            filterFunc(selectedCategory, filterItemsToFilter);
         });
     }
 }
@@ -70,41 +75,47 @@ function setFilters(filterItems) {
  * Establece el valor de filtro predeterminado al cargar la página.
  * Encuentra el filtro activo y lo aplica, actualizando la interfaz de usuario correspondiente.
  * @param {Array<object>} filterItems - Lista de objetos de filtro para encontrar el valor predeterminado.
+ * @param {HTMLElement} filterSelectValueEl - Elemento del DOM para el valor seleccionado del filtro.
+ * @param {NodeListOf<HTMLElement>} filterButtonsElements - Nodelist de los botones de filtro.
+ * @param {NodeListOf<HTMLElement>} filterItemsToFilter - Nodelist de los elementos del portafolio a filtrar.
  */
-function setFilterDefaultValue(filterItems) {
+function setFilterDefaultValue(filterItems, filterSelectValueEl, filterButtonsElements, filterItemsToFilter) {
+    // Re-query filterButtonsElements to ensure it's up-to-date
+    filterButtonsElements = document.querySelectorAll("[data-filter-btn]");
+
     const defaultCategory = filterItems.find(item => item.active).category?.toString() || 'all';
     const defaultFilterItem = filterItems.find(item => item.category === defaultCategory);
     if (defaultFilterItem) {
-        const filterSelectValue = document.querySelector('.select-value');
-        filterSelectValue.textContent = defaultFilterItem.text;
-        filterSelectValue.setAttribute('data-category', defaultFilterItem.category);
-        filterFunc(defaultCategory);
+        filterSelectValueEl.textContent = defaultFilterItem.text;
+        filterSelectValueEl.setAttribute('data-category', defaultFilterItem.category);
+        filterFunc(defaultCategory, filterItemsToFilter);
     }
-    const filterButtons = document.querySelectorAll('[data-filter-btn]');
 
-    filterButtons.forEach(button => {
+    filterButtonsElements.forEach(button => {
         const buttonCategory = button.getAttribute('data-category');
         if (buttonCategory === defaultCategory) {
             button.classList.add('active');
+        } else {
+            button.classList.remove('active'); // Ensure other buttons are not active
         }
-
     });
 }
 
 /**
  * Configura la funcionalidad del cuadro de selección de filtros (para vistas móviles).
  * Asigna eventos para mostrar/ocultar la lista de filtros y para manejar la selección de un filtro.
+ * @param {HTMLElement} filterSelectBoxEl - Elemento del DOM del cuadro de selección de filtros.
+ * @param {NodeListOf<HTMLElement>} filterButtonsElements - Nodelist de los botones de filtro.
+ * @param {NodeListOf<HTMLElement>} filterItemsToFilter - Nodelist de los elementos del portafolio a filtrar.
  */
-function setFilterBox() {
-    const filterSelectBox = document.querySelector('.filter-select-box');
-    if (filterSelectBox) {
-        const filterSelectButton = filterSelectBox.querySelector('.filter-select');
-        const filterSelectValue = filterSelectBox.querySelector('.select-value');
-        const currentFilterList = filterSelectBox.querySelector('.filter-list');
+function setFilterBox(filterSelectBoxEl, filterButtonsElements, filterItemsToFilter) {
+    if (filterSelectBoxEl) {
+        const filterSelectButton = filterSelectBoxEl.querySelector('.filter-select');
+        const filterSelectValue = filterSelectBoxEl.querySelector('.select-value');
+        const currentFilterList = filterSelectBoxEl.querySelector('.filter-list');
 
         if (filterSelectButton && filterSelectValue && currentFilterList) {
             filterSelectButton.addEventListener('click', function () {
-                console.log('click');
                 currentFilterList.classList.toggle('active');
             });
 
@@ -116,15 +127,15 @@ function setFilterBox() {
                     currentFilterList.classList.remove('active');
 
                     // Update active class on buttons
-                    for (let i = 0; i < filterButtons.length; i++) {
-                        if (filterButtons[i] === event.target) {
-                            filterButtons[i].classList.add('active');
+                    for (let i = 0; i < filterButtonsElements.length; i++) {
+                        if (filterButtonsElements[i] === event.target) {
+                            filterButtonsElements[i].classList.add("active");
                         } else {
-                            filterButtons[i].classList.remove('active');
+                            filterButtonsElements[i].classList.remove("active");
                         }
                     }
 
-                    filterFunc(selectedCategory);
+                    filterFunc(selectedCategory, filterItemsToFilter);
                 }
             });
         }
@@ -132,3 +143,5 @@ function setFilterBox() {
 }
 
 export { setFilters, setFilterBox, setFilterDefaultValue };
+
+

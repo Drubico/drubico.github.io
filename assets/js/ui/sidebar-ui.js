@@ -9,17 +9,14 @@ import { calculateAge } from '../services/utils.js';
 /**
  * Rellena la barra lateral con la información de contacto y personal.
  * @param {object} data - Objeto que contiene los datos de la barra lateral.
- * @param {object} data.sidebar - Datos específicos de la barra lateral.
- * @param {Array<object>} data.sidebar.contacts - Información de contacto.
- * @param {string} data.sidebar.name - Nombre del titular del portafolio.
- * @param {string} data.sidebar.title - Título o rol profesional.
- * @param {string} data.sidebar.showContactsBtn - Texto para el botón de mostrar contactos.
  * @param {object} staticData - Objeto que contiene los datos estáticos.
- * @param {Array<object>} staticData.sidebarContacts - Información de contacto de la barra lateral.
+ * @param {HTMLElement} contactsListEl - Elemento del DOM para la lista de contactos.
+ * @param {HTMLElement} nameEl - Elemento del DOM para el nombre.
+ * @param {HTMLElement} titleEl - Elemento del DOM para el título/rol.
+ * @param {HTMLElement} showContactsBtnEl - Elemento del DOM para el botón de mostrar contactos.
  */
-function setSidebar(data, staticData) {
-    const contactsList = document.getElementById("contacts-list");
-    contactsList.innerHTML = "";
+function setSidebar(data, staticData, contactsListEl, nameEl, titleEl, showContactsBtnEl) {
+    contactsListEl.innerHTML = "";
 
     staticData.sidebarContacts.forEach(contact => {
         const contactItem = document.createElement("li");
@@ -60,22 +57,22 @@ function setSidebar(data, staticData) {
         contactItem.appendChild(iconBox);
         contactItem.appendChild(contactInfo);
 
-        contactsList.appendChild(contactItem);
+        contactsListEl.appendChild(contactItem);
     });
 
-    document.querySelector(".name").textContent = data.sidebar.name;
-    document.querySelector(".title").textContent = data.sidebar.title;
-    document.querySelector("[data-show-contacts]").textContent = data.sidebar.showContactsBtn;
+    nameEl.textContent = data.sidebar.name;
+    titleEl.textContent = data.sidebar.title;
+    showContactsBtnEl.textContent = data.sidebar.showContactsBtn;
 }
 
 /**
  * Configura el evento de clic para el botón que muestra u oculta la barra lateral en vista móvil.
+ * @param {HTMLElement} sidebarEl - Elemento del DOM de la barra lateral.
+ * @param {HTMLElement} sidebarBtnEl - Elemento del DOM del botón de la barra lateral.
  */
-function setSidebarClick() {
-    const sidebar = document.querySelector("[data-sidebar]");
-    const sidebarBtn = document.querySelector("[data-sidebar-btn]");
+function setSidebarClick(sidebarEl, sidebarBtnEl) {
     const elementToggleFunc = function (elem) { elem.classList.toggle("active"); }
-    sidebarBtn.addEventListener("click", function () { elementToggleFunc(sidebar); });
+    sidebarBtnEl.addEventListener("click", function () { elementToggleFunc(sidebarEl); });
 }
 
 export { setSidebar, setSidebarClick };

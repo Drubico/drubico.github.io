@@ -15,8 +15,8 @@
  * @param {Array<string>} skillsData.skills[].frameworks - Frameworks asociados a la habilidad.
  * @param {Array<string>} skillsData.skills[].libraries - Librerías asociadas a la habilidad.
  */
-function loadSkills(skillsData) {
-    const skillList = document.querySelector('.skill-list');
+function loadSkills(skillsData, skillListEl) {
+    const skillList = skillListEl;
     skillList.innerHTML = '';
 
     skillsData.skills.forEach(skill => {

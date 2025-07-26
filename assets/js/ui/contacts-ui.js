@@ -9,23 +9,16 @@
  * Limpia los elementos de contacto existentes y genera dinámicamente nuevos elementos
  * basados en los datos proporcionados, traduciendo los textos según el idioma actual.
  * @param {object} langData - Objeto con los textos traducidos.
- * @param {object} langData.contact - Textos específicos para la sección de contacto.
  * @param {object} staticData - Objeto con los datos estáticos de los elementos de contacto.
- * @param {Array<object>} staticData.contactItems - Lista de elementos de contacto.
- * @param {string} staticData.contactItems[].icon - URL del icono.
- * @param {string} staticData.contactItems[].alt - Texto alternativo del icono.
- * @param {boolean} staticData.contactItems[].isRounded - Define si el icono tiene fondo redondeado.
- * @param {string} staticData.contactItems[].titleLangKey - Clave de idioma para el título.
- * @param {string} staticData.contactItems[].descriptionLangKey - Clave de idioma para la descripción.
- * @param {string} staticData.contactItems[].urlTitleLangKey - Clave de idioma para el texto del enlace.
- * @param {string} staticData.contactItems[].link - URL del enlace.
+ * @param {HTMLElement} contactTitleEl - Elemento del DOM para el título de contacto.
+ * @param {HTMLElement} formTitleEl - Elemento del DOM para el título del formulario.
+ * @param {HTMLElement} contactListEl - Elemento del DOM para la lista de contactos.
  */
-function setContacts(langData, staticData) {
-    document.querySelector("[data-lang='contact.title']").textContent = langData.contact.title;
-    document.querySelector("[data-lang='contact.formTitle']").textContent = langData.contact.formTitle;
+function setContacts(langData, staticData, contactTitleEl, formTitleEl, contactListEl) {
+    contactTitleEl.textContent = langData.contact.title;
+    formTitleEl.textContent = langData.contact.formTitle;
 
-    const contactList = document.querySelector('.contact-me-list');
-    contactList.innerHTML = '';
+    contactListEl.innerHTML = '';
 
     if (staticData.contactItems) {
         staticData.contactItems.forEach(item => {
@@ -50,7 +43,7 @@ function setContacts(langData, staticData) {
                     </div>
                 </div>
             `;
-            contactList.appendChild(listItem);
+            contactListEl.appendChild(listItem);
         });
     }
 }

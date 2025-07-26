@@ -62,25 +62,20 @@ function populateTimeline(timelineElement, items, section) {
 /**
  * Rellena dinámicamente la sección de experiencia y educación con datos.
  * @param {object} data - El objeto de datos que contiene la información del currículum.
- * @param {object} data.resume - Contiene los datos del currículum.
- * @param {string} data.resume.title - Título principal de la sección del currículum.
- * @param {object} data.resume.education - Contiene los datos de educación.
- * @param {string} data.resume.education.title - Título de la sección de educación.
- * @param {Array<object>} data.resume.education.items - Lista de elementos de educación.
- * @param {object} data.resume.experience - Contiene los datos de experiencia.
- * @param {string} data.resume.experience.title - Título de la sección de experiencia.
- * @param {Array<object>} data.resume.experience.items - Lista de elementos de experiencia.
+ * @param {HTMLElement} resumeTitleEl - Elemento del DOM para el título principal del currículum.
+ * @param {HTMLElement} experienceTitleEl - Elemento del DOM para el título de experiencia.
+ * @param {HTMLElement} educationTitleEl - Elemento del DOM para el título de educación.
+ * @param {HTMLElement} experienceTimelineEl - Elemento del DOM para la línea de tiempo de experiencia.
+ * @param {HTMLElement} educationTimelineEl - Elemento del DOM para la línea de tiempo de educación.
  */
-function setExperience(data) {
-    const experienceTimeline = document.getElementById("experience-timeline");
-    const educationTimeline = document.getElementById("education-timeline");
+function setExperience(data, resumeTitleEl, experienceTitleEl, educationTitleEl, experienceTimelineEl, educationTimelineEl) {
+    resumeTitleEl.textContent = data.resume.title;
+    experienceTitleEl.textContent = data.resume.experience.title;
+    educationTitleEl.textContent = data.resume.education.title;
 
-    document.querySelector("[data-lang='resume.title']").textContent = data.resume.title;
-    document.querySelector("[data-lang='resume.experience.title']").textContent = data.resume.experience.title;
-    document.querySelector("[data-lang='resume.education.title']").textContent = data.resume.education.title;
-
-    populateTimeline(experienceTimeline, data.resume.experience.items, 'experience');
-    populateTimeline(educationTimeline, data.resume.education.items, 'education');
+    populateTimeline(experienceTimelineEl, data.resume.experience.items, 'experience');
+    populateTimeline(educationTimelineEl, data.resume.education.items, 'education');
 }
 
 export { setExperience };
+

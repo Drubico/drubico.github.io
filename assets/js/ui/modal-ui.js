@@ -13,8 +13,8 @@
  * @param {Array<object>} data.portfolio.projects - Lista de proyectos a mostrar.
  * @param {object} data.portfolio.technologies - Textos relacionados con las tecnologías.
  */
-function setModal(langData, staticData) {
-    const modal = document.getElementById("project-modal");
+function setModal(langData, staticData, projectModalEl, imageModalEl) {
+    const modal = projectModalEl;
     const overlay = modal.querySelector('[data-overlay]');
     const closeButton = modal.querySelector('[data-modal-close-btn]');
     const swiperWrapper = modal.querySelector('.swiper-wrapper');
@@ -22,7 +22,7 @@ function setModal(langData, staticData) {
     const modalText = modal.querySelector('[data-modal-text]');
     let swiperInstance = null;
 
-    const imgModal = document.getElementById("image-modal");
+    const imgModal = imageModalEl;
     const imgModalSwiperWrapper = imgModal.querySelector('.swiper-wrapper');
     const imgModalClose = imgModal.querySelector(".close");
     let imgModalSwiperInstance = null;

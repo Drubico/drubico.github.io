@@ -486,9 +486,9 @@ main {
   bottom: 0;
   left: 0;
   width: 100%;
-  background: hsla(240, 1%, 17%, 0.75);
+  background: var(--bg-secondary);
   backdrop-filter: blur(10px);
-  border: 1px solid var(--jet);
+  border: 1px solid var(--border-color);
   border-radius: 12px 12px 0 0;
   box-shadow: var(--shadow-2);
   z-index: 5;
@@ -503,7 +503,7 @@ main {
 }
 
 .navbar-link {
-  color: var(--light-gray);
+  color: var(--text-secondary);
   font-size: var(--fs-8);
   padding: 20px 7px;
   transition: color var(--transition-1);
@@ -511,11 +511,11 @@ main {
 
 .navbar-link:hover,
 .navbar-link:focus {
-  color: var(--light-gray-70);
+  color: var(--text-primary);
 }
 
 .navbar-link.active {
-  color: var(--orange-yellow-crayola);
+  color: var(--accent-color);
 }
 
 
@@ -590,6 +590,7 @@ main {
 
 .service-icon-box img {
   margin: auto;
+  filter: brightness(0) saturate(100%) invert(20%) sepia(90%) saturate(2000%) hue-rotate(260deg) brightness(100%) contrast(100%); /* This filter approximates the --accent-color */
 }
 
 .service-content-box {
@@ -837,7 +838,7 @@ main {
 }
 
 .timeline-list span {
-  color: var(--vegas-gold);
+  color: var(--accent-color);
   font-weight: var(--fw-400);
   line-height: 1.6;
 }

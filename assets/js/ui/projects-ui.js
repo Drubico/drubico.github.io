@@ -18,9 +18,8 @@
  * @param {Array<string>} [projects[].frameworks] - Una lista de frameworks utilizados.
  * @param {Array<string>} [projects[].libraries] - Una lista de librerías utilizadas.
  */
-function renderProjects(projects, data) {
-    const projectList = document.getElementById("project-list");
-    projectList.innerHTML = "";
+function renderProjects(projects, data, projectListEl) {
+    projectListEl.innerHTML = "";
 
     projects.forEach((project) => {
         const projectData = data.projects.find(p => p.id === project.id);
@@ -129,7 +128,7 @@ function renderProjects(projects, data) {
         projectLink.appendChild(projectDescription);
 
         projectItem.appendChild(projectLink);
-        projectList.appendChild(projectItem);
+        projectListEl.appendChild(projectItem);
     });
 }
 

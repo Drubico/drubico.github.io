@@ -5,26 +5,22 @@
  */
 
 /**
- * Rellena la sección "Sobre mí" con los datos proporcionados.
+ * Rellena la sección "Sobre mí" con los datos proporcionados y los elementos del DOM.
  * @param {object} data - El objeto de datos que contiene los textos para la sección.
- * @param {object} data.about - Contiene los textos de la sección "Sobre mí".
- * @param {string} data.about.title - Título principal de la sección.
- * @param {string} data.about.intro - Texto de introducción.
- * @param {string} data.about.description - Descripción detallada.
- * @param {object} data.about.services - Textos para la subsección de servicios.
- * @param {string} data.about.services.title - Título de la subsección de servicios.
- * @param {Array<object>} data.about.services.items - Lista de servicios a mostrar.
- * @param {object} data.about.skills - Textos para la subsección de habilidades.
- * @param {string} data.about.skills.title - Título para la subsección de habilidades.
+ * @param {HTMLElement} aboutTitleEl - Elemento del DOM para el título "Sobre mí".
+ * @param {HTMLElement} aboutIntroEl - Elemento del DOM para la introducción "Sobre mí".
+ * @param {HTMLElement} aboutDescriptionEl - Elemento del DOM para la descripción "Sobre mí".
+ * @param {HTMLElement} serviceTitleEl - Elemento del DOM para el título de servicios.
+ * @param {HTMLElement} serviceListEl - Elemento del DOM para la lista de servicios.
+ * @param {HTMLElement} skillsTitleEl - Elemento del DOM para el título de habilidades.
  */
-function setAbout(data) {
-    document.querySelector("[data-about-title]").textContent = data.about.title;
-    document.querySelector("[data-about-intro]").textContent = data.about.intro;
-    document.querySelector("[data-about-description]").textContent = data.about.description;
-    document.querySelector("[data-service-title]").textContent = data.about.services.title;
+function setAbout(data, aboutTitleEl, aboutIntroEl, aboutDescriptionEl, serviceTitleEl, serviceListEl, skillsTitleEl) {
+    aboutTitleEl.textContent = data.about.title;
+    aboutIntroEl.textContent = data.about.intro;
+    aboutDescriptionEl.textContent = data.about.description;
+    serviceTitleEl.textContent = data.about.services.title;
 
-    const serviceList = document.getElementById("service-list");
-    serviceList.innerHTML = "";
+    serviceListEl.innerHTML = "";
 
     data.about.services.items.forEach(item => {
         const serviceItem = document.createElement("li");
@@ -52,10 +48,10 @@ function setAbout(data) {
         serviceItem.appendChild(iconBox);
         serviceItem.appendChild(contentBox);
 
-        serviceList.appendChild(serviceItem);
+        serviceListEl.appendChild(serviceItem);
     });
 
-    document.querySelector("[data-skills-title]").textContent = data.about.skills.title;
+    skillsTitleEl.textContent = data.about.skills.title;
 }
 
 export { setAbout };

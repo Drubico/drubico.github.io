@@ -10,6 +10,7 @@ import { languageMain } from './services/language-manager.js';
 import { setEventNavBar } from './ui/navbar-ui.js';
 import { setSidebarClick } from './ui/sidebar-ui.js';
 import { setFilterBox } from './ui/filters-ui.js';
+import { initializeThemeManager } from './services/theme-manager.js';
 
 /**
  * Clave para guardar el idioma en el Local Storage.
@@ -43,10 +44,18 @@ let langEnglish = {
  * Se ejecuta cuando el contenido del DOM ha sido cargado.
  */
 document.addEventListener("DOMContentLoaded", function () {
-  setSidebarClick();
-  setEventNavBar();
-  setFilterBox();
+  const sidebarEl = document.querySelector("[data-sidebar]");
+  const sidebarBtnEl = document.querySelector("[data-sidebar-btn]");
+  if (sidebarEl && sidebarBtnEl) {
+    setSidebarClick(sidebarEl, sidebarBtnEl);
+  } else {
+    console.error("Sidebar elements not found. sidebarEl:", sidebarEl, "sidebarBtnEl:", sidebarBtnEl);
+  }
+  const navigationLinks = document.querySelectorAll("[data-nav-link]");
+  const pages = document.querySelectorAll("[data-page]");
+  setEventNavBar(navigationLinks, pages);
   languageMain(languageTagLS, langSpanish, langEnglish);
+  initializeThemeManager();
 
   const loadingElement = document.getElementById("loading");
   setTimeout(() => {

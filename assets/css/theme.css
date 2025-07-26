@@ -1,0 +1,63 @@
+
+:root {
+  /* Dark Theme Colors */
+  --bg-primary: hsl(260, 10%, 15%); /* Deep Dark Purple */
+  --bg-secondary: hsl(260, 10%, 20%); /* Slightly Lighter Dark Purple */
+  --text-primary: hsl(0, 0%, 95%); /* Off-White */
+  --text-secondary: hsl(0, 0%, 70%); /* Light Gray */
+  --accent-color: hsl(280, 80%, 60%); /* Vibrant Purple */
+  --border-color: hsl(260, 10%, 25%); /* Subtle Dark Purple Border */
+
+  /* Gradients (adjust as needed for purple tones) */
+  --bg-gradient-onyx: linear-gradient(to bottom right, var(--bg-secondary) 3%, var(--bg-primary) 97%);
+  --bg-gradient-jet: linear-gradient(to bottom right, hsla(260, 10%, 20%, 0.251) 0%, hsla(260, 10%, 15%, 0) 100%), var(--bg-primary);
+  --bg-gradient-yellow-1: linear-gradient(to bottom right, var(--accent-color) 0%, hsla(280, 80%, 60%, 0) 50%);
+  --bg-gradient-yellow-2: linear-gradient(135deg, hsla(280, 80%, 60%, 0.251) 0%, hsla(280, 80%, 60%, 0) 59.86%), var(--bg-primary);
+  --border-gradient-onyx: linear-gradient(to bottom right, var(--border-color) 0%, hsla(260, 10%, 25%, 0) 50%);
+  --text-gradient-yellow: linear-gradient(to right, var(--accent-color), hsl(290, 80%, 65%)); /* Adjusted for purple gradient */
+
+  /* Other existing variables that might need remapping */
+  --jet: var(--bg-secondary);
+  --onyx: var(--bg-primary);
+  --eerie-black-1: var(--bg-primary);
+  --eerie-black-2: var(--bg-secondary);
+  --smoky-black: var(--bg-primary);
+  --white-1: var(--text-primary);
+  --white-2: var(--text-primary);
+  --orange-yellow-crayola: var(--accent-color);
+  --green-language: hsl(120, 100%, 28%); /* Keep as is or adjust */
+  --blue-framework: hsl(210, 100%, 28%); /* Keep as is or adjust */
+  --pink-library: hsl(330, 97%, 26%); /* Keep as is or adjust */
+  --purple-link: var(--accent-color);
+  --vegas-gold: hsl(45, 54%, 58%); /* Keep as is or adjust */
+  --light-gray: var(--text-secondary);
+  --light-gray-70: hsla(0, 0%, 70%, 0.7); /* Adjusted based on text-secondary */
+  --bittersweet-shimmer: hsl(0, 43%, 51%); /* Keep as is or adjust */
+}
+
+body.light-theme {
+  /* Light Theme Colors */
+  --bg-primary: hsl(260, 60%, 95%); /* Very Light Purple / Lavender */
+  --bg-secondary: hsl(0, 0%, 100%); /* White */
+  --text-primary: hsl(260, 10%, 20%); /* Dark Purple */
+  --text-secondary: hsl(260, 10%, 40%); /* Medium Purple */
+  --accent-color: hsl(280, 80%, 60%); /* Vibrant Purple (same as dark theme) */
+  --border-color: hsl(260, 20%, 85%); /* Subtle Light Purple Border */
+
+  /* Gradients (adjust as needed for purple tones) */
+  --bg-gradient-onyx: linear-gradient(to bottom right, var(--bg-secondary) 3%, var(--bg-primary) 97%);
+  --bg-gradient-jet: linear-gradient(to bottom right, hsla(260, 60%, 95%, 0.251) 0%, hsla(260, 60%, 95%, 0) 100%), var(--bg-primary);
+  --border-gradient-onyx: linear-gradient(to bottom right, var(--border-color) 0%, hsla(260, 20%, 85%, 0) 50%);
+
+  /* Other existing variables that might need remapping */
+  --jet: var(--bg-secondary);
+  --onyx: var(--bg-primary);
+  --eerie-black-1: var(--bg-primary);
+  --eerie-black-2: var(--bg-secondary);
+  --smoky-black: var(--bg-primary);
+  --white-1: var(--text-primary);
+  --white-2: var(--text-primary);
+  --orange-yellow-crayola: var(--accent-color);
+  --light-gray: var(--text-secondary);
+  --light-gray-70: hsla(260, 10%, 40%, 0.7); /* Adjusted based on text-secondary */
+}

@@ -12,7 +12,7 @@ import { setNavBarData } from '../ui/navbar-ui.js';
 import { renderProjects } from '../ui/projects-ui.js';
 import { setTextProject } from './projects-service.js';
 import { setSidebar } from '../ui/sidebar-ui.js';
-import { setFilters, setFilterDefaultValue } from '../ui/filters-ui.js';
+import { setFilters, setFilterDefaultValue, setFilterBox } from '../ui/filters-ui.js';
 import { loadSkills } from '../ui/skills-ui.js';
 
 /**
@@ -66,17 +66,62 @@ function setLanguageData(language) {
 
     Promise.all([fetch(language.jsonPath).then(res => res.json()), fetch(dataUrl).then(res => res.json())])
         .then(([langData, staticData]) => {
-            loadSkills(staticData);
-            setExperience(langData);
-            setAbout(langData);
-            setContacts(langData, staticData);
-            renderProjects(langData.portfolio.projects, staticData);
-            setModal(langData, staticData);
-            setNavBarData(langData);
-            setSidebar(langData, staticData);
+            // Get DOM elements for loadSkills
+            const skillListEl = document.querySelector('.skill-list');
+            loadSkills(staticData, skillListEl);
+            // Get DOM elements for setExperience
+            const resumeTitleEl = document.querySelector("[data-lang='resume.title']");
+            const experienceTitleEl = document.querySelector("[data-lang='resume.experience.title']");
+            const educationTitleEl = document.querySelector("[data-lang='resume.education.title']");
+            const experienceTimelineEl = document.getElementById("experience-timeline");
+            const educationTimelineEl = document.getElementById("education-timeline");
+
+            setExperience(langData, resumeTitleEl, experienceTitleEl, educationTitleEl, experienceTimelineEl, educationTimelineEl);
+            // Get DOM elements for setAbout
+            const aboutTitleEl = document.querySelector("[data-about-title]");
+            const aboutIntroEl = document.querySelector("[data-about-intro]");
+            const aboutDescriptionEl = document.querySelector("[data-about-description]");
+            const serviceTitleEl = document.querySelector("[data-service-title]");
+            const serviceListEl = document.getElementById("service-list");
+            const skillsTitleEl = document.querySelector("[data-skills-title]");
+
+            setAbout(langData, aboutTitleEl, aboutIntroEl, aboutDescriptionEl, serviceTitleEl, serviceListEl, skillsTitleEl);
+            // Get DOM elements for setContacts
+            const contactTitleEl = document.querySelector("[data-lang='contact.title']");
+            const formTitleEl = document.querySelector("[data-lang='contact.formTitle']");
+            const contactListEl = document.querySelector('.contact-me-list');
+
+            setContacts(langData, staticData, contactTitleEl, formTitleEl, contactListEl);
+            // Get DOM elements for renderProjects
+            const projectListEl = document.getElementById("project-list");
+            renderProjects(langData.portfolio.projects, staticData, projectListEl);
+            // Get DOM elements for setModal
+            const projectModalEl = document.getElementById("project-modal");
+            const imageModalEl = document.getElementById("image-modal");
+            setModal(langData, staticData, projectModalEl, imageModalEl);
+            // Get DOM elements for setNavBarData
+            const navigationLinks = document.querySelectorAll("[data-nav-link]");
+            setNavBarData(langData, navigationLinks);
+            // Get DOM elements for setSidebar
+            const contactsListEl = document.getElementById("contacts-list");
+            const nameEl = document.querySelector(".name");
+            const titleEl = document.querySelector(".title");
+            const showContactsBtnEl = document.querySelector("[data-show-contacts]");
+            setSidebar(langData, staticData, contactsListEl, nameEl, titleEl, showContactsBtnEl);
             const filterItems = setTextProject(langData);
-            setFilters(filterItems);
-            setFilterDefaultValue(filterItems);
+            // Get DOM elements for setFilters and setFilterDefaultValue
+            const filterListElements = document.querySelectorAll('.filter-list');
+            let filterButtonsElements = document.querySelectorAll("[data-filter-btn]"); // Changed to let
+            const filterItemsToFilter = document.querySelectorAll("[data-filter-item]");
+            const filterSelectValueEl = document.querySelector('.select-value');
+
+            setFilters(filterItems, filterListElements, filterButtonsElements, filterItemsToFilter);
+            // Re-query filterButtonsElements after setFilters has rendered them
+            filterButtonsElements = document.querySelectorAll("[data-filter-btn]");
+            setFilterDefaultValue(filterItems, filterSelectValueEl, filterButtonsElements, filterItemsToFilter);
+            // Get DOM elements for setFilterBox
+            const filterSelectBox = document.querySelector('.filter-select-box');
+            setFilterBox(filterSelectBox, filterButtonsElements, filterItemsToFilter);
         })
         .catch((error) => console.error("Error al cargar los archivos de datos:", error));
 }
