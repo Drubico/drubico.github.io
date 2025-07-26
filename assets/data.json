@@ -151,13 +151,6 @@
             "icon": "location-outline",
             "titleLangKey": "sidebar.contacts.address.title",
             "text": "La Libertad, El Salvador"
-        },
-        {
-            "type": "linkedin",
-            "icon": "logo-linkedin",
-            "titleLangKey": "sidebar.contacts.linkedin.title",
-            "text": "Diego Alejandro Rubí",
-            "link": "https://www.linkedin.com/in/drubico/"
         }
     ],
     "projects": [

@@ -421,7 +421,7 @@ main {
 
 .contact-info :is(.contact-link, time, address) {
 	color: var(--white-2);
-	font-size: var(--fs-5);
+	font-size: var(--fs-6);
 }
 
 .contact-info address {
@@ -2036,9 +2036,9 @@ textarea.form-input::-webkit-resizer {
 	}
 
 	.contact-info :is(.contact-link) {
-		white-space: nowrap;
-		overflow: hidden;
-		text-overflow: ellipsis;
+		white-space: normal !important;
+		overflow: visible !important;
+		text-overflow: unset !important;
 	}
 
 	.contact-info :is(.contact-link, time, address) {
@@ -2160,7 +2160,6 @@ textarea.form-input::-webkit-resizer {
 	width: 1em;
 	margin-left: -1em;
 }
-
 
 .project-language,
 .project-framework,
