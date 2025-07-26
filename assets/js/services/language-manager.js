@@ -116,6 +116,8 @@ function setLanguageData(language) {
             const filterSelectValueEl = document.querySelector('.select-value');
 
             setFilters(filterItems, filterListElements, filterButtonsElements, filterItemsToFilter);
+            // Reaplicar lógica select responsive tras regenerar filtros
+            if (window.setupResponsiveFilterSelect) window.setupResponsiveFilterSelect();
             // Re-query filterButtonsElements after setFilters has rendered them
             filterButtonsElements = document.querySelectorAll("[data-filter-btn]");
             setFilterDefaultValue(filterItems, filterSelectValueEl, filterButtonsElements, filterItemsToFilter);
