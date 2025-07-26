@@ -1849,17 +1849,24 @@ textarea.form-input::-webkit-resizer {
   }
 
   .filter-item button {
-    color: var(--light-gray);
+    background-color: var(--eerie-black-1); /* Dark background for bubbles */
+    color: var(--light-gray); /* Default text color */
     font-size: var(--fs-5);
+    padding: 8px 15px; /* Padding for bubble shape */
+    border-radius: 20px; /* Rounded corners for bubble shape */
     transition: var(--transition-1);
+    box-shadow: var(--shadow-1); /* Subtle shadow */
   }
 
   .filter-item button:hover {
-    color: var(--light-gray-70);
+    background-color: var(--jet); /* Slightly lighter on hover */
+    color: var(--white-2); /* Lighter text on hover */
   }
 
   .filter-item button.active {
-    color: var(--orange-yellow-crayola);
+    background-color: var(--orange-yellow-crayola); /* Accent color for active bubble */
+    color: var(--white-2); /* White text for active bubble */
+    box-shadow: 0 0 10px var(--orange-yellow-crayola); /* Glow effect for active */
   }
 
   /* portfolio and blog grid */
