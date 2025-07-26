@@ -1140,7 +1140,8 @@ main {
 	margin-bottom: 5px;
 }
 
-.project-category {
+.project-category,
+.project-link {
 	display: inline-block;
 	background-color: var(--orange-yellow-crayola);
 	/* Color de fondo de la etiqueta */
@@ -1417,8 +1418,8 @@ textarea.form-input::-webkit-resizer {
 
 	:root {
 		/**
-     * typography
-     */
+	 * typography
+	 */
 
 		--fs-1: 32px;
 		--fs-2: 24px;
@@ -1818,8 +1819,8 @@ textarea.form-input::-webkit-resizer {
 
 	:root {
 		/**
-    * shadow
-    */
+	* shadow
+	*/
 
 		--shadow-1: -4px 8px 24px hsla(0, 0%, 0%, 0.125);
 		--shadow-2: 0 16px 30px hsla(0, 0%, 0%, 0.125);
@@ -2160,27 +2161,60 @@ textarea.form-input::-webkit-resizer {
 	margin-left: -1em;
 }
 
-.project-link,
+
 .project-language,
 .project-framework,
 .project-library {
 	display: inline-block;
-	background-color: var(--green-language);
-	/* Color de fondo de la etiqueta */
-	color: var(--white-1);
-	/* Color del texto */
-	padding: 4px 10px;
-	/* Espaciado interno */
+	padding: 4px 12px;
 	border-radius: var(--br-3);
-	/* Bordes redondeados */
 	font-size: 13px;
-	/* Tamaño de la fuente */
-	font-weight: 400;
-	/* Negrita */
-	margin: 4px 5px 4px 0px;
-	/* Margen */
+	font-weight: 500;
+	margin: 4px 6px 4px 0px;
 	text-align: center;
-	/* Alineación del texto */
+	letter-spacing: 0.02em;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+	transition: background 0.2s, color 0.2s;
+}
+
+/* Lenguajes */
+.project-language {
+	background: linear-gradient(90deg, #43e97b 0%, #38f9d7 100%);
+	color: #1a1a1a;
+	border: 1px solid #38f9d7;
+}
+
+/* Frameworks */
+.project-framework {
+	background: linear-gradient(90deg, #3a7bd5 0%, #00d2ff 100%);
+	color: #fff;
+	border: 1px solid #3a7bd5;
+}
+
+/* Librerías */
+.project-library {
+	background: linear-gradient(90deg, #ff6a00 0%, #ee0979 100%);
+	color: #fff;
+	border: 1px solid #ee0979;
+}
+
+/* Modo claro: mejor contraste */
+@media (prefers-color-scheme: light) {
+	.project-language {
+		background: linear-gradient(90deg, #b2ffda 0%, #e0ffe0 100%);
+		color: #0a3d2c;
+		border: 1px solid #43e97b;
+	}
+	.project-framework {
+		background: linear-gradient(90deg, #b2d8ff 0%, #e0f7ff 100%);
+		color: #003366;
+		border: 1px solid #3a7bd5;
+	}
+	.project-library {
+		background: linear-gradient(90deg, #ffd6b2 0%, #ffe0e0 100%);
+		color: #7a1a1a;
+		border: 1px solid #ee0979;
+	}
 }
 
 .project-framework {
