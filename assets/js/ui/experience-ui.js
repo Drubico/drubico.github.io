@@ -17,9 +17,12 @@ function populateTimeline(timelineElement, items, section) {
         const timelineItem = document.createElement("li");
         timelineItem.className = "timeline-item";
 
+        // Contenedor para la columna izquierda (título y fechas)
+        const leftCol = document.createElement("div");
+        leftCol.className = "timeline-col timeline-col-left";
+
         const title = document.createElement("h4");
         title.className = "h4 timeline-item-title";
-        
         if (section === 'experience') {
             title.setAttribute("data-lang", `resume.experience.items[${index}].position`);
             title.textContent = item.position;
@@ -27,17 +30,20 @@ function populateTimeline(timelineElement, items, section) {
             title.setAttribute("data-lang", `resume.education.items[${index}].institution`);
             title.textContent = item.institution;
         }
-        timelineItem.appendChild(title);
+        leftCol.appendChild(title);
 
         const dates = document.createElement("span");
         dates.setAttribute("data-lang", `resume.${section}.items[${index}].dates`);
         dates.textContent = item.dates;
-        timelineItem.appendChild(dates);
+        leftCol.appendChild(dates);
+
+        // Contenedor para la columna derecha (detalles o descripción)
+        const rightCol = document.createElement("div");
+        rightCol.className = "timeline-col timeline-col-right";
 
         if (item.details) {
             const detailsList = document.createElement("ul");
             detailsList.className = "timeline-details";
-
             item.details.forEach((detail, detailIndex) => {
                 const detailItem = document.createElement("li");
                 detailItem.className = "timeline-text";
@@ -45,15 +51,17 @@ function populateTimeline(timelineElement, items, section) {
                 detailItem.textContent = detail;
                 detailsList.appendChild(detailItem);
             });
-            timelineItem.appendChild(detailsList);
+            rightCol.appendChild(detailsList);
         } else if (item.description) {
             const description = document.createElement("p");
             description.className = "timeline-text";
             description.setAttribute("data-lang", `resume.education.items[${index}].description`);
             description.textContent = item.description;
-            timelineItem.appendChild(description);
+            rightCol.appendChild(description);
         }
 
+        timelineItem.appendChild(leftCol);
+        timelineItem.appendChild(rightCol);
         timelineElement.appendChild(timelineItem);
     });
 }
