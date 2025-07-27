@@ -11,26 +11,8 @@
  * @param {string} section - El nombre de la sección ('experience' o 'education').
  */
 
-
-// Cargar data.json una sola vez y reutilizarlo
-let sharedData = null;
-async function getSharedData() {
-    if (sharedData) return sharedData;
-    try {
-        const response = await fetch('./assets/data.json');
-        if (!response.ok) throw new Error('No se pudo cargar data.json');
-        sharedData = await response.json();
-        return sharedData;
-    } catch (e) {
-        console.error('Error cargando data.json:', e);
-        return { experienceLogos: {} };
-    }
-}
-
-async function populateTimeline(timelineElement, items, section) {
+function populateTimeline(timelineElement, items, section, experienceLogos = {}) {
     timelineElement.innerHTML = "";
-    const experienceLogos = (await getSharedData()).experienceLogos || {};
-
     items.forEach((item, index) => {
         const timelineItem = document.createElement("li");
         timelineItem.className = "timeline-item";
@@ -103,13 +85,14 @@ async function populateTimeline(timelineElement, items, section) {
  * @param {HTMLElement} educationTimelineEl - Elemento del DOM para la línea de tiempo de educación.
  */
 
-async function setExperience(data, resumeTitleEl, experienceTitleEl, educationTitleEl, experienceTimelineEl, educationTimelineEl) {
+
+function setExperience(data, resumeTitleEl, experienceTitleEl, educationTitleEl, experienceTimelineEl, educationTimelineEl, experienceLogos = {}) {
     resumeTitleEl.textContent = data.resume.title;
     experienceTitleEl.textContent = data.resume.experience.title;
     educationTitleEl.textContent = data.resume.education.title;
 
-    await populateTimeline(experienceTimelineEl, data.resume.experience.items, 'experience');
-    await populateTimeline(educationTimelineEl, data.resume.education.items, 'education');
+    populateTimeline(experienceTimelineEl, data.resume.experience.items, 'experience', experienceLogos);
+    populateTimeline(educationTimelineEl, data.resume.education.items, 'education', experienceLogos);
 }
 
 export { setExperience };

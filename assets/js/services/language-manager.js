@@ -76,7 +76,15 @@ function setLanguageData(language) {
             const experienceTimelineEl = document.getElementById("experience-timeline");
             const educationTimelineEl = document.getElementById("education-timeline");
 
-            setExperience(langData, resumeTitleEl, experienceTitleEl, educationTitleEl, experienceTimelineEl, educationTimelineEl);
+            setExperience(
+                langData,
+                resumeTitleEl,
+                experienceTitleEl,
+                educationTitleEl,
+                experienceTimelineEl,
+                educationTimelineEl,
+                staticData.experienceLogos || {}
+            );
             // Get DOM elements for setAbout
             const aboutTitleEl = document.querySelector("[data-about-title]");
             const aboutIntroEl = document.querySelector("[data-about-intro]");
