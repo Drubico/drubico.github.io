@@ -69,7 +69,7 @@
 					"institution": "Universidad Centroamericana José Simeón Cañas",
 					"dates": "2017 — Present",
 					"description": "Bachelor's in Computer Engineering with emphasis on software development, cybersecurity, and system architectures.",
-					"logo": "./assets/images/uca.jpg"
+					"logoId": "uca"
 				}
 			]
 		},
@@ -78,17 +78,18 @@
 			"items": [
 				{
 					"position": "Senior Mobile Developer - PBS GROUP",
+					"logoId": "pbs-group",
 					"dates": "March 2025 — Present",
 					"details": [
 						"Development of mobile solutions using ODK Collect and Enketo",
 						"Form consumption from ODK Central following Clean Architecture and Clean Code best practices",
 						"Implementation of custom data capture flows for field operations",
 						"Integration with REST APIs and advanced XML handling in Android"
-					],
-					"logo": "./assets/images/pbs-group.webp"
+					]
 				},
 				{
 					"position": "Senior Mobile Developer - Secretariat of Innovation of the Presidency",
+					"logoId": "gobierno",
 					"dates": "October 2022 — March 2025",
 					"details": [
 						"Technical leadership in the development of native Android applications using Kotlin and Jetpack Compose",
@@ -100,6 +101,7 @@
 				},
 				{
 					"position": "Full Stack Developer - Ministry of Health",
+					"logoId": "gobierno",
 					"dates": "February 2022 — October 2022",
 					"details": [
 						"Modernization of legacy applications by migrating from Java to Kotlin",
@@ -111,6 +113,7 @@
 				},
 				{
 					"position": "WordPress Developer - The Virtual Buddy",
+					"logoId": "the-virtual-buddy",
 					"dates": "January 2021 — June 2021",
 					"details": [
 						"Creation of customized CMS platforms using WordPress",

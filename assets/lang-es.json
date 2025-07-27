@@ -69,7 +69,7 @@
 					"institution": "Universidad Centroamericana José Simeón Cañas",
 					"dates": "2017 — Presente",
 					"description": "Carrera en Ingeniería Informática con énfasis en desarrollo de software, seguridad informática y arquitecturas de sistemas.",
-					"logo": "./assets/images/uca.jpg"
+					"logoId": "uca"
 				}
 			]
 		},
@@ -78,46 +78,46 @@
 			"items": [
 				{
 					"position": "Desarrollador Móvil Senior - PBS GROUP",
+					"logoId": "pbs-group",
 					"dates": "Marzo 2025 — Presente",
 					"details": [
 						"Desarrollo de soluciones móviles con ODK Collect y Enketo",
 						"Consumo de formularios desde ODK Central aplicando Clean Architecture y buenas prácticas de Clean Code",
 						"Implementación de flujos personalizados para la captura de datos en campo",
 						"Integración con APIs REST y manejo avanzado de XML en Android"
-					],
-					"logo": "./assets/images/pbs-group.webp"
+					]
 				},
 				{
 					"position": "Desarrollador Móvil Senior - Secretaría de Innovación de la Presidencia",
+					"logoId": "gobierno",
 					"dates": "Octubre 2022 — Marzo 2025",
 					"details": [
 						"Liderazgo técnico en el desarrollo de aplicaciones Android nativas usando Kotlin y Jetpack Compose",
 						"Implementación de arquitecturas MVVM y Clean Architecture en proyectos críticos",
 						"Integración de servicios RESTful con Retrofit y gestión de datos locales con Room",
 						"Coordinación de equipos ágiles para entrega de features prioritarios"
-					],
-					"logo": "./assets/images/gobierno.png"
+					]
 				},
 				{
 					"position": "Desarrollador Full Stack - Ministerio de Salud",
+					"logoId": "gobierno",
 					"dates": "Febrero 2022 — Octubre 2022",
 					"details": [
 						"Modernización de aplicaciones legacy migrando de Java a Kotlin",
 						"Diseño e implementación de APIs robustas con Node.js y Express",
 						"Optimización de rendimiento en aplicaciones críticas reduciendo latencia en 40%",
 						"Implementación de inyección de dependencias con Dagger Hilt"
-					],
-					"logo": "./assets/images/gobierno.png"
+					]
 				},
 				{
 					"position": "Desarrollador WordPress - The Virtual Buddy",
+					"logoId": "the-virtual-buddy",
 					"dates": "Enero 2021 — Junio 2021",
 					"details": [
 						"Creación de plataformas CMS personalizadas con WordPress",
 						"Diseño de temas adaptativos y optimización SEO",
 						"Integración de sistemas de comercio electrónico"
-					],
-					"logo": "./assets/images/the_virtual_buddy.png"
+					]
 				}
 			]
 		}
