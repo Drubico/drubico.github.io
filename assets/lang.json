@@ -68,7 +68,8 @@
 				{
 					"institution": "Universidad Centroamericana José Simeón Cañas",
 					"dates": "2017 — Present",
-					"description": "Bachelor's in Computer Engineering with emphasis on software development, cybersecurity, and system architectures."
+					"description": "Bachelor's in Computer Engineering with emphasis on software development, cybersecurity, and system architectures.",
+					"logo": "./assets/images/uca.jpg"
 				}
 			]
 		},
@@ -83,7 +84,8 @@
 						"Form consumption from ODK Central following Clean Architecture and Clean Code best practices",
 						"Implementation of custom data capture flows for field operations",
 						"Integration with REST APIs and advanced XML handling in Android"
-					]
+					],
+					"logo": "./assets/images/pbs-group.webp"
 				},
 				{
 					"position": "Senior Mobile Developer - Secretariat of Innovation of the Presidency",
@@ -93,7 +95,8 @@
 						"Implementation of MVVM and Clean Architecture in critical projects",
 						"Integration of RESTful services with Retrofit and local data management with Room",
 						"Coordination of agile teams for the delivery of priority features"
-					]
+					],
+					"logo": "./assets/images/gobierno.png"
 				},
 				{
 					"position": "Full Stack Developer - Ministry of Health",
@@ -103,7 +106,8 @@
 						"Design and implementation of robust APIs using Node.js and Express",
 						"Performance optimization in critical applications, reducing latency by 40%",
 						"Implementation of dependency injection with Dagger Hilt"
-					]
+					],
+					"logo": "./assets/images/gobierno.png"
 				},
 				{
 					"position": "WordPress Developer - The Virtual Buddy",
@@ -112,7 +116,8 @@
 						"Creation of customized CMS platforms using WordPress",
 						"Design of responsive themes and SEO optimization",
 						"Integration of e-commerce systems"
-					]
+					],
+					"logo": "./assets/images/the_virtual_buddy.png"
 				}
 			]
 		}

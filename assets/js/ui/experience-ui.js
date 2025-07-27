@@ -17,10 +17,28 @@ function populateTimeline(timelineElement, items, section) {
         const timelineItem = document.createElement("li");
         timelineItem.className = "timeline-item";
 
-        // Contenedor para la columna izquierda (título y fechas)
+
+        // Contenedor para la columna izquierda (logo, título y fechas)
         const leftCol = document.createElement("div");
         leftCol.className = "timeline-col timeline-col-left";
 
+        // Logo de empresa o institución si existe
+        if (item.logo) {
+            const logo = document.createElement("img");
+            logo.src = item.logo;
+            if (section === 'experience') {
+                logo.alt = item.company ? item.company + ' logo' : 'Logo empresa';
+            } else {
+                logo.alt = item.institution ? item.institution + ' logo' : 'Logo institución';
+            }
+            logo.className = "timeline-logo";
+            leftCol.appendChild(logo);
+        }
+
+        // Contenedor para la columna derecha (detalles o descripción)
+
+        const rightCol = document.createElement("div");
+        rightCol.className = "timeline-col timeline-col-right";
         const title = document.createElement("h4");
         title.className = "h4 timeline-item-title";
         if (section === 'experience') {
@@ -30,16 +48,12 @@ function populateTimeline(timelineElement, items, section) {
             title.setAttribute("data-lang", `resume.education.items[${index}].institution`);
             title.textContent = item.institution;
         }
-        leftCol.appendChild(title);
+        rightCol.appendChild(title);
 
         const dates = document.createElement("span");
         dates.setAttribute("data-lang", `resume.${section}.items[${index}].dates`);
         dates.textContent = item.dates;
-        leftCol.appendChild(dates);
-
-        // Contenedor para la columna derecha (detalles o descripción)
-        const rightCol = document.createElement("div");
-        rightCol.className = "timeline-col timeline-col-right";
+        rightCol.appendChild(dates);
 
         if (item.details) {
             const detailsList = document.createElement("ul");
