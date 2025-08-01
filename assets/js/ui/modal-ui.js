@@ -302,16 +302,17 @@ function setupZoomControls(imgModal, swiperInstance) {
         zoomInBtn.disabled = currentZoom >= maxZoom;
         zoomOutBtn.disabled = currentZoom <= minZoom;
         zoomInfo.textContent = `${Math.round(currentZoom * 100)}%`;
-    }    // Función SIMPLIFICADA para mostrar imágenes al tamaño máximo
+    }    // Función mejorada para aplicar transformaciones de zoom y movimiento
     function applyTransform(scale, translateX = 0, translateY = 0) {
         const activeSlide = swiperInstance.slides[swiperInstance.activeIndex];
         const zoomContainer = activeSlide.querySelector('.swiper-zoom-container');
         const img = activeSlide.querySelector('.img-modal-content');
 
         if (zoomContainer && img) {
-            // Solo aplicar el zoom del usuario, sin escala base
-            const transform = `scale(${scale}) translate(${translateX}px, ${translateY}px)`;
+            // Aplicar translate ANTES de scale para evitar que se multiplique por el factor de escala
+            const transform = `translate(${translateX}px, ${translateY}px) scale(${scale})`;
             zoomContainer.style.transform = transform;
+            zoomContainer.style.transformOrigin = 'center center';
 
             // Actualizar cursor y clase
             if (scale > 1) {
@@ -323,12 +324,37 @@ function setupZoomControls(imgModal, swiperInstance) {
                 imagePosition = { x: 0, y: 0 };
             }
         }
-    }    // Función para aplicar zoom
+    }    // Función para aplicar zoom con mejor manejo de la posición
     function setZoom(newZoom) {
+        const oldZoom = currentZoom;
         currentZoom = Math.max(minZoom, Math.min(maxZoom, newZoom));
 
         if (currentZoom === minZoom) {
-            imagePosition = { x: 0, y: 0 }; // Resetear posición
+            imagePosition = { x: 0, y: 0 }; // Resetear posición al zoom mínimo
+        } else if (oldZoom !== currentZoom) {
+            // Ajustar la posición proporcionalmente al cambio de zoom
+            const zoomRatio = currentZoom / oldZoom;
+            imagePosition.x *= zoomRatio;
+            imagePosition.y *= zoomRatio;
+
+            // Verificar que la nueva posición esté dentro de los límites
+            const activeSlide = swiperInstance.slides[swiperInstance.activeIndex];
+            const img = activeSlide.querySelector('.img-modal-content');
+            const container = activeSlide.querySelector('.swiper-zoom-container');
+
+            if (img && container) {
+                const imgRect = img.getBoundingClientRect();
+                const containerRect = container.getBoundingClientRect();
+
+                const scaledWidth = imgRect.width * currentZoom;
+                const scaledHeight = imgRect.height * currentZoom;
+
+                const maxMoveX = Math.max(0, (scaledWidth - containerRect.width) / 2);
+                const maxMoveY = Math.max(0, (scaledHeight - containerRect.height) / 2);
+
+                imagePosition.x = Math.max(-maxMoveX, Math.min(maxMoveX, imagePosition.x));
+                imagePosition.y = Math.max(-maxMoveY, Math.min(maxMoveY, imagePosition.y));
+            }
         }
 
         applyTransform(currentZoom, imagePosition.x, imagePosition.y);
@@ -407,12 +433,26 @@ function setupZoomControls(imgModal, swiperInstance) {
             const newX = e.clientX - dragStart.x;
             const newY = e.clientY - dragStart.y;
 
-            // Límites de arrastre más amplios basados en el zoom
-            const maxMoveX = Math.min(window.innerWidth * 0.4, 150 * currentZoom);
-            const maxMoveY = Math.min(window.innerHeight * 0.4, 150 * currentZoom);
+            // Calcular límites más precisos basados en las dimensiones reales de la imagen ampliada
+            const activeSlide = swiperInstance.slides[swiperInstance.activeIndex];
+            const img = activeSlide.querySelector('.img-modal-content');
+            const container = activeSlide.querySelector('.swiper-zoom-container');
 
-            imagePosition.x = Math.max(-maxMoveX, Math.min(maxMoveX, newX));
-            imagePosition.y = Math.max(-maxMoveY, Math.min(maxMoveY, newY));
+            if (img && container) {
+                const imgRect = img.getBoundingClientRect();
+                const containerRect = container.getBoundingClientRect();
+
+                // Calcular el área visible y los límites de movimiento
+                const scaledWidth = imgRect.width * currentZoom;
+                const scaledHeight = imgRect.height * currentZoom;
+
+                // Los límites permiten mover la imagen hasta que los bordes sean visibles
+                const maxMoveX = Math.max(0, (scaledWidth - containerRect.width) / 2);
+                const maxMoveY = Math.max(0, (scaledHeight - containerRect.height) / 2);
+
+                imagePosition.x = Math.max(-maxMoveX, Math.min(maxMoveX, newX));
+                imagePosition.y = Math.max(-maxMoveY, Math.min(maxMoveY, newY));
+            }
 
             applyTransform(currentZoom, imagePosition.x, imagePosition.y);
             e.preventDefault();
@@ -426,12 +466,26 @@ function setupZoomControls(imgModal, swiperInstance) {
             const newX = touch.clientX - dragStart.x;
             const newY = touch.clientY - dragStart.y;
 
-            // Límites de arrastre más amplios basados en el zoom
-            const maxMoveX = Math.min(window.innerWidth * 0.4, 150 * currentZoom);
-            const maxMoveY = Math.min(window.innerHeight * 0.4, 150 * currentZoom);
+            // Calcular límites más precisos basados en las dimensiones reales de la imagen ampliada
+            const activeSlide = swiperInstance.slides[swiperInstance.activeIndex];
+            const img = activeSlide.querySelector('.img-modal-content');
+            const container = activeSlide.querySelector('.swiper-zoom-container');
 
-            imagePosition.x = Math.max(-maxMoveX, Math.min(maxMoveX, newX));
-            imagePosition.y = Math.max(-maxMoveY, Math.min(maxMoveY, newY));
+            if (img && container) {
+                const imgRect = img.getBoundingClientRect();
+                const containerRect = container.getBoundingClientRect();
+
+                // Calcular el área visible y los límites de movimiento
+                const scaledWidth = imgRect.width * currentZoom;
+                const scaledHeight = imgRect.height * currentZoom;
+
+                // Los límites permiten mover la imagen hasta que los bordes sean visibles
+                const maxMoveX = Math.max(0, (scaledWidth - containerRect.width) / 2);
+                const maxMoveY = Math.max(0, (scaledHeight - containerRect.height) / 2);
+
+                imagePosition.x = Math.max(-maxMoveX, Math.min(maxMoveX, newX));
+                imagePosition.y = Math.max(-maxMoveY, Math.min(maxMoveY, newY));
+            }
 
             applyTransform(currentZoom, imagePosition.x, imagePosition.y);
             e.preventDefault();
@@ -471,7 +525,16 @@ function setupZoomControls(imgModal, swiperInstance) {
     swiperInstance.on('slideChange', () => {
         currentZoom = 1;
         imagePosition = { x: 0, y: 0 };
-        applyTransform(1, 0, 0);
+        isDragging = false;
+
+        // Limpiar cualquier transformación pendiente
+        const activeSlide = swiperInstance.slides[swiperInstance.activeIndex];
+        const zoomContainer = activeSlide.querySelector('.swiper-zoom-container');
+        if (zoomContainer) {
+            zoomContainer.style.transform = 'translate(0px, 0px) scale(1)';
+            zoomContainer.style.transformOrigin = 'center center';
+        }
+
         updateButtonStates();
 
         // Reconfigurar funcionalidad de arrastrar para el nuevo slide
