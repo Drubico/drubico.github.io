@@ -1,0 +1,19 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://diego-rubi.is-a.dev/sitemap.xml
+
+# Disallow crawling of certain directories if any
+# Disallow: /admin/
+# Disallow: /private/
+
+# Allow all common crawlers
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
