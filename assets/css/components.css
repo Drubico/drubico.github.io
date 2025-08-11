@@ -437,8 +437,8 @@ main {
 	justify-content: flex-start;
 	align-items: stretch;
 	gap: 25px;
-	max-width: 90%;
-	max-height: 95%;
+	width: min(1600px, 96vw);
+	max-height: 95vh;
 	overflow: auto;
 }
 .modal-container.active .testimonials-modal {
@@ -491,7 +491,8 @@ main {
 /* Imagen dentro del modal: limitar ancho en pantallas grandes */
 .modal-avatar-box img {
 	width: 100%;
-	max-width: 650px;
+	max-width: 100%;
+	height: auto;
 }
 
 /* CLIENTS */
@@ -1241,7 +1242,7 @@ textarea.form-input::-webkit-resizer {
 /* SWIPER */
 .modal-img-wrapper {
 	width: 100%;
-	max-width: 1000px;
+	max-width: none;
 	margin: 0 auto;
 }
 .swiper {
@@ -1257,6 +1258,20 @@ textarea.form-input::-webkit-resizer {
 	width: 100%;
 	height: auto;
 	display: block;
+}
+
+/* Modal: evitar recorte de imágenes y respetar proporciones */
+.testimonials-modal .img-project {
+	width: 100%;
+	height: 100%;
+	object-fit: contain; /* no crop, añade letterbox si hace falta */
+	background: var(--eerie-black-1);
+}
+/* Asegurar que el slide y el figure llenen la altura asignada al swiper */
+.modal-img-wrapper .swiper-wrapper,
+.modal-img-wrapper .swiper-slide,
+.modal-avatar-box {
+	height: 100%;
 }
 .swiper-pagination,
 .swiper-button-next,
