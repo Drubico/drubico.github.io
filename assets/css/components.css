@@ -421,7 +421,7 @@ main {
 	visibility: visible;
 	pointer-events: all;
 }
-.testimonials-modal {
+.projects-modal {
 	background: var(--eerie-black-2);
 	position: relative;
 	padding: 30px;
@@ -441,7 +441,7 @@ main {
 	max-height: 95vh;
 	overflow: auto;
 }
-.modal-container.active .testimonials-modal {
+.modal-container.active .projects-modal {
 	transform: scale(1);
 	opacity: 1;
 }
@@ -1266,7 +1266,7 @@ textarea.form-input::-webkit-resizer {
 }
 
 /* Modal: evitar recorte de imágenes y respetar proporciones */
-.testimonials-modal .img-project {
+.projects-modal .img-project {
 	width: 100%;
 	height: 100%;
 	object-fit: contain; /* no crop, añade letterbox si hace falta */

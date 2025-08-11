@@ -248,7 +248,7 @@
 	.navbar-link {
 		--fs-8: 15px;
 	}
-	.testimonials-modal {
+	.projects-modal {
 		gap: 35px;
 	}
 
@@ -370,9 +370,6 @@
 		grid-template-columns: 1fr 1fr;
 		gap: 20px 25px;
 	}
-	.testimonials-item {
-		min-width: calc(50% - 15px);
-	}
 	.clients-item {
 		min-width: calc(25% - 38px);
 	}
@@ -395,8 +392,8 @@
 	/* Damos prioridad para sobreescribir reglas previas que preservaban proporciones */
 	.modal-img-wrapper .swiper-slide .modal-avatar-box img,
 	.modal-img-wrapper .swiper-slide .img-project,
-	.testimonials-modal .modal-avatar-box img,
-	.testimonials-modal .img-project {
+	.projects-modal .modal-avatar-box img,
+	.projects-modal .img-project {
 		width: 100%;
 		height: 100%;
 		object-fit: cover;
@@ -406,8 +403,8 @@
 	/* Excepción: imágenes panorámicas (muy anchas) deben respetar 100% width y ajustar la altura automáticamente */
 	.modal-img-wrapper .swiper-slide .modal-avatar-box img.is-wide,
 	.modal-img-wrapper .swiper-slide .img-project.is-wide,
-	.testimonials-modal .modal-avatar-box img.is-wide,
-	.testimonials-modal .img-project.is-wide {
+	.projects-modal .modal-avatar-box img.is-wide,
+	.projects-modal .img-project.is-wide {
 		width: 100%;
 		height: auto; /* Evita overflow vertical y mantiene proporción */
 		object-fit: contain; /* No recortar, mostrar completa a lo ancho */
