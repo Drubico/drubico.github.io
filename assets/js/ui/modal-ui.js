@@ -59,17 +59,40 @@ function setModal(langData, staticData, projectModalEl, imageModalEl) {
 
             if (swiperInstance) swiperInstance.destroy();
 
+            const hasOneSlide = (currentProjectImages?.length || 0) <= 1;
+            const nextBtn = modal.querySelector('.swiper-button-next');
+            const prevBtn = modal.querySelector('.swiper-button-prev');
+            const paginationEl = modal.querySelector('.swiper-pagination');
+
+            // Mostrar/ocultar controles según cantidad de imágenes
+            [nextBtn, prevBtn, paginationEl].forEach(el => {
+                if (!el) return;
+                if (hasOneSlide) el.classList.add('hidden');
+                else el.classList.remove('hidden');
+            });
+
             swiperInstance = new Swiper(modal.querySelector('.swiper'), {
                 slidesPerView: 1,
-                spaceBetween: 20,
+                effect: 'fade',
+                fadeEffect: { crossFade: true },
+                speed: 350,
+                loop: false,
+                allowTouchMove: !hasOneSlide,
+                grabCursor: !hasOneSlide,
                 navigation: {
                     nextEl: '.swiper-button-next',
                     prevEl: '.swiper-button-prev',
                 },
-                effect: 'cube',
                 pagination: {
                     el: '.swiper-pagination',
-                    clickable: true,
+                    clickable: !hasOneSlide,
+                },
+                keyboard: {
+                    enabled: true,
+                    onlyInViewport: true,
+                },
+                a11y: {
+                    enabled: true,
                 },
                 observer: true,
                 observeParents: true,

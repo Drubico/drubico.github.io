@@ -392,13 +392,14 @@
 	}
 
 	/* En desktop: imagen ~70%, texto ~30% con mínimo legible */
+	/* En desktop: imagen 60%, texto 40% con mínimo legible */
 	.modal-img-wrapper {
-		grid-template-columns: minmax(0, 7fr) minmax(320px, 3fr);
+		grid-template-columns: minmax(0, 3fr) minmax(320px, 2fr);
 	}
-	/* Aumentar tipografía dentro del modal para mejor lectura */
+	/* Aumentar tipografía dentro del modal para mejor lectura (fluida) */
 	.modal-content {
-		font-size: calc(var(--fs-6) + 2px);
-		line-height: 1.7;
+		font-size: clamp(calc(var(--fs-6) + 2px), 1.2vw, calc(var(--fs-6) + 6px));
+		line-height: 1.75;
 	}
 	.modal-content p,
 	.modal-content li,
@@ -406,10 +407,10 @@
 		font-size: inherit;
 	}
 	.modal-title {
-		font-size: calc(var(--fs-2) + 4px);
+		font-size: clamp(calc(var(--fs-2) + 2px), 2vw, calc(var(--fs-2) + 10px));
 	}
 	.project-details-title {
-		font-size: calc(var(--fs-4) + 2px);
+		font-size: clamp(calc(var(--fs-4) + 2px), 1.5vw, calc(var(--fs-4) + 8px));
 	}
 }
 
