@@ -53,6 +53,22 @@ function setModal(langData, staticData, projectModalEl, imageModalEl) {
                         </figure>
                     `;
 
+                    const imgEl = slide.querySelector('img');
+                    const markWideIfNeeded = () => {
+                        if (!imgEl.naturalWidth || !imgEl.naturalHeight) return;
+                        const ratio = imgEl.naturalWidth / imgEl.naturalHeight;
+                        // Considerar panorámica si es notablemente más ancha que alta
+                        if (ratio > 1.6) {
+                            imgEl.classList.add('is-wide');
+                        }
+                    };
+                    if (imgEl.complete) {
+                        // La imagen pudo estar cacheada; aplicar de inmediato
+                        markWideIfNeeded();
+                    } else {
+                        imgEl.addEventListener('load', markWideIfNeeded, { once: true });
+                    }
+
                     swiperWrapper.appendChild(slide);
                 });
             }
