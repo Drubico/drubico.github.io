@@ -105,8 +105,7 @@ function setLanguageData(language) {
             renderProjects(langData.portfolio.projects, staticData, projectListEl);
             // Get DOM elements for setModal
             const projectModalEl = document.getElementById("project-modal");
-            const imageModalEl = document.getElementById("image-modal");
-            setModal(langData, staticData, projectModalEl, imageModalEl);
+            setModal(langData, staticData, projectModalEl, null);
             // Get DOM elements for setNavBarData
             const navigationLinks = document.querySelectorAll("[data-nav-link]");
             setNavBarData(langData, navigationLinks);
