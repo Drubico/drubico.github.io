@@ -39,7 +39,7 @@
 	},
 	"about": {
 		"title": "About Me",
-		"intro": "Mobile Developer specialized in Kotlin based in El Salvador. I specialize in transforming technical challenges into intuitive and aesthetically refined solutions.",
+		"intro": "Mobile developer specialized in Kotlin, based in El Salvador. I focus on transforming technical challenges into intuitive and polished experiences.",
 		"description": "My approach combines robust functionality with attractive design, ensuring seamless user experiences. I have collaborated on application development for government institutions and private companies, implementing best practices and modern technologies.",
 		"services": {
 			"title": "Services",
@@ -52,7 +52,7 @@
 				{
 					"icon": "./assets/images/icon-dev.svg",
 					"title": "Web Solutions",
-					"description": "Development of responsive web interfaces and efficient backend systems"
+					"description": "Development of responsive web interfaces and efficient backend systems."
 				}
 			]
 		},
@@ -68,7 +68,7 @@
 				{
 					"institution": "Universidad Centroamericana José Simeón Cañas",
 					"dates": "2017 — Present",
-					"description": "Bachelor's in Computer Engineering with emphasis on software development, cybersecurity, and system architectures.",
+					"description": "Bachelor's in Computer Engineering with emphasis on software development, cybersecurity, and system architectures. Currently completing final degree requirements (graduation in progress).",
 					"logoId": "uca"
 				}
 			]
@@ -178,7 +178,7 @@
 			},
 			{
 				"id": "pokedex",
-				"title": "PokeDex",
+				"title": "Pokédex",
 				"category": {
 					"key": "applications",
 					"value": "Applications"
@@ -206,12 +206,12 @@
 			},
 			{
 				"id": "combo-vip",
-				"title": "Combo Vip",
+				"title": "Combo VIP",
 				"category": {
 					"key": "webDevelopment",
 					"value": "Web Development"
 				},
-				"description": "<strong>Corporate Survey System</strong> - Web platform for VIP customer feedback management with automated analytical reporting. Features interactive dashboard and multi-format data export capabilities."
+				"description": "<strong>Corporate Survey System</strong> - Web platform for VIP customer feedback management with automated analytical reporting. Features an interactive dashboard and multi-format data export."
 			}
 		]
 	},

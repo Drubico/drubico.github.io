@@ -39,7 +39,7 @@
 	},
 	"about": {
 		"title": "Sobre mí",
-		"intro": "Desarrollador móvil especializado en Kotlin con base en El Salvador. Me apasiona transformar desafíos técnicos en soluciones intuitivas y estéticamente pulidas.",
+		"intro": "Desarrollador móvil especializado en Kotlin, basado en El Salvador. Me apasiona transformar desafíos técnicos en soluciones intuitivas y estéticamente pulidas.",
 		"description": "Mi enfoque combina funcionalidad robusta con diseño atractivo, asegurando experiencias de usuario fluidas. He colaborado en el desarrollo de aplicaciones para instituciones gubernamentales y empresas privadas, implementando mejores prácticas y tecnologías modernas.",
 		"services": {
 			"title": "Servicios",
@@ -52,7 +52,7 @@
 				{
 					"icon": "./assets/images/icon-dev.svg",
 					"title": "Soluciones Web",
-					"description": "Desarrollo de interfaces web responsivas y sistemas backend eficientes"
+					"description": "Desarrollo de interfaces web responsivas y sistemas backend eficientes."
 				}
 			]
 		},
@@ -68,7 +68,7 @@
 				{
 					"institution": "Universidad Centroamericana José Simeón Cañas",
 					"dates": "2017 — Presente",
-					"description": "Carrera en Ingeniería Informática con énfasis en desarrollo de software, seguridad informática y arquitecturas de sistemas.",
+					"description": "Carrera en Ingeniería Informática con énfasis en desarrollo de software, seguridad informática y arquitecturas de sistemas. Actualmente finalizando el plan de estudios (en proceso de graduación).",
 					"logoId": "uca"
 				}
 			]
@@ -146,7 +146,7 @@
 				"description": "<strong>Calculadora Fiscal Avanzada</strong> - Herramienta especializada para cálculo preciso de salarios netos en El Salvador. Incluye módulos para deducciones de AFP, ISSS e impuesto sobre la renta, con capacidad de simulación de escenarios financieros.",
 				"links": {
 					"playstore": {
-						"title": "Ver en play store"
+						"title": "Ver en Play Store"
 					}
 				}
 			},
@@ -160,7 +160,7 @@
 				"description": "<strong>Plataforma Deportiva Interactiva</strong> - Sistema de gestión de torneos amateur con seguimiento en tiempo real de marcadores, tablas de posiciones y estadísticas de rendimiento. Integra autenticación segura y sincronización multiplataforma.",
 				"links": {
 					"playstore": {
-						"title": "Ver en play store"
+						"title": "Ver en Play Store"
 					}
 				}
 			},
@@ -175,7 +175,7 @@
 			},
 			{
 				"id": "pokedex",
-				"title": "PokeDex",
+				"title": "Pokédex",
 				"category": {
 					"key": "applications",
 					"value": "Aplicaciones"
@@ -203,7 +203,7 @@
 			},
 			{
 				"id": "combo-vip",
-				"title": "Combo Vip",
+				"title": "Combo VIP",
 				"category": {
 					"key": "webDevelopment",
 					"value": "Desarrollo web"
@@ -216,7 +216,7 @@
 		"title": "Contacto",
 		"formTitle": "Contacta conmigo",
 		"linkedinProfile": {
-			"title": "Perfil de linkedin",
+			"title": "Perfil de LinkedIn",
 			"urlTitle": "Ver perfil de LinkedIn",
 			"description": "Conéctate conmigo en LinkedIn."
 		},
@@ -226,7 +226,7 @@
 			"description": "Echa un vistazo a mis proyectos en GitHub."
 		},
 		"playStoreProfile": {
-			"title": "Ver perfil de Play Store",
+			"title": "Perfil de Play Store",
 			"urlTitle": "Ver perfil de Play Store",
 			"description": "Descubre mis aplicaciones en Play Store."
 		},
