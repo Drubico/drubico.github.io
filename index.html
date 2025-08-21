@@ -87,6 +87,24 @@
 	<link rel="dns-prefetch" href="//cdnjs.cloudflare.com" />
 	<link rel="dns-prefetch" href="//unpkg.com" />
 	<!-- Google Tag Manager -->
+	<!-- Visit counter (per browser) -> pushes event to dataLayer for GTM Preview -->
+	<script>
+		(function () {
+			try {
+				window.dataLayer = window.dataLayer || [];
+				var key = 'visit_count_v1';
+				var count = parseInt(localStorage.getItem(key) || '0', 10) + 1;
+				localStorage.setItem(key, count);
+				// Push a readable event to dataLayer so GTM Preview shows it
+				window.dataLayer.push({
+					event: 'visit_counter',
+					visit_count: count
+				});
+			} catch (e) {
+				// fail silently if storage is blocked
+			}
+		})();
+	</script>
 	<script>
 		(function (w, d, s, l, i) {
 			w[l] = w[l] || []; w[l].push({
