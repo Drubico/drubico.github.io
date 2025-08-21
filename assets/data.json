@@ -199,9 +199,13 @@
         },
         {
             "id": "finflex",
-            "img": "finflex.webp",
+            "img": "finflex_1.webp",
             "images": [
-                "./assets/images/finflex.webp"
+                "./assets/images/finflex_1.webp",
+                "./assets/images/finflex_2.webp",
+                "./assets/images/finflex_3.webp",
+                "./assets/images/finflex_4.webp",
+                "./assets/images/finflex_5.webp"
             ],
             "languages": [
                 "Kotlin"
