@@ -298,8 +298,8 @@
     ],
     "experienceLogos": {
         "pbs-group": "./assets/images/pbs-group.webp",
-        "gobierno": "./assets/images/gobierno.png",
-        "the-virtual-buddy": "./assets/images/the_virtual_buddy.png",
-        "uca": "./assets/images/uca.jpg"
+        "gobierno": "./assets/images/gobierno.webp",
+        "the-virtual-buddy": "./assets/images/the_virtual_buddy.webp",
+        "uca": "./assets/images/uca.webp"
     }
 }

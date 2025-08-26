@@ -22,7 +22,7 @@ Si aún no funciona, puede ser por cache. Intenta:
 3. Usar la herramienta de Facebook para forzar actualización
 
 ## 📝 Verificación Actual
-Tu imagen está en: `/assets/images/portada.png`
+Tu imagen está en: `/assets/images/portada.webp`
 - ✅ Tamaño recomendado: 1200x630px
 - ✅ Formato: PNG
 - ✅ Meta tags optimizados para WhatsApp

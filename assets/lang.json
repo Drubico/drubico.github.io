@@ -96,8 +96,7 @@
 						"Implementation of MVVM and Clean Architecture in critical projects",
 						"Integration of RESTful services with Retrofit and local data management with Room",
 						"Coordination of agile teams for the delivery of priority features"
-					],
-					"logo": "./assets/images/gobierno.png"
+					]
 				},
 				{
 					"position": "Full Stack Developer - Ministry of Health",
@@ -108,8 +107,7 @@
 						"Design and implementation of robust APIs using Node.js and Express",
 						"Performance optimization in critical applications, reducing latency by 40%",
 						"Implementation of dependency injection with Dagger Hilt"
-					],
-					"logo": "./assets/images/gobierno.png"
+					]
 				},
 				{
 					"position": "WordPress Developer - The Virtual Buddy",
@@ -119,8 +117,7 @@
 						"Creation of customized CMS platforms using WordPress",
 						"Design of responsive themes and SEO optimization",
 						"Integration of e-commerce systems"
-					],
-					"logo": "./assets/images/the_virtual_buddy.png"
+					]
 				}
 			]
 		}
