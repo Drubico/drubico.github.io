@@ -307,10 +307,8 @@
 	.blog-posts-list {
 		grid-template-columns: 1fr 1fr;
 	}
-	/* Certs: 2 columnas en tablet */
-	.cert-grid {
-		grid-template-columns: 1fr 1fr;
-	}
+	/* Certs: mantener 1 columna en tablet */
+	.cert-grid { grid-template-columns: 1fr; }
 	.input-wrapper {
 		grid-template-columns: 1fr 1fr;
 	}
@@ -380,10 +378,11 @@
 	.project-list {
 		grid-template-columns: repeat(3, 1fr);
 	}
-	/* Certs: máx 2 columnas en desktop para mantener tamaño consistente */
-	.cert-grid {
-		grid-template-columns: repeat(2, 1fr);
-	}
+	/* Certs: mantener 1 columna también en desktop según requerimiento */
+	.cert-grid { grid-template-columns: 1fr; }
+
+  /* Cert card: suficiente espacio en desktop para 3 columnas internas */
+  .cert-card { grid-template-columns: auto 1fr auto; }
 	.blog-banner-box {
 		height: 230px;
 	}

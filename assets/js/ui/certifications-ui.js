@@ -48,33 +48,34 @@ function setCertifications(langData, staticData, titleEl, listEl) {
         const li = document.createElement('li');
         li.className = 'cert-card';
 
-        const header = document.createElement('div');
-        header.className = 'cert-card-header';
-        // Logo a la izquierda (si disponible). Prioriza cert.logo, luego intenta por providerId
+        // Columna 1: logo
+        const media = document.createElement('div');
+        media.className = 'cert-media';
         const logoSrc = cert.logo || (cert.providerId ? `./assets/images/${cert.providerId}.svg` : null);
         if (logoSrc) {
             const logoImg = document.createElement('img');
             logoImg.className = 'cert-logo';
             logoImg.src = logoSrc;
             logoImg.alt = (t.provider || cert.providerId || cert.id) + ' logo';
-            header.appendChild(logoImg);
+            media.appendChild(logoImg);
         }
-        const heading = document.createElement('div');
-        heading.className = 'cert-heading';
+        li.appendChild(media);
+
+        // Columna 2: contenido (título + meta)
+        const content = document.createElement('div');
+        content.className = 'cert-content';
         const h4 = document.createElement('h4');
         h4.className = 'h4 cert-title';
         h4.setAttribute('data-lang', `resume.certifications.items[${idx}].title`);
         h4.textContent = t.title || cert.id;
-        heading.appendChild(h4);
+        content.appendChild(h4);
         if (t.provider) {
             const prov = document.createElement('span');
             prov.className = 'cert-provider';
             prov.setAttribute('data-lang', `resume.certifications.items[${idx}].provider`);
             prov.textContent = t.provider;
-            heading.appendChild(prov);
+            content.appendChild(prov);
         }
-        header.appendChild(heading);
-        li.appendChild(header);
 
         const body = document.createElement('div');
         body.className = 'cert-card-body';
@@ -100,10 +101,13 @@ function setCertifications(langData, staticData, titleEl, listEl) {
             meta.appendChild(cred);
         }
         body.appendChild(meta);
+        content.appendChild(body);
+        li.appendChild(content);
 
+        // Columna 3: acciones (botón)
+        const actions = document.createElement('div');
+        actions.className = 'cert-actions';
         if (cert.url) {
-            const actions = document.createElement('div');
-            actions.className = 'cert-actions';
             const link = document.createElement('a');
             link.href = cert.url;
             link.target = '_blank';
@@ -112,10 +116,8 @@ function setCertifications(langData, staticData, titleEl, listEl) {
             link.setAttribute('data-lang', 'resume.certifications.labels.showCredential');
             link.textContent = langData.resume.certifications.labels.showCredential;
             actions.appendChild(link);
-            body.appendChild(actions);
         }
-
-        li.appendChild(body);
+        li.appendChild(actions);
         listEl.appendChild(li);
     });
 }
