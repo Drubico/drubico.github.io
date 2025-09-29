@@ -120,6 +120,31 @@
 					]
 				}
 			]
+		},
+		"certifications": {
+			"title": "Licencias y certificaciones",
+			"labels": {
+				"issued": "Expedición:",
+				"credentialId": "ID de la credencial:",
+				"showCredential": "Mostrar credencial"
+			},
+			"items": [
+				{
+					"id": "jetpack-compose",
+					"title": "Jetpack Compose: Curso definitivo desde 0",
+					"provider": "Udemy"
+				},
+				{
+					"id": "solid-clean-code",
+					"title": "Principios SOLID y Clean Code",
+					"provider": "Udemy"
+				},
+				{
+					"id": "kotlin-desde-cero",
+					"title": "Curso de Kotlin desde Cero",
+					"provider": "Platzi"
+				}
+			]
 		}
 	},
 	"portfolio": {

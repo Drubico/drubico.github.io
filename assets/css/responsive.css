@@ -307,6 +307,10 @@
 	.blog-posts-list {
 		grid-template-columns: 1fr 1fr;
 	}
+	/* Certs: 2 columnas en tablet */
+	.cert-grid {
+		grid-template-columns: 1fr 1fr;
+	}
 	.input-wrapper {
 		grid-template-columns: 1fr 1fr;
 	}
@@ -375,6 +379,10 @@
 	}
 	.project-list {
 		grid-template-columns: repeat(3, 1fr);
+	}
+	/* Certs: máx 2 columnas en desktop para mantener tamaño consistente */
+	.cert-grid {
+		grid-template-columns: repeat(2, 1fr);
 	}
 	.blog-banner-box {
 		height: 230px;

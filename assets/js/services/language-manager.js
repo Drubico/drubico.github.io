@@ -8,6 +8,7 @@ import { setAbout } from '../ui/about-ui.js';
 import { setContacts } from '../ui/contacts-ui.js';
 import { setExperience } from '../ui/experience-ui.js';
 import { setModal } from '../ui/modal-ui.js';
+import { setCertifications } from '../ui/certifications-ui.js';
 import { setNavBarData } from '../ui/navbar-ui.js';
 import { renderProjects } from '../ui/projects-ui.js';
 import { setTextProject } from './projects-service.js';
@@ -63,6 +64,8 @@ function setLanguageData(language) {
     const langToggle = document.getElementById("lang-toggle");
     langToggle.src = language.imgSrc;
     langToggle.alt = language.imgAlt;
+    // Actualiza el atributo lang del documento para formateo correcto
+    document.documentElement.setAttribute('lang', language.lang || 'es');
 
     Promise.all([fetch(language.jsonPath).then(res => res.json()), fetch(dataUrl).then(res => res.json())])
         .then(([langData, staticData]) => {
@@ -85,6 +88,12 @@ function setLanguageData(language) {
                 educationTimelineEl,
                 staticData.experienceLogos || {}
             );
+            // Get DOM elements for setCertifications
+            const certificationsTitleEl = document.querySelector("[data-lang='resume.certifications.title']");
+            const certificationListEl = document.getElementById("certification-list");
+            if (certificationsTitleEl && certificationListEl) {
+                setCertifications(langData, staticData, certificationsTitleEl, certificationListEl);
+            }
             // Get DOM elements for setAbout
             const aboutTitleEl = document.querySelector("[data-about-title]");
             const aboutIntroEl = document.querySelector("[data-about-intro]");

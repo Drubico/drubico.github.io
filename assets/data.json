@@ -301,5 +301,31 @@
         "gobierno": "./assets/images/gobierno.webp",
         "the-virtual-buddy": "./assets/images/the_virtual_buddy.webp",
         "uca": "./assets/images/uca.webp"
-    }
+    },
+    "certifications": [
+        {
+            "id": "jetpack-compose",
+            "providerId": "udemy",
+            "logo": "./assets/images/udemy.svg",
+            "credentialId": "UC-45a9af61-008f-485e-a4f8-45eafbb66ab3",
+            "issuedAt": "2023-11-01",
+            "url": "https://www.udemy.com/certificate/UC-45a9af61-008f-485e-a4f8-45eafbb66ab3/"
+        },
+        {
+            "id": "solid-clean-code",
+            "providerId": "udemy",
+            "logo": "./assets/images/udemy.svg",
+            "credentialId": "UC-e9a67a19-ebde-458e-ad8d-cd0717986176",
+            "issuedAt": "2023-02-01",
+            "url": "https://www.udemy.com/certificate/UC-e9a67a19-ebde-458e-ad8d-cd0717986176/"
+        },
+        {
+            "id": "kotlin-desde-cero",
+            "providerId": "platzi",
+            "logo": "./assets/images/platzi.svg",
+            "credentialId": "68f09ddd-7a72-4529-8c6b-1caebb83ff46",
+            "issuedAt": "2022-06-01",
+            "url": "https://platzi.com/p/diego.rubi/curso/2245-kotlin/diploma/detalle/"
+        }
+    ]
 }
