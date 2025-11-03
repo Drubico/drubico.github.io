@@ -21,6 +21,9 @@ function setAbout(data, aboutTitleEl, aboutIntroEl, aboutDescriptionEl, serviceT
     serviceTitleEl.textContent = data.about.services.title;
 
     serviceListEl.innerHTML = "";
+    
+    // Use DocumentFragment for better performance
+    const fragment = document.createDocumentFragment();
 
     data.about.services.items.forEach(item => {
         const serviceItem = document.createElement("li");
@@ -48,8 +51,11 @@ function setAbout(data, aboutTitleEl, aboutIntroEl, aboutDescriptionEl, serviceT
         serviceItem.appendChild(iconBox);
         serviceItem.appendChild(contentBox);
 
-        serviceListEl.appendChild(serviceItem);
+        fragment.appendChild(serviceItem);
     });
+    
+    // Single DOM operation
+    serviceListEl.appendChild(fragment);
 
     skillsTitleEl.textContent = data.about.skills.title;
 }

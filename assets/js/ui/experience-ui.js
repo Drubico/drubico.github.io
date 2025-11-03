@@ -13,6 +13,10 @@
 
 function populateTimeline(timelineElement, items, section, experienceLogos = {}) {
     timelineElement.innerHTML = "";
+    
+    // Use DocumentFragment for better performance
+    const fragment = document.createDocumentFragment();
+    
     items.forEach((item, index) => {
         const timelineItem = document.createElement("li");
         timelineItem.className = "timeline-item";
@@ -70,8 +74,11 @@ function populateTimeline(timelineElement, items, section, experienceLogos = {})
 
         timelineItem.appendChild(leftCol);
         timelineItem.appendChild(rightCol);
-        timelineElement.appendChild(timelineItem);
+        fragment.appendChild(timelineItem);
     });
+    
+    // Single DOM operation
+    timelineElement.appendChild(fragment);
 }
 
 

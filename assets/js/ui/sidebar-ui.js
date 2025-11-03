@@ -17,6 +17,9 @@ import { calculateAge } from '../services/utils.js';
  */
 function setSidebar(data, staticData, contactsListEl, nameEl, titleEl, showContactsBtnEl) {
     contactsListEl.innerHTML = "";
+    
+    // Use DocumentFragment for better performance
+    const fragment = document.createDocumentFragment();
 
     staticData.sidebarContacts.forEach(contact => {
         const contactItem = document.createElement("li");
@@ -57,8 +60,11 @@ function setSidebar(data, staticData, contactsListEl, nameEl, titleEl, showConta
         contactItem.appendChild(iconBox);
         contactItem.appendChild(contactInfo);
 
-        contactsListEl.appendChild(contactItem);
+        fragment.appendChild(contactItem);
     });
+    
+    // Single DOM operation
+    contactsListEl.appendChild(fragment);
 
     nameEl.textContent = data.sidebar.name;
     titleEl.textContent = data.sidebar.title;
