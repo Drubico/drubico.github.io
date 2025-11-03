@@ -41,6 +41,9 @@ function setCertifications(langData, staticData, titleEl, listEl) {
 
     // Limpiar
     listEl.innerHTML = '';
+    
+    // Use DocumentFragment for better performance
+    const fragment = document.createDocumentFragment();
 
     items.forEach((cert, idx) => {
         const t = textsById[cert.id] || {};
@@ -118,8 +121,11 @@ function setCertifications(langData, staticData, titleEl, listEl) {
             actions.appendChild(link);
         }
         li.appendChild(actions);
-        listEl.appendChild(li);
+        fragment.appendChild(li);
     });
+    
+    // Single DOM operation
+    listEl.appendChild(fragment);
 }
 
 export { setCertifications };

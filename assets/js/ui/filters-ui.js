@@ -27,15 +27,11 @@ function generateFilterItems(items) {
  * @param {NodeListOf<HTMLElement>} filterItemsElements - Nodelist de los elementos a filtrar.
  */
 const filterFunc = function (selectedCategory, filterItemsElements) {
-    for (let i = 0; i < filterItemsElements.length; i++) {
-        if (selectedCategory === "all") {
-            filterItemsElements[i].classList.add("active");
-        } else if (selectedCategory === filterItemsElements[i].dataset.category) {
-            filterItemsElements[i].classList.add("active");
-        } else {
-            filterItemsElements[i].classList.remove("active");
-        }
-    }
+    filterItemsElements.forEach(item => {
+        item.classList.toggle("active", 
+            selectedCategory === "all" || selectedCategory === item.dataset.category
+        );
+    });
 }
 
 /**
@@ -52,23 +48,20 @@ function setFilters(filterItems, filterListElements, filterButtonsElements, filt
     });
 
     // Re-query filterButtonsElements after they have been rendered
-    filterButtonsElements = document.querySelectorAll("[data-filter-btn]");
+    const buttons = document.querySelectorAll("[data-filter-btn]");
 
-    for (let i = 0; i < filterButtonsElements.length; i++) {
-        filterButtonsElements[i].addEventListener("click", function () {
+    buttons.forEach(button => {
+        button.addEventListener("click", function () {
             const selectedCategory = this.getAttribute('data-category');
 
-            for (let j = 0; j < filterButtonsElements.length; j++) {
-                if (filterButtonsElements[j] === this) {
-                    filterButtonsElements[j].classList.add("active");
-                } else {
-                    filterButtonsElements[j].classList.remove("active");
-                }
-            }
+            // Update active state on all buttons
+            buttons.forEach(btn => {
+                btn.classList.toggle("active", btn === this);
+            });
 
             filterFunc(selectedCategory, filterItemsToFilter);
         });
-    }
+    });
 }
 
 /**
@@ -109,37 +102,34 @@ function setFilterDefaultValue(filterItems, filterSelectValueEl, filterButtonsEl
  * @param {NodeListOf<HTMLElement>} filterItemsToFilter - Nodelist de los elementos del portafolio a filtrar.
  */
 function setFilterBox(filterSelectBoxEl, filterButtonsElements, filterItemsToFilter) {
-    if (filterSelectBoxEl) {
-        const filterSelectButton = filterSelectBoxEl.querySelector('.filter-select');
-        const filterSelectValue = filterSelectBoxEl.querySelector('.select-value');
-        const currentFilterList = filterSelectBoxEl.querySelector('.filter-list');
+    if (!filterSelectBoxEl) return;
 
-        if (filterSelectButton && filterSelectValue && currentFilterList) {
-            filterSelectButton.addEventListener('click', function () {
-                currentFilterList.classList.toggle('active');
-            });
+    const filterSelectButton = filterSelectBoxEl.querySelector('.filter-select');
+    const filterSelectValue = filterSelectBoxEl.querySelector('.select-value');
+    const currentFilterList = filterSelectBoxEl.querySelector('.filter-list');
 
-            currentFilterList.addEventListener('click', function (event) {
-                if (event.target.matches('[data-filter-btn]')) {
-                    const selectedCategory = event.target.getAttribute('data-category');
-                    filterSelectValue.textContent = event.target.textContent;
-                    filterSelectValue.setAttribute('data-category', selectedCategory);
-                    currentFilterList.classList.remove('active');
+    if (!filterSelectButton || !filterSelectValue || !currentFilterList) return;
 
-                    // Update active class on buttons
-                    for (let i = 0; i < filterButtonsElements.length; i++) {
-                        if (filterButtonsElements[i] === event.target) {
-                            filterButtonsElements[i].classList.add("active");
-                        } else {
-                            filterButtonsElements[i].classList.remove("active");
-                        }
-                    }
+    filterSelectButton.addEventListener('click', function () {
+        currentFilterList.classList.toggle('active');
+    });
 
-                    filterFunc(selectedCategory, filterItemsToFilter);
-                }
-            });
-        }
-    }
+    currentFilterList.addEventListener('click', function (event) {
+        if (!event.target.matches('[data-filter-btn]')) return;
+
+        const selectedCategory = event.target.getAttribute('data-category');
+        filterSelectValue.textContent = event.target.textContent;
+        filterSelectValue.setAttribute('data-category', selectedCategory);
+        currentFilterList.classList.remove('active');
+
+        // Update active class on buttons - use cached buttons
+        const allButtons = document.querySelectorAll('[data-filter-btn]');
+        allButtons.forEach(btn => {
+            btn.classList.toggle("active", btn === event.target);
+        });
+
+        filterFunc(selectedCategory, filterItemsToFilter);
+    });
 }
 
 export { setFilters, setFilterBox, setFilterDefaultValue };

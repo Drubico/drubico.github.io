@@ -16,27 +16,20 @@
  * @param {Array<string>} skillsData.skills[].libraries - Librerías asociadas a la habilidad.
  */
 function loadSkills(skillsData, skillListEl) {
-    const skillList = skillListEl;
-    skillList.innerHTML = '';
+    skillListEl.innerHTML = '';
+    
+    // Use DocumentFragment for better performance
+    const fragment = document.createDocumentFragment();
 
     skillsData.skills.forEach(skill => {
         const skillItem = document.createElement('li');
         skillItem.className = 'skill-item';
 
-        let languagesHtml = '';
-        if (skill.languages.length > 0) {
-            languagesHtml = `<div>${skill.languages.map(lang => `<p class="project-language">${lang}</p>`).join('')}</div>`;
-        }
-
-        let frameworksHtml = '';
-        if (skill.frameworks.length > 0) {
-            frameworksHtml = `<div>${skill.frameworks.map(framework => `<p class="project-framework">${framework}</p>`).join('')}</div>`;
-        }
-
-        let librariesHtml = '';
-        if (skill.libraries.length > 0) {
-            librariesHtml = `<div>${skill.libraries.map(lib => `<p class="project-library">${lib}</p>`).join('')}</div>`;
-        }
+        // Helper function to build tech tags HTML
+        const buildTechHtml = (items, className) => {
+            if (!items || items.length === 0) return '';
+            return `<div>${items.map(item => `<p class="${className}">${item}</p>`).join('')}</div>`;
+        };
 
         skillItem.innerHTML = `
             <div class="skill-icon-box">
@@ -44,13 +37,16 @@ function loadSkills(skillsData, skillListEl) {
             </div>
             <div class="skill-content-box">
                 <h4 class="h4 skill-item-title">${skill.title}</h4>
-                ${languagesHtml}
-                ${frameworksHtml}
-                ${librariesHtml}
+                ${buildTechHtml(skill.languages, 'project-language')}
+                ${buildTechHtml(skill.frameworks, 'project-framework')}
+                ${buildTechHtml(skill.libraries, 'project-library')}
             </div>
         `;
-        skillList.appendChild(skillItem);
+        fragment.appendChild(skillItem);
     });
+    
+    // Single DOM operation
+    skillListEl.appendChild(fragment);
 }
 
 export { loadSkills };

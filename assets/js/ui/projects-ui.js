@@ -20,6 +20,9 @@
  */
 function renderProjects(projects, data, projectListEl) {
     projectListEl.innerHTML = "";
+    
+    // Use DocumentFragment for better performance when adding multiple elements
+    const fragment = document.createDocumentFragment();
 
     projects.forEach((project) => {
         const projectData = data.projects.find(p => p.id === project.id);
@@ -90,32 +93,20 @@ function renderProjects(projects, data, projectListEl) {
         const projectDetails = document.createElement("div");
         projectDetails.className = "project-details hidden";
 
-        if (projectData.languages) {
-            projectData.languages.forEach((language) => {
-                const languageElement = document.createElement("span");
-                languageElement.className = "project-language";
-                languageElement.textContent = language;
-                projectDetails.appendChild(languageElement);
+        // Helper function to create and append spans
+        const appendSpans = (items, className) => {
+            if (!items) return;
+            items.forEach((text) => {
+                const span = document.createElement("span");
+                span.className = className;
+                span.textContent = text;
+                projectDetails.appendChild(span);
             });
-        }
+        };
 
-        if (projectData.frameworks) {
-            projectData.frameworks.forEach((framework) => {
-                const frameworkElement = document.createElement("span");
-                frameworkElement.className = "project-framework";
-                frameworkElement.textContent = framework;
-                projectDetails.appendChild(frameworkElement);
-            });
-        }
-
-        if (projectData.libraries) {
-            projectData.libraries.forEach((library) => {
-                const libraryElement = document.createElement("span");
-                libraryElement.className = "project-library";
-                libraryElement.textContent = library;
-                projectDetails.appendChild(libraryElement);
-            });
-        }
+        appendSpans(projectData.languages, "project-language");
+        appendSpans(projectData.frameworks, "project-framework");
+        appendSpans(projectData.libraries, "project-library");
 
         const projectDescription = document.createElement("div");
         projectDescription.className = "project-description";
@@ -128,8 +119,11 @@ function renderProjects(projects, data, projectListEl) {
         projectLink.appendChild(projectDescription);
 
         projectItem.appendChild(projectLink);
-        projectListEl.appendChild(projectItem);
+        fragment.appendChild(projectItem);
     });
+    
+    // Single DOM operation instead of multiple appends
+    projectListEl.appendChild(fragment);
 }
 
 export { renderProjects };

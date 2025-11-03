@@ -32,49 +32,29 @@ function setEventNavBar(navigationLinks, pages) {
         localStorage.setItem("activePage", activePage);
     }
 
-    if (activePage) {
-        for (let j = 0; j < pages.length; j++) {
-            if (pages[j].dataset.page.includes(activePage)) {
-                pages[j].classList.add("active");
-            } else {
-                pages[j].classList.remove("active");
-            }
-        }
+    // Helper function to update active state
+    const updateActiveState = (targetPage) => {
+        pages.forEach(page => {
+            page.classList.toggle("active", page.dataset.page.includes(targetPage));
+        });
 
-        for (let k = 0; k < navigationLinks.length; k++) {
-            if (navigationLinks[k].getAttribute('data-page') === activePage) {
-                navigationLinks[k].classList.add("active");
-            } else {
-                navigationLinks[k].classList.remove("active");
-            }
-        }
+        navigationLinks.forEach(link => {
+            link.classList.toggle("active", link.getAttribute('data-page') === targetPage);
+        });
+    };
+
+    if (activePage) {
+        updateActiveState(activePage);
     }
 
-    for (let i = 0; i < navigationLinks.length; i++) {
-        navigationLinks[i].addEventListener("click", function () {
+    navigationLinks.forEach(navLink => {
+        navLink.addEventListener("click", function () {
             const targetPage = this.getAttribute('data-page');
-
-            for (let j = 0; j < pages.length; j++) {
-                if (pages[j].dataset.page.includes(targetPage)) {
-                    pages[j].classList.add("active");
-                } else {
-                    pages[j].classList.remove("active");
-                }
-            }
-
-            for (let k = 0; k < navigationLinks.length; k++) {
-                if (navigationLinks[k].getAttribute('data-page') === targetPage) {
-                    navigationLinks[k].classList.add("active");
-                } else {
-                    navigationLinks[k].classList.remove("active");
-                }
-            }
-
+            updateActiveState(targetPage);
             localStorage.setItem("activePage", targetPage);
-
             window.scrollTo(0, 0);
         });
-    }
+    });
 }
 
 export { setNavBarData, setEventNavBar };

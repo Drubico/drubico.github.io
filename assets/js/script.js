@@ -58,68 +58,86 @@ document.addEventListener("DOMContentLoaded", function () {
   initializeThemeManager();
 
   // Responsive filter select logic reutilizable
+  // Store cleanup functions to remove listeners properly
+  const filterSelectCleanupFunctions = [];
+  
   function setupResponsiveFilterSelect() {
+    // Clean up previous event listeners
+    filterSelectCleanupFunctions.forEach(cleanup => cleanup());
+    filterSelectCleanupFunctions.length = 0;
+
     document.querySelectorAll('.filter-select-box').forEach(box => {
       const selectBtn = box.querySelector('.filter-select');
       const filterList = box.querySelector('.filter-list');
       const selectValue = box.querySelector('.select-value');
-      if (selectBtn && filterList && selectValue) {
-        // Elimina listeners previos
-        selectBtn.onclick = null;
-        filterList.onclick = null;
-        // Cierra menú y elimina clases activas
-        box.classList.remove('open');
-        selectBtn.classList.remove('active');
-        filterList.classList.remove('active');
-        // Asegura que solo un botón esté activo y el texto del select sea el correcto
-        const activeBtn = filterList.querySelector('button.active');
-        if (activeBtn) {
-          selectValue.textContent = activeBtn.textContent;
-          selectValue.setAttribute('data-category', activeBtn.getAttribute('data-category'));
-          selectValue.setAttribute('data-lang', activeBtn.getAttribute('data-lang'));
-        } else {
-          // Si no hay activo, activa el primero
-          const firstBtn = filterList.querySelector('button[data-filter-btn]');
-          if (firstBtn) {
-            firstBtn.classList.add('active');
-            selectValue.textContent = firstBtn.textContent;
-            selectValue.setAttribute('data-category', firstBtn.getAttribute('data-category'));
-            selectValue.setAttribute('data-lang', firstBtn.getAttribute('data-lang'));
-          }
+      if (!selectBtn || !filterList || !selectValue) return;
+
+      // Cierra menú y elimina clases activas
+      box.classList.remove('open');
+      selectBtn.classList.remove('active');
+      filterList.classList.remove('active');
+
+      // Asegura que solo un botón esté activo y el texto del select sea el correcto
+      const activeBtn = filterList.querySelector('button.active');
+      if (activeBtn) {
+        selectValue.textContent = activeBtn.textContent;
+        selectValue.setAttribute('data-category', activeBtn.getAttribute('data-category'));
+        selectValue.setAttribute('data-lang', activeBtn.getAttribute('data-lang'));
+      } else {
+        // Si no hay activo, activa el primero
+        const firstBtn = filterList.querySelector('button[data-filter-btn]');
+        if (firstBtn) {
+          firstBtn.classList.add('active');
+          selectValue.textContent = firstBtn.textContent;
+          selectValue.setAttribute('data-category', firstBtn.getAttribute('data-category'));
+          selectValue.setAttribute('data-lang', firstBtn.getAttribute('data-lang'));
         }
-        // Click para abrir/cerrar menú
-        selectBtn.addEventListener('click', function (e) {
-          e.stopPropagation();
-          box.classList.toggle('open');
-          selectBtn.classList.toggle('active');
-          filterList.classList.toggle('active');
-        });
-        // Click fuera para cerrar
-        document.addEventListener('click', function docClick(e) {
-          if (!box.contains(e.target)) {
-            box.classList.remove('open');
-            selectBtn.classList.remove('active');
-            filterList.classList.remove('active');
-          }
-        }, { once: true });
-        // Al seleccionar un filtro, cerrar menú y actualizar select
-        filterList.addEventListener('click', function (e) {
-          if (e.target.matches('button[data-filter-btn]')) {
-            // Quitar clase active de todos
-            filterList.querySelectorAll('button[data-filter-btn]').forEach(btn => btn.classList.remove('active'));
-            // Activar el seleccionado
-            e.target.classList.add('active');
-            // Actualizar texto y atributos
-            selectValue.textContent = e.target.textContent;
-            selectValue.setAttribute('data-category', e.target.getAttribute('data-category'));
-            selectValue.setAttribute('data-lang', e.target.getAttribute('data-lang'));
-            // Cerrar menú
-            box.classList.remove('open');
-            selectBtn.classList.remove('active');
-            filterList.classList.remove('active');
-          }
-        });
       }
+
+      // Click para abrir/cerrar menú
+      const handleSelectBtnClick = (e) => {
+        e.stopPropagation();
+        box.classList.toggle('open');
+        selectBtn.classList.toggle('active');
+        filterList.classList.toggle('active');
+      };
+      selectBtn.addEventListener('click', handleSelectBtnClick);
+
+      // Click fuera para cerrar
+      const handleDocClick = (e) => {
+        if (!box.contains(e.target)) {
+          box.classList.remove('open');
+          selectBtn.classList.remove('active');
+          filterList.classList.remove('active');
+        }
+      };
+      document.addEventListener('click', handleDocClick);
+
+      // Al seleccionar un filtro, cerrar menú y actualizar select
+      const handleFilterClick = (e) => {
+        if (e.target.matches('button[data-filter-btn]')) {
+          // Quitar clase active de todos
+          filterList.querySelectorAll('button[data-filter-btn]').forEach(btn => btn.classList.remove('active'));
+          // Activar el seleccionado
+          e.target.classList.add('active');
+          // Actualizar texto y atributos
+          selectValue.textContent = e.target.textContent;
+          selectValue.setAttribute('data-category', e.target.getAttribute('data-category'));
+          selectValue.setAttribute('data-lang', e.target.getAttribute('data-lang'));
+          // Cerrar menú
+          box.classList.remove('open');
+          selectBtn.classList.remove('active');
+          filterList.classList.remove('active');
+        }
+      };
+      filterList.addEventListener('click', handleFilterClick);
+
+      // Store cleanup function
+      filterSelectCleanupFunctions.push(() => {
+        selectBtn.removeEventListener('click', handleSelectBtnClick);
+        document.removeEventListener('click', handleDocClick);
+        filterList.removeEventListener('click', handleFilterClick);
+      });
     });
   }
   setupResponsiveFilterSelect();
