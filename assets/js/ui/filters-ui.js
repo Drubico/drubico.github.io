@@ -73,8 +73,8 @@ function setFilters(filterItems, filterListElements, filterButtonsElements, filt
  * @param {NodeListOf<HTMLElement>} filterItemsToFilter - Nodelist de los elementos del portafolio a filtrar.
  */
 function setFilterDefaultValue(filterItems, filterSelectValueEl, filterButtonsElements, filterItemsToFilter) {
-    // Re-query filterButtonsElements to ensure it's up-to-date
-    filterButtonsElements = document.querySelectorAll("[data-filter-btn]");
+    // Query current buttons to ensure they're up-to-date after rendering
+    const currentButtons = document.querySelectorAll("[data-filter-btn]");
 
     const defaultCategory = filterItems.find(item => item.active).category?.toString() || 'all';
     const defaultFilterItem = filterItems.find(item => item.category === defaultCategory);
@@ -84,13 +84,9 @@ function setFilterDefaultValue(filterItems, filterSelectValueEl, filterButtonsEl
         filterFunc(defaultCategory, filterItemsToFilter);
     }
 
-    filterButtonsElements.forEach(button => {
+    currentButtons.forEach(button => {
         const buttonCategory = button.getAttribute('data-category');
-        if (buttonCategory === defaultCategory) {
-            button.classList.add('active');
-        } else {
-            button.classList.remove('active'); // Ensure other buttons are not active
-        }
+        button.classList.toggle('active', buttonCategory === defaultCategory);
     });
 }
 
@@ -114,6 +110,9 @@ function setFilterBox(filterSelectBoxEl, filterButtonsElements, filterItemsToFil
         currentFilterList.classList.toggle('active');
     });
 
+    // Cache all filter buttons for performance
+    let cachedFilterButtons = document.querySelectorAll('[data-filter-btn]');
+    
     currentFilterList.addEventListener('click', function (event) {
         if (!event.target.matches('[data-filter-btn]')) return;
 
@@ -122,9 +121,8 @@ function setFilterBox(filterSelectBoxEl, filterButtonsElements, filterItemsToFil
         filterSelectValue.setAttribute('data-category', selectedCategory);
         currentFilterList.classList.remove('active');
 
-        // Update active class on buttons - use cached buttons
-        const allButtons = document.querySelectorAll('[data-filter-btn]');
-        allButtons.forEach(btn => {
+        // Update active class on cached buttons
+        cachedFilterButtons.forEach(btn => {
             btn.classList.toggle("active", btn === event.target);
         });
 
