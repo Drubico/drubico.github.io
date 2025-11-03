@@ -13,7 +13,7 @@ import { setNavBarData } from '../ui/navbar-ui.js';
 import { renderProjects } from '../ui/projects-ui.js';
 import { setTextProject } from './projects-service.js';
 import { setSidebar } from '../ui/sidebar-ui.js';
-import { setFilters, setFilterDefaultValue, setFilterBox } from '../ui/filters-ui.js';
+import { setFilters, setFilterDefaultValue } from '../ui/filters-ui.js';
 import { loadSkills } from '../ui/skills-ui.js';
 
 /**
@@ -137,9 +137,11 @@ function setLanguageData(language) {
             // Re-query filterButtonsElements after setFilters has rendered them
             filterButtonsElements = document.querySelectorAll("[data-filter-btn]");
             setFilterDefaultValue(filterItems, filterSelectValueEl, filterButtonsElements, filterItemsToFilter);
-            // Get DOM elements for setFilterBox
-            const filterSelectBox = document.querySelector('.filter-select-box');
-            setFilterBox(filterSelectBox, filterButtonsElements, filterItemsToFilter);
+            // Note: setFilterBox is not needed here because setupResponsiveFilterSelect already handles
+            // the responsive filter select box behavior. Calling both creates duplicate event listeners
+            // that interfere with each other.
+            // const filterSelectBox = document.querySelector('.filter-select-box');
+            // setFilterBox(filterSelectBox, filterButtonsElements, filterItemsToFilter);
         })
         .catch((error) => console.error("Error al cargar los archivos de datos:", error));
 }

@@ -9,7 +9,6 @@
 import { languageMain } from './services/language-manager.js';
 import { setEventNavBar } from './ui/navbar-ui.js';
 import { setSidebarClick } from './ui/sidebar-ui.js';
-import { setFilterBox } from './ui/filters-ui.js';
 import { initializeThemeManager } from './services/theme-manager.js';
 
 /**
