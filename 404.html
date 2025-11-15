@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>404 - Página No Encontrada</title>
+
+		<!-- Importar estilos base y tema del portafolio -->
+		<link rel="stylesheet" href="/assets/css/base.css" />
+		<link rel="stylesheet" href="/assets/css/theme.css" />
+
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+			}
+
+			body {
+				font-family: var(--ff-poppins);
+				background: var(--bg-primary);
+				min-height: 100vh;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				padding: 20px;
+				color: var(--text-primary);
+				transition: background-color 0.3s ease, color 0.3s ease;
+			}
+
+			.container {
+				text-align: center;
+				background: var(--bg-secondary);
+				border-radius: var(--br-4);
+				padding: 60px 40px;
+				box-shadow: var(--shadow-2);
+				max-width: 500px;
+				width: 100%;
+				border: 1px solid var(--border-color);
+				transition: all 0.3s ease;
+			}
+
+			h1 {
+				font-size: 120px;
+				font-weight: var(--fw-600);
+				background: var(--text-gradient-yellow);
+				-webkit-background-clip: text;
+				-webkit-text-fill-color: transparent;
+				background-clip: text;
+				margin-bottom: 20px;
+				line-height: 1;
+			}
+
+			h2 {
+				font-size: 28px;
+				color: var(--text-primary);
+				margin-bottom: 15px;
+				font-weight: var(--fw-600);
+			}
+
+			p {
+				font-size: var(--fs-4);
+				color: var(--text-secondary);
+				margin-bottom: 30px;
+				line-height: 1.6;
+				font-weight: var(--fw-300);
+			}
+
+			.button-group {
+				display: flex;
+				gap: 10px;
+				flex-wrap: wrap;
+				justify-content: center;
+			}
+
+			a {
+				display: inline-block;
+				padding: 12px 24px;
+				margin: 5px;
+				border-radius: var(--br-2);
+				text-decoration: none;
+				font-weight: var(--fw-600);
+				transition: var(--transition-1);
+				cursor: pointer;
+			}
+
+			.btn-primary {
+				background: var(--text-gradient-yellow);
+				color: var(--bg-primary);
+				box-shadow: var(--shadow-1);
+			}
+
+			.btn-primary:hover {
+				transform: translateY(-2px);
+				box-shadow: 0 0 15px var(--accent-color);
+			}
+
+			.btn-secondary {
+				background: var(--bg-primary);
+				color: var(--text-primary);
+				border: 2px solid var(--accent-color);
+			}
+
+			.btn-secondary:hover {
+				background: var(--accent-color);
+				color: var(--bg-primary);
+				box-shadow: 0 0 15px var(--accent-color);
+			}
+
+			.emoji {
+				font-size: 80px;
+				margin-bottom: 20px;
+				display: block;
+				animation: float 3s ease-in-out infinite;
+			}
+
+			@keyframes float {
+				0%,
+				100% {
+					transform: translateY(0px);
+				}
+				50% {
+					transform: translateY(-10px);
+				}
+			}
+
+			@media (max-width: 600px) {
+				.container {
+					padding: 40px 20px;
+				}
+
+				h1 {
+					font-size: 80px;
+				}
+
+				h2 {
+					font-size: 22px;
+				}
+
+				p {
+					font-size: var(--fs-5);
+				}
+
+				.emoji {
+					font-size: 60px;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<span class="emoji">🔍</span>
+			<h1>404</h1>
+			<h2>Página No Encontrada</h2>
+			<p>Lo sentimos, la página que buscas no existe o ha sido movida. Verifica la URL e intenta nuevamente.</p>
+			<div class="button-group">
+				<a href="/" class="btn-primary">Volver al Inicio</a>
+				<a href="javascript:history.back()" class="btn-secondary">Volver Atrás</a>
+			</div>
+		</div>
+
+		<!-- Script para aplicar el tema guardado -->
+		<script>
+			// Aplicar el tema guardado al cargar la página
+			const applyTheme = (theme) => {
+				if (theme === 'dark') {
+					document.body.classList.remove('light-theme');
+				} else {
+					document.body.classList.add('light-theme');
+				}
+			};
+
+			const savedTheme = localStorage.getItem('theme') || 'dark';
+			applyTheme(savedTheme);
+		</script>
+	</body>
+</html>
